@@ -1,0 +1,27 @@
+.team_assign
+
+  .ts-grid_row
+    .small-6.ts-grid_columns
+      span.team_assign-heading
+        i.team_assign-heading-toggle-teams.fa.fa-users click='toggle_resource_teams_visible' title='Show/hide teams'
+        span.team_assign-heading-label= parentController.heading_label
+      hr.team_assign-separator
+
+    .small-6.ts-grid_columns
+      if team_filter_category
+        span.team_assign-heading
+          i.team_assign-heading-toggle-users.fa.fa-users click='toggle_team_users_visible' title='Show/hide users'
+          span.team_assign-heading-label #{team_filter_category.title} Teams
+        hr.team_assign-separator
+
+  .ts-grid_row
+    .small-6.ts-grid_columns
+      each resource in resources
+        = view assign_resource_view resource=resource.model
+
+    .small-6.ts-grid_columns
+      if team_filter_category
+        ul.team_assign-teams-list
+          each team in filtered_teams
+            = view assign_team_view team=team
+

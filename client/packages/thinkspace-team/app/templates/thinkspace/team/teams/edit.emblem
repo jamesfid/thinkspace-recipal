@@ -1,0 +1,21 @@
+.ts-grid_row: .small-12.ts-grid_columns: .form
+  fieldset
+    legend Team Information
+    partial 'thinkspace/team/shared/validation_errors'
+
+    .ts-grid_row: .small-12.ts-grid_columns
+      h6 Team Category: #{model.category.title}
+
+    .ts-grid_row: .small-12.ts-grid_columns
+      h6 Title (required)
+      = input value=title
+
+    .ts-grid_row: .small-12.ts-grid_columns
+      h6 Description
+      = textarea value=description rows='4'
+
+    .ts-grid_row
+      .small-2.ts-grid_columns: button.btn.btn-primary.btn-small disabled=view.save_disabled click='save' Save
+      .small-2.ts-grid_columns: button.btn.btn-primary.btn-small click='cancel' Cancel
+      .small-8.ts-grid_columns
+

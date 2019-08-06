@@ -1,0 +1,6 @@
+.ts-menu_toggle-width class=dock.addon_maximized:is-maximized:is-minimized click='"toggle_width" target=dock'
+  if dock.addon_maximized
+    i.fa.fa-angle-right.ts-menu_icon-left
+  else
+    i.fa.fa-angle-left.ts-menu_icon-left
+  = dock.toggle_width_text

@@ -1,0 +1,848 @@
+
+.tsi {
+	display: inline-block;
+  vertical-align: middle;
+	height: 32px;
+	width:  32px;
+	&.tsi-small, &.tsi-size_24 {
+		height: 24px;
+		width:  24px;
+	}
+	&.tsi-size_22 {
+		height: 22px;
+		width:  22px;
+	}
+	&.tsi-tiny, &.tsi-size_20 {
+		height: 20px;
+		width:  20px;
+	}
+	&.tsi-micro, &.tsi-size_16 {
+		height: 16px;
+		width: 16px;
+	}
+	&.tsi-nano, &.tsi-size_14 {
+		height: 14px;
+		width: 14px;
+	}
+	&.tsi-right {
+		margin-left: .5em;
+	}
+	&.tsi-left {
+		margin-right: .5em;
+	}
+
+
+
+	&.tsi-activities-color {
+		background-image: image-url('ts-icons/activities-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/activities-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-activities-outline {
+		background-image: image-url('ts-icons/activities-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/activities-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-assignments-color {
+		background-image: image-url('ts-icons/assignments-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/assignments-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-assignments-outline {
+		background-image: image-url('ts-icons/assignments-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/assignments-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-bus-color {
+		background-image: image-url('ts-icons/bus-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/bus-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-bus-outline {
+		background-image: image-url('ts-icons/bus-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/bus-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-collapse-outline {
+		background-image: image-url('ts-icons/collapse-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/collapse-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-collapse-color {
+		background-image: image-url('ts-icons/collapse-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/collapse-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-courses-color {
+		background-image: image-url('ts-icons/courses-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/courses-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-courses-outline {
+		background-image: image-url('ts-icons/courses-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/courses-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-expand-color {
+		background-image: image-url('ts-icons/expand-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/expand-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-expand-outline {
+		background-image: image-url('ts-icons/expand-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/expand-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-gear-color {
+		background-image: image-url('ts-icons/gear-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/gear-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-gear-outline {
+		background-image: image-url('ts-icons/gear-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/gear-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-hub-color {
+		background-image: image-url('ts-icons/hub-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/hub-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-hub-outline {
+		background-image: image-url('ts-icons/hub-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/hub-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-pages-color {
+		background-image: image-url('ts-icons/pages-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/pages-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-pages-outline {
+		background-image: image-url('ts-icons/pages-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/pages-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-phases-color {
+		background-image: image-url('ts-icons/phases-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phases-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-phases-outline {
+		background-image: image-url('ts-icons/phases-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phases-outline_2x.png');
+		}
+	}
+
+	&.tsi-spacebux-color {
+		background-image: image-url('ts-icons/spacebux-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/spacebux-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-spacebux-outline {
+		background-image: image-url('ts-icons/spacebux-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/spacebux-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-spaceman-color {
+		background-image: image-url('ts-icons/spaceman-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/spaceman-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-spaceman-outline {
+		background-image: image-url('ts-icons/spaceman-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/spaceman-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-spaceship-color {
+		background-image: image-url('ts-icons/spaceship-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/spaceship-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-spaceship-outline {
+		background-image: image-url('ts-icons/spaceship-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/spaceship-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-thingbot1-color {
+		background-image: image-url('ts-icons/thingbot1-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/thingbot1-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-thinkbot1-outline {
+		background-image: image-url('ts-icons/thinkbot1-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/thinkbot1-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-thinkbot2-color {
+		background-image: image-url('ts-icons/thinkbot2-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/thinkbot2-color_2x.png');
+		}
+	}
+
+	 
+	&.tsi-thinkbot2-outline {
+		background-image: image-url('ts-icons/thinkbot2-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/thinkbot2-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-user-outline {
+		background-image: image-url('ts-icons/user-outline.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/user-outline_2x.png');
+		}
+	}
+
+	 
+	&.tsi-user-color {
+		background-image: image-url('ts-icons/user-color.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/user-color_2x.png');
+		}
+	}
+
+	// System
+	 
+	&.tsi-add-inverse {
+		background-image: image-url('ts-icons/add-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/add-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-add-note-inverse {
+		background-image: image-url('ts-icons/add-note-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/add-note-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-add-note {
+		background-image: image-url('ts-icons/add-note.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/add-note_2x.png');
+		}	
+	}
+
+	 
+	&.tsi-add {
+		background-image: image-url('ts-icons/add.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/add_2x.png');
+		}	
+	}
+
+	 
+	&.tsi-checkmark-inverse {
+		background-image: image-url('ts-icons/checkmark-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/checkmark-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-checkmark {
+		background-image: image-url('ts-icons/checkmark.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/checkmark_2x.png');
+		}
+	}
+
+	 
+	&.tsi-cross-inverse {
+		background-image: image-url('ts-icons/cross-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/cross-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-cross {
+		background-image: image-url('ts-icons/cross.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/cross_2x.png');
+		}
+	}
+
+	 
+	&.tsi-down-arrow-inverse {
+		background-image: image-url('ts-icons/down-arrow-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/down-arrow-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-down-arrow {
+		background-image: image-url('ts-icons/down-arrow.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/down-arrow_2x.png');
+		}
+	}
+
+	 
+	&.tsi-down-bottom-inverse {
+		background-image: image-url('ts-icons/down-bottom-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/down-bottom-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-down-bottom {
+		background-image: image-url('ts-icons/down-bottom.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/down-bottom_2x.png');
+		}
+	}
+
+	 
+	&.tsi-edit-inverse {
+		background-image: image-url('ts-icons/edit-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/edit-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-edit {
+		background-image: image-url('ts-icons/edit.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/edit_2x.png');
+		}
+	}
+
+	 
+	&.tsi-info-inverse {
+		background-image: image-url('ts-icons/info-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/info-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-info {
+		background-image: image-url('ts-icons/info.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/info_2x.png');
+		}
+	}
+
+	 
+	&.tsi-left-arrow-inverse {
+		background-image: image-url('ts-icons/left-arrow-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/left-arrow-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-left-arrow {
+		background-image: image-url('ts-icons/left-arrow.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/left-arrow_2x.png');
+		}
+	}
+
+	 
+	&.tsi-lock-inverse {
+		background-image: image-url('ts-icons/lock-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/left-arrow_2x.png');
+		}
+	}
+
+	 
+	&.tsi-lock {
+		background-image: image-url('ts-icons/lock.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/lock_2x.png');
+		}
+	}
+
+	 
+	&.tsi-note-inverse {
+		background-image: image-url('ts-icons/note-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/note-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-note {
+		background-image: image-url('ts-icons/note.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/note_2x.png');
+		}
+	}
+
+	 
+	&.tsi-remove-note-inverse {
+		background-image: image-url('ts-icons/remove-note-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/remove-note-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-remove-note {
+		background-image: image-url('ts-icons/remove-note.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/remove-note_2x.png');
+		}
+	}
+
+	 
+	&.tsi-right-arrow-inverse {
+		background-image: image-url('ts-icons/right-arrow-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/right-arrow-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-right-arrow {
+		background-image: image-url('ts-icons/right-arrow.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/right-arrow_2x.png');
+		}
+	}
+
+	 
+	&.tsi-star-inverse {
+		background-image: image-url('ts-icons/star-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/star-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-star {
+		background-image: image-url('ts-icons/star.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/star_2x.png');
+		}
+	}
+
+	 
+	&.tsi-trash-inverse {
+		background-image: image-url('ts-icons/trash-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/trash-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-trash {
+		background-image: image-url('ts-icons/trash.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/trash_2x.png');
+		}
+	}
+
+	 
+	&.tsi-up-arrow-inverse {
+		background-image: image-url('ts-icons/up-arrow-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/up-arrow-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-up-arrow {
+		background-image: image-url('ts-icons/up-arrow.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/up-arrow_2x.png');
+		}
+	}
+
+	&.tsi-left-caret {
+		background-image: url('ts-icons/left-caret.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/left-caret_2x.png');
+			}
+	}
+
+	&.tsi-right-caret {
+		background-image: url('ts-icons/right-caret.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/right-caret_2x.png');
+			}
+	}
+
+	&.tsi-down-caret-inverse {
+		background-image: url('ts-icons/down-caret-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/down-caret-inverse_2x.png');
+			}
+	}
+
+	&.tsi-left-caret-inverse {
+		background-image: url('ts-icons/left-caret-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/left-caret-inverse_2x.png');
+			}
+	}
+
+	&.tsi-right-caret-inverse {
+		background-image: url('ts-icons/right-caret-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/right-caret-inverse_2x.png');
+			}
+	}
+
+	&.tsi-up-caret-inverse {
+		background-image: url('ts-icons/up-caret-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/up-caret-inverse_2x.png');
+			}
+	}
+
+	&.tsi-up-caret {
+		background-image: url('ts-icons/up-caret.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/up-caret_2x.png');
+			}
+	}
+
+	&.tsi-down-caret {
+		background-image: url('ts-icons/down-caret.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+				background-image: url('ts-icons/down-caret_2x.png');
+			}
+	}
+
+	 
+	&.tsi-up-top-inverse {
+		background-image: image-url('ts-icons/up-top-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/up-top-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-up-top {
+		background-image: image-url('ts-icons/up-top.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/up-top_2x.png');
+		}
+	}
+
+	 
+	&.tsi-warning-inverse {
+		background-image: image-url('ts-icons/warning-inverse.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/warning-inverse_2x.png');
+		}
+	}
+
+	 
+	&.tsi-warning {
+		background-image: image-url('ts-icons/warning.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/warning_2x.png');
+		}
+	}
+
+	// Phase States
+	 
+	&.tsi-phase-complete, &.tsi-phase-completed {
+		background-image: image-url('ts-icons/phase-complete.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phase-complete_2x.png');
+		}
+	}
+
+	 
+	&.tsi-phase-current {
+		background-image: image-url('ts-icons/phase-current.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phase-current_2x.png');
+		}
+	}
+
+	 
+	&.tsi-phase-incomplete, &.tsi-phase-unlocked  {
+		background-image: image-url('ts-icons/phase-incomplete.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phase-incomplete_2x.png');
+		}
+	}
+
+	 
+	&.tsi-phase-incorrect {
+		background-image: image-url('ts-icons/phase-incorrect.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phase-incorrect_2x.png');
+		}
+	}
+
+	 
+	&.tsi-phase-locked {
+		background-image: image-url('ts-icons/phase-locked.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phase-locked_2x.png');
+		}
+	}
+
+	 
+	&.tsi-phase-warning {
+		background-image: image-url('ts-icons/phase-warning.png');
+		background-repeat: no-repeat;
+
+		@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+			background-image: image-url('ts-icons/phase-warning_2x.png');
+		}
+	}
+
+} 

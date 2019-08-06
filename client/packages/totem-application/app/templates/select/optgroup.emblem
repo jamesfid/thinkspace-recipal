@@ -1,0 +1,2 @@
+= each item in view.content
+  = view 'select/option' is_record=view.is_record_list content=item content_display_property=view.display_property class_names=view.option_class_names selected_items=view.selected_items disabled_items=view.disabled_items data_placeholder=view.data_placeholder

@@ -1,0 +1,15 @@
+include_configs:
+  - artifacts
+  - artifacts_images
+  - artifacts_images_teams
+  - gradebook
+  - html_users
+  - html_teams
+  - indented_lists
+  - indented_lists_expert
+  - indented_lists_large
+  - labs
+  - markup
+  - resources
+  - simulations
+  - weather_forecaster

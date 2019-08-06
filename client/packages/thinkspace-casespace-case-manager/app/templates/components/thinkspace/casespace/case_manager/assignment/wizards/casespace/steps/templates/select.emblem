@@ -1,0 +1,6 @@
+.ts-forms_field-container
+  label.ts-radio click='select'
+    component c_radio checked=is_current
+    | #{model.title}
+    .ts-radio_description
+      | #{model.description}

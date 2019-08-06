@@ -1,0 +1,115 @@
+prereq_configs: space
+
+variables:
+  - &CASE            Weather Forecaster
+  - &PHASE_ALL       All Input Types
+  - &PHASE_INPUT     Inputs Only
+  - &PHASE_RADIO     Radios Only
+  - &PHASE_CHECKBOX  Checkboxes Only
+  - &PHASE_ONE_EACH  Input + Radio + Checkbox
+  - &PHASE_OVERRIDES All Input Types + Overrides for Presentation and Help Tips
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+  - title: *PHASE_ALL
+    assignment:    *CASE
+    template_name: template_weather_forecaster
+    settings:
+      <<: *SUBMIT
+
+  - title: *PHASE_INPUT
+    assignment:    *CASE
+    template_name: template_weather_forecaster
+    settings:
+      <<: *SUBMIT
+
+  - title: *PHASE_RADIO
+    assignment:    *CASE
+    template_name: template_weather_forecaster
+    settings:
+      <<: *SUBMIT
+
+  - title: *PHASE_CHECKBOX
+    assignment:    *CASE
+    template_name: template_weather_forecaster
+    settings:
+      <<: *SUBMIT
+
+  - title: *PHASE_ONE_EACH
+    assignment:    *CASE
+    template_name: template_weather_forecaster
+    settings:
+      <<: *SUBMIT
+
+  - title: *PHASE_OVERRIDES
+    assignment:    *CASE
+    template_name: template_weather_forecaster
+    settings:
+      <<: *SUBMIT
+      actions:
+        add: 3
+        outcome:
+          max_value: 5
+
+weather_forecaster_variables:
+  - &STATION KDSM
+  - &ITEMS_ALL      [1006, 1009, 1013, 1021, 1026, 1029, 1032, 1040, 1045, 1048, 1058, 1062]
+  - &ITEMS_INPUT    [1006, 1026, 1045]
+  - &ITEMS_RADIO    [1009, 1013, 1021, 1029, 1032, 1040, 1048, 1058]
+  - &ITEMS_CHECKBOX [1062]
+  - &ITEMS_ONE_EACH [1006, 1013, 1062]
+
+  - assessment_common: &ASSESSMENT_COMMON
+      space:      *SPACE
+      assignment: *CASE
+      station:    *STATION
+
+weather_forecaster:
+  forecast_days:
+    - start: -20
+
+  assessments:
+    - title: All
+      phase: *PHASE_ALL
+      items: *ITEMS_ALL
+      <<: *ASSESSMENT_COMMON
+
+    - title: Inputs
+      phase: *PHASE_INPUT
+      items: *ITEMS_INPUT
+      <<: *ASSESSMENT_COMMON
+
+    - title: Radio
+      phase: *PHASE_RADIO
+      items: *ITEMS_RADIO
+      <<: *ASSESSMENT_COMMON
+
+    - title: Checkbox
+      phase: *PHASE_CHECKBOX
+      items: *ITEMS_CHECKBOX
+      <<: *ASSESSMENT_COMMON
+
+    - title: One-each
+      phase: *PHASE_ONE_EACH
+      items: *ITEMS_ONE_EACH
+      <<: *ASSESSMENT_COMMON
+
+    - title: Overrides
+      phase:        *PHASE_OVERRIDES
+      items:        *ITEMS_ALL
+      presentation: 'Presentation override qestion?'
+      help_tip:
+        html: '<h4>Help tip override.</h4>'
+      <<: *ASSESSMENT_COMMON
+
+auto_input:
+  forecasts:
+    users:  read_1
+    phases: [*PHASE_ALL, *PHASE_ONE_EACH]
+    days:   10
+    completed_days: 3

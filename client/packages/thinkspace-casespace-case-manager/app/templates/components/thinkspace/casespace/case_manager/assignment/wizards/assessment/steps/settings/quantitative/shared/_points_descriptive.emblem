@@ -1,0 +1,25 @@
+.ts-forms_field-container
+  label.ts-checkbox click='toggle_set_points_descriptive_enabled'
+    component c_checkbox checked=points_descriptive_enabled disable_click=true
+    | Use end point labels
+  if points_descriptive_enabled
+    .ts-forms_sub-choices-container
+      .ts-radio_item-container
+        label.ts-radio click="'set_points_descriptive_values' 'not_at_all'" 
+          component c_radio checked=is_points_descriptive_not_at_all disable_click=true
+          | Not at all - Somewhat - Completely
+
+      .ts-radio_item-container
+        label.ts-radio click="'set_points_descriptive_values' 'rarely'"
+          component c_radio checked=is_points_descriptive_rarely disable_click=true
+          | Rarely - Sometimes - Always
+
+      .ts-radio_item-container
+        label.ts-radio click="'set_points_descriptive_values' 'never'"
+          component c_radio checked=is_points_descriptive_never disable_click=true
+          | Never - Sometimes - Always
+
+      .ts-radio_item-container
+        label.ts-radio click="'set_points_descriptive_values' 'strongly_disagree'"
+          component c_radio checked=is_points_descriptive_strongly_disagree disable_click=true
+          | Strongly disagree - Neutral - Strongly agree

@@ -1,0 +1,34 @@
+.library_categories
+  .library_categories-header
+    | Categories
+    / .library_categories-header-action
+    /   .action-icon
+    /     i.im.im-plus
+    /   .action-text
+    /     | New Category
+    .category_header-all-count   
+      .category_header-checkbox-wrapper
+        component c_checkbox toggle_action='all_selected' checked=all_selected label='All'
+      .category_all-tag-count
+        = all_tag_count
+  hr
+  .library_categories-body
+    each tag in tags_by_count
+      component c_clickable_tag model=tag click_action='toggle_tag_selection' tag_count=tag_count all_selected=all_selected
+  
+  .library_categories-input
+    if is_adding_category
+      .library_categories-new
+        | Category Name
+        component c_validated_input value=category_name
+        .library_categories-new-confirmation
+          .btn.btn-primary.btn-small.library_new-categories-btn{action 'confirm_category_add'}
+            | Add Category
+          .action-cancel{action 'cancel_category_add'}
+            | Cancel
+    else
+      .library_categories-footer-action{action 'add_category'}
+        .action-icon
+          i.im.im-plus
+        .action-text
+          | New Category

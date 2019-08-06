@@ -1,0 +1,24 @@
+.indented-list_item-value.overflow doubleClick='edit' class={overflow_visible:overflow-visible}
+
+  .indented-list_item-value-column
+    | #{indent_letter} -  Observation
+    if itemable_icon
+      .indented-list_item-value-type: =itemable_icon
+  .indented-list_item-value-observation
+    | #{show_value}
+    if has_children
+      unless children_visible
+        .indented_list_has-children-status click='toggle_children'
+          |Packed ( #{number_children} )
+
+  if confirm_remove_visible
+    component c_response_item_confirm_remove response_manager=response_manager item=item cancel='remove_cancel' ok='remove_ok'
+
+if show_dropdown
+  .indented-list_item-actions
+    component c_dropdown_split_button collection=dropdown_collection button_class='btn-square btn-default' show_button=false
+
+if edit_visible
+  component c_response_item_edit response_manager=response_manager item=item cancel='edit_cancel' done='edit_done'
+
+

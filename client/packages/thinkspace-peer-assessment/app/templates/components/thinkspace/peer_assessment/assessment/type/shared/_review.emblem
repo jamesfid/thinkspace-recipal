@@ -1,0 +1,50 @@
+.ts-grid_row
+  .small-12.medium-7.large-8.ts-grid_columns.ts-grid_columns-thick
+    .tbl-reviewee-info_container
+      h5 You are evaluating:
+      h4 #{review.reviewable.full_name}
+
+    / Quantitative
+    .phase-content_section-heading
+      h5 Quantitative for Review
+      p Use slider to give #{review.reviewable.first_name} a score
+    .phase-content_section
+      each item in model.quantitative_items
+        component c_item_quantitative manager=manager model=item items=model.quantitative_items
+
+    / Qualitative (optional)
+    if has_qualitative_section
+      .phase-content_section-heading
+        h5 Qualitative
+        p All comments are anonymous.
+      .phase-content_section
+        each item in model.qualitative_items
+          component c_item_qualitative manager=manager model=item  items=model.qualitative_items
+
+  .small-12.medium-5.large-4.ts-grid_columns.ts-grid_columns-thick 
+    if is_balance
+      .phase-content_section
+        .tbl-balance_container
+          .ts-grid_row
+            h6.left Total points:     
+            h6.right #{points_total}
+          .ts-grid_row
+            h6.left Expended points:  
+            h6.right #{points_expended}
+            hr
+          .ts-grid_row
+            h6.left Points remaining:
+            if has_negative_points_remaining
+              h6.right style='color: red;' #{points_remaining}
+            else
+              h6.right #{points_remaining}
+    component c_team manager=manager
+.ts-grid_row
+  .small-12.medium-7.large-8.ts-grid_columns.ts-grid_columns-thick
+    a.btn.btn-default.btn-medium click='previous' 
+      .tsi.tsi-left.icon-small.tsi-left-arrow-inverse
+      | Back
+
+    a.btn.btn-primary.btn-medium.right click='next' 
+      | Next
+      .tsi.tsi-right.icon-small.tsi-right-arrow-inverse

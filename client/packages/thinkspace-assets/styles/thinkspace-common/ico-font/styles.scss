@@ -1,0 +1,103 @@
+// font-face mixin cannot be used with ember cli's build process.
+@font-face {
+  font-family: 'icomoon';
+  font-weight: normal;
+  font-style:  normal;
+  src: url('fonts/icomoon.eot');
+  src: url('fonts/icomoon.eot?#iefix')               format('embedded-opentype'),
+       url('fonts/icomoon.woff')                     format('woff'),
+       url('fonts/icomoon.ttf')                      format('truetype'),
+       url('fonts/icomoon.svg#icomoon')              format('svg');
+}
+
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+.im {
+  font-family:             'icomoon';
+  speak:                   none;
+  font-weight:             normal;
+  font-variant:            normal;
+  font-style:              normal;
+  text-transform:          none;
+  line-height:             1;
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.im-phone:before        { content: $im-phone; }
+.im-envelope:before     { content: $im-envelope; }
+.im-paperclip:before    { content: $im-paperclip; }
+.im-user:before         { content: $im-user; }
+.im-user-group:before   { content: $im-user-group; }
+.im-user-add:before     { content: $im-user-add; }
+.im-share:before        { content: $im-share; }
+.im-place-marker:before { content: $im-place-marker; }
+.im-book:before         { content: $im-book; }
+.im-clock:before        { content: $im-clock; }
+.im-circle-o:before     { content: $im-circle-o; }
+.im-pie-chart:before    { content: $im-pie-chart; }
+.im-checkmark:before    { content: $im-checkmark; }
+.im-close:before        { content: $im-close; }
+.im-minus:before        { content: $im-minus; }
+.im-plus:before         { content: $im-plus; }
+.im-information:before  { content: $im-information; }
+.im-info-circle:before  { content: $im-info-circle; }
+.im-warning:before      { content: $im-warning; }
+.im-expand:before       { content: $im-expand; }
+.im-contract:before     { content: $im-contract; }
+.im-open-left:before    { content: $im-open-left; }
+.im-open-down:before    { content: $im-open-down; }
+.im-open-up:before      { content: $im-open-up; }
+.im-open-right:before   { content: $im-open-right; }
+.im-options:before      { content: $im-options; }
+.im-pencil:before       { content: $im-pencil;}
+.im-sub-list:before     { content: $im-sub-list;}
+.im-add-list-item:before{ content: $im-add-list-item;}
+.im-caret-down:before   { content: $im-caret-down;}
+.im-caret-up:before     { content: $im-caret-up;}
+.im-data:before         { content: $im-data;}
+.im-note:before         { content: $im-note;}
+.im-enter:before        { content: $im-enter;}
+.im-download:before     { content: $im-download;}
+.im-calender:before     { content: $im-calender;}
+.im-graph:before        { content: $im-graph;}
+.im-gear:before         { content: $im-gear;}
+.im-lock:before         { content: $im-lock;}
+.im-unlock:before       { content: $im-unlock;}
+
+.im-error-base {
+  color:        red;
+  margin-right: em-calc(3px);
+}
+
+.im-close-base {
+  color:    $ts-black-med;
+  position: absolute;
+  top:      em-calc(10px);
+  right:    em-calc(10px);
+
+  @include highlight-transition-all;
+  @include close-button($ts-black-med, $ts-black-base);
+}
+
+.im-place-marker-base {
+  color: $ts-black-base;
+}
+
+.fa-gear-base {
+  padding-right: em-calc(3px);
+}
+
+// Need to center these icons
+
+.im-expand {
+  vertical-align: middle;
+}
+
+.im-open-up {
+  vertical-align: middle;
+}
+
+.im-open-down {
+  vertical-align: middle;
+}

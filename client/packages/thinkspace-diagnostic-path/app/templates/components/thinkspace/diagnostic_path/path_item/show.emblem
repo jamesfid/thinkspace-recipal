@@ -1,0 +1,38 @@
+div.diag-path_list-item-content
+
+  if confirm_destroy_message
+    component c_path_item_confirm_destroy message=confirm_destroy_message cancel='destroy_cancel' ok='destroy_path_item'
+
+  .diag-path_list-item-icon= model.category_icon
+
+  div.diag-path_list-item-value doubleClick='edit' class={is_expanded:is-expanded:is-collapsed edit_visible:edit-visible}
+    if edit_visible
+      component c_path_item_edit model=model cancel='cancel'
+    else
+      = model.itemable.value
+
+  .diag-path_list-item-actions.sortable-exclude 
+    if is_overflown
+      a.diag-path_list-item-action.sortable-exclude click='toggle_expand'
+       if is_expanded
+          i.im.im-contract
+       else
+          i.im.im-expand
+    if model.path_items
+      a.diag-path_list-item-action.sortable-exclude click='toggle_collapse'
+        if is_collapsed
+          i.im.im-open-down.sortable-exclude
+        else
+          i.im.im-open-up.sortable-exclude
+
+    if model.can.create
+      a.diag-path_list-item-action.sortable-exclude click='edit'
+        .tsi.tsi-edit-inverse.icon-small title='edit'
+
+    if model.can.destroy
+      a.diag-path_list-item-action.sortable-exclude click='remove_item'
+        .tsi.tsi-trash-inverse.icon-small
+
+ol.diag-path_list-children class={is_collapsed:hidden}
+  each child in model.path_items
+    component c_path_item model=child is_view_only=is_view_only parent_cancel='parent_cancel'

@@ -1,0 +1,44 @@
+.ts-grid_row: .ts-grid_columns.small-12
+  .thinkspace-tbl-pa_user-assessment-container
+    .thinkspace-tbl-pa_parent-user-container style=css_style
+      unless review_set.is_sent
+        if review_set
+          .span.right
+            component c_dropdown_split_button collection=dropdown_collection button_class='btn-square btn-default' show_button=false
+        .right
+          if review_set
+            i.tsi.tsi-phase-complete{action 'approve_all'} title='Approve all evaluations'
+            i.tsi.tsi-phase-incomplete{action 'unapprove_all'} title='Set all evaluations to in-progress'
+            i.tsi.tsi-trash{action 'ignore'} title='Ignore all evaluations'
+          i.tsi.tsi-add-note{action 'notify'} title='Notify student'
+      .thinkspace-tbl-pa_toggle-wrapper{action 'toggle'}
+        .thinkspace-tbl-pa_user-avatar.left
+        .thinkspace-tbl-pa_user-name.left  #{model.full_name}'s Evaluations 
+        .thinkspace-tbl-pa_status.left
+          component c_state model_state=review_set_state
+      
+    if is_expanded
+      .ts-grid_row
+        .small-11.ts-grid_columns.right
+          component c_review_set model=review_set user=model assessment=assessment color=color
+
+.ts-tblpa_user-modal.reveal-modal aria-hidden='true' aria-labelledby='modalTitle' data-reveal='' role='dialog' 
+  .ts-grid_row
+    .ts-grid_columns.small-6.ts-grid_columns-thick
+      .ts-forms_heading
+        h4 Notification for #{model.full_name}
+      = textarea value=notification
+    .ts-grid_columns.small-6.ts-grid_columns-thick
+      .ts-forms_heading
+        h4 Preview
+      p Hi #{model.first_name},
+      p You have received a notification from your instructor about your peer evaluation (link):
+      p Your instructor said: 
+      p #{notification}
+      p
+        | With love,
+        br
+        | ThinkBot and the ThinkSpace Team
+  a.btn.btn-primary.btn-small.left click='send_notification' Send Notification
+  a.btn.btn-default.btn-small.right click='close_notification_modal' Cancel
+  a.close-reveal-modal aria-label='Close'  ×

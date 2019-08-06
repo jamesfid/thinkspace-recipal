@@ -1,0 +1,97 @@
+.team_viewers {
+
+  .team_viewers-separator {margin: 0;}
+
+  .team_viewers-heading {
+    margin-top: .5em;
+  }
+
+  .team_viewers-heading-label {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+
+  .team_viewers-heading-hide, .team_viewers-heading-show {
+    float:        right;
+    font-size:    .7em;
+    margin-right: 1em;
+  }
+
+  .team_viewers-team-list {
+    font-family: 'Times New Roman';
+    list-style:  decimal inside none;
+    font-weight: normal;
+    font-size:   em-calc(15px);
+  }
+
+  .team_viewers-team-teams-select, .team_viewers-team-users-select {
+    float: right;
+  }
+
+  .team_viewers-team-teams-list, .team_viewers-team-users-list {
+    margin-top:    0;
+    margin-bottom: 0;
+  }
+
+  .team_viewers-team-viewer-list {
+    font-family: 'Times New Roman';
+    list-style:  none inside none;
+    font-weight: normal;
+    font-size:   em-calc(15px);
+  }
+
+  .team_viewers-team-toggle-viewers {
+    color:        $ts-blue-dark;
+    margin-right: .5em;
+  }
+
+  .team_viewers-team-teams-list-heading-no-teams {
+    font-family: 'Times New Roman';
+    font-weight: normal;
+    margin-left: 1em;
+    margin-top:  0;
+  }
+
+  .team_viewers-team-teams-list-heading, .team_viewers-team-users-list-heading {
+    font-family:     'Times New Roman';
+    font-weight:     normal;
+    text-decoration: underline;
+    margin-left:     1em;
+    margin-top:      0;
+    margin-bottom:   0;
+  }
+
+  .team_viewers-team-list-team, .team_viewers-team-list-user {
+    margin-left: 2em;
+  }
+
+  .team_viewers-user-viewer-list {
+    font-family: 'Times New Roman';
+    list-style:  none inside none;
+    font-weight: normal;
+    font-size:   em-calc(15px);
+  }
+
+  .team_viewers-team-viewer-trash {
+    color: $ts-blue-dark;
+  }
+
+  .team_viewers-selected-team {
+    background-color: $ts-blue-med;
+  }
+
+  .team_viewers-team-team-action {
+    cursor:       pointer;
+    width:        1em;
+    margin-right: 5px;
+  }
+
+  .team_viewers-team-team-add {
+    color: green;
+  }
+
+  .team_viewers-team-team-remove {
+    color: red;
+  }
+
+}

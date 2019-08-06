@@ -1,0 +1,20 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      if is_editing
+        h4 #{t 'builder.casespace.headings.edit_case'}
+      else
+        h4 #{t 'builder.casespace.headings.new_case'}
+      p #{t 'builder.casespace.describe.details'}
+
+    .ts-forms_field-container
+      .ts-forms_field-label #{t 'builder.casespace.instruct.case_name'}
+      component c_validated_input value=title errors=errors.title
+
+  .ts-wizard_row.ts-forms_action-btns-container
+    .ts-grid_columns.small-12
+      unless is_editing
+        a.btn.btn-default.btn-small.left click='back' #{t 'builder.casespace.buttons.back'}
+      a.btn.btn-primary.btn-small.right click='complete' #{t 'builder.casespace.buttons.next'}
+
+      

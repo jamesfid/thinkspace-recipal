@@ -1,0 +1,10 @@
+.indented-list_item-value-edit-container
+
+  .ts-grid_row: .ts-grid_columns.small-12
+    .indented-list_item-value-edit-input
+      = input value=edit_value
+
+  .ts-grid_row: .ts-grid_columns.small-12
+    .indented-list_item-value-edit-actions
+      a.btn.btn-small.btn-primary.left click='done' Update
+      a.btn.btn-small.btn-default click='cancel' Cancel

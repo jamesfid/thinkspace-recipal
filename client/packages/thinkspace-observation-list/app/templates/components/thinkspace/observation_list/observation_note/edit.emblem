@@ -1,0 +1,8 @@
+.obs-list_edit
+
+  .ts-grid_row: .small-12
+    = textarea value=note_text
+
+  .ts-grid_row: .small-12
+      a.btn.btn-small.btn-primary click='update' Done
+      a.btn.btn-small click='cancel' Cancel

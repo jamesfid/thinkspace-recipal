@@ -1,0 +1,17 @@
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+  ul.ts-action-bar
+    li.ts-action-bar_action
+      a class={assignment_scores_visible:active:inactive} click='select_assignment_scores'
+        | All Phases
+    li.ts-action-bar_action 
+      a class={phase_scores_or_select_phase_scores_visible:active:inactive} click='toggle_select_phase_scores'
+        | Individual Phase
+  hr
+  .gradebook_select-phase.ts-menu_flyout
+    if select_phase_scores_visible
+      unless selected_phase
+        .ts-forms_field-label Choose a phase:
+        ol.gradebook-overview_phase-menu
+          each phase in current_assignment.phases
+            li click='"select_phase_scores" phase' 
+              = phase.title

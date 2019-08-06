@@ -1,0 +1,20 @@
+/////
+// Label Module
+/////
+
+.label {
+  @include border-radius($border-radius);
+  font-weight: normal;
+  padding: .15em .35em;
+  background: $ts-blue-base;
+  color: white;
+
+  &.label-orchid {
+    background: orchid;
+  }
+
+  &.label-pink {
+    background: DeepPink;
+  }
+}
+

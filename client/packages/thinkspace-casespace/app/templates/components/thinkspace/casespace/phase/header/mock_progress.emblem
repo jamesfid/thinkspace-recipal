@@ -1,0 +1,8 @@
+.phase-progress_section
+
+  span.casespace-assignment_phase-state-icon
+    link-to r_phases_show model.assignment model (query-params query_id='none')
+      if is_current_phase
+        .casespace-phase_header-mock-progress-icon: i.fa.fa-dot-circle-o
+      else
+        .casespace-phase_header-mock-progress-icon: i.fa.fa-circle-o

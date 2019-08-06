@@ -1,0 +1,20 @@
+.ts-grid_row.ts-ownerable-bar
+  .ts-ownerable-bar_ownerable click='toggle_is_selecting_ownerable'
+    .ts-ownerable-bar_ownerable-info
+      if addon_ownerable
+        p.ts-ownerable-bar_ownerable-label Viewing:
+        p.ts-ownerable-bar_ownerable-name #{addon_ownerable.full_name}
+      else
+        span Select Team Member
+      .ts-ownerable-bar_ownerable-icon
+        .tsi.tsi-right.tsi-tiny.tsi-down-caret-inverse.right
+    component c_ownerable_selector ownerables=ownerables select='select_ownerable' menu_only=true is_selecting_ownerables=is_selecting_ownerable
+
+  .ts-ownerable-bar_actions
+    .btn-group
+      a.btn.btn-tiny.btn-default click='select_previous_ownerable'
+        | Previous Student
+        .tsi.tsi-left.tsi-micro.tsi-left-arrow-inverse.left
+      a.btn.btn-tiny.btn-default click='select_next_ownerable'
+        | Next Student
+        .tsi.tsi-right.tsi-micro.tsi-right-arrow-inverse.right

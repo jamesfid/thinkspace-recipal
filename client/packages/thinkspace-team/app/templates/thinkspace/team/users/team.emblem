@@ -1,0 +1,10 @@
+span.team_users-team-label
+  | #{team.title}
+  small
+    |  (#{team.category.title})
+  a.team_users-select_team click='"select_team" team' (select)
+
+each user in view.users_sorted
+  = view users_team_user_view user=user team=team
+else
+  h6 No Users

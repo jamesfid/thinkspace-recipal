@@ -1,0 +1,36 @@
+prefix: timetable_
+
+variables:
+  - &SPACE         space
+  - &ASSIGNMENT_1  assignment_1
+  - &ASSIGNMENT_2  assignment_2
+  - &ASSIGNMENT_3  assignment_3
+  - &TEMPLATE      template
+
+spaces:
+  - title: *SPACE
+
+space_users:
+  - spaces: *SPACE
+    users: import[users]
+
+assignments:
+  - {title: *ASSIGNMENT_1, space: *SPACE}
+  - {title: *ASSIGNMENT_2, space: *SPACE}
+  - {title: *ASSIGNMENT_3, space: *SPACE}
+
+phases:
+  - {title: phase_1_A, assignment: *ASSIGNMENT_1, template_name: *TEMPLATE}
+  - {title: phase_1_B, assignment: *ASSIGNMENT_1, template_name: *TEMPLATE}
+  - {title: phase_1_C, assignment: *ASSIGNMENT_1, template_name: *TEMPLATE}
+  - {title: phase_2_A, assignment: *ASSIGNMENT_2, template_name: *TEMPLATE}
+  - {title: phase_2_B, assignment: *ASSIGNMENT_2, template_name: *TEMPLATE}
+  - {title: phase_2_C, assignment: *ASSIGNMENT_2, template_name: *TEMPLATE}
+  - {title: phase_3_A, assignment: *ASSIGNMENT_3, template_name: *TEMPLATE}
+  - {title: phase_3_B, assignment: *ASSIGNMENT_3, template_name: *TEMPLATE}
+  - {title: phase_3_C, assignment: *ASSIGNMENT_3, template_name: *TEMPLATE}
+
+phase_templates:
+  - title: *TEMPLATE
+    name: *TEMPLATE
+    template: '<row></row>'

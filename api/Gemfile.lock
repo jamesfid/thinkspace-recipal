@@ -1,0 +1,449 @@
+PATH
+  remote: engines/thinkspace/thinkspace-artifact
+  specs:
+    thinkspace-artifact (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-authorization
+  specs:
+    thinkspace-authorization (0.2.0)
+      cancan (~> 1.6.10)
+
+PATH
+  remote: engines/thinkspace/thinkspace-builder
+  specs:
+    thinkspace-builder (0.2.0)
+      aasm
+
+PATH
+  remote: engines/thinkspace/thinkspace-casespace
+  specs:
+    thinkspace-casespace (0.2.0)
+      aasm
+
+PATH
+  remote: engines/thinkspace/thinkspace-common
+  specs:
+    thinkspace-common (0.2.0)
+      smarter_csv
+
+PATH
+  remote: engines/thinkspace/thinkspace-diagnostic-path-viewer
+  specs:
+    thinkspace-diagnostic-path-viewer (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-diagnostic-path
+  specs:
+    thinkspace-diagnostic-path (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-html
+  specs:
+    thinkspace-html (0.2.0)
+      ckeditor
+      nokogiri
+
+PATH
+  remote: engines/thinkspace/thinkspace-importer
+  specs:
+    thinkspace-importer (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-indented-list
+  specs:
+    thinkspace-indented-list (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-input-element
+  specs:
+    thinkspace-input-element (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-lab
+  specs:
+    thinkspace-lab (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-markup
+  specs:
+    thinkspace-markup (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-observation-list
+  specs:
+    thinkspace-observation-list (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-peer-assessment
+  specs:
+    thinkspace-peer-assessment (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-reporter
+  specs:
+    thinkspace-reporter (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-resource
+  specs:
+    thinkspace-resource (0.2.0)
+      paperclip
+
+PATH
+  remote: engines/thinkspace/thinkspace-seed
+  specs:
+    thinkspace-seed (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-simulation
+  specs:
+    thinkspace-simulation (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-team
+  specs:
+    thinkspace-team (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-test
+  specs:
+    thinkspace-test (0.2.0)
+
+PATH
+  remote: engines/thinkspace/thinkspace-weather-forecaster
+  specs:
+    thinkspace-weather-forecaster (0.2.0)
+
+PATH
+  remote: engines/thinkspace
+  specs:
+    thinkspace (0.2.0)
+      aasm
+      totem
+
+PATH
+  remote: engines/totem/totem-authentication-session
+  specs:
+    totem-authentication-session (0.5.0)
+      totem (= 0.5.0)
+
+PATH
+  remote: engines/totem/totem-authorization-cancan
+  specs:
+    totem-authorization-cancan (0.5.0)
+      totem (= 0.5.0)
+
+PATH
+  remote: engines/totem/totem-core
+  specs:
+    totem-core (0.5.0)
+
+PATH
+  remote: engines/totem/totem-seed
+  specs:
+    totem-seed (0.5.0)
+      totem (= 0.5.0)
+
+PATH
+  remote: engines/totem/totem-test
+  specs:
+    totem-test (0.5.0)
+      totem (= 0.5.0)
+      totem-seed (= 0.5.0)
+
+PATH
+  remote: engines/totem
+  specs:
+    totem (0.5.0)
+      totem-core (= 0.5.0)
+
+PATH
+  remote: vendor/active_model_serializers-0.8.1
+  specs:
+    active_model_serializers (0.8.1)
+      activemodel (>= 3.0)
+
+PATH
+  remote: vendor/cancan-1.6.10
+  specs:
+    cancan (1.6.10)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    aasm (5.0.5)
+      concurrent-ruby (~> 1.0)
+    actionmailer (4.2.11.1)
+      actionpack (= 4.2.11.1)
+      actionview (= 4.2.11.1)
+      activejob (= 4.2.11.1)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+    actionpack (4.2.11.1)
+      actionview (= 4.2.11.1)
+      activesupport (= 4.2.11.1)
+      rack (~> 1.6)
+      rack-test (~> 0.6.2)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionview (4.2.11.1)
+      activesupport (= 4.2.11.1)
+      builder (~> 3.1)
+      erubis (~> 2.7.0)
+      rails-dom-testing (~> 1.0, >= 1.0.5)
+      rails-html-sanitizer (~> 1.0, >= 1.0.3)
+    activejob (4.2.11.1)
+      activesupport (= 4.2.11.1)
+      globalid (>= 0.3.0)
+    activemodel (4.2.11.1)
+      activesupport (= 4.2.11.1)
+      builder (~> 3.1)
+    activerecord (4.2.11.1)
+      activemodel (= 4.2.11.1)
+      activesupport (= 4.2.11.1)
+      arel (~> 6.0)
+    activesupport (4.2.11.1)
+      i18n (~> 0.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
+    acts-as-taggable-on (3.5.0)
+      activerecord (>= 3.2, < 5)
+    arel (6.0.4)
+    aws-sdk (1.67.0)
+      aws-sdk-v1 (= 1.67.0)
+    aws-sdk-v1 (1.67.0)
+      json (~> 1.4)
+      nokogiri (~> 1)
+    binding_of_caller (0.8.0)
+      debug_inspector (>= 0.0.1)
+    builder (3.2.3)
+    byebug (11.0.1)
+    choice (0.2.0)
+    ckeditor (5.0.0)
+      orm_adapter (~> 0.5.0)
+    climate_control (0.2.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
+    concurrent-ruby (1.1.5)
+    crass (1.0.4)
+    daemons (1.3.1)
+    dalli (2.7.10)
+    debug_inspector (0.0.3)
+    deep_cloneable (2.4.0)
+      activerecord (>= 3.1.0, < 6)
+    delayed_job (4.1.5)
+      activesupport (>= 3.0, < 5.3)
+    delayed_job_active_record (4.1.3)
+      activerecord (>= 3.0, < 5.3)
+      delayed_job (>= 3.0, < 5)
+    domain_name (0.5.20180417)
+      unf (>= 0.0.5, < 1.0.0)
+    erubis (2.7.0)
+    eventmachine (1.2.7)
+    globalid (0.4.2)
+      activesupport (>= 4.2.0)
+    has_secure_token (1.0.0)
+      activerecord (>= 3.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
+    json (1.8.6)
+    kaminari (1.1.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.1.1)
+      kaminari-activerecord (= 1.1.1)
+      kaminari-core (= 1.1.1)
+    kaminari-actionview (1.1.1)
+      actionview
+      kaminari-core (= 1.1.1)
+    kaminari-activerecord (1.1.1)
+      activerecord
+      kaminari-core (= 1.1.1)
+    kaminari-core (1.1.1)
+    loofah (2.2.3)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
+    mime-types (3.2.2)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2019.0331)
+    mimemagic (0.3.0)
+    mini_mime (1.0.1)
+    mini_portile2 (2.4.0)
+    minitest (5.11.3)
+    netrc (0.11.0)
+    newrelic_rpm (6.4.0.356)
+    nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
+    non-digest-assets (1.0.10)
+      sprockets (>= 2.0)
+    orm_adapter (0.5.0)
+    paper_trail (3.0.9)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
+    paperclip (4.3.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (= 0.3.0)
+    passenger (6.0.2)
+      rack
+      rake (>= 0.8.1)
+    pg (0.20.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
+    rack (1.6.11)
+    rack-attack (6.0.0)
+      rack (>= 1.0, < 3)
+    rack-cors (1.0.3)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rails (4.2.11.1)
+      actionmailer (= 4.2.11.1)
+      actionpack (= 4.2.11.1)
+      actionview (= 4.2.11.1)
+      activejob (= 4.2.11.1)
+      activemodel (= 4.2.11.1)
+      activerecord (= 4.2.11.1)
+      activesupport (= 4.2.11.1)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.2.11.1)
+      sprockets-rails
+    rails-deprecated_sanitizer (1.0.3)
+      activesupport (>= 4.2.0.alpha)
+    rails-dom-testing (1.0.9)
+      activesupport (>= 4.2.0, < 5.0)
+      nokogiri (~> 1.6)
+      rails-deprecated_sanitizer (>= 1.0.1)
+    rails-erd (1.6.0)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
+    rails-html-sanitizer (1.0.4)
+      loofah (~> 2.2, >= 2.2.2)
+    railties (4.2.11.1)
+      actionpack (= 4.2.11.1)
+      activesupport (= 4.2.11.1)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
+    rake (12.3.2)
+    redis (4.1.2)
+    responders (2.4.1)
+      actionpack (>= 4.2.0, < 6.0)
+      railties (>= 4.2.0, < 6.0)
+    rest-client (2.0.2)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    ruby-graphviz (1.2.4)
+    ruby-ole (1.2.12.2)
+    slim (4.0.1)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    smarter_csv (1.2.6)
+    spreadsheet (1.2.4)
+      ruby-ole (>= 1.0)
+    sprockets (3.7.2)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (3.2.1)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
+    temple (0.8.1)
+    thin (1.7.2)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (>= 1, < 3)
+    thor (0.20.3)
+    thread_safe (0.3.6)
+    tilt (2.0.9)
+    tzinfo (1.2.5)
+      thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.6)
+    web-console (2.3.0)
+      activemodel (>= 4.0)
+      binding_of_caller (>= 0.7.2)
+      railties (>= 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
+    zxcvbn-ruby (1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  aasm (= 5.0.5)
+  active_model_serializers!
+  acts-as-taggable-on (= 3.5.0)
+  aws-sdk (= 1.67.0)
+  byebug (= 11.0.1)
+  cancan!
+  dalli (= 2.7.10)
+  deep_cloneable (= 2.4.0)
+  delayed_job_active_record (= 4.1.3)
+  has_secure_token (= 1.0.0)
+  kaminari (= 1.1.1)
+  newrelic_rpm (= 6.4.0.356)
+  non-digest-assets (= 1.0.10)
+  paper_trail (= 3.0.9)
+  paperclip (= 4.3.0)
+  passenger (= 6.0.2)
+  pg (= 0.20)
+  quiet_assets (= 1.1.0)
+  rack-attack (= 6.0.0)
+  rack-cors (= 1.0.3)
+  rails (= 4.2.11.1)
+  rails-erd (= 1.6.0)
+  redis (= 4.1.2)
+  responders (= 2.4.1)
+  rest-client (= 2.0.2)
+  slim (= 4.0.1)
+  smarter_csv (= 1.2.6)
+  spreadsheet (= 1.2.4)
+  sprockets-rails (= 3.2.1)
+  thin (= 1.7.2)
+  thinkspace!
+  thinkspace-artifact!
+  thinkspace-authorization!
+  thinkspace-builder!
+  thinkspace-casespace!
+  thinkspace-common!
+  thinkspace-diagnostic-path!
+  thinkspace-diagnostic-path-viewer!
+  thinkspace-html!
+  thinkspace-importer!
+  thinkspace-indented-list!
+  thinkspace-input-element!
+  thinkspace-lab!
+  thinkspace-markup!
+  thinkspace-observation-list!
+  thinkspace-peer-assessment!
+  thinkspace-reporter!
+  thinkspace-resource!
+  thinkspace-seed!
+  thinkspace-simulation!
+  thinkspace-team!
+  thinkspace-test!
+  thinkspace-weather-forecaster!
+  totem!
+  totem-authentication-session!
+  totem-authorization-cancan!
+  totem-core!
+  totem-seed!
+  totem-test!
+  web-console (= 2.3.0)
+  zxcvbn-ruby (= 1.0.0)
+
+RUBY VERSION
+   ruby 2.5.5p157
+
+BUNDLED WITH
+   1.17.3

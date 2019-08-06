@@ -1,0 +1,8 @@
+.obs-list_new
+
+  .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+    = textarea value=observation_content placeholder='Type an observation.'
+
+  .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+      a.btn.btn-small.btn-primary click='done' Done
+      a.btn.btn-small click='cancel' Cancel

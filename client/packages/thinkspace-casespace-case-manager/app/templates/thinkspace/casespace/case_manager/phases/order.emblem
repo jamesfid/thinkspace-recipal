@@ -1,0 +1,35 @@
+.title-region
+  .ts-grid_row: .small-12.ts-grid_columns: h3
+    span.action Case Manager - Order Phases
+
+.case_manager_select: .ts-grid_row: .small-12.ts-grid_columns
+
+  table.case_manager_phase-order
+    thead
+      tr
+        th
+        th
+        th
+        th
+        th Phase
+
+    tbody
+      each phase in controller.sorted_phases
+        tr
+          td.text-center.case_manager_phase-order-move{action 'move_up' phase}
+            .tsi.tsi-up-arrow.icon-small title='Move up'
+          td.text-center.case_manager_phase-order-move{action 'move_down' phase}
+            .tsi.tsi-down-arrow.icon-small title='Move down'
+
+          td.text-center.case_manager_phase-order-move{action 'move_top' phase}
+            .tsi.tsi-up-top.icon-small title='Move to top'
+          td.text-center.case_manager_phase-order-move{action 'move_bottom' phase}
+            .tsi.tsi-down-bottom.icon-small title='Move to bottom'
+
+          td= phase.title
+
+  .ts-grid_row
+    .small-3.ts-grid_columns: .btn.btn-primary.btn-small click='save' Save Order
+    .small-2.ts-grid_columns: .btn.btn-primary.btn-small click='reset' Reset
+    .small-2.ts-grid_columns: .btn.btn-primary.btn-small click='cancel' Cancel
+    .small-5.ts-grid_columns

@@ -1,0 +1,13 @@
+.phase-progress_section
+  each phase_state in phase_states
+    span.casespace-assignment_phase-state-icon
+
+      / If the current phase and has multiple phase states, select via an action rather than a link-to.
+      / A link-to will be the same route as the current phase and will not rerender the view.
+      if is_select_phase_state
+        span.casespace-phase_header-progress-icon click='"select" phase_state' title=phase_state.title_with_phase
+          = phase-progress-icon current_phase.phase_state phase_state phase_state.computed_current_state
+
+      else
+        link-to r_phases_show model.assignment model (query-params query_id=phase_state.id) title=phase_state.title_with_phase
+          = phase-progress-icon current_phase.phase_state phase_state phase_state.computed_current_state

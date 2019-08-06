@@ -1,0 +1,9 @@
+span.team_viewers-team-user-wrapper
+
+  if view.is_user_assigned.content
+    i.team_viewers-team-team-action.team_viewers-team-team-remove.fa.fa-minus click='"remove_user" target=view' title='Remove user'
+  else
+    i.team_viewers-team-team-action.team_viewers-team-team-add.fa.fa-plus click='"add_user" target=view' title='Add user'
+
+  span.team_viewers-team-user-label
+    = user.sort_name

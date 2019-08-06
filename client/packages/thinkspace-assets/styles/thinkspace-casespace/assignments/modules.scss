@@ -1,0 +1,147 @@
+.casespace-assignment_phase-header {
+  position: relative;
+
+  >h1 {
+    font-size:      1.125rem;
+    font-weight:    $ts-heavy;
+    letter-spacing: .5px;
+  }
+}
+.casespace-assignment_phase-tagline { margin-bottom: 0.5em; }
+
+.casespace-assignment_phase-list {
+
+  table {
+    border: none;
+  }
+
+  .casespace-assignment_phase-container {
+    @include clearfix;
+    padding: .5rem;
+
+    &:nth-child(2n) {
+      background-color: $ts-blue-light;
+    }
+  }
+
+  .casespace-assignment_phase-state {
+    float: left;
+  }
+
+  .casespace-assignment_phase-info {
+    padding-left: 2.15rem;
+    position: relative;
+  }
+
+  .casespace-assignment_phase-settings-container {
+    position: absolute;
+    right:    0;
+    top:      0;
+
+    >img {
+      width: 20px;
+    }
+  }
+  .casespace-assignment_phase-dates-container {
+    position:    relative;
+    padding-top: .5rem;
+    font-size:   .875rem;
+    color:       $ts-black-base;
+
+    >a {
+      position: absolute;
+      right:    0;
+      font-weight: $ts-bold;
+    }
+
+  }
+
+  .casespace-assignment_phase-state-icon {
+    display: inline-block;
+    &:hover {color: $ts-blue-dark;}
+  }
+
+  .casespace-assignment_phase-title-link {}
+
+  .casespace-assignment_phase-title {
+    color:          $ts-black-dark;
+    font-weight:    $ts-bold;
+    font-size:      1rem;
+    display:        inline-block;
+    vertical-align: top;
+
+    &:hover {color: $ts-blue-dark;}
+
+  }
+
+
+
+  .casespace-assignment_phase-team-based-icon {color: $ts-blue-dark;}
+
+}
+
+.casespace-assignment_phase-date-details {
+  font-style: italic;
+}
+
+.casespace-assignment_phase-notifications {
+  padding-top: .5rem;
+  font-size: .875rem;
+  color: $ts-black-base;
+
+  .casespace-assignment_phase-date-details {
+    display: inline-block;
+
+  }
+}
+
+.casespace-assignment_stats {
+  background-color: $ts-black-light;
+  margin-bottom:    1.875em;
+  padding: 1em 0;
+  @include border-radius($border-radius);
+
+  .casespace-assignment_stat {
+    text-align: center;
+    p { 
+      margin-bottom: 0;
+      font-size: 1.25em; 
+      color: $ts-black-dark;
+    }
+    h1, h2, h3, h4, h5, h6 { color: $ts-black-base; }
+  }
+}
+.casespace-assignment_resume-link { text-align: center; }
+
+.assignment-content_actions {
+  float: right;
+
+  .btn {
+    margin-right: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  .assignment-content_actions-msg {
+    font-style: italic;
+  }
+}
+
+.case-status-label {
+  display:          inline-block;
+  text-align:       center;
+  padding:          0 .5rem;
+  font-size:        .75rem;
+  font-weight:      $ts-bold;
+  border:           2px solid;
+  border-radius:    $border-radius;
+  background-color: white;
+  margin-right:     1rem;
+
+  &.case-status-label_past-due {
+    border-color: $ts-red-base;
+    color:        $ts-red-base;
+  }
+}

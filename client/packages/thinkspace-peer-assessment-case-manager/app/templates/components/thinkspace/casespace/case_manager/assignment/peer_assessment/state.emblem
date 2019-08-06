@@ -1,0 +1,2 @@
+.thinkspace-tbl-pa_state-tag class={is_approved:state_approved is_neutral:state_neutral is_submitted:state_submitted is_sent:state_sent is_ignored:state_ignored}
+  = state_text

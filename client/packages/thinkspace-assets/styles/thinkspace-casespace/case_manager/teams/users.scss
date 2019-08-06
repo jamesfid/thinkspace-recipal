@@ -1,0 +1,123 @@
+.team_users {
+
+  .team_users-selected-team {
+    background-color: $ts-blue-med;
+  }
+
+  .team_users-select_team {float: right;}
+
+  .team_users-team-list {
+    font-family: 'Times New Roman';
+    list-style:  decimal inside none;
+    font-weight: normal;
+    font-size:   em-calc(15px);
+  }
+
+  .team_users-user-list {
+    font-family: 'Times New Roman';
+    list-style:  decimal inside none;
+    font-weight: normal;
+    font-size:   em-calc(15px);
+    margin: 0;
+  }
+
+  .team_users-select-team-wrapper {
+    margin: 0 auto;
+    display: table;
+
+    .team_users-select-team-label {
+      margin-left: 1em;
+      color:       $ts-blue-dark;
+      font-weight: bold;
+    }
+
+  }
+
+  .team_users-user-team-action {
+    cursor:       pointer;
+    width:        1em;
+    margin-right: 5px;
+  }
+
+  .team_users-user-team-remove {color: red;}
+
+  .team_users-user-show-teams {color: $ts-blue-dark;}
+
+  .team_users-selectable-user {
+    .team_users-user-label {
+      cursor: pointer;
+      &:hover {
+        background-color: $ts-blue-dark;
+        color:            white;
+        padding-top:      3px;
+        padding-bottom:   3px;
+      }
+    }
+  }
+  
+  .team_is-unassigned {
+    font-weight: normal;
+  }
+
+  .team_users-team-user-action {
+    cursor:       pointer;
+    width:        1em;
+    margin-right: 5px;
+    color:        $ts-blue-dark;
+  }
+
+  .team_users-user-team-folder-wrapper {
+    cursor:       pointer;
+    margin-right: .5em;
+  }
+  
+  .team_users-user-team-folder {
+    font-size: 1.5em;
+    color:     $ts-blue-dark;
+  }
+
+  .team_users-user-team-folder-count {
+    color:       $ts-blue-dark;
+    margin-left: -1em;
+    font-weight: bold;
+    position:    fixed;
+  }
+
+  .team_users-filter-label {
+     margin-left:  1em;
+     margin-right: 1em;
+  }
+  .team_users-filter-action {
+     margin-right: 1em;
+  }
+
+  .team_users-user-filter-label {
+     margin-right: 1em;
+  }
+
+  .team_users-user-filter-action {
+     margin-right: 1em;
+  }
+
+  .team_users-filter-separator {margin: 0;}
+
+  .team_users-heading {
+    margin-top: .5em;
+  }
+
+  .team_users-heading-label {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+
+  .team_users-heading-show-users {
+    cursor:       pointer;
+    color:        $ts-blue-dark;
+    margin-right: .5em;
+  }
+
+  .team_users-user-list-team {
+    padding-left: 2em;
+  }
+
+}

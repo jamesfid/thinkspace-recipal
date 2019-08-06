@@ -1,0 +1,9 @@
+tr
+  th #
+  th= roster.content.heading.column_1
+  each phase in roster.content.phases
+    th
+      if phase.team_ownerable
+        i.fa.fa-users.gradebook_roster-phase-title-team-icon title='Team based phase'
+      = phase.title
+  th Total

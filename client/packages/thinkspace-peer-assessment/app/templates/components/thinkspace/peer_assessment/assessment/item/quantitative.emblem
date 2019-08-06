@@ -1,0 +1,25 @@
+.tbl-category_item-container
+  .phase-content_question-label #{model_index} .   #{model.label}
+  input.ts-rangeslider type='range' min=points_min max=points_max step=slider_step value=slider_value disabled=is_read_only
+  .tbl-category_descriptive-values
+    .tbl-category_descriptive-text.low.numeric 
+      | #{points_min}
+      if points_descriptive_enabled
+        |  - #{points_descriptive_low}
+    .tbl-category_descriptive-text.high.numeric 
+      if points_descriptive_enabled
+        | #{points_descriptive_high} - 
+      | #{points_max}
+  .ts-rangeslider_value
+    span.casespace_phase-input_element-text.casespace_phase-input_element-text_neutral Slider value:
+    span.casespace_phase-input_element-count.casespace_phase-input_element-count_neutral #{slider_value}
+  if is_read_only
+    if comment
+      = input value=comment disabled=is_read_only
+    else
+      p No comment added.
+  else
+    if can_comment
+      .tbl-category_comment-container
+        .phase-content_question-label Leave a comment:
+        = input value=comment focus-out='save_comment'

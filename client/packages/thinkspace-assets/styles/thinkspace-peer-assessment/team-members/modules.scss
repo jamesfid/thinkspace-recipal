@@ -1,0 +1,37 @@
+.team-members_container {
+	ul { 
+    list-style: none; 
+    margin-left: 0;
+  }
+
+	li {
+		margin-bottom: 1em;
+		cursor: pointer;
+		&:hover { color: $ts-blue-base; }
+		&:active { color: $ts-blue-dark; }
+
+		.ts-avatar { margin-right: 1em;}
+
+    &.is-selected {
+      border: 2px solid $ts-blue-base;
+      border-radius: $border-radius;
+      color: $ts-blue-base;
+    }
+	}
+
+  .ts-avatar {
+    display: inline-block;
+  }
+  .team-members_name {
+    display: inline-block;
+    font-weight: $ts-medium;
+  }
+
+  .team-members_score {
+    font-weight: $ts-bold;
+    display: inline;
+    float: right;
+    padding-top: 5px;
+    padding-right: .5em;
+  }
+}

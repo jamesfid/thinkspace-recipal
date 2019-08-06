@@ -1,0 +1,48 @@
+.sim-canvas-setup {
+  width: 525px;
+  height: 300px;
+  margin-left: 10%;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.sim_left-btn {
+  margin-left: 40%;
+} 
+
+.sim_right-btn {
+  margin-right: 40%;
+}
+
+.sim_btn-list {
+  //display: inline-block;
+
+  margin: .5em 1em;
+
+  &:last-of-type {
+    margin-bottom: 3em;
+  }
+}
+
+.budget-sim_btn {
+  margin-right: 2em;
+}
+
+.sim_display-row {
+  @include grid-row();
+  margin-top: 1em;
+  .sim_display-col {
+    @include grid-column($columns: 3, $collapse: true)
+  }
+}
+
+.sim_input {
+  //@include grid-row();
+
+  .sim_input-column {
+    width: 1000px;
+    height: 500px;
+    //@include grid-column($columns: 6, $collapse: true);
+  }
+}

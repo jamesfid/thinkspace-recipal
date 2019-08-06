@@ -1,0 +1,48 @@
+/ li.primary-list_link: .ts-grid_row
+/     .small-4.ts-grid_columns.primary-list_link-item
+/       h5.primary-list_link-item-title
+/         = file-icon-from-type model.content_type 'thinkspace-artifact_list-icon'
+/         a href=file_url target='_blank': = model.title
+
+/       if c_file_component
+/         if show_file
+/           a.btn.btn-default.btn-small click='hide': |Hide
+/         else
+/           a.btn.btn-default.btn-small click='show': |Show
+
+/     .small-6.ts-grid_columns.primary-list_link-item
+/       h6.primary-list_link-item-value
+/         = attachment_updated_at
+/         small  (#{ago model.attachment_updated_at})
+/       h5.primary-list_link-item-heading Uploaded At
+
+/     if can_update
+/       .small-2.ts-grid_columns.primary-list_link-item click='destroy'
+/         h6.primary-list_link-item-value
+/           a click='destroy': i.fa.fa-trash-o: |Delete
+
+/ / Create the component so when do show/hide will only load once.
+/ if c_file_component
+/   component c_file_component model=model file_url=file_url show_file=show_file
+
+
+// -----
+
+li.ts-artifact_item
+  h1.primary-list_link-item-title  click="show"
+    = file-icon-from-type model.content_type 'thinkspace-artifact_list-icon'
+    = model.title
+    if c_file_component
+      if show_file
+        .tsi.tsi-right.icon-small.tsi-left-caret
+      else
+        .tsi.tsi-right.icon-small.tsi-down-caret
+
+  .ts-artifact_item-actions
+    if can_update      
+      .primary-list_link-item
+        a.primary-list_link-item-value href=file_url target='_blank'
+          .tsi.tsi-left.icon-small.tsi-download_black title="Download file"
+        component c_confirmation_modal title='Delete uploaded file' subtitle='Are you sure you want to delete this file?' description='All related comments will be deleted as well.' modal_reveal_icon_class_names='tsi icon-small tsi-trash-outline_black' confirm_text='Yes, Delete' confirm='destroy'
+if c_file_component
+  component c_file_component model=model file_url=file_url show_file=show_file

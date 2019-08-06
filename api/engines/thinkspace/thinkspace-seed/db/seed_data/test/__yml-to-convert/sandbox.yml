@@ -1,0 +1,28 @@
+space_master:  &SPACE_MASTER  Sandbox Space (Master)
+space_read_1:  &SPACE_READ_1  Read 1 Sandbox Space
+space_read_2:  &SPACE_READ_2  Read 2 Sandbox Space
+space_read_3:  &SPACE_READ_3  Read 3 Sandbox Space
+space_owner_1: &SPACE_OWNER_1 Owner 1 Sandbox Space
+case_master:   &CASE Sandbox Case (Master)
+case_read_1:   &CASE_READ_1 Read 1 Sandbox Case (NOT Master)
+
+spaces:
+  - {title: *SPACE_MASTER,  is_sandbox: true} # 'is_sandbox: true' sets the space.sandbox_space_id = space.id
+  - {title: *SPACE_OWNER_1, sandbox: *SPACE_MASTER}
+  - {title: *SPACE_READ_1,  sandbox: *SPACE_MASTER}
+  - {title: *SPACE_READ_2,  sandbox: *SPACE_MASTER}
+  - {title: *SPACE_READ_3,  sandbox: *SPACE_MASTER}
+
+space_users:
+  - {spaces: *SPACE_MASTER,  users: {first_name: owner_1, role: read}}
+  # - {spaces: *SPACE_MASTER,  users: {first_name: read_1,  role: read}}
+  # - {spaces: *SPACE_MASTER,  users: {first_name: read_2,  role: read}}
+  # - {spaces: *SPACE_MASTER,  users: {first_name: read_3,  role: read}}
+  - {spaces: *SPACE_OWNER_1, users: {first_name: owner_1, role: owner}}
+  - {spaces: *SPACE_READ_1,  users: {first_name: read_1,  role: owner}}
+  - {spaces: *SPACE_READ_2,  users: {first_name: read_2,  role: owner}}
+  - {spaces: *SPACE_READ_3,  users: {first_name: read_3,  role: owner}}
+
+assignments:
+  - {title: *CASE,        space: *SPACE_MASTER}
+  - {title: *CASE_READ_1, space: *SPACE_READ_1}

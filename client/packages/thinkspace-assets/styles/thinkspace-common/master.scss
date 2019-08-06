@@ -1,0 +1,113 @@
+// Foundation Import (Zurb), https://github.com/zurb/foundation/
+//// All "foundation/overrides" are TS overrides only, not part of Foundation.
+@import "foundation/overrides/variables";
+@import "foundation/components/grid";
+@import "foundation/components/accordion";
+@import "foundation/components/alert-boxes";
+@import "foundation/components/block-grid";
+@import "foundation/components/breadcrumbs";
+@import "foundation/components/button-groups";
+@import "foundation/components/buttons";
+@import "foundation/components/clearing";
+@import "foundation/components/dropdown";
+@import "foundation/components/dropdown-buttons";
+@import "foundation/components/flex-video";
+@import "foundation/components/forms";
+@import "foundation/components/icon-bar";
+@import "foundation/components/inline-lists";
+@import "foundation/components/joyride";
+@import "foundation/components/keystrokes";
+@import "foundation/components/labels";
+@import "foundation/components/magellan";
+@import "foundation/components/orbit";
+@import "foundation/components/pagination";
+@import "foundation/components/panels";
+@import "foundation/components/pricing-tables";
+@import "foundation/components/progress-bars";
+@import "foundation/components/range-slider";
+@import "foundation/components/reveal";
+@import "foundation/components/side-nav";
+@import "foundation/components/split-buttons";
+@import "foundation/components/sub-nav";
+@import "foundation/components/switches";
+@import "foundation/components/tables";
+@import "foundation/components/tabs";
+@import "foundation/components/thumbs";
+@import "foundation/components/tooltips";
+@import "foundation/components/top-bar";
+@import "foundation/components/type";
+@import "foundation/components/offcanvas";
+@import "foundation/components/visibility";
+@import "foundation/overrides/styles";
+
+//@import "pickadate/classic";
+//@import "pickadate/classic.date";
+
+// Totem importation
+//@import "totem/ember/master";
+
+// Shared variables/mixins
+// shared/mixins relies on Foundation variables
+// All files below may rely on both shared/variables or shared/mixins
+@import "shared/variables";
+@import "shared/mixins";
+
+// Shared styles
+@import "shared/base";
+@import "shared/layout";
+@import "shared/ts-grid";
+@import "shared/states";
+@import "shared/modules/btn";
+@import "shared/modules/checkbox";
+@import "shared/modules/radio-checkbox-inputs";
+@import "shared/modules/callout";
+@import "shared/modules/confirmation";
+@import "shared/modules/dialogue";
+@import "shared/modules/primary-list";
+@import "shared/modules/title-region";
+@import "shared/modules/label";
+@import "shared/modules/activity-feed";
+@import "shared/modules/dropdown";
+@import "shared/modules/date-picker";
+@import "shared/modules/file-upload";
+@import "shared/modules/tooltip";
+@import "shared/modules/loading";
+@import "shared/modules/ts-action-bar";
+@import "shared/modules/password";
+@import "shared/modules/forms";
+@import "shared/modules/public_user";
+@import "shared/modules/validated";
+@import "shared/modules/ts-destroy-msg";
+@import "shared/modules/action-header-imgs";
+@import "shared/modules/ts-full-page";
+@import "shared/modules/borderless-table";
+@import "shared/modules/ts-helper-classes";
+
+// Fonts
+//// Font Awesome, http://fortawesome.github.io/Font-Awesome/
+//// ico-font files require shared/variables and shared/mixins
+$fa-font-path: "fonts" !default;
+@import "font-awesome";
+@import "ico-font/variables";
+@import "ico-font/styles";
+@import "ts-icons/mixins";
+@import "ts-icons/icons.data.png";
+@import "ts-icons/icons.fallback.scss";
+@import "ts-icons/icons.data.svg";
+@import "ts-icons/states";
+@import "ts-icons/modules";
+
+// COMMON ThinkSpace Imports
+//// Spaces
+@import "spaces/modules/recent-activity-list";
+@import "spaces/modules/content-heading";
+
+//// Branding
+@import "branding/variables";
+@import "branding/modules/ts-branding";
+
+//// Users
+@import "users/variables";
+@import "users/modules";
+@import "users/profile";
+@import "users/password";

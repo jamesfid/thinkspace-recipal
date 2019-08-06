@@ -1,0 +1,6 @@
+span.team_viewers-team-team
+
+  i.team_viewers-team-team-action.team_viewers-team-viewer-trash.fa.fa-trash-o click='"remove_team" target=view' title='Remove team from peer review'
+
+  span.team_viewers-team-team-label
+    = viewer_team.title

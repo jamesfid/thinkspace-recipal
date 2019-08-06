@@ -1,0 +1,40 @@
+.picker {
+    width: 174%;
+}
+
+.date-picker {
+    display: inline-block;
+
+    margin-left: 1em;
+    .date-picker-input-hidden {
+        display: none;
+        //input {
+
+        margin: 0;
+        //}
+    }
+    .date-picker-action {
+        display: inline-block;
+    }
+}
+
+.picker--opened .picker__holder {
+    margin-bottom: 4em;
+}
+
+
+///// ts-picker components - date/time /////
+.ts-picker .ts-picker_input {
+    display: none !important;
+}
+
+.ts-picker .ts-picker_preview {
+    padding: .5em;
+
+    border: 2px solid $ts-black-med;
+    border-radius: $border-radius;
+}
+
+.ts-picker .ts-picker_icon { 
+  margin-right: 0.5em;
+}

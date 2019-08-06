@@ -1,0 +1,44 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 #{t 'builder.casespace.headings.case_logistics'}
+      p #{t 'builder.casespace.describe.logistics'}
+
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.headings.release_date'}
+        p #{t 'builder.casespace.instruct.set_release_date'}
+      date-picker-split-row content=this property='release_at' hide_input=false hide_button=true time_picker=true date_picker_header='Release Day' time_picker_header='Release Time (your local timezone)' save_on_close=false
+      hr
+
+
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.headings.due_date'}
+        p #{t 'builder.casespace.instruct.set_due_date'}
+      date-picker-split-row content=this property='due_at' hide_input=false hide_button=true time_picker=true date_picker_header='Due Day' time_picker_header='Due Time (your local timezone)' save_on_close=false
+
+      hr
+
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.headings.case_instructions'}
+        p #{t 'builder.casespace.instruct.add_instructions'}
+      view ckeditor_view value=instructions height='200'
+      hr
+
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.assessment.headings.team_set'}
+        p #{t 'builder.assessment.instruct.set_team_set'}
+      ul.thinkspace-tbl-pa_team-set-list
+        if team_sets
+          each team_set_each in team_sets
+            component c_team_set model=team_set_each selected=team_set
+        else
+          p #{t 'builder.assessment.describe.no_team_sets'}
+
+  .ts-wizard_row.ts-forms_action-btns-container
+    .ts-grid_columns.small-12
+      a.btn.btn-default.btn-small.left click='back' #{t 'builder.casespace.buttons.back'}
+      a.btn.btn-primary.btn-small.right click='complete' #{t 'builder.casespace.buttons.next'}

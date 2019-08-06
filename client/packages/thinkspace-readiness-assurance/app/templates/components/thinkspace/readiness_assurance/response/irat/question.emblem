@@ -1,0 +1,15 @@
+.ts-ra_question-text
+  = qm.question
+
+if qm.is_ifat
+  component ra.c_shared_radio_ifat_buttons qm=qm select='select_answer'
+else
+  component ra.c_shared_radio_buttons qm=qm select='select_answer'
+  component ra.c_irat_justification qm=qm save='save_justification'
+
+/ unless viewonly
+/   unless qm.answers_disabled
+/     each message in errors.answer_id
+/       span.ts-ra_question-error-message
+/         i.im.im-warning.im-error-base
+/         = message

@@ -1,0 +1,17 @@
+tr.ts-lab_result model_id=model.id
+
+  if model.admin_is_html
+    td= component title_column.component model=model column=title_column
+    td colspan=html_column_span
+      component html_column.component model=model column=html_column
+
+  else
+    if model.admin_is_adjusted
+      each column in result_columns
+        td= component column.component model=model column=column
+      td
+    else
+      each column in result_columns
+        td= component column.component model=model column=column
+
+  td.action-button= component admin.c_dropdown_split_button collection=action_dropdown_collection button_class='btn-small btn-default'

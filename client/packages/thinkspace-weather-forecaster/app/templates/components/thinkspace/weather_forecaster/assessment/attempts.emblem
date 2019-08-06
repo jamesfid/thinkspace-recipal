@@ -1,0 +1,16 @@
+.thinkspace-weather-forecaster_assessment-forecast-attempts-header
+  |Click on previous attempts to see your responses.
+
+.thinkspace-weather-forecaster_assessment-forecast-attempts
+
+  table
+
+    thead
+      tr
+        th colspan='2' Attempts
+        th.text-right Score
+
+    tbody
+      each attempt in forecast_attempts
+        component c_attempt_show model=attempt forecast=forecast current_forecast=current_forecast select='select'
+

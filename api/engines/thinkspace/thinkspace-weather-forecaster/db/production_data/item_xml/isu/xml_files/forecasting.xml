@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<questestinterop>
+	<assessment title="Forecasting" ident="A1001">
+		<presentation>
+			<material>
+				<mattext texttype="text/html"><![CDATA[<h3>Forecasting the Weather</h3>
+				<a href="forecasting.html">Weather Products</a>.]]></mattext>
+			</material>
+		</presentation>
+		<section title="Main" ident="S1002">
+			<item title="Reporting Station" ident="QUE_1003">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[Enter the station code for the area this forecast is about.
+							<a href="stations.html">Select a station</a>]]></mattext>
+					</material>
+					<response_str ident="QUE_1004_RS">
+						<render_fib fibtype="String" prompt="Box" columns="4" value="KDSM">
+							<response_label ident="QUE_1005_ANS"></response_label>
+						</render_fib>
+					</response_str>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="0" varname="que_score" maxvalue="3"
+							minvalue="0" />
+					</outcomes>
+				</resprocessing>
+			</item>
+
+			<item title="Morning Temperature" ident="QUE_1006">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[
+						<h4>Questions 2-5 all refer to conditions expected at 12z.</h4>
+						What will be the 12Z temperature (&#176;F) tomorrow?<br/>
+						<a href="glossary.html">What does 12Z mean?</a>]]></mattext>
+					</material>
+					<response_str ident="QUE_1007_RS">
+						<render_fib fibtype="String" prompt="Box" columns="3">
+							<response_label ident="QUE_1008_ANS"></response_label>
+						</render_fib>
+					</response_str>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" maxvalue="3"
+							minvalue="0" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1007_RS">{type=wx,site=QUE_1003,var=TEMP_12}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Temperature Influences" ident="QUE_1009">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[Cloud cover to inhibit radiational cooling tonight will]]></mattext>
+					</material>
+					<response_lid ident="QUE_1010_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1011_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[be significant]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1012_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[not be significant]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1010_RL">{type=wx,site=QUE_1003,var=CLOUD_18,ret=QUE_1011_A1;QUE_1012_A2}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Frontal Passage" ident="QUE_1013">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[A frontal passage by 12Z tomorrow may also affect the temperature. I predict there will have been the passage (within about 140 miles of the reporting station)]]></mattext>
+					</material>
+					<response_lid ident="QUE_1014_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1015_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[a warm front ]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1016_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[a cold front]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1017_A3">
+								<material>
+									<mattext texttype="text/html"><![CDATA[an occluded front]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1018_A4">
+								<material>
+									<mattext texttype="text/html"><![CDATA[a stationary front]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1019_A5">
+								<material>
+									<mattext texttype="text/html"><![CDATA[no front]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1014_RL">{type=wx,site=QUE_1003,var=FRONT_12,ret=QUE_1015_A1;QUE_1016_A2;QUE_1017_A3;QUE_1018_A4;QUE_1019_A5}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Advection at 12Z" ident="QUE_1021">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[Advection may also change temperature. I predict 12Z temperature change will ]]></mattext>
+					</material>
+					<response_lid ident="QUE_1022_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1023_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[be affected by warm air advection.]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1024_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[be affected by cold air advection.]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1025_A3">
+								<material>
+									<mattext texttype="text/html"><![CDATA[not be significantly affected by advection.]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1022_RL">{type=wx,site=QUE_1003,var=ADVECT_12,ret=QUE_1023_A1;QUE_1024_A2;QUE_1025_A3}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="18Z Temperature" ident="QUE_1026">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[
+						<h4>Questions 6-11 all refer to conditions expected at 18z.</h4>
+						What will be the 18Z temperature (&#176;F) tomorrow?]]></mattext>
+					</material>
+					<response_str ident="QUE_1027_RS">
+						<render_fib fibtype="String" prompt="Box" columns="3">
+							<response_label ident="QUE_1028_ANS"></response_label>
+						</render_fib>
+					</response_str>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" maxvalue="3" minvalue="0" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1027_RS">{type=wx,site=QUE_1003,var=TEMP_18}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Cloudiness" ident="QUE_1029">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[For 18Z tomorrow, I predict cloudiness will]]></mattext>
+					</material>
+					<response_lid ident="QUE_1030_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1031_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[hold down the daytime temperature.]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1031_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[not affect the daytime temperature.]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" maxvalue="3" minvalue="0" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1030_RL">{type=wx,site=QUE_1003,var=CLOUD_18,ret=QUE_1031_A1;QUE_1031_A2}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Frontal Passage at 18Z" ident="QUE_1032">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[A frontal passage by 18Z tomorrow may also affect the temperature. I predict there will have been the passage of (within about 140 miles of the reporting station)]]></mattext>
+					</material>
+					<response_lid ident="QUE_1033_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1034_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[a warm front ]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1035_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[a cold front]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1036_A3">
+								<material>
+									<mattext texttype="text/html"><![CDATA[an occluded front]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1037_A4">
+								<material>
+									<mattext texttype="text/html"><![CDATA[a stationary front]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1038_A5">
+								<material>
+									<mattext texttype="text/html"><![CDATA[no front]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1033_RL">{type=wx,site=QUE_1003,var=FRONT_18,ret=QUE_1034_A1;QUE_1035_A2;QUE_1036_A3;QUE_1037_A4;QUE_1038_A5}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Advection at 18Z" ident="QUE_1040">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[Advection may also change temperature. I predict 18Z temperature change will ]]></mattext>
+					</material>
+					<response_lid ident="QUE_1041_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1042_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[be affected by warm air advection.]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1043_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[be affected by cold air advection.]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1044_A3">
+								<material>
+									<mattext texttype="text/html"><![CDATA[not be significantly affected by advection.]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1041_RL">{type=wx,site=QUE_1003,var=ADVECT_18,ret=QUE_1042_A1;QUE_1043_A2;QUE_1044_A3}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Wind Speed at 18Z knots" ident="QUE_1045">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[Enter the expected wind speed at 18Z (knots) ]]></mattext>
+					</material>
+					<response_str ident="QUE_1046_RS">
+						<render_fib fibtype="String" prompt="Box" columns="3">
+							<response_label ident="QUE_1047_ANS"></response_label>
+						</render_fib>
+					</response_str>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" maxvalue="3"
+							minvalue="0" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1046_RS">{type=wx,site=QUE_1003,var=WSPD_18}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Wind Direction at 18Z" ident="QUE_1048">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[Select wind direction at 18Z]]></mattext>
+					</material>
+					<response_lid ident="QUE_1049_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1050_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[N]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1051_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[NE]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1052_A3">
+								<material>
+									<mattext texttype="text/html"><![CDATA[E]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1053_A4">
+								<material>
+									<mattext texttype="text/html"><![CDATA[SE]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1054_A5">
+								<material>
+									<mattext texttype="text/html"><![CDATA[S]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1055_A6">
+								<material>
+									<mattext texttype="text/html"><![CDATA[SW]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1056_A7">
+								<material>
+									<mattext texttype="text/html"><![CDATA[W]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1057_A8">
+								<material>
+									<mattext texttype="text/html"><![CDATA[NW]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1049_RL">{type=wx,site=QUE_1003,var=WDIR_18,ret=QUE_1050_A1;QUE_1051_A2;QUE_1052_A3;QUE_1053_A4;QUE_1054_A5;QUE_1055_A6;QUE_1056_A7;QUE_1057_A8}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Precipitation" ident="QUE_1058">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[Will there be precipitation between 12Z tomorrow and 12Z the next day? ]]></mattext>
+					</material>
+					<response_lid ident="QUE_1059_RL" rcardinality="Single" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1060_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[Yes]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1061_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[No]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1059_RL">{type=wx,site=QUE_1003,var=PRECIP,ret=QUE_1060_A1;QUE_1061_A2}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+
+			<item title="Precipitation Influences" ident="QUE_1062">
+				<presentation>
+					<material>
+						<mattext texttype="text/html"><![CDATA[The following factors will favor precipitation between 12Z tomorrow and 12Z the next day. 
+						<br/>Marking the box means YES. It is possible to have any combination including all NOs. ]]></mattext>
+					</material>
+					<response_lid ident="QUE_1063_RL" rcardinality="Multiple" rtiming="No">
+						<render_choice>
+							<response_label ident="QUE_1064_A1">
+								<material>
+									<mattext texttype="text/html"><![CDATA[Moisture Supply]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1066_A2">
+								<material>
+									<mattext texttype="text/html"><![CDATA[Frontal Position]]></mattext>
+								</material>
+							</response_label>
+							<response_label ident="QUE_1068_A3">
+								<material>
+									<mattext texttype="text/html"><![CDATA[Unstable Atmosphere]]></mattext>
+								</material>
+							</response_label>
+						</render_choice>
+					</response_lid>
+				</presentation>
+				<resprocessing>
+					<outcomes>
+						<decvar vartype="Integer" defaultval="1" varname="que_score" maxvalue="3" minvalue="0" />
+					</outcomes>
+					<respcondition>
+						<conditionvar>
+							<varequal respident="QUE_1063_RL">{type=wx,site=QUE_1003,var=FAVOR_PRECIP,ret=QUE_1064_A1;QUE_1066_A2;QUE_1068_A3}</varequal>
+						</conditionvar>
+						<setvar varname="que_score" action="Add">2</setvar>
+					</respcondition>
+				</resprocessing>
+			</item>
+		</section>
+	</assessment>
+
+</questestinterop>

@@ -1,0 +1,56 @@
+prereq_configs: space
+
+variables:
+  - &CASE                Teams Artifacts Images
+  - &PHASE_IMAGE         Collaboration Team Artifacts Image with HTML
+  - &PHASE_CARRY_FORWARD Collaboration Team Artifacts Image Carry Forward
+  - &PHASE_EXPERT        Collaboration Team Artifacts Image Carry Forward + Expert Image
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+  import_text[../common_imports/teams]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_IMAGE
+    assignment:    *CASE
+    template_name: one_column_html_artifact_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      artifact:
+        instructions: '<h3>Upload your image below.</h3>'
+      html:
+        methods: lorem
+
+  - title: *PHASE_CARRY_FORWARD
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods:
+          - thinkspace
+          - carry_forward_image
+
+  - title: *PHASE_EXPERT
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT
+      artifact_expert: true
+    sections:
+      html:
+        methods:
+          - lorem
+          - carry_forward_expert_image
+        phase: prev-2
+
+team_phases:
+  - {title: *PHASE_IMAGE,         space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_COLLABORATION}
+  - {title: *PHASE_CARRY_FORWARD, space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_COLLABORATION}
+  - {title: *PHASE_EXPERT,        space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_COLLABORATION}

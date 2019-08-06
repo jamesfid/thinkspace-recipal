@@ -1,0 +1,45 @@
+.ts-grid_row.ts-markup_comments
+  #ts-markup_comment-gutter-wrapper class={:ts-grid_columns :ts-grid_sticky is_library_open:small-6:small-12}
+    if all_data_loaded
+      if is_pdf_loading
+        h5 Loading comments...
+        component c_loader
+      else
+        #ts-markup_comment-gutter-header.title-region
+          .ts-grid_row
+            .small-12.ts-grid_columns
+              h1.left Comments
+          .ts-grid_row
+            .small-12.ts-grid_columns.ts-markup_sidepocket-instructions
+              p Add a comment by clicking on the uploaded file or the button below. 
+          .ts-grid_row
+            .small-12.ts-grid_columns
+              .btn.btn-tiny.btn-primary click='add_comment_to_phase'
+                | Comment
+                .tsi.tsi-left.icon-tiny.tsi-add-inverse.left
+              if is_library_open
+                span.ts-markup_header-link click='close_library' 
+                  | Close Library
+                  .tsi.tsi-right.icon-tiny.tsi-right-arrow
+              else
+                span.ts-markup_header-link click='open_library' 
+                  | Open Library
+                  .tsi.tsi-right.icon-tiny.tsi-left-arrow
+        #ts-markup_comment-gutter
+          #ts-markup_phase-discussions
+            if sorted_phase_discussions
+              each discussion in sorted_phase_discussions
+                component c_markup_discussion_sidepocket model=discussion is_for_phase=true discussions=sorted_phase_discussions
+            else
+              .ts-markup_sidepocket-discussion.ts-markup_library-target.ts-markup_sidepocket-no-comments
+                h1.ts-markup_library-target No General Comments
+                p.ts-markup_library-target This is dedicated to comments that address general topics as oppose to specific areas of the student's work. Click the button above to add a comment. 
+          #ts-markup_other-discussions
+            each discussion in sorted_other_discussions
+              component c_markup_discussion_sidepocket model=discussion discussions=sorted_other_discussions
+
+    else
+      component c_loader
+  if is_library_open
+    .ts-grid_columns.small-6.ts-grid_sticky
+      component c_library select='select_library_comment'

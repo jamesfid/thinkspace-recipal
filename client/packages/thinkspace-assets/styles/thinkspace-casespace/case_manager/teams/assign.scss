@@ -1,0 +1,82 @@
+.team_assign {
+
+  .team_assign-separator {margin: 0;}
+
+  .team_assign-heading {
+    margin-top: .5em;
+  }
+
+  .team_assign-heading-label {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+
+  .team_assign-resource-list {
+    font-family: 'Times New Roman';
+    list-style:  decimal inside none;
+    font-size:   em-calc(15px);
+  }
+
+  .team_assign-resource-list-parent-label {
+    font-weight:   bold;
+    font-size:     em-calc(16px);
+    color:         $ts-blue-dark;
+    padding-right: .2em;
+  }
+
+  .team_assign-resource-list-label {
+    font-weight:   bold;
+    font-size:     em-calc(15px);
+    color:         #6F6F6F;
+    font-size:     80%;
+    padding-right: .2em;
+  }
+
+  .team_assign-selected-resource {
+    background-color: $ts-blue-med;
+  }
+
+  .team_assign-teams-list {
+    font-family: 'Times New Roman';
+    list-style:  inside none;
+    font-size:   em-calc(15px);
+  }
+
+  .team_assign-team-action {
+    cursor:       pointer;
+    width:        1em;
+    margin-right: 5px;
+    color:         $ts-blue-dark;
+  }
+
+  .team_assign-resource-list-team-based {
+    font-weight: normal;
+    font-size:   em-calc(15px);
+    color:       #6F6F6F;
+    font-size:   80%;
+    margin-left: .3em;
+  }
+
+  .team_assign-resource-list-add-teams {
+    float: right;
+  }
+
+  .team_assign-heading-toggle-teams, .team_assign-heading-toggle-users {
+    cursor:       pointer;
+    color:        $ts-blue-dark;
+    margin-right: .5em;
+  }
+
+  .team_assign-team-action-trash {color: $ts-blue-dark;}
+  
+  .team_assign-team-action-add {color: green;}
+
+  .team_assign-team-action-remove {color: red;}
+
+  .team_assign_team-users-list {
+    font-family:  'Times New Roman';
+    list-style:   decimal inside none;
+    font-size:    em-calc(15px);
+  }
+
+}

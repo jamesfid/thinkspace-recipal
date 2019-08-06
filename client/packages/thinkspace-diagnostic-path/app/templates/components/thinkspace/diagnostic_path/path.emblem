@@ -1,0 +1,37 @@
+.small-12.ts-grid_columns.ts-grid_columns-thick.diag-path_wrapper
+  .diag-path_mechanism
+    h5 Add a Mechanism
+    .dialogue.dialogue-instruct
+      p To add a new mechanism, either drag the 'New mechanism' into the appropriate location on the path or press the 'add mechanism to bottom' button at the top of the path.
+    ol.diag-path_mechanism-list
+      component c_path_mechanism path=model
+
+  .diag-path_header
+    if is_view_only
+      h6.diag-path_header-text= model.title
+    else
+      if model.can.update
+        h6.diag-path_header-text click='edit'
+          if edit_visible
+            component c_path_edit model=model save='save'
+          else
+            = model.title
+      else
+        h6.diag-path_header-text= model.title
+
+    .diag-path_header-actions
+      a.diag-path_header-action click='toggle_collapse_all'
+        if all_collapsed
+          i.im.im-open-down
+        else
+          i.im.im-open-up
+
+      unless is_view_only
+        a.diag-path_header-action click='add_mechanism_bottom' title='add mechanism to bottom': i.im.im-add-list-item
+
+
+  ol.diag-path_list
+    if ready
+      each path_item in scoped_children
+        component c_path_item model=path_item is_view_only=is_view_only all_collapsed=all_collapsed toggle_collapse='toggle_collapse' toggle_expand='toggle_expand'
+

@@ -1,0 +1,10 @@
+td
+  link-to r_builder_phases_edit model
+    | #{model.title}
+td.right
+  link-to r_builder_phases_edit model class='btn btn-small btn-inline'
+    | Edit
+  component c_dropdown collection=dropdown_sorted_collection auto_width=true select_action='select' action_receiver=this text=selected_sort anchor_classes='btn btn-small thinkspace-dropdown_inline-btn' class='thinkspace-dropdown_inline'
+
+if is_destroying
+  component c_phase_destroy model=model cancel='cancel_destroy' approve='destroy'

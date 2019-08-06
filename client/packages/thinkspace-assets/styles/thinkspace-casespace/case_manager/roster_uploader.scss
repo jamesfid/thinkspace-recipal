@@ -1,0 +1,120 @@
+.case-manager-roster-uploader {
+  // To display this as a button in the title-region
+  display: inline-block;
+
+
+  .case-manager-roster-uploader_upload-overlay {
+    position:         fixed;
+    top:              0;
+    bottom:           0;
+    left:             0;
+    right:            0;
+    width:            100%;
+    height:           100%;
+    opacity:          0.5;
+    background-color: $ts-black-light;
+    z-index:          5000;
+    text-align:       center;
+
+    .case-manager-roster-uploader_upload-text {
+      margin-right: 25%; 
+      margin-top:   15%;
+      display:      none;
+      font-size:    5em;
+    }
+
+    &.is-drag-hovered {
+      .case-manager-roster-uploader_upload-text {
+        display: block;
+      }
+    }
+  }
+
+  .case-manager-roster-uploader_upload-modal {
+    z-index: 5001;
+    position: fixed;
+
+    .case-manager-roster-uploader_upload-modal-body {
+      position: fixed;
+      top: 30%;
+      right: 25%;
+
+      .case-manager-roster-uploader_upload-cancel {
+        margin-left: 1.5em;
+        width: auto;
+      }
+
+      .case-manager-roster-uploader_upload-button {
+        font-size:   1.5em;
+        width: auto;
+        font-weight: 600;
+        padding:     em-calc(7px) em-calc(5px);
+        margin-top:  em-calc(5px);
+
+        form {
+          margin-bottom: 0;
+        }
+
+        .case-manager-roster-uploader_upload-input {
+          cursor:   pointer;
+          position: absolute;
+          top:      0;
+          right:    0;
+          bottom:   0;
+          opacity:  0;
+          margin:   0;
+          display:  block;
+        }
+      }
+    }
+
+    .case-manager-roster-uploader_instruction-list{
+      text-align: left;
+      padding: .25em 2em;
+    }
+
+    .case-manager-roster-uploader_drop-zone {
+      margin:   0.9375em;
+      height:   200px;
+      border:   2px dashed $ts-black-med;
+      position: relative;
+
+      &.is-drag-hovered { border: 2px dashed $ts-blue-dark; }
+
+      .case-manager-roster-uploader_drop-zone-mask {
+        position: absolute;
+        height:   100%;
+        width:    100%;
+        z-index:  6000;
+      }
+
+      .case-manager-roster-uploader_drop-text {
+        text-align: center;
+        position:   absolute;
+        top:        50%;
+        height:     100px;
+        width:      100%;
+        margin-top: -((100) / 2);
+        font-size:  2em;
+      }
+    } 
+  } 
+}
+
+.case-manager-roster-uploader_expansion-header-actions {
+  font-weight: normal;
+  float:       right;
+  display:     block;
+
+  .case-manager-roster-uploader_expansion-header-action-icon {
+    color:    $ts-black-base;
+    position: relative;
+    float:    left;
+    height:   em-calc(25px);
+    width:    em-calc(25px);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

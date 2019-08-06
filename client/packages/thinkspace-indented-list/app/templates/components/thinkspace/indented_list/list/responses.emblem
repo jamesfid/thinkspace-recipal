@@ -1,0 +1,9 @@
+if is_ready
+  if model.responses
+    each response in model.responses
+      component c_response_items model=response list=model
+  else
+    .row
+      .ts-grid_columns.small-12
+        .dialogue.dialogue-error
+          h1 No path data.

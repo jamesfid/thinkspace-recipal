@@ -1,0 +1,17 @@
+i.team_assign-team.action.team_assign-heading-toggle-teams.fa.fa-users click='"toggle_teams_visible" target=view' title='Show/hide teams'
+
+span.team_assign-resource-list-parent-label #{resource.parent_label}
+span.team_assign-resource-list-label #{resource.label}
+
+if resource.team_ownerable
+  span.team_assign-resource-list-team-based
+    | [team based]
+
+a.team_assign-resource-list-add-teams click='"select_resource" resource.model' (select)
+
+if view.teams_visible
+  each team in view.resource_teams
+    = view assign_resource_team_view team=team resource=resource.model
+  else
+    h6 No Teams
+

@@ -1,0 +1,45 @@
+//foundation tooltip overrides
+
+body {
+  .tooltip {
+    box-shadow: 0 0 10px 1px #eee;
+    padding: 1em;
+    z-index: 500000001;
+
+    &.tip-right {
+      border-left: 10px solid #3194bb;
+
+      .nub {
+        left: -20px;
+        border-color: transparent #3194bb transparent transparent;
+      }
+    }
+
+    &.tip-left {
+      border-right: 10px solid #3194bb;
+
+      .nub {
+        right: -20px;
+        border-color: transparent transparent transparent #3194bb;
+      }
+    }
+
+    &.tip-bottom {
+      border-top: 10px solid #3194bb;
+
+      .nub {
+        top: -20px;
+        border-color: transparent transparent #3194bb transparent;
+      }
+    }
+
+    &.tip-top {
+      border-bottom: 10px solid #3194bb;
+
+      .nub {
+        bottom: -20px;
+        border-color: #3194bb transparent transparent transparent;
+      }
+    }
+  }
+}

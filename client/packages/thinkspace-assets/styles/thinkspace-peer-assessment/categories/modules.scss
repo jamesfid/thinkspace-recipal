@@ -1,0 +1,29 @@
+.tbl-category_item-container {
+	margin-bottom:  1.5em;
+	padding-bottom: 1.5em;
+	border-bottom:  2px solid $ts-black-light;
+
+  .tbl-category_descriptive-values {
+    @include fluid-grid-row();
+    padding: 0 .875rem;
+    margin-bottom: 2em;
+
+    .tbl-category_descriptive-text {
+      @include grid-column($columns: 6);
+      padding: 0;
+      font-size: .875em;
+      font-weight: $ts-medium;
+      &.low { text-align: left; }
+      &.high { text-align: right; }
+      &.numeric { font-weight: $ts-bold;}
+
+    }
+  }
+
+}
+
+.tbl-category_comment-container {
+	.btn:first-of-type {
+		margin-right: 2em;
+	}
+}

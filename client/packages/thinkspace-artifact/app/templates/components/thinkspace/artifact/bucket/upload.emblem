@@ -1,0 +1,10 @@
+.thinkspace-artifact_upload
+
+  .btn.btn-primary.btn-small
+    |Select File
+
+    form action=files_url method='POST' enctype='multipart/form-data'
+      input type='hidden' name='bucket_id'  value=model.id
+      input type='hidden' name='ownerable_type' value=ownerable_type
+      input type='hidden' name='ownerable_id'   value=ownerable_id
+      input.thinkspace-artifact_upload-input type='file' name='files[]'

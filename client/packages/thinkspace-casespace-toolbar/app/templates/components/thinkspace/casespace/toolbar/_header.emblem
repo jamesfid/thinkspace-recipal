@@ -1,0 +1,10 @@
+/ if is_maximized
+/   header.toolbar_header
+/     link-to 'thinkspace/common/spaces'
+/       h4.ts-branding.ts-branding-color
+/         == t 'thinkspace.branding'
+
+.nav-link
+  link-to 'thinkspace/common/spaces'
+    h4.ts-branding.ts-branding-color
+      == t 'thinkspace.branding'

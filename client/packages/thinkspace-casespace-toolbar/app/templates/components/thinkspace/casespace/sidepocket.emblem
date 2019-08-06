@@ -1,0 +1,3 @@
+#sidepocket class={has_sticky_addon:has-sticky-addon}
+  if c_sidepocket_component
+    component c_sidepocket_component model=model

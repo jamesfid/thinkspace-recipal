@@ -1,0 +1,11 @@
+component c_space_header model=model
+
+each space_type in model.space_types
+  component space_type.component model=model
+
+/ if all_data_loaded
+/   each space_type in model.space_types
+/     component space_type.component model=model
+/ else
+/   .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+/     component c_loader message='Loading...'

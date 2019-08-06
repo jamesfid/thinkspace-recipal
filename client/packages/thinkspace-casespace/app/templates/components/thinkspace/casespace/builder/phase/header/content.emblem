@@ -1,0 +1,7 @@
+.ts-grid_row: .ts-grid_columns.small-12
+  .ts-forms_field-label Edit phase title
+  = input value=title
+
+.ts-grid_row: .small-12.ts-grid_columns.ts-forms_actions
+  .html_submit.btn.btn-primary.btn-small click='save': |Update Title
+  .html_submit.btn.btn-default.btn-small click='cancel': |Cancel

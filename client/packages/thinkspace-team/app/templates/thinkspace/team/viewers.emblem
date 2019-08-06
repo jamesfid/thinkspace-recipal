@@ -1,0 +1,39 @@
+.team_viewers
+
+  .ts-grid_row
+    .small-6.ts-grid_columns
+      span.team_viewers-heading
+        i.team_viewers-team-toggle-viewers.fa.fa-users click='toggle_team_viewers_visible' title='Show/hide viewers'
+        span.team_viewers-heading-label Teams
+      hr.team_viewers-separator
+
+      each review_team in filtered_teams
+        = view viewers_team_view review_team=review_team
+
+    .small-6.ts-grid_columns
+
+      if teams_visible
+        span.team_viewers-heading
+          span.team_viewers-heading-label
+            |Teams
+            a.team_viewers-heading-hide click='hide_teams' hide
+            unless users_visible
+              a.team_viewers-heading-show click='show_users' users
+        hr.team_viewers-separator
+
+        ul.team_viewers-team-viewer-list
+          each team in team_viewers
+            = view viewers_team_viewer_view team=team
+
+      if users_visible
+        span.team_viewers-heading
+          span.team_viewers-heading-label
+            | Users
+            a.team_viewers-heading-hide click='hide_users' hide
+            unless teams_visible
+              a.team_viewers-heading-show click='show_teams' teams
+        hr.team_viewers-separator
+
+        ul.team_viewers-user-viewer-list
+          each user in resource_users
+            = view viewers_user_viewer_view user=user

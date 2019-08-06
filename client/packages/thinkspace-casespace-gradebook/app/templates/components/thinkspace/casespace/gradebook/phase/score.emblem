@@ -1,0 +1,28 @@
+.ts-grid_row.gradebook_score-range-headers
+  .small-6.ts-grid_columns.ts-grid_columns-thin
+    .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thin: h6 Phase Score
+  .small-6.ts-grid_columns.ts-grid_columns-thin
+    .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thin: h6 Total Score
+
+.ts-grid_row
+  .small-6.ts-grid_columns.ts-grid_columns-thin.end.gradebook_score-range
+    if score_to
+      |#{score_from} to #{score_to}
+
+.ts-grid_row
+  .small-6.ts-grid_columns.ts-grid_columns-thin
+    = input value=input_score style=view_attrs.style size=view_attrs.size maxlength=view_attrs.maxlength readonly=view_attrs.readonly disabled=view_attrs.disabled class=view_attrs.class
+
+    if is_valid
+      a.btn.btn-small.btn-primary.ts-menu_btn click='save' Save Score
+
+  .small-6.ts-grid_columns.ts-grid_columns-thin
+    .gradebook_total-score
+      = total_score
+
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thin
+  span class={is_valid:no-error:error}
+    unless is_valid
+      em.error-message.dialogue.dialogue-error
+        each message in errors.input_score
+          = message

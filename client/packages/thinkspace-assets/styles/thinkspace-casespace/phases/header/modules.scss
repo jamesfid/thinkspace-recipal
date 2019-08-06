@@ -1,0 +1,61 @@
+.phase-header {
+  min-height: $ts-min-height-title-region;
+
+  .phase-header_resource-title {
+    color: $ts-black-dark;
+  }
+
+  .phase-header_navigation {
+    position: absolute;
+    bottom: 1rem;
+    
+    .phase-header_button {
+      padding:   0.35em 0.5em .25em;
+      color:     white;
+      font-size: .75em;
+
+      i {margin-right: 0;}
+
+      &.phase-header_button-disabled {
+        &:hover { cursor: not-allowed; }
+      }
+    }
+
+    .phase-header_phase-count {
+      color:        $ts-black-base;
+      font-size:    .875rem;
+      font-weight:  $ts-medium;
+      line-height:  26px;
+      display:      inline-block;
+      margin-left:  .75rem;
+      margin-right: .75rem;
+    }
+  }
+
+}
+
+.phase-progress {
+  margin-bottom: 0.5em;
+
+  .phase-progress_section {
+    display:      inline-block;
+    margin-right: 1em;
+    vertical-align: bottom;
+  }
+
+  .casespace-phase_header-mock-progress-icon {
+    font-size: 1.5em;
+    color:     $ts-black-base;
+    cursor:    pointer;
+    i {width: 24px; height: 24px;}
+  }
+
+}
+
+.phase-header_resource-title-team-title {
+  .casespace_phase-select-team-list {
+    position:         fixed;
+    margin-top:       1em;
+    right:            2em;
+  }
+}

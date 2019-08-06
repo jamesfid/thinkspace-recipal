@@ -1,0 +1,68 @@
+/////
+// title-region
+/////
+.title-region {
+  position: relative;
+  background:    $ts-black-light;
+  margin-bottom: $content-padding;
+  padding:       .875rem 0;
+  min-height:    $ts-min-height-title-region;
+
+  .title-region_breadcrumbs { color: $ts-black-med;}
+  .title-region_breadcrumbs>a {
+    font-size: .875rem;
+    font-weight: $ts-bold;
+    color: $ts-black-base;
+    transition: all 0.29s ease-in-out 0s;
+
+    &:hover {
+      color: $ts-blue-base;
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    font-size: 1.25em;
+    font-weight: $ts-heavy;
+    letter-spacing: .5px;
+    color: $ts-black-dark;
+
+  }
+
+  &.title-region-stretched {
+    //margin-left:  -.9375em;
+    //margin-right: -.9375em;
+  }
+
+  .title-region_title {
+    margin-top: 0;
+  }
+
+  .title-region_options {
+    .dropdown {
+      @include highlight-transition-all;
+      border:  2px solid $ts-blue-base;
+
+      &:hover {
+        border:     2px solid $ts-blue-dark;
+        background: $ts-blue-dark;
+      }
+
+      &:active {
+        border:     2px solid $ts-blue-dark;
+        background: white;
+        color:      $ts-blue-dark;
+      }
+    }
+  }
+
+  // Experimental for PDAPM titles
+  .title-region_course-actions {
+    padding: .5em 0;
+
+    .title-region_course-action {
+      display: inline-block;
+      padding-right: .5em;
+    }
+  }
+}

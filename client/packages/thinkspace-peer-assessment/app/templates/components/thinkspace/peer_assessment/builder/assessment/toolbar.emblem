@@ -1,0 +1,17 @@
+.ts-builder_toolbar-actions-section
+  h1.ts-builder_toolbar-actions-label Quantitative
+  ul.ts-builder_toolbar-actions
+    li click='add_quant_item' 
+      p + Scale
+      img style="width: 64px;" src='/assets/images/ts-icons/builder/ts-builder-icons_slider.svg'
+
+.ts-builder_toolbar-actions-section
+  h1.ts-builder_toolbar-actions-label Qualitative
+  ul.ts-builder_toolbar-actions
+    li click="'add_qual_item' 'text'"
+      p + Small text
+      img style="width: 64px;" src='/assets/images/ts-icons/builder/ts-builder-icons_small-text.svg'
+    li click="'add_qual_item' 'textarea'" 
+      p + Large text
+      img style="width: 64px;" src='/assets/images/ts-icons/builder/ts-builder-icons_large-text.svg'
+  

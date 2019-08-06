@@ -1,0 +1,31 @@
+.title-region
+  .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+    .ts-grid_row
+      h3.title-region_title.left= model.title
+      if can.update
+        .space-content_actions
+          / a.btn.btn-default.btn-small
+          /   .tsi.tsi-left.tsi-size_16.tsi-download_white.left
+          /   | Export Space Report
+          link-to r_spaces_edit model
+            a.btn.btn-default.btn-small
+              | Edit Space
+              .tsi.tsi-left.icon-tiny.tsi-edit-inverse.left
+    .ts-grid_row
+      ul.ts-action-bar
+        li.ts-action-bar_action
+          link-to r_spaces_show model
+            | Cases
+        if can.update
+          / li.ts-action-bar_action
+          /   link-to r_spaces_scores model
+          /     | Scores
+          li.ts-action-bar_action
+            link-to r_spaces_roster model
+             | Space Roster
+          / li.ts-action-bar_action
+          /   link-to r_spaces_roster model
+          /    | Reports
+          li.ts-action-bar_action
+            link-to 'thinkspace/casespace/case_manager/team_sets' model
+              | Team Manager

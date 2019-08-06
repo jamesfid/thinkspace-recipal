@@ -1,0 +1,2 @@
+div id=file_comment_gutter_id style='width: 300px; float: right;'
+  component c_markup_comments model=model section=comment_section show_file=show_file

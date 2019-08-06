@@ -1,0 +1,56 @@
+.ts-markup-manager.ts-full-page
+  .ts-grid_row.ts-full-page_header
+    .small-12.medium-3.ts-grid_columns.ts-grid_columns-thick
+      h4.ts-branding
+        | Think
+        span.ts-branding_space Space
+    .small-12.medium-9.ts-grid_columns.ts-grid_columns-thick
+      .ts-full-page_header-content
+        h1 Comment Manager
+        p Manage all of your comments in one place. 
+      .ts-full-page_header-actions
+        .btn.btn-default.btn-small{action 'exit'}
+          | Exit Manager
+
+  .ts-grid_row.ts-full-page_content
+    .small-12.medium-5.large-3.ts-grid_columns.ts-grid_columns-thick.ts-full-page_content-side
+      component c_library_tags model=model register_as=tag_component selected_tags=selected_tags select_tag_action='toggle_tag_selection' add_tag_action='confirm_category_add' register_tags_component='register_tags_component' select_all='all_selected' all_selected=all_selected input_class=add_category_class
+    .small-12.medium-7.large-9.ts-grid_columns.ts-grid_columns-thick.ts-full-page_content-primary
+      .ts-full-page_content-heading
+        h1 Comment List
+        .btn-cluster.right-cluster
+          .btn.btn-primary.btn-small{action 'toggle_add_comment'}
+            | New Comment
+      .ts-markup-manager_sort-list
+        | Sort by: 
+        component c_common_dropdown collection=sort_text select_action='select_sort' action_receiver=this text=selected_sort anchor_class='library_dropdown-style' class='dropdown-wrapper'
+
+      .ts-markup-manager_list
+        .ts-markup-manager_list-header
+          .ts-markup-manager_comment-col
+            h2 Comment
+          .ts-markup-manager_uses-col
+            h2 Uses
+          .ts-markup-manager_actions-col
+            h2 Actions
+        .ts-markup-manager_list-content
+          if is_adding_library_comment
+            .ts-markup-manager_comment-wrapper
+              .ts-markup-manager_comment-col
+                h6 New Comment
+                component c_validated_input value=new_comment_text class=add_comment_class
+                .btn-cluster.left-cluster
+                  .btn.btn-primary.btn-small{action 'add_library_comment'}
+                    | Add Comment
+                  .btn.btn-default.btn-small
+                    | Cancel
+              .ts-markup-manager_uses-col
+              .ts-markup-manager_actions-col
+            
+          if sorted_and_filtered_comments
+            component c_library_comments comments=sorted_and_filtered_comments model=model remove_tag='remove_comment_tag' add_tag='add_comment_tag'
+          else
+            if library_empty
+              p Library comments serve as a way to easily reuse the comments you leave most often. Add a comment to your library to get started!
+            else
+              p You currently have no comments in your selected categories. You can add categories to a comment by editing a comment using the pencil icon.

@@ -1,0 +1,14 @@
+.ts-grid_row: .small-12.ts-grid_columns
+
+  if validation_message
+    span.team_form-errors
+      ul
+        each message in validation_message
+          li
+            i.im.im-warning.im-error-base
+            = message
+
+  if model_validation_message
+    a click='clear_model_errors' Clear errors
+    span.team_form-errors
+      = model_validation_message

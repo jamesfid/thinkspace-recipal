@@ -1,0 +1,4 @@
+.small-12.medium-4.large-3.ts-grid_columns
+  li.ts-builder_template-grid-template click='select'
+    .ts-builder_template-title #{model.title}
+    img.ts-builder_template-thumbnail src=model.images_thumbnail_src

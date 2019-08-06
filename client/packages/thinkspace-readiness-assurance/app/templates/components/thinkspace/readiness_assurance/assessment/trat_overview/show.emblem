@@ -1,0 +1,16 @@
+if team_data_rows
+
+  each row in team_data_rows
+    .ts-grid_row
+      each data in row
+        .ts-grid_columns.ts-grid_columns-thick class=columns_class
+          h6= data.question
+          table
+            thead
+              th Team
+              th Answer
+            tbody
+              each answer in data.answers
+                tr
+                  td= answer.title
+                  td= answer.answer

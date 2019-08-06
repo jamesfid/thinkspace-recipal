@@ -1,0 +1,28 @@
+// # ### Start changes to remove compass ### #
+$orchid:    #DA70D6; 
+$deep_pink: #ff1493;
+// # ### End changes to remove compass ### #
+
+@import 'totem-ember/master';
+@import 'thinkspace-common/master';
+@import 'thinkspace-markup/master';
+@import 'thinkspace-resource/master';
+@import 'thinkspace-dock/master';
+@import 'thinkspace-artifact/master';
+@import 'thinkspace-diagnostic-path/master';
+@import 'thinkspace-diagnostic-path-viewer/master';
+@import 'thinkspace-indented-list/master';
+@import 'thinkspace-input-element/master';
+@import 'thinkspace-observation-list/master';
+@import 'thinkspace-html/master';
+@import 'thinkspace-lab/master';
+@import 'thinkspace-simulation/master';
+@import 'thinkspace-weather-forecaster/master';
+@import 'thinkspace-casespace/master';
+@import 'thinkspace-casespace-case-manager/master';
+@import 'thinkspace-simulation/master';
+@import 'thinkspace-peer-assessment/master';
+@import 'thinkspace-peer-assessment-case-manager/master';
+@import 'thinkspace-team-manager/master';
+@import 'thinkspace-builder/master';
+@import 'sessions/master';

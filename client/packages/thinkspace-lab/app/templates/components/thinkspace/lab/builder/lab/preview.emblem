@@ -1,0 +1,37 @@
+.small-12.ts-grid_columns.ts-grid_columns-thick
+
+  ul.thinkspace-lab_chart-categories
+
+  ul.ts-lab_categories
+    each category in model.categories
+      component c_select_category model=category selected=selected_category select='select' 
+
+  if is_viewing_keyboard_shortcuts
+    p.ts-lab_keyboard-shortcuts
+      i.fa.fa-keyboard-o.ts-lab_keyboard-tip-icon
+      span.ts-lab_keyboard-tip-text
+        | You can use your keyboard to interact with the lab data.
+        a.ts-lab_keyboard-tip-toggle click='toggle_keyboard_shortcuts'
+          |  Hide keyboard shortcuts
+          i.fa.fa-chevron-up
+      ul.ts-lab_keyboard-tips
+        li.ts-lab_keyboard-tip 
+          span.ts-lab_keyboard-tip-key tab
+          | - Navigate through rows.
+        li.ts-lab_keyboard-tip
+          span.ts-lab_keyboard-tip-key enter
+          | - Submit analysis or abnormality.
+        li.ts-lab_keyboard-tip
+          span.ts-lab_keyboard-tip-key a-z
+          | - Submit analysis for selected row that begins with the letter pressed.
+  else
+    p.ts-lab_keyboard-shortcuts
+      i.fa.fa-keyboard-o.ts-lab_keyboard-tip-icon
+      span.ts-lab_keyboard-tip-text
+        | You can use your keyboard to interact with the lab data.
+        a.ts-lab_keyboard-tip-toggle click='toggle_keyboard_shortcuts'
+          |  Show keyboard shortcuts
+          i.fa.fa-chevron-down
+
+  each category in model.categories
+    component category.component model=category selected=selected_category

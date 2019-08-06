@@ -1,0 +1,14 @@
+if view.show_user
+
+  span.team_users-user
+
+    span.team_users-user-team-folder-wrapper click='"toggle_teams_visible" target=view' title='Show/hide user teams'
+      i.team_users-user-team-folder.fa.fa-folder-o 
+      span.team_users-user-team-folder-count= view.filtered_teams.length
+
+    span.team_users-user-label click='"add_user" target=view' title='Add user to selected team'
+      | #{user.sort_name}
+
+    if view.teams_visible
+      each team in view.teams_sorted
+        = view users_user_team_view team=team user=user

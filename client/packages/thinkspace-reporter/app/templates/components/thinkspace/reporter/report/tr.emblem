@@ -1,0 +1,8 @@
+td
+  link-to r_assignments_reports_show model.token
+    | #{model.title}
+td #{model.created_at}
+td
+  .btn.btn-default.btn-small click='delete'
+    | Delete Report
+    .tsi.tsi-left.tsi-size_14.tsi-trash-outline_white.left

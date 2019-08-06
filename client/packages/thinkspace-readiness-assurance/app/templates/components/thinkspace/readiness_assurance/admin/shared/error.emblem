@@ -1,0 +1,9 @@
+unless valid
+  .ts-ra_admin-message-error
+    i.im.im-warning.im-error-base
+    span.ts-ra_admin-message-error-message= message
+
+each msg in errors
+  .ts-ra_admin-message-error
+    i.im.im-warning.im-error-base
+    span.ts-ra_admin-message-error-message= msg

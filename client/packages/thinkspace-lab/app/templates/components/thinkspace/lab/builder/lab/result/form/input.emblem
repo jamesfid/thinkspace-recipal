@@ -1,0 +1,15 @@
+unless result_edit
+  a.ts-lab_admin-result-display-value click='edit'
+    = display_value
+
+if is_edit
+
+  div class={result_edit::ts-lab_admin-result-value-edit-content}
+
+    component admin.c_validated_input value=column_value errors=errors.column_value show_errors=show_errors
+
+    unless result_edit
+      .ts-wizard_form-button-container
+        a.btn.btn-default.btn-small.left click='cancel' #{t 'builder.lab.admin.buttons.cancel'}
+        if is_valid
+          a.btn.btn-primary.btn-small.right click='save' #{t 'builder.lab.admin.buttons.save'}

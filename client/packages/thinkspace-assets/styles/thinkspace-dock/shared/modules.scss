@@ -1,0 +1,394 @@
+.thinkspace-dock {
+  position:    fixed;
+  bottom:      0;
+  right:       0;
+  height:      $thinkspace-dock-height;
+  z-index:     $thinkspace-dock-z-index;
+
+  .thinkspace-dock_addons { float: right; }
+
+  .thinkspace-dock_addon {
+    float:           left;
+    line-height:     $thinkspace-dock-height;
+    padding:         0 15px;
+    border-left:     2px solid white;
+    display:         inline-block;
+
+    .thinkspace-dock_addon-actions {
+      position:         fixed;
+      bottom:           40px;
+    }
+
+    .thinkspace-dock_addon-title {
+      color:     white;
+      font-size: .875em;
+      font-weight: $ts-medium;
+      letter-spacing: 1px;
+      display: inline-block;
+    }
+    // Needed to allow the support addon to have a checkbox and a text component.
+    .thinkspace-dock_support-addon {
+      position:relative;
+      right: 0%;
+      display: inline-block;
+      color: white;
+    }
+
+    &:hover { 
+      cursor: pointer;
+    }
+  }
+}
+
+.thinkspace-dock_addon-green {
+  background-color: $ts-green-base;
+
+  &:hover { 
+    background-color: $ts-green-dark;
+  }
+
+  &.darken{
+    background-color: $ts-green-dark;
+  }
+}
+
+.thinkspace-dock_addon-blue {
+  background-color: $ts-blue-base;
+
+  &:hover { 
+    background-color: $ts-blue-dark;
+  }
+
+  &.darken{
+    background-color: $ts-blue-dark;
+  }
+}
+
+
+.thinkspace-dock-expansion_addon-actions {
+  border-top:       2px solid $ts-black-med;
+  border-bottom:    2px solid $ts-black-med;
+
+  .thinkspace-dock-expansion_action-buttons {
+    margin: 0 2em;
+    color:  $ts-blue-base;
+    &:hover { cursor: pointer; color: $ts-blue-dark; }
+  }
+
+}
+
+.totem-addon_list {
+  padding: em-calc(4px);
+  background-color: $ts-blue-light;
+  width: 15%;
+}
+
+.thinkspace-dock_list {
+  overflow-y:      auto;
+  max-height:      em-calc(150px);
+  margin-bottom:   0;
+  list-style-type: none;
+
+  li { @include clearfix; }
+
+  li:nth-child(even) {
+    background-color: white;
+  }
+
+  li:nth-child(odd) {
+    background-color: $ts-blue-light;
+  }
+
+  .thinkspace-dock_list-icon {
+    margin: 0 0.5em;
+  }
+
+  .thinkspace-dock_list-item-link-wrapper {
+    width: 75%;
+    float: left;
+
+    .thinkspace-dock_list-item-link {
+      display: block;
+    }
+
+  }
+
+  .thinkspace-dock_list-item-actions {
+    width:      25%;
+    float:      left;
+    text-align: right;
+
+    .thinkspace-dock_list-item-action {
+      display:          inline-block;
+      background-color: $ts-blue-base;
+      color:            white;
+      text-align:       center;
+      padding:          0 $thinkspace-dock_list-item-action-padding;
+      border-right:     2px solid white;
+
+      i {
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.thinkspace-dock_inline-pane { display: inline-block; }
+
+// TOTEM DOCK EXPANSION STYLING
+.thinkspace-dock-expansion_image {
+  margin-top: 1.5em;
+}
+
+.thinkspace-dock_pane {
+  position:         fixed;
+  right:            2%;
+  line-height:      em-calc(30px);
+  background-color: white;
+  font-weight:      500;
+  border:           2px solid $ts-black-med;
+  bottom:           $thinkspace-dock-bottom + $thinkspace-dock-height + 1; // The 1 adds a little padding between the dock and the panel
+  z-index:          $thinkspace-dock-z-index;
+  min-width:        $thinkspace-dock_pane-min-width;
+  min-height:       $thinkspace-dock_pane-min-height;
+  @include          border-radius($border-radius);
+
+  .thinkspace-dock-expansion_header-actions {
+    font-weight:      normal;
+    float:            right;
+    display:          inline-block;
+    margin-right:     .5em;
+
+    .thinkspace-dock-expansion_header-action-icon {
+      color:     $ts-black-base;
+      position:  relative;
+      float:     left;
+      padding-top: .5em;
+      font-size: 1.5em;
+
+      &:hover {
+        cursor: pointer;
+        color: $ts-black-dark;
+      }
+    }
+  } // .thinkspace-dock_expansion-header-actions
+
+  .thinkspace-dock-expansion_header-close-icon {
+    position: relative;
+    height:   25px;
+    width:    25px;
+  } // .thinkspace-dock_expansion-header-close-icon
+
+} // .thinkspace-dock_expansion-header
+
+.thinkspace-dock-expansion_header {
+  line-height:      em-calc(30px);
+  //min-height:       em-calc(70px);
+  min-height:       2em;
+  font-weight:      500;
+  z-index:          5001;
+  margin-bottom:    0;
+  margin-top:       0;
+  width:            100%;
+  background-color: #eeeeee;
+}
+
+.thinkspace-dock-expansion_addon-display {
+  height: $totem-addons-toolbar-height;
+  margin-top: 0;
+  background-color: $ts-green-med;
+  margin-bottom: 0;
+  width: 100%;
+  z-index: 5001;
+  font-weight:      500;
+}
+
+.thinkspace-dock-expansion_display {
+  bottom:                     0;
+  height:                     $thinkspace-dock-addon-height;
+  width:                      100%;
+  border-bottom-left-radius:  em-calc(4px);
+  border-bottom-right-radius: em-calc(4px);
+  line-height:                em-calc(30px);
+  padding:                    0 $thinkspace-dock_expansion-header-padding;
+  z-index:                    5001;
+  font-weight:                500;
+  overflow-y:                 auto;
+}
+
+.thinkspace-dock-expansion_addon {
+  padding: em-calc(5px);
+  color: $ts-blue-base;
+  margin: em-calc(3px) ;
+  margin-right: em-calc(2px);
+  margin-top: 10px;
+  margin-left: 10px;
+
+  border-radius: em-calc(20px);
+
+  &:hover { cursor: pointer; }
+  &:first-of-type {margin-left: em-calc(3px);}
+} //END OF THE EXPANSION STYLING
+
+///// STATES /////
+.thinkspace-dock_pane-is-open {
+  background-color: $ts-blue-dark;
+  color: white;
+}
+
+.thinkspace-dock_resource-expansion, .thinkspace-dock_support-expansion {
+  // Button to open the upload-expansion
+  .thinkspace-dock_upload-expansion-icon {
+    margin-right: $thinkspace-dock_expansion-header-padding;
+  }
+
+  .thinkspace-dock_resource-list-header {
+    font-size:        0.90em;
+    font-weight:      500;
+    background-color: $ts-black-light;
+    padding:          $thinkspace-dock_expansion-header-padding $thinkspace-dock_expansion-header-padding * 2;
+  }
+
+  .thinkspace-dock_resource-list {
+    overflow-y:      scroll;
+    max-height:      em-calc(150px);
+    margin-bottom:   0;
+    list-style-type: none;
+
+    li:nth-child(even) {
+      background-color: white;
+    }
+
+    li:nth-child(odd) {
+      background-color: $ts-blue-light;
+    }
+include
+    .thinkspace-dock_resource-list-item {
+      padding:    0 $thinkspace-dock_expansion-header-padding * 3;
+      overflow-x: hidden;
+
+      .thinkspace-dock_resource-list-item-icon {
+        margin-right: $thinkspace-dock_expansion-header-padding;
+        font-size:    0.9em;
+        width:        1.25em;
+        text-align:   center;
+      }
+
+      .thinkspace-dock_resource-list-item-link-wrapper {
+        width: 75%;
+        float: left;
+
+        .thinkspace-dock_resource-list-item-link {
+          display: block;
+        }
+      } // .resource-list-item-link-wrapper
+
+      .thinkspace-dock_resource-list-item-actions {
+        width: 25%;
+        float: left;
+        text-align: right;
+
+        .thinkspace-dock_resource-list-item-action {
+          display:          inline-block;
+          background-color: $ts-blue-base;
+          color:            white;
+          text-align:       center;
+          padding:          0 $thinkspace-dock_expansion-header-padding;
+          border-right:     2px solid white;
+
+          i {
+            pointer-events: none;
+          }
+        }
+      } // .resource-list-item-actions
+
+    }
+  } 
+} // #resource-expansion
+
+.thinkspace-dock_resource-dock, .thinkspace-dock_support-dock {
+  height:           em-calc(30px);
+  line-height:      em-calc(30px);
+  background-color: $ts-blue-base;
+
+  .count {
+    float:            left;
+    margin-top:       em-calc(5px);
+    margin-right:     0.9375em;
+    padding:          0 em-calc(7px);
+    border-radius:    $border-radius;
+    background-color: white;
+    color:            $ts-blue-base;
+    line-height:      em-calc(20px);
+  } // .count
+
+  .dock-title {
+    color: white;
+  } // .dock-title
+
+  &.is-open {
+    background-color: $ts-blue-dark;
+  }
+
+  &:hover {
+    cursor:           pointer;
+    background-color: darken($ts-blue-base, 5%);
+  }
+
+} // #resource-dock, #support-dock
+
+.thinkspace-dock_resource-dock {
+  border-right: 1px solid white;
+  @include grid-column(($total-columns / 3) * 2);
+  @include border-top-left-radius($border-radius);
+  @include border-bottom-left-radius($border-radius);
+} // #resource-dock
+
+.thinkspace-dock_support-dock {
+  text-align: center;
+  @include grid-column($total-columns / 3);
+  @include border-top-right-radius($border-radius);
+  @include border-bottom-right-radius($border-radius);
+} // #support-dock
+
+
+/////
+// States
+/////
+.is-visible {
+  display: block;
+}
+
+.is-hidden {
+  display: none;
+}
+
+// No .tae- prefix on this because it is not only for animations.
+.is-drag-hovered{
+  @include animation(thinkspace-dock_pop-up 2s infinite alternate)
+}
+
+.is-not-drag-hovered {
+  @include transform( scale(1) );
+  @include transition( transform 1s, background-color 1s, border 1s);
+  background-color: white;
+  border:           2px dashed $ts-black-med;
+}
+
+.tae-is-visible {
+  @include animation(thinkspace-dock_fade-in 0.2s 0s)
+}
+
+.tae-is-hidden {
+  @include animation(thinkspace-dock_fade-out 0.2s 0s)
+}
+
+
+
+.thinkspace-dock_addon-title {
+  .thinkspace-dock_support-icon { margin-right: 0.2em; }
+
+  &.is-pressed {
+    .thinkspace-dock_support-icon { color: white; }
+  }
+}

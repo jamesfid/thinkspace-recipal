@@ -1,0 +1,22 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+
+    .ts-forms_heading: h4 #{form_heading}
+
+    each column in result_columns
+      if column.fieldset
+        fieldset style='border: 4px solid lightgray; padding: 1.25em;'
+          legend: h5= column.heading
+          component column.component model=model column=column result_edit=true show_form_errors=show_form_errors
+      else
+        .ts-forms_field-label= column.heading
+        component column.component model=model column=column result_edit=true show_form_errors=show_form_errors
+
+  if show_form_errors
+    hr
+    h6.ts-wizard_red.ts-wizard_bold #{t 'builder.lab.admin.result.form_errors'}
+
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-wizard_form-button-container
+      a.btn.btn-default.btn-small.left  click='cancel' #{t 'builder.lab.admin.buttons.cancel'}
+      a.btn.btn-primary.btn-small.right click='save' #{t 'builder.lab.admin.buttons.save'}

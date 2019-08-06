@@ -1,0 +1,1 @@
+component admin.c_category_form model=model save='save' cancel='cancel' form_heading=form_heading

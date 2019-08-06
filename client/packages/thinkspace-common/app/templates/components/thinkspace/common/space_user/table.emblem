@@ -1,0 +1,12 @@
+thead
+  tr
+    th Last Name
+    th First Name
+    th Email
+    th Status
+    th width='15%' Role
+    th Resend
+    th Delete
+tbody
+  each space_user in model
+    component c_space_user_row model=space_user

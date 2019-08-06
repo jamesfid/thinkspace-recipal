@@ -1,0 +1,20 @@
+if has_phase_errors
+  if model.has_phases_without_team_set
+    .dialogue.dialogue-error
+      h1 Missing Teams 
+      p You have team-based phases that haven't been given a team set yet.
+  if model.has_inactive_phases
+    .dialogue.dialogue-instruct
+      h1 Inactive Phases 
+      p Some of your phases are still set to draft mode. These will not be seen by your students.
+  if has_inactive_peer_assessments
+    .dialogue.dialogue-error  
+      h1 Peer evaluation is inactive
+      p It looks like you still need to activate your peer evaluation tied to this case.  Your students will not be able to fully access their peer evaluation until you have done this.
+      .btn.btn-primary.btn-small click='activate_assessments' Activate Peer Evaluations
+else
+  unless hide_success
+    if model.has_valid_phases
+      .dialogue.dialogue-success
+        h1 Good to Go! 
+        p All your phases look good from here. You can go into each one and edit the content or just move along and edit later. 

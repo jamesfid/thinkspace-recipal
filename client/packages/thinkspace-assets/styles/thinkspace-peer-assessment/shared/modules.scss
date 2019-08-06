@@ -1,0 +1,10 @@
+.tbl-reviewee-info_container {
+	margin-bottom: 3em;
+
+  h5 { font-weight: $ts-regular;}
+  h4 { font-weight: $ts-heavy;}
+}
+
+.tbl-type_submit {
+  &.is-disabled { cursor: not-allowed; opacity: .5 }
+}

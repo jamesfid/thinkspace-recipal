@@ -1,0 +1,3 @@
+h6.btn.btn-rounded class={manage_files_expanded:btn-primary:btn-transparent} click='toggle_files_pane' Files
+h6.btn.btn-rounded class={manage_links_expanded:btn-primary:btn-transparent} click='toggle_links_pane' Links
+h6.btn.btn-rounded class={manage_tags_expanded:btn-primary:btn-transparent}  click='toggle_tags_pane'  Tags

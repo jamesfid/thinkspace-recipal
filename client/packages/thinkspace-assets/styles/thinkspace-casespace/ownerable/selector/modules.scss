@@ -1,0 +1,72 @@
+$width: 300px;
+
+.ts-ownerable-selector {
+
+}
+
+.ts-ownerable-selector .ts-ownerable-selector_selection {
+  width:            $width; // TODO: How to get to set automatically?
+  padding:          .4em 1em;
+  font-size:        0.875em;
+  letter-spacing:   1px;
+  font-weight:      $ts-medium;
+  margin-bottom:    .25em;
+  border:           2px solid $ts-black-med;
+  border-radius:    $border-radius;
+  color:            white;
+  background-color: $ts-black-med;
+
+  .ts-ownerable-selector_selection-text { display: block; }
+  
+  &:hover {
+    cursor: pointer;
+    background-color: $ts-black-base;
+    border-color: $ts-black-base;
+  }
+
+  &:active {
+    background-color: white;
+    border-color: $ts-black-base;
+    color: $ts-black-base;
+  }
+}
+
+.ts-ownerable-selector .ts-ownerable-selector_menu {
+  position:                   absolute;
+  z-index:                    5000;
+  width:                      $width;
+  border:                     2px solid $ts-black-med;
+  border-bottom-left-radius:  $border-radius;
+  border-bottom-right-radius: $border-radius;
+  background-color:           white;
+  box-shadow: 1px 3px 7px 1px rgba(173, 173, 173, 0.29);
+
+  .ts-ownerable-selector_search {
+    border-top:                 none;
+    border-left:                none;
+    border-right:               none;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius:  0px;
+    border-bottom-width:        2px;
+    border-bottom-style:        solid;
+    margin-bottom:              0;
+  }
+
+  ul.ts-ownerable-selector_list {
+    margin: 0;
+    list-style-type: none;
+    height: 450px;
+    overflow: scroll;
+
+    li:hover {
+      cursor: pointer;
+
+      background-color: $ts-blue-light;
+    }
+  }
+
+  .ts-ownerable-selector_list-item {
+    font-size: .875em;
+    padding: .4em 1em;
+  }
+}

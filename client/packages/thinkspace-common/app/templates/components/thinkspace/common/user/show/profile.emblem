@@ -1,0 +1,75 @@
+partial p_header
+.ts-grid_row
+  .small-12.ts-grid_columns.ts-grid_columns-thick.ts-forms_section-container
+    .ts-forms_section-heading 
+      h1 Profile Picture  
+    .ts-user-profile
+      .ts-user-profile_image-col
+        img.ts-user-profile_image src=avatar_url
+      .ts-user-profile_text-col
+        .ts-forms_field-container
+          .ts-forms_field-label-container 
+            .ts-forms_field-label
+              | Upload your profile picture
+            .ts-forms_field-description Must be at least 400px x 400px
+          component c_file_upload form_action=upload_avatar_form_action btn_text=upload_avatar_btn_text loading_text=upload_avatar_loading_text api_params=upload_avatar_params close_on_success=false verb='POST' multiple=false file_input_accept='image/*' select_text=upload_avatar_select_text model_path=upload_avatar_model_path
+    
+.ts-grid_row
+  .small-12.medium-12.large-6.ts-grid_columns.ts-grid_columns-thick
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h1 Profile Information
+
+      .ts-forms_field-container
+        .ts-forms_field-label First Name
+        component c_validated_input value=first_name errors=errors.first_name
+
+      .ts-forms_field-container
+        .ts-forms_field-label Last Name
+        component c_validated_input value=last_name errors=errors.last_name
+
+      .ts-forms_field-container
+        .ts-forms_field-label-container 
+          .ts-forms_field-label School Email
+          .tsi.tsi-right.tsi-nano.tsi-lock
+          .ts-forms_field-description Your school email is set by your instructor.
+        component c_validated_input value=email disabled=true
+
+      .ts-forms_field-container
+        .ts-forms_field-label-container 
+          .ts-forms_field-label Discipline
+          .ts-forms_field-description Select the discipline that is the closest to yours.
+        component c_dropdown collection=all_disciplines display_property='title' default_text='Select a Discipline' text=discipline.title select_action='select_discipline' action_receiver=this anchor_classes='btn btn-small'
+
+      .ts-forms_field-container
+        .ts-forms_field-label-container 
+          .ts-forms_field-label Are you an instructor or planning to be one?
+          .ts-forms_field-description This will give you access to the ThinkSpace sandbox to help you learn about ThinkSpace tools and components to enhance your class.
+        .ts-forms_radio-btn
+          label.ts-radio click="'set_role' 'instructor'"
+            component c_radio checked=is_instructor disable_click=true
+            | Yes, I am an instructor or future instructor.
+        .ts-forms_field-container
+          label.ts-radio click="'set_role' 'student'"
+            component c_radio checked=is_student disable_click=true
+            | No, I am a student.
+
+      .btn.btn-primary.btn-small{action 'update_information'}
+        | Update Information
+  .small-12.medium-12.large-6.ts-grid_columns.ts-grid_columns-thick
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h1 Change Password
+
+      p To change your password, click on the button below.
+      .btn.btn-primary.btn-small{action 'update_password'}
+        | Update Password
+
+    .ts-forms_field-container
+      .ts-forms_section-heading
+        h1 E-mail Settings
+
+      label.ts-checkbox
+        component c_checkbox checked=email_optin
+        .ts-checkbox_label Yes, keep me updated with the latest ThinkSpace news
+        .ts-radio_description ThinkSpace newsletters send you the latest updates on features and development.

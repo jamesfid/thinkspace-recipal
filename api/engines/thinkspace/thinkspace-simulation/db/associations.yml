@@ -1,0 +1,6 @@
+- model: thinkspace/simulation/simulation
+  associations:
+    - belongs_to: authable
+      polymorphic: true
+  serializers:
+    - attributes: [id, authable_id, authable_type, path]

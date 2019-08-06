@@ -1,0 +1,17 @@
+if is_current_user
+  / span You: #{model.full_name}
+  if is_selected_addon_ownerable
+    span 
+      | Yourself
+      .tsi.tsi-left.tsi-tiny.tsi-right-arrow.left
+  else
+    span Yourself
+
+else
+  if is_selected_addon_ownerable
+    span 
+      | #{model.full_name}
+      .tsi.tsi-left.tsi-tiny.tsi-right-arrow.left
+
+  else
+    span #{model.full_name}

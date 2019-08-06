@@ -1,0 +1,3 @@
+.ts-ra_chats
+  each am in chat_managers
+    component ra.c_trat_chat cm=am.cm qm=am.qm close='close'

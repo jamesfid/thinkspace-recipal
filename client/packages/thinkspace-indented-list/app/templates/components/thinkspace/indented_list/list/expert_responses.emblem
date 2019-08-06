@@ -1,0 +1,2 @@
+each response in responses
+  component c_response_items model=response list=model

@@ -1,0 +1,144 @@
+.row
+  .small-12.medium-12.large-12.ts-grid_columns.ts-grid_columns-thin
+    .ts-forms_inline-heading
+      h4 Phase Settings
+      .ts-forms_heading-actions
+        .btn.btn-small.btn-primary click='save' Update Settings
+        .btn.btn-small.btn-default click='cancel' Back to Content
+if all_data_loaded
+  .ts-forms_form-container
+    .row
+      .small-12.medium-6.large-6.ts-grid_columns.ts-grid_columns-thin
+        .ts-forms_section-heading
+          h1 Phase Scoring
+          p Set your scoring preferences for this phase.
+          if can.max_score
+            .ts-forms_field-container
+              label.ts-forms_field-label Max Score
+              = input value=max_score class='ts-forms_input-tiny'
+          else
+            .dialogue.dialogue-error
+              span You cannot edit the max score of this phase.
+            span Max Score: #{max_score}
+
+
+          .ts-forms_field-container
+            unless can.auto_score
+              .dialogue.dialogue-error
+                span You cannot edit the auto scoring of this phase.
+            label.ts-checkbox click='toggle_auto_score'
+              component c_checkbox checked=auto_score class='case_manager_phase-validate-checkbox' disable_click=true
+              .ts-checkbox_label Phase auto scoring
+              .ts-radio_description 
+                | When the phase is submitted, ThinkSpace will automatically award full points to the student.
+
+        .ts-forms_section-heading
+          h1 Phase Behavior
+        
+          .ts-forms_field-container
+            unless can.unlock_phase
+              .dialogue.dialogue-error
+                span You cannot edit the phase unlocking of this phase.
+            label.ts-checkbox click='toggle_unlock_phase'
+              component c_checkbox checked=unlock_phase class='case_manager_phase-validate-checkbox' disable_click=true
+              .ts-checkbox_label 
+                | Unlock next phase
+              .ts-radio_description 
+                | Next phase is unlocked when student submits this phase.
+
+          .ts-forms_field-container
+            unless can.configuration_validate
+              .dialogue.dialogue-error
+                span You cannot edit the input validation of this phase.
+            label.ts-checkbox click='toggle_configuration_validate'
+              component c_checkbox checked=configuration_validate class='case_manager_phase-validate-checkbox' disable_click=true
+              .ts-checkbox_label
+                | Validate inputs
+              .ts-radio_description 
+                | Require all text inputs to be filled out before the student can submit the phase. Presently, this setting only affects inputs in the HTML components.
+
+          .ts-forms_field-container
+            unless can.default_state
+              .dialogue.dialogue-error
+                span You cannot change the default state of this phase.
+            label.ts-checkbox click='toggle_default_state_locked'
+              component c_checkbox checked=default_state_locked class='case_manager_phase-validate-checkbox' disable_click=true
+              .ts-checkbox_label
+                | Phase initially locked
+              .ts-radio_description 
+                | Phase is initial locked preventing students to access it until unlocked or phase before is set to unlock it. 
+
+      .small-12.medium-6.large-6.ts-grid_columns.ts-grid_columns-thin
+        if model.is_not_archived
+          .ts-forms_section-heading
+            h1 Phase State
+          .ts-forms_field-container
+            if model.is_not_active
+              img.ts-builder_phase-type-img style="width:100px; margin-right:1em;" src='/assets/images/ts-icons/builder/ts-case_active-status-icons_draft.svg'
+              h1 Inactive
+              p Your phase is currently inactive, it will not be seen by your students.
+              .ts-forms_field-container
+                .btn.btn-small.btn-primary click='activate' Activate Phase
+            if model.is_active
+              img.ts-builder_phase-type-img style="width:100px; margin-right:1em;" src='/assets/images/ts-icons/builder/ts-case_active-status-icons_active.svg'
+              h1 Active
+              p Your phase is currently active and will be seen by your students.
+              .ts-forms_field-container
+                .btn.btn-small.btn-default click='inactivate' Deactivate Phase
+
+        if model.is_archived
+          .ts-forms_section-heading
+            h1 Phase State
+          .ts-forms_field-container
+            img.ts-builder_phase-type-img style="width:100px; margin-right:1em;" src='/assets/images/ts-icons/builder/ts-case_active-status-icons_archive.svg'
+            h1 Archived
+            p This phase is currently archived, so it cannot be seen by you or students in the phase list.  If you save the phase as a draft, it will allow you to use it in your cases again.
+            .ts-forms_field-container
+              .btn.btn-small.btn-ownership click='inactivate' Save Phase as Draft
+        else
+          .ts-forms_section-heading
+            h1 Phase Archival
+          .ts-forms_field-container
+            p Archive the phase.  Students cannot see archived phases and you will not see it in the phase list.  You can bring it back at any time.
+            .ts-forms_field-container
+              .btn.btn-small.btn-default click='archive' Archive Phase
+
+        .ts-forms_section-heading
+          h1 Team-Based Learning
+          p Manage which team set is assigned to this p hase and how the teams interact with the phase.
+        .ts-forms_field-container
+          unless can.team_based
+            .dialogue.dialogue-error
+              span You cannot edit the team based of this phase.
+          .ts-forms_field-container
+            label.ts-checkbox click='toggle_is_team_based'
+              component c_checkbox checked=is_team_based class='case_manager_phase-validate-checkbox' disable_click=true
+              .ts-checkbox_label
+                | #{t 'builder.casespace.phases.edit.instruct.team_based'}
+
+            if is_team_based
+              .ts-forms_field-subcontainer
+                if has_team_sets
+                  if has_team_categories
+                    if can.team_category
+                      .ts-forms_field-container
+                        .ts-forms_field-label-wrapper
+                          .ts-forms_field-label #{t 'builder.casespace.phases.edit.instruct.team_category'}
+                          p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.team_category'}
+                        = view 'select' selection=selected_team_category content=team_categories optionValuePath='content.id' optionLabelPath='content.title' class='btn btn-small' prompt='Not team based'
+                    else
+                      .dialogue.dialogue-error
+                        span You cannot change the team category, it is presently #{selected_team_category.title}
+                  if has_team_sets
+                    if can.team_set
+                      .ts-forms_field-container
+                        .ts-forms_field-label #{t 'builder.casespace.phases.edit.instruct.team_set'}
+                        = view 'select' selection=selected_team_set content=team_sets optionValuePath='content.id' optionLabelPath='content.title' class='btn btn-small' prompt='No team set.'
+                    else
+                      .dialogue.dialogue-error
+                        span You cannot change the team set, it is presently #{selected_team_set.title}
+                else
+                  .dialogue.dialogue-error This space doesn't have any team sets.  You'll need to go make one before you enable the phase to be team based.
+
+else
+  component c_loader

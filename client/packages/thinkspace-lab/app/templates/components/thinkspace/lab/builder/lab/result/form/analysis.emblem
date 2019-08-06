@@ -1,0 +1,39 @@
+unless result_edit
+  a.ts-lab_admin-result-display-value click='edit'
+    = display_value
+
+if is_edit
+
+  div class={result_edit::ts-lab_admin-result-value-edit-content}
+
+    .ts-wizard_row: .ts-grid_columns.small-12
+      .ts-forms_field-label #{t 'builder.lab.admin.form.analysis.selections'}
+      a.btn.btn-primary.btn-small.right click='add_label' #{t 'builder.lab.admin.buttons.add'}
+
+      each selection in selections
+        .ts-wizard_row
+          .ts-grid_columns.small-11
+            = input value=selection.label class=selection.class
+          .ts-grid_columns.small-1
+            a.tsi.tsi-cross click='"delete_label" selection'
+
+    .ts-forms_field-container
+      hr
+
+      .ts-forms_field-label #{t 'builder.lab.admin.form.analysis.normal'}
+      = input value=normal_label
+
+      .ts-forms_field-label #{t 'builder.lab.admin.form.analysis.correct'}
+      = input value=correct_label
+
+    if error_messages
+      .ts-validated-input.has-errors
+        hr
+        ul.ts-validated-input_input-errors
+          each message in error_messages
+            li.ts-validated-input_input-error= message
+
+    unless result_edit
+      .ts-wizard_form-button-container
+        a.btn.btn-default.btn-small.left click='cancel' #{t 'builder.lab.admin.buttons.cancel'}
+        a.btn.btn-primary.btn-small.right click='save' #{t 'builder.lab.admin.buttons.save'}

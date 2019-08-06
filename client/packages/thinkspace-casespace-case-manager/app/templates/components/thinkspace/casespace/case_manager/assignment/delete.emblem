@@ -1,0 +1,31 @@
+.ts-wizard-title-region: .ts-wizard-title-region_row
+  .small-3.ts-grid_columns.ts-grid_columns-thick
+    h1 #{t 'builder.casespace.mode.delete'}
+
+  .ts-wizard-title-region_columns: h1
+    | #{model.space.title} |  
+    span.emphasis  #{model.title}
+  .small-3.ts-grid_columns.ts-grid_columns-thick
+    a.btn.btn-default.btn-small.right click='exit' #{t 'builder.casespace.buttons.exit'}
+
+.ts-wizard: .ts-wizard_content
+
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      .action-header-img
+        .ts-delete-case-img
+      h5 Do you really want to delete the following #{t 'casespace.assignment'}?
+      h4 = model.title
+      br
+      .ts-forms_description-warning
+        .tsi.tsi-small.tsi-phase-warning 
+        | This will permanately delete your case and any content within the case.
+
+      / span.ts-wizard_red In #{t 'casespace.space'}
+      / br
+      / = current_space.title
+
+  .ts-wizard_row
+    .ts-grid_columns.small-12
+      a.btn.btn-primary.btn-small.left click='delete' Yes, delete the case
+      a.btn.btn-default.btn-small.right click='exit' No, nevermind

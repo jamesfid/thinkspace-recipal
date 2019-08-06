@@ -1,0 +1,13 @@
+span class={is_inactive:hide}
+
+  table.thinkspace-lab
+
+    thead
+      th.ts-lab_status
+      each column in model.columns
+        th= column.heading
+
+    tbody
+      each result in model.results
+        component c_lab_result model=result lab=lab category=model
+

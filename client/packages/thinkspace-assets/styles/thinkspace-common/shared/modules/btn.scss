@@ -1,0 +1,184 @@
+/////
+// btn
+/////
+
+.btn {
+  @include highlight-transition-all;
+  @include border-radius($border-radius);
+  @include button($ts-black-med, $ts-black-base);
+  position:       relative;
+  display:        inline-block;
+  margin-bottom:  0;
+  border:         2px solid;
+  border-color:   $ts-black-med;
+  color:          $btn-color;
+  text-align:     $btn-text-align;
+  letter-spacing: $btn-letter-spacing;
+  font-weight:    $btn-font-weight;
+  line-height:    $btn-line-height;
+
+  &.btn-inline {  // When .btn-group will not apply (due to using dropdowns, etc where the root element isn't the btn)
+    border-top-right-radius:    0px;
+    border-bottom-right-radius: 0px;
+    border-right:               2px solid white;
+  } 
+
+  &.btn-default {
+    @include button($ts-black-med, $ts-black-base);
+  }
+
+  &.btn-transparent {
+    @include button(transparent, transparent, $ts-blue-base);
+    @include hover-color($ts-blue-base, 2px);
+  }
+
+  &.btn-transparent-gradebook {
+    @include button(transparent, transparent, $ts-green-base);
+    @include hover-color($ts-green-base, 2px);
+  }
+
+  &.btn-primary {
+    @include button($ts-blue-base, $ts-blue-dark);
+  }
+
+  &.btn-ownership {
+    @include button($ts-green-base, $ts-green-dark);
+  }
+
+  &.btn-warning {
+    @include button($ts-red-base, $ts-red-dark);
+  }
+
+  &.btn-caution {
+    @include button($ts-orange-base, $ts-orange-dark);
+  }
+
+  &.btn-transparent {
+    @include button(transparent, transparent, $ts-black-base);
+
+    &:hover {
+      border: 2px solid $ts-blue-base;
+      color: $ts-black-base;
+    }
+  }
+
+  &.btn-locked {
+    // @include button($ts-black-med, $ts-black-base, $ts-black-dark);
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: .35;
+    
+  }
+
+  &.btn-link {
+    background-color: transparent;
+    border:           none;
+    color:            $ts-black-base;
+    padding:          0px !important;
+    letter-spacing:   .5px;
+
+    &:hover {
+      color: $ts-blue-base;
+    }
+    &:active {
+      color: $ts-blue-dark;
+    }
+  }
+
+  &.btn-inverse {
+    @include button(white, $ts-black-light);
+    color: $ts-black-base;
+
+    &:hover{ color: $ts-black-dark; }
+  }
+
+  &.btn-rounded {
+    padding: .25em .5em;
+    border-radius: 15px
+  }
+
+  &.btn-tiny {
+    @include button-size($btn-tiny-padding, $btn-tiny-font-size);
+    line-height: 16px;
+  }
+
+  &.btn-small {
+    @include button-size($btn-small-padding, $btn-small-font-size);
+  }
+
+  &.btn-medium {
+    @include button-size($btn-medium-padding, $btn-medium-font-size);
+  }
+
+  &.btn-husky {
+    @include button-size($btn-husky-padding, $btn-husky-font-size);
+  }
+
+  &.btn-square {
+    padding: 0.15em .25em;
+  }
+
+  &.btn-rounded {
+    padding: em-calc(5px) 1em;
+    margin: em-calc(10px) em-calc(3px);
+
+    border-radius: em-calc(20px);
+  }
+
+  &:hover {
+    cursor: pointer; 
+    color: white;
+  }
+
+  i, .im {
+    margin-right: .875em;
+  }
+}
+
+.btn-group {
+  display: inline-block; // For Safari that doesn't take inline-flex
+  display: inline-flex;
+}
+
+.btn-group > .btn { 
+  border-radius: 0;
+  //border-right: 2px solid white;
+  margin-right: 2px;
+  &:first-of-type { 
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+  } 
+  &:last-of-type { 
+    margin-right: 0;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  } 
+}
+
+.btn-cluster {
+
+  &.right-cluster {
+    float: right;
+
+    .btn {
+      margin-left: 1em;
+    }
+
+    >.btn-group>.btn {
+      margin-left: 0;
+    }
+  }
+
+  &.left-cluster {
+    float: left;
+
+    .btn {
+      margin-right: 1em;
+    }
+  }
+}
+
+.action-link {
+  font-size:   .875rem;
+  font-weight: $ts-bold;
+}

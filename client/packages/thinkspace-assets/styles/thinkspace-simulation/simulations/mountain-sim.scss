@@ -1,0 +1,20 @@
+.sim-mountain_result-wrapper {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sim-mountain_result-divider {
+  width: 14%;
+  display: inline-block;
+  text-align: center;
+}
+
+.sim-mountain_result-header {
+  width: 14%;
+  display: inline-block;
+  text-align: center;
+  font-size: 10px;
+  font-family: 'omnes-pro';
+  line-height: 1;
+}

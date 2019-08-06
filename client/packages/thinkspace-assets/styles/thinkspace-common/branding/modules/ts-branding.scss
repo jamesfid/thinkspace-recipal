@@ -1,0 +1,11 @@
+/////
+// ts-branding
+/////
+.ts-branding {
+  font-size: 1.25rem;
+  display: inline-block;
+  font-weight: $ts-heavy;
+
+  &.ts-branding-color { color: $ts-branding-color; }
+  .ts-branding_space { font-weight: $ts-branding_space-font-weight; }
+}

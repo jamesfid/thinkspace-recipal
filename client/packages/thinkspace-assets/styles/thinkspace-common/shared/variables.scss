@@ -1,0 +1,146 @@
+/////
+// LAYOUT
+/////
+$base-columns: 12;
+$content-padding: 1.875em;
+
+/////
+// GLOBALS
+/////
+$border-radius: 4px;
+
+$padding:        1em;
+$padding-left:   1em;
+$padding-right:  1em;
+$padding-top:    1em;
+$padding-bottom: 1em;
+
+/////
+// TYPOGRAPHY
+/////
+$header-font-family: "omnes-pro", sans-serif;
+$body-font-family: "omnes-pro", sans-serif;
+
+$ts-regular: 300;
+$ts-medium: 400;
+$ts-bold: 500;
+$ts-heavy: 600;
+
+$h1_font-size: 1.5rem;
+$h2_font-size: 1.25rem;
+
+
+
+/////
+// COLORS
+/////
+$ts-primary:   #82c2ee;
+$ts-secondary: #959595;
+$ts-ownership: #94cb8a;
+
+// Blue
+$ts-blue-dark:  #3194bb;
+$ts-blue-base:  #63b4d6;
+$ts-blue-med:   #b4dbeb;
+$ts-blue-light: #f0f8fb;
+
+// Green
+$ts-green-dark:  #49973b;
+$ts-green-base:  #6dc05e;
+$ts-green-med:   #afdda7;
+$ts-green-light: #ebf7e9;
+
+// Red
+$ts-red-dark:  #f92121;
+$ts-red-base:  #fb6b6b;
+$ts-red-med:   #fecece;
+$ts-red-light: #fff1f1;
+
+// Orange
+$ts-orange-dark:  #d28f03;
+$ts-orange-base:  #fcb725;
+$ts-orange-med:   #fdd88a;
+$ts-orange-light: #fff6e4;
+
+// Black
+$ts-black-dark:  #464646;
+$ts-black-base:  #797979;
+$ts-black-med:   #bcbcbc;
+$ts-black-light: #eeeeee;
+
+// Purple
+$ts-purple-dark:  red;
+$ts-purple-base:  #7261a3;
+$ts-purple-med:   red;
+$ts-purple-light: red;
+
+// PDAPM
+$pdapm-red:   #c84146;
+
+
+/////
+// TOOLBAR MODULE
+/////
+$left-panel-background-color: $ts-blue-base;
+$toolbar-width:               250px;
+$toolbar-is-minimized-width:  50px;
+$toolbar-is-hidden-width:     0px;
+
+//$left-panel-background-color:          #37A290
+$body-background-color:          #e9e6e6;
+$content-background-color-dark:  #eeeeee;
+$content-background-color-light: white;
+$content-background-color:       $content-background-color-light;
+
+// /// CONTENT WRAPPER
+$content-wrapper-margin-bottom: 2em;
+
+// /// SIDEPOCKET
+$sidepocket-bottom: $content-wrapper-margin-bottom;
+
+/////
+// BTN MODULE
+/////
+$btn-color:          #fff;
+$btn-text-align:     center;
+$btn-font-weight:    400;
+$btn-letter-spacing: 1px;
+$btn-line-height:    1.25em;
+
+$btn-tiny-padding:   .2rem .8rem;
+$btn-tiny-font-size: .65rem;
+
+$btn-small-padding:   .4em 1em;
+$btn-small-font-size: .875em;
+
+$btn-medium-padding:   .35em .875em;
+$btn-medium-font-size: 1em;
+
+$btn-husky-padding:   .4em .875em;
+$btn-husky-font-size: 1.125em;
+
+/////
+// DIALOUGE MODULE
+/////
+$dialogue-margin-bottom: 1.875em;
+$dialogue-margin-top:    .5em;
+$dialogue-padding:       .875em 1em;
+
+/////
+// PRIMARY-LIST MODULE
+/////
+$primary-list-border-color-hover: $ts-blue-base;
+$primary-list-border-color:       $ts-black-base;
+
+
+/////
+// .row-group
+/////
+$row-group-margin-bottom: 2em;
+
+/////
+// ol.indent, ul.indent
+/////
+$indent-padding-left: 1.5em;
+
+$ts-min-height-title-region: 105px;

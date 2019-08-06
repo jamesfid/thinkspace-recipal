@@ -1,0 +1,17 @@
+component c_space_header model=space
+
+.ts-grid_row: .small-7.ts-grid_columns.ts-grid_columns-thick
+  .space-content_heading
+    h4.left Edit #{model.title}
+
+    .space-content_actions
+      a.btn.btn-link.btn-small click='destroy'
+        | Delete Team Set
+
+    
+  .phase-content_question-label  Name of Team Set
+  = input value=title
+
+  a.btn.btn-primary.btn-small.left click='save' Save
+  link-to r_team_sets space
+    a.btn.btn-default.btn-small.right Cancel

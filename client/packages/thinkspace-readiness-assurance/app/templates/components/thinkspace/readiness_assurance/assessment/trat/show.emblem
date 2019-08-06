@@ -1,0 +1,13 @@
+if rm.ready
+
+  .ts-grid_row
+
+    .small-7.ts-grid_columns.ts-grid_columns-thick
+      h4= rm.assessment.title
+      component ra.c_trat_questions rm=rm chat='chat' chat_close='chat_close'
+
+    .small-5.ts-grid_columns.ts-grid_columns-thick
+      if rm.room_users
+        component ra.c_trat_room_users rm=rm
+        hr
+        component ra.c_trat_chats rm=rm chat_ids=chat_ids close='chat_close'

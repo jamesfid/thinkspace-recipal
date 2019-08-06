@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 129 101" style="enable-background:new 0 0 129 101;" xml:space="preserve">
+<g id="html">
+</g>
+<g id="html_2_columns">
+</g>
+<g id="peer_evaluation">
+	<path style="fill:none;stroke:#EEEEEE;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;" d="M3,7v88c0,1.657,1.343,3,3,3
+		h118"/>
+	<g>
+		<path style="fill:#FFFFFF;" d="M7,95c-0.552,0-1-0.449-1-1V4c0-0.551,0.448-1,1-1h118c0.552,0,1,0.449,1,1v90c0,0.551-0.448,1-1,1
+			H7z"/>
+		<path style="fill:#797979;" d="M124,5v88H8V5H124 M125,1H7C5.343,1,4,2.343,4,4v90c0,1.657,1.343,3,3,3h118c1.657,0,3-1.343,3-3V4
+			C128,2.343,126.657,1,125,1L125,1z"/>
+	</g>
+	
+		<line style="fill:none;stroke:#797979;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;" x1="16" y1="14" x2="49" y2="14"/>
+	<rect x="56" y="81" style="fill:#63B5D6;" width="20" height="6"/>
+	
+		<line style="fill:none;stroke:#BCBCBC;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="15" y1="27" x2="57" y2="27"/>
+	
+		<line style="fill:none;stroke:#EEEEEE;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;" x1="15" y1="39" x2="73" y2="39"/>
+	
+		<line style="fill:none;stroke:#AFDDA7;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;" x1="15" y1="39" x2="55" y2="39"/>
+	<g>
+		<circle style="fill:#FFFFFF;" cx="56" cy="39" r="3"/>
+		<path style="fill:#BCBCBC;" d="M56,37c1.103,0,2,0.897,2,2s-0.897,2-2,2s-2-0.897-2-2S54.897,37,56,37 M56,35
+			c-2.209,0-4,1.791-4,4s1.791,4,4,4s4-1.791,4-4S58.209,35,56,35L56,35z"/>
+	</g>
+	
+		<line style="fill:none;stroke:#BCBCBC;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="15" y1="55" x2="57" y2="55"/>
+	<g>
+		<path style="fill:#EEEEEE;" d="M74,65v8H17v-8H74 M76,63H15v12h61V63L76,63z"/>
+	</g>
+</g>
+<g id="peer_evaluation_summary">
+</g>
+<g id="html_observations">
+</g>
+<g id="lab_data_observations">
+</g>
+<g id="diagnostic_path_observations">
+</g>
+<g id="expert_path">
+</g>
+<g id="guides">
+</g>
+</svg>

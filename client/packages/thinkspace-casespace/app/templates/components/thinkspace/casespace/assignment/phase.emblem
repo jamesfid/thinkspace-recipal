@@ -1,0 +1,41 @@
+.casespace-assignment_phase-container
+  .casespace-assignment_phase-state
+    each phase_state in phase_states
+      span.casespace-assignment_phase-state-icon
+        link-to r_phases_show assignment model (query-params query_id=phase_state.id) title=phase_state.title
+          = phase-progress-icon-from-state phase_state.computed_current_state
+  .casespace-assignment_phase-info
+    span.casespace-assignment_phase-title-link
+      link-to r_phases_show assignment model (query-params query_id='none')
+        span.casespace-assignment_phase-title
+          | #{position}. #{model.title}
+
+    if model.team_ownerable
+      .casespace-assignment_phase-settings-container
+        img src='/assets/images/ts-icons/phase-settings/ts-builder_phase-settings_tbl.svg' alt_text="Team-based" title="Team-based"
+
+    if model.phase_state.is_past_due
+      .casespace-assignment_phase-notifications
+        .case-status-label.case-status-label_past-due Past Due
+        .casespace-assignment_phase-date-details
+            <strong> Due </strong>
+            | #{friendly_due_at_date} at #{friendly_due_at_time}
+
+    if model.phase_state.has_not_unlocked
+      .casespace-assignment_phase-notifications
+        .casespace-assignment_phase-date-details
+          <strong> Available on </strong> 
+          | #{friendly_unlock_at_date} at #{friendly_unlock_at_time}
+
+    if display_phase_details
+      .casespace-assignment_phase-dates-container
+        link-to r_case_builder_logistics assignment
+          | Edit Date
+        .casespace-assignment_phase-date-details
+          <strong> Unlock </strong>
+          | #{friendly_unlock_mode}
+        .casespace-assignment_phase-date-details
+          <strong> Due </strong>
+          | #{friendly_due_at_date} at #{friendly_due_at_time}
+
+

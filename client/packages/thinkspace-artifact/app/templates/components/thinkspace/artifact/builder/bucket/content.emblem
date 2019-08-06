@@ -1,0 +1,11 @@
+.ts-forms_heading
+  h4 Edit Instructions
+div.bucket_instructions-editor class={editor_loaded:is-visible:is-hidden}
+  = textarea value=model.instructions class='bucket_instructions-content'
+  if editor_loaded
+    .ts-grid_row: .small-12.ts-grid_columns
+      .btn-cluster.left-cluster
+        .html_submit.btn.btn-primary.btn-small click='save': | Update Instructions
+        .html_submit.btn.btn-default.btn-small click='cancel': | Cancel
+  else
+    component c_loader

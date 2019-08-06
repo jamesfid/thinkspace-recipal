@@ -1,0 +1,7 @@
+= input value=input_value style=tattrs.style size=tattrs.size maxlength=tattrs.maxlength readonly=tattrs.readonly disabled=tattrs.disabled
+
+if show_errors
+  each message in errors.input_value
+    span.thinkspace-ie_errors
+      i.im.im-warning.im-error-base
+      = message

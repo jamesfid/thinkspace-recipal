@@ -1,0 +1,12 @@
+tr class={is_selected:selected} click='select'
+
+  td 
+    span.status
+      if is_current
+        .tsi.tsi-small.tsi-weather-forecaster-checked-item
+      if is_completed
+        i.fa.fa-check.completed
+
+  td= forecast_at
+
+  td.text-right= forecast_score

@@ -1,0 +1,15 @@
+unless result_edit
+  .ts-lab_admin-result-display-value click='edit'
+    = display_value
+
+if is_edit
+
+  div class={result_edit::ts-lab_admin-result-value-edit-content}
+
+    div class={editor_loaded::hide}
+      = textarea value=html class='lab-admin_edit-html-result'
+
+    unless result_edit
+      .ts-wizard_form-button-container class={editor_loaded::hide}
+        a.btn.btn-default.btn-small.left click='cancel' #{t 'builder.lab.admin.buttons.cancel'}
+        a.btn.btn-primary.btn-small.right click='save' #{t 'builder.lab.admin.buttons.save'}

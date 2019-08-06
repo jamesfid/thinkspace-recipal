@@ -1,0 +1,9 @@
+.phase-content_heading
+  h4: = model.title
+  .thinkspace-weather-forecaster_assessment-station 
+    | Station Code: 
+    span #{model.station.location}
+
+
+.thinkspace-weather-forecaster_assessment-items
+   component c_forecast assessment=model model=forecast show_help='show_help'

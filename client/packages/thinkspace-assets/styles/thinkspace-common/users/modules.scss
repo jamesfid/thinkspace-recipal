@@ -1,0 +1,13 @@
+.ts-avatar {
+  display:    inline-block;
+  margin:     0.25rem;
+  text-align: center;
+
+  .ts-avatar_initials { color: black; letter-spacing: -1px; line-height: 1.75rem; vertical-align: middle; }
+
+  &.is-small  { width:  $is-small-width; height: $is-small-width; border-radius: $is-small-width; }
+  &.is-medium  { width: $is-medium-width; height: $is-medium-width; border-radius: $is-medium-width; }
+  &.is-large  { width:  $is-large-width; height: $is-large-width; border-radius: $is-large-width; }
+  &.is-selected { border: 3px solid $ts-blue-base; }
+  &.is-clickable { &:hover { cursor: pointer; } }
+}

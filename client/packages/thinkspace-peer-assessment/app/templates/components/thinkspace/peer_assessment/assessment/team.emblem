@@ -1,0 +1,32 @@
+.phase-content_section
+  .phase-content_section-heading
+  	h5 Team Members
+  	p Click on a team member to jump to their assessment
+
+  .team-members_container
+    ul
+      each member in reviewables
+        component c_team_member manager=manager model=member reviewable=reviewable class="team-members_item"
+    a.btn.btn-default.btn-small click='confirmation' Jump to Confirmation
+
+
+if manager.is_balance
+  .phase-content_section
+    .phase-content_section-heading
+      h5 Checklist
+    p
+      if manager.errors.points_remaining
+        span.tsi.tsi-left.tsi-tiny.tsi-right-arrow
+      else
+        span.tsi.tsi-left.tsi-small.tsi-checkmark
+      span You must spend all your points, but not more than the maximum of #{manager.points_total}.
+    if manager.model_points_different
+      p
+        if manager.errors.points_different
+          span.tsi.tsi-left.tsi-tiny.tsi-right-arrow
+        else
+          span.tsi.tsi-left.tsi-tiny.tsi-checkmark
+        span Not all evaluations have the same score.
+
+
+

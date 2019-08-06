@@ -1,0 +1,111 @@
+.casespace-phase_state-icon {
+  display:          inline-block;
+  position:         relative;
+}
+
+.casespace_phase_loading {
+  .spinner {
+    color:     $ts-blue-dark;
+    font-size: 10em;
+    position:  fixed;
+    top:       30%;
+    left:      40%;
+  }
+}
+
+.casespace_phase-submit {
+  text-align: center;
+  margin:     1.5em 0;
+}
+
+.casespace_phase-submit-message-title {
+}
+
+.casespace_phase-submit-message {
+  margin-left: 2em;
+  color:       red;
+}
+
+.casespace-assignment_phase-state-icon {
+  vertical-align: top;
+}
+
+.casespace_phase-input_element-status {
+  margin-top:  2em;
+}
+
+// Response completion
+
+.casespace_phase-input_element-label {
+  font-weight: $ts-bold;
+  font-size: .875rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.casespace_phase-input_element-text {
+  background-color:          white;
+  font-size:                 .875rem;
+  letter-spacing:            .25px;
+  font-weight:               $ts-medium;
+  margin-left:               0;
+  border:                    2px solid;
+  border-top-left-radius:    $border-radius;
+  border-bottom-left-radius: $border-radius;
+  padding:                   .25rem .5rem;
+}
+
+.casespace_phase-input_element-text_completed {
+  color:        $ts-green-base;
+  border-color: $ts-green-base;
+}
+
+.casespace_phase-input_element-text_remaining {
+  color:        $ts-red-base;
+  border-color: $ts-red-base;
+  margin-left:  1rem;
+}
+
+.casespace_phase-input_element-text_neutral {
+  color:        $ts-black-base;
+  border-color: $ts-black-base;
+}
+
+.casespace_phase-input_element-count {
+  color:                      white;
+  font-weight:                $ts-bold;
+  font-size:                  .875rem;
+  margin-left:                -2px;
+  border:                     2px solid;
+  border-top-right-radius:    $border-radius;
+  border-bottom-right-radius: $border-radius;
+  padding:                    .25rem .5rem;
+}
+
+.casespace_phase-input_element-count_completed {
+  border-color:     $ts-green-base;
+  background-color: $ts-green-base;
+}
+
+.casespace_phase-input_element-count_remaining {
+  border-color:     $ts-red-base;
+  background-color: $ts-red-base;
+}
+
+.casespace_phase-input_element-count_neutral {
+  border-color:     $ts-black-base;
+  background-color: $ts-black-base;
+}
+
+.casespace_phase-select-team-list {
+  list-style:       none;
+  background-color: $ts-blue-light;
+  z-index:          1000;
+  .casespace_phase-select-team-item {
+    cursor: pointer;
+    &:hover {
+      background-color: $ts-blue-dark;
+      color: white;
+    }
+  }
+}

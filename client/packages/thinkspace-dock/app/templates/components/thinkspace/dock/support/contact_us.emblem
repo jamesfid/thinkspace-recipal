@@ -1,0 +1,27 @@
+.dock-support_contact-us
+  .ts-grid_row
+    .small-12.ts-grid_columns.ts-grid_columns-thin
+      .ts-forms_heading
+        h4 ThinkSpace Support
+        p Need help with something? Have suggestions? Let us know and we'll get back to you as soon as possible.
+        .dialogue.dialogue-general.dialogue_inline
+          strong Your reply from us may go to your spam.  Please check there as well as adding thinkbot-replies@thinkspace.org to your contacts list.
+
+      if error_message
+        .dialogue.dialogue-error
+          span #{error_message}
+      if success_message
+        .dialogue.dialogue-success
+          span #{success_message}
+        a.btn.btn-primary.btn-medium.right click='toggle_addon_visible' Close
+      unless success_message
+        .ts-forms_field-container
+          .ts-forms_field-label
+            | Subject
+          component c_validated_input value=title errors=errors.title show_errors=show_errors
+        .ts-forms_field-container
+          .ts-forms_field-label
+            | What do you need help with?
+          component c_validated_input value=raw errors=errors.raw type='textarea' show_errors=show_errors
+        a.btn.btn-primary.btn-small.left click='submit' Send Message
+        a.btn.btn-default.btn-small.right click='toggle_addon_visible' Cancel

@@ -1,0 +1,3 @@
+@mixin tsi-hover-color($icon) {
+  .tsi.tsi-#{$icon}-outline { @extend .tsi.tsi-#{$icon}-color; }
+}

@@ -1,0 +1,8 @@
+if response_manager.save_error
+  .indented-list_save-error
+    h4 There was a problem saving your response!
+    h5 Refresh the page and redo your last change(s).
+
+else
+  if response_manager
+    component c_list_layout model=model list=list response_manager=response_manager

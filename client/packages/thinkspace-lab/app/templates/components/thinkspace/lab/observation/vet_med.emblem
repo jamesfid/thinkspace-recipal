@@ -1,0 +1,8 @@
+if is_select
+  component c_select lab_observation=lab_observation
+else
+  if is_input
+    component c_input  lab_observation=lab_observation
+  else
+    if is_correctable
+      component c_correctable lab_observation=lab_observation

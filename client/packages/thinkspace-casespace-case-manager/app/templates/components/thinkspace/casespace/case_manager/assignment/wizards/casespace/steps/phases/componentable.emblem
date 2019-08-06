@@ -1,0 +1,2 @@
+if c_componentable
+  component c_componentable model=model is_current=is_current select='select' show_link=show_link

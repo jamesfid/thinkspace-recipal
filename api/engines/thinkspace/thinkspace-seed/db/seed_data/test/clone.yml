@@ -1,0 +1,43 @@
+prefix: clone_
+
+variables:
+  - &SPACE            space
+  - &ASSIGNMENT       assignment
+  - &TEAM_ASSIGNMENT  team_assignment
+  - &PHASE            phase
+  - &TEAM_PHASE       team_phase
+  - &TEMPLATE         template
+  - &TEAM_SET_A       team_set_A
+  - &TEAM_1           team_1
+  - &TEAM_1_USERS     [read_1, read_2, read_3]
+
+spaces:
+  - title: *SPACE
+
+space_users:
+  - spaces: *SPACE
+    users: import[users]
+
+assignments:
+  - {title: *ASSIGNMENT,      space: *SPACE}
+  - {title: *TEAM_ASSIGNMENT, space: *SPACE}
+
+phases:
+  - {title: *PHASE, assignment: *ASSIGNMENT, template_name: *TEMPLATE}
+  - {title: *TEAM_PHASE, assignment: *TEAM_ASSIGNMENT, default_state: locked, template_name: *TEMPLATE, team_category: collaboration}
+
+teams:
+
+  team_sets:
+    - {title: *TEAM_SET_A, space: *SPACE, user: owner_1}
+
+  team_set_teams:
+    - {title: *TEAM_1, users: *TEAM_1_USERS , team_set: *TEAM_SET_A, space: *SPACE}
+
+  phase:
+    - {title: *TEAM_PHASE, assignment: *TEAM_ASSIGNMENT, team_sets: *TEAM_SET_A, space: *SPACE}
+
+phase_templates:
+  - title: *TEMPLATE
+    name: *TEMPLATE
+    template: '<row></row>'

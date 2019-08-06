@@ -1,0 +1,64 @@
+.ts-grid_row.ts-ownerable-bar
+  .ts-ownerable-bar_ownerable click='toggle_is_selecting_ownerable'
+    .ts-ownerable-bar_ownerable-info
+      if addon_ownerable
+        p.ts-ownerable-bar_ownerable-label Viewing:
+        p.ts-ownerable-bar_ownerable-name #{addon_ownerable.full_name}
+      else
+        if has_team_category
+          span Select Team
+        else
+          span Select Student
+      .ts-ownerable-bar_ownerable-icon
+        .tsi.tsi-right.tsi-tiny.tsi-down-caret-inverse.right
+    component c_ownerable_selector ownerables=ownerables select='select_ownerable' menu_only=true is_selecting_ownerables=is_selecting_ownerable
+
+  .ts-ownerable-bar_actions
+    .btn-group
+      a.btn.btn-tiny.btn-default click='select_previous_ownerable'
+        | Previous Student
+        .tsi.tsi-left.tsi-micro.tsi-left-arrow-inverse.left
+      a.btn.btn-tiny.btn-default click='select_next_ownerable'
+        | Next Student
+        .tsi.tsi-right.tsi-micro.tsi-right-arrow-inverse.right
+
+    .ts-ownerable-bar_showcard.right click='toggle_scorecard'
+      if is_scoring
+        | Hide Scorecard
+      else
+        | Show Scorecard
+
+if is_scoring
+  if addon_ownerable
+    .ts-grid_row.ts-ownerable-bar.ts-scorecard
+      .ts-scorecard_branding
+        a.btn.btn-small.btn-warning.ts-menu_btn click='delete_ownerable_data' Reset Phase Data
+      .ts-grid_columns.small-10.medium-8.large-6
+        ul.ts-scorecard_actions.clearfix
+          li.ts-scorecard_action
+            .ts-scorecard_action-title Phase Score
+            component c_phase_score current_phase=model save='phase_score' register_to=this
+          li.ts-scorecard_action click='toggle_is_viewing_total_score' 
+            .ts-scorecard_action-title Total Score 
+            .ts-scorecard_action-value 
+              | #{total_score.content}
+              .ts-scorecard_action-value-icon
+                .tsi.tsi-right.tsi-tiny.tsi-down-caret.right
+            if is_viewing_total_score
+              .ts-scorecard_flyout
+                table
+                  each phase in current_assignment.phases
+                    component c_phase_overview model=phase current_phase=model register_to=this
+          li.ts-scorecard_action click='toggle_is_viewing_phase_state'
+            .ts-scorecard_action-title Phase State
+            .ts-scorecard_action-value 
+              | #{phase-progress-icon-from-state phase_state.current_state}
+              .ts-scorecard_action-value-icon
+                .tsi.tsi-right.tsi-tiny.tsi-down-caret.right
+            if is_viewing_phase_state
+              .ts-scorecard_flyout
+                table
+                  component c_phase_state current_phase=model change='phase_state' register_to=this
+  else
+    .ts-grid_row.ts-ownerable-bar.ts-scorecard
+      .ts-scorecard_empty-msg Please select a learner to use the scorecard.

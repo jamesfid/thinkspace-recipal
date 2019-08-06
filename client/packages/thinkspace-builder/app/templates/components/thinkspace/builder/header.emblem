@@ -1,0 +1,12 @@
+.row.ts-builder_header
+  .ts-builder_header-content.small-12.small-centered.medium-12.large-8.ts-grid_columns.ts-grid_columns-thin
+    .row: .small-12.ts-grid_columns
+      h5 #{space.title} | #{title}
+      a.btn.btn-small.btn-default.right click='exit' Exit Builder
+
+    .row: .small-12.ts-grid_columns
+      ul.ts-builder_header-steps
+        each step in steps
+          component c_step model=step
+    .row: .small-12.ts-grid_columns
+      

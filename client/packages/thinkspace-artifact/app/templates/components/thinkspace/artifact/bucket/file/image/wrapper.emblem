@@ -1,0 +1,2 @@
+/ This wrapper isolates 'click' events on the file view and comment views (if can comment).
+component c_image_file model=model file_container_id=file_container_id file_url=file_url show_file=show_file comment_section=comment_section can_comment=can_comment

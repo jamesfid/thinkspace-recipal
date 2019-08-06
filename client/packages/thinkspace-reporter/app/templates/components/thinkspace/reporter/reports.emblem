@@ -1,0 +1,29 @@
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+  if all_data_loaded
+    .space-content_heading
+      h4 Case Reports
+      .space-content_actions
+        a.btn.btn-primary.btn-small click='request_report' Request Scores and Responses
+      p You can request a report containing all of the text responses (input elements only) as well as the scores for all of your students or teams. <strong> The reports may take awhile to run, you will get an email with the link when it is ready. </strong>
+      
+    if is_report_requested
+      .dialogue.dialogue-success Your report was successfully requested.  <strong>You will receive an email with the link when it is done.</strong>
+    .ts-grid_row: .ts-grid_columns.small-12
+      if reports
+        table
+          thead
+            tr
+              th Title
+              th Created
+              th Actions
+          tbody
+            each report in reports
+              component c_report_tr model=report
+      else
+        .ts-grid_columns.small-12.large-8
+          .dialogue.dialogue-instruct
+            h1 You have no reports
+            p Creating a case report allows you to export student responses for the entire case. Give it a try! 
+
+  else
+    component c_loader

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 128 100" style="enable-background:new 0 0 128 100;" xml:space="preserve">
+<g id="html">
+	<g>
+		<path style="fill:#FFFFFF;" d="M5,96c-0.551,0-1-0.449-1-1V5c0-0.551,0.449-1,1-1h118c0.551,0,1,0.449,1,1v90c0,0.551-0.449,1-1,1
+			H5z"/>
+		<path style="fill:#BCBCBC;" d="M122,6v88H6V6H122 M123,2H5C3.343,2,2,3.343,2,5v90c0,1.657,1.343,3,3,3h118c1.657,0,3-1.343,3-3V5
+			C126,3.343,124.657,2,123,2L123,2z"/>
+	</g>
+	
+		<line style="fill:none;stroke:#797979;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;" x1="14" y1="15" x2="47" y2="15"/>
+	
+		<line style="fill:none;stroke:#BCBCBC;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="13" y1="51" x2="71" y2="51"/>
+	
+		<line style="fill:none;stroke:#BCBCBC;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="13" y1="59" x2="71" y2="59"/>
+	
+		<line style="fill:none;stroke:#BCBCBC;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" x1="13" y1="67" x2="71" y2="67"/>
+	<rect x="32" y="83" style="fill:#63B5D6;" width="20" height="6"/>
+	<rect x="12" y="26" style="fill:#EEEEEE;" width="59" height="17"/>
+</g>
+<g id="html_2_columns">
+</g>
+<g id="peer_evaluation">
+</g>
+<g id="peer_evaluation_summary">
+</g>
+<g id="html_observations">
+</g>
+<g id="lab_data_observations">
+</g>
+<g id="diagnostic_path_observations">
+</g>
+<g id="expert_path">
+</g>
+<g id="guides">
+</g>
+</svg>

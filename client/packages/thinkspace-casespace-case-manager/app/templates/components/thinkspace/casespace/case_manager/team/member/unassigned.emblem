@@ -1,0 +1,3 @@
+span.team-manager_unassigned-student click="select" class={is_selected:is-selected} 
+  component c_user_avatar model=model size='small'
+  span #{model.full_name}

@@ -1,0 +1,28 @@
+.ts-grid_row
+  .ts-grid_columns.small-12
+    partial t_header
+
+    if addon_ownerable
+      .gradebook_phase-score: .ts-grid_row: .small-12
+        component c_phase_score current_phase=current_phase total_score=total_score.content save='phase_score' view='score_view'
+      .gradebook_phase-state: .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thin
+        component c_phase_state current_phase=current_phase change='phase_state'
+
+      .gradebook_user-phases
+        .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thin
+          h6 
+            |Assignment Overview
+            br
+            small All phases for {{current_assignment.title}}
+
+          table.ts-menu_table-no-margin
+            thead
+              tr
+                th colspan='2' Phase
+                th.text-right Score
+                th
+            tbody
+              each phase in current_assignment.phases
+                component c_overview model=phase current_phase=current_phase
+
+      partial t_footer

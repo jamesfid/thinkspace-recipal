@@ -1,0 +1,14 @@
+.ts-forms_section-container 
+  .ts-forms_section-heading
+    h5 File upload settings
+
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_field-container
+      div class={editor_loaded::hide}
+        .ts-forms_field-label Instructions for file upload
+        = textarea value=model.instructions class='artifact_bucket-instructions'
+
+  .ts-wizard_row: .ts-grid_columns.small-12
+    a.btn.btn-primary.btn-small.left click='save' Update File Upload
+
+hr

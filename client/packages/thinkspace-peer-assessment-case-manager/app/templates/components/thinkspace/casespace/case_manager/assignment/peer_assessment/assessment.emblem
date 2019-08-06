@@ -1,0 +1,58 @@
+component c_assignment_header model=assignment
+.ts-grid_columns.ts-grid_columns-thick.small-12
+  .ts-grid_row
+    .phase-content_heading.ts-grid_columns.small-7
+      h4 Student Peer Evaluation Review
+      h5 Major changes
+      ol
+        li 
+          | Your downloadable report under "Reports" contains evaluation scores from all <span class="thinkspace-tbl-pa_state-tag state_submitted">submitted</span>, <span class="thinkspace-tbl-pa_state-tag state_approved">approved</span>, and <span class="thinkspace-tbl-pa_state-tag state_sent">sent</span> evaluations.
+          ol
+            li This allows you to monitor the evaluations as they're in-progress, but be aware they can differ from what the student may see.
+        li A student will see their score calculated <strong>only</strong> from <span class="thinkspace-tbl-pa_state-tag state_sent">sent</span> evaluations.
+        li 
+          | You can now send the evaluation as many times as you want.
+          ol
+            li Sending will mark all <span class="thinkspace-tbl-pa_state-tag state_submitted">submitted</span> as <span class="thinkspace-tbl-pa_state-tag state_sent">sent</span>.
+            li Sending will also mark all <span class="thinkspace-tbl-pa_state-tag state_neutral">in-progress</span> as <span class="thinkspace-tbl-pa_state-tag state_ignored">ignored</span>.
+        li There is a new feature to mark an evaluation as <span class="thinkspace-tbl-pa_state-tag state_ignored">ignored</span>.  This removes all evaluations marked with this from calculations.
+        li Icons have been added to handle the common functions on each row, about half as much clicking required.  Less common options are still in the drop-down menu.  Hover over the icons to see what their description.
+        li Notifications can now be sent to students who have not yet started their evaluations. 
+        li Added the ability to send a reminder to all <span class="thinkspace-tbl-pa_state-tag state_neutral">in-progress</span> and not yet started work.
+
+    .ts-grid_columns.small-5
+      .btn-group.right
+        a.btn.btn-default.btn-small click='show_notify_all_modal' Notify All Incomplete
+        a.btn.btn-primary.btn-small click='show_approve_modal' Send Evaluations
+
+  if has_sent
+    .ts-grid_row: .ts-grid_columns.small-12
+      .dialogue.dialogue-success
+        h4 Your evaluations are sent.
+        p These take a bit to process, so they will not reflect here immediately.  Check back in a few minutes to see if their states have updated.
+  else
+    each team in teams
+      component c_team model=team assessment=model team_sets=team_sets
+
+    .ts-tblpa_modal.reveal-modal aria-hidden='true' aria-labelledby='modalTitle' data-reveal='' role='dialog' 
+      .ts-forms_heading
+        h4 Are you sure?
+        p Sending the evaluations will unlock and make visible all evaluations to team members in their current state.  Once they are sent, the students will have access to view all comments (anonymized) that their peers have written.
+        br
+        p Sending the evaluations will send only <strong>approved</strong> team's reviews.  This can only be done once, so ensure all teams are approved before continuing.
+        br
+        p <strong>Please note:</strong> The evaluations will be sent in the background and will not reflect on this page immediately.  You will need to come back later (or refresh in a minute or two) to see which evaluations have been sent.
+        br
+        .dialogue.dialogue-error.dialogue_inline
+          p Any teams that are not approved will <strong>NOT</strong> be sent.
+      a.btn.btn-default.btn-small.left click='close_approve_modal' No, Go Back
+      a.btn.btn-primary.btn-small.right click='approve' Yes, Send
+      a.close-reveal-modal aria-label='Close'  ×
+
+    .ts-tblpa_modal-notify.reveal-modal aria-hidden='true' aria-labelledby='modalTitle' data-reveal='' role='dialog' 
+      .ts-forms_heading
+        h4 Notify all students who have not submitted
+        p This will send a reminder to all students who are marked as <span class="thinkspace-tbl-pa_state-tag state_neutral">in-progress</span> or have not yet started.
+      a.btn.btn-default.btn-small.left click='close_notify_all_modal' No, Go Back
+      a.btn.btn-primary.btn-small.right click='approve_notify_all' Yes, Notify
+      a.close-reveal-modal aria-label='Close'  ×

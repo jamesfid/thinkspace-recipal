@@ -1,0 +1,3 @@
+.tbl-qualitative_item-container
+	.phase-content_question-label #{model_index}.  #{model.label}
+	= input value=comment key-up='set_qualitative_value' focus-out='save_review' disabled=is_read_only

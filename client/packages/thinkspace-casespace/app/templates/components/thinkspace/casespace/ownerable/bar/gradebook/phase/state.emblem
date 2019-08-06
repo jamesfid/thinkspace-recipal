@@ -1,0 +1,9 @@
+each phase_state in domain_phase_states
+  tr click="'change' phase_state.state"
+    td.gradebook_table-current-row= is-current model current_phase
+    td.gradebook_table-phase-state
+      span.gradebook_phase-state-action click='"change" phase_state.state' title='{{unbound phase_state.title}}'
+        a= phase-progress-icon-from-state phase_state.state
+    td.gradebook_phase-state-info
+      h1 #{phase_state.title}
+      p #{phase_state.description}

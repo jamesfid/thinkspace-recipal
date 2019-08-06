@@ -1,0 +1,85 @@
+prereq_configs: space
+
+variables:
+  - &CASE  HTML Teams
+  - &PHASE_ONE_COL             HTML (one column) (not team)
+  - &PHASE_INPUTS              Collaboration Team HTML + Inputs
+  - &PHASE_CARRY_FORWARD       Collaboration Team HTML + Carray Forward Inputs
+  - &PHASE_OBSERVATION_LIST_1  Peer-Review Team HTML + Observation List 1
+  - &PHASE_OBSERVATION_LIST_2  Peer-Review Team HTML + Observation List 2
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+  import_text[../common_imports/teams]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_ONE_COL
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: lorem_all
+        title:   HTML-Only (with submit)
+
+  - title: *PHASE_INPUTS
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT_AUTO_SCORE
+    sections:
+      html:
+        methods: inputs
+        title:   HTML (submit unlock next)
+
+  - title: *PHASE_CARRY_FORWARD
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        title:         Carry Forward (submit unlock next)
+        methods:       carry_forward
+        carry_forward: *PHASE_INPUTS
+
+  - title: *PHASE_OBSERVATION_LIST_1
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    settings:
+      <<: *SUBMIT_AUTO_SCORE
+    sections:
+      html:
+        methods: thinkspace
+        title:   Select Text (submit unlock next)
+
+  - title: *PHASE_OBSERVATION_LIST_2
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    settings:
+      <<: *SUBMIT_AUTO_SCORE
+    sections:
+      html:
+        methods: lorem_2
+        title:   Select Text
+
+team_phases:
+  - {title: *PHASE_INPUTS,             space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_COLLABORATION}
+  - {title: *PHASE_CARRY_FORWARD,      space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_COLLABORATION}
+  - {title: *PHASE_OBSERVATION_LIST_1, space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_PEER_REVIEW}
+  - {title: *PHASE_OBSERVATION_LIST_1, space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_PEER_REVIEW}
+
+auto_input:
+  responses:
+    - phases: *PHASE_INPUTS
+      teams:  *TEAM_1
+  observations:
+    - observations_per_list: 10
+      max_notes_per_observation: 3
+      phases: *PHASE_OBSERVATION_LIST_1
+      teams:  *TEAM_1

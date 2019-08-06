@@ -1,0 +1,68 @@
+.ts-ra_messages {
+  background-color: white;
+  padding:          0;
+  margin-top:       1em;
+  border:           1px solid $ts-blue-base;
+  .ts-ra_message_hr {margin: .5em;}
+  .ts-ra_messages-header {
+    font-weight: 500;
+    font-size:   80%;
+    color:       $ts-blue-dark;
+    .ts-ra_messages-header-toggle-new {
+      display: inline-block;
+      margin:  0 2em 0 2em;
+      cursor:  pointer;
+      color:   $ts-red-base;
+    }
+    .ts-ra_messages-header-toggle-previous {
+      display: inline-block;
+      margin:  0 2em 0 2em;
+      cursor:  pointer;
+    }
+    .ts-ra_messages-header-mark-previous {
+      display: inline-block;
+      float:   right;
+      margin:  0 2em 0 2em;
+      cursor:  pointer;
+    }
+  }
+  .ts-ra_message-type-header {
+    font-weight: bold;
+    font-style:  italic;
+    color:       $ts-blue-dark;
+  }
+  .ts-ra_message-header {
+    border-top:  1px solid $ts-blue-dark;
+    font-weight: 400;
+  }
+  .ts-ra_message-from {
+    display:   inline-block;
+    font-size: 80%;
+    color:     $ts-blue-dark;
+  }
+  .ts-ra_message-time {
+    display:   inline-block;
+    font-size: 80%;
+    color:     $ts-blue-dark;
+    float:     right;
+  }
+  .ts-ra_message-to {
+    font-size:   80%;
+    font-weight: 400;
+    color:       $ts-blue-dark;
+  }
+  .ts-ra_message-body {
+    font-size:   90%;
+    font-weight: 500;
+  }
+  .ts-ra_message-clear {
+    display:   inline-block;
+    font-size: 80%;
+    color:     $ts-blue-dark;
+    margin:    0 2em 0 2em;
+    cursor:    pointer;
+  }
+  .ts-ra_message-pre {
+    pre {white-space: pre-wrap;}
+  }
+}

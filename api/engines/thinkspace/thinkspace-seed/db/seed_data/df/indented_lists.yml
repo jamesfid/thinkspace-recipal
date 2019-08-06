@@ -1,0 +1,58 @@
+prereq_configs: space
+
+variables:
+  - &CASE                      Indented List
+  - &PHASE_OBSERVATION_LIST_1  HTML + Observation List 1
+  - &PHASE_OBSERVATION_LIST_2  HTML + Observation List 2
+  - &PHASE_INDENTED_LIST       Indented List + Observation Lists
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_OBSERVATION_LIST_1
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: thinkspace
+      obs-list:
+        category: {name: M}
+
+  - title: *PHASE_OBSERVATION_LIST_2
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: lorem
+      obs-list:
+        category: {name: D}
+
+  - title: *PHASE_INDENTED_LIST
+    assignment:    *CASE
+    template_name: two_column_indented_list_observation_list_submit
+    settings:
+      <<: *SUBMIT
+
+auto_input:
+  observations:
+    - phases: *PHASE_OBSERVATION_LIST_1
+      users:                     read_1
+      observations_per_list:     2
+      max_notes_per_observation: 1
+    - phases: *PHASE_OBSERVATION_LIST_2
+      users:                     read_1
+      observations_per_list:     3
+      max_notes_per_observation: 1
+  indented_list_responses:
+    - phases: *PHASE_INDENTED_LIST
+      users:  read_1
+      indent: 3

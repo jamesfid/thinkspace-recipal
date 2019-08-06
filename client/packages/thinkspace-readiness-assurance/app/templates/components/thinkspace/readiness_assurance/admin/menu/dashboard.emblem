@@ -1,0 +1,16 @@
+.title-region.ts_ra-title-region: .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+
+  span.ts-ra_admin-title Readiness Assurance Dashboard
+  span.ts-ra_admin-model-route
+    link-to r_model model
+      |#{model.title}
+
+  .ts-ra_admin-menu
+    ul.ts-action-bar
+      each config in menu
+        li.ts-action-bar_action class={config.active:active}
+          a click="'select' config" #{config.title}
+
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+  each config in selected_components
+    component config.component config=config done='done'

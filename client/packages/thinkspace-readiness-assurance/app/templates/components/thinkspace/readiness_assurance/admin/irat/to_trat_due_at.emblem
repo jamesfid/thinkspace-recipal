@@ -1,0 +1,29 @@
+if ready
+  if has_errors
+    h5.ta-ra_admin-transition-error= irad.error_message
+
+  component am.c_admin_shared_toggle_select rad=trad title='Select Teams'
+
+  .ts-ra_admin-select-teams class={trad.show_select::hide}
+    component am.c_admin_shared_teams_select rad=trad title='Select Teams to Transition to TRAT'
+
+  .ts-grid_row: .small-6.ts-grid_columns: .ts-ra_admin-due-at class={irad.due_at::error}
+    component am.c_admin_shared_time_at rad=irad time_at=irad.time_at time='due_at' title='IRAT Phase Due At'
+
+  if irad.due_at
+    component am.c_admin_shared_timer_show rad=irad time_at=irad.due_at
+
+  .ts-grid_row: .small-6.ts-grid_columns: .ts-ra_admin-due-at class={trad.errors:error}
+    component am.c_admin_shared_time_at rad=trad time_at=irad.due_at time='due_at' title='TRAT Phase Due At' optional=true
+
+  .ts-grid_row: .small-12.ts-grid_columns
+    component am.c_admin_shared_message rad=irad optional=true show_default=irad.due_at
+
+  if selected_send
+    .ts-ra_admin-selected-send-errors
+      component am.c_admin_shared_error errors=irad.errors
+      component am.c_admin_shared_error errors=trad.errors
+
+  .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+    a.btn.btn-small.btn-primary.right click='send_transition' Do Transition
+    a.btn.btn-small  click='done' Cancel

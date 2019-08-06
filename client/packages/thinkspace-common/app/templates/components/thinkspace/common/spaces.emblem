@@ -1,0 +1,9 @@
+#application class={toolbar_is_hidden:toolbar-is-hidden toolbar_is_minimized:toolbar-is-minimized sidepocket_is_expanded:sidepocket-is-expanded}
+  component c_toolbar
+  component c_messages
+  component c_dock current_route=current_route
+  if terms_modal_visible
+    component c_terms_modal
+  #content-wrapper class={has_sticky_addon:has-sticky-addon}
+    #content
+      outlet

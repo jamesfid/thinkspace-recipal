@@ -1,0 +1,9 @@
+.totem_message_outlet-container
+
+  .totem_message_outlet-messages
+
+    each message in totem_outlet_messages
+      h4= message.message
+
+  .totem_message_outlet-footer
+    button.btn click='sign_out' Sign back in

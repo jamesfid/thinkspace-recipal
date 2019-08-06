@@ -1,0 +1,8 @@
+.ts-radio-toggle click='toggle_radio'
+
+    if is_checked
+      .tsi.tsi-input-element-radio-checked
+    else
+      .tsi.tsi-input-element-radio-unchecked
+
+    = category_label

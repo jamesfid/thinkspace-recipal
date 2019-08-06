@@ -1,0 +1,8 @@
+form submit='add_key'
+  .ts-forms_field-container
+    .ts-forms_field-label-container 
+      .ts-forms_field-label Account Key
+      .ts-forms_field-description The account key provided by your instructor or obtained through the bookstore.
+    component c_validated_input value=key errors=errors.key
+  .btn.btn-primary.btn-small{action 'add_key'}
+    | Add Key

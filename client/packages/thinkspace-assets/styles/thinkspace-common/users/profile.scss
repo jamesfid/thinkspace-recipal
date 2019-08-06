@@ -1,0 +1,28 @@
+.ts-user-profile {
+  .ts-user-profile_image-col {
+    display:       inline-block;
+    padding-right: 1rem;
+
+    .ts-user-profile_image {
+      border-radius: $border-radius;
+    }
+  }
+
+  .ts-user-profile_text-col {
+    display: inline-block;
+
+    .ts-user-profile_text-header {
+      font-size: 1rem;
+      margin-top: 0.125rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .ts-user-profile_text-description {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+    }
+
+  }
+
+
+}

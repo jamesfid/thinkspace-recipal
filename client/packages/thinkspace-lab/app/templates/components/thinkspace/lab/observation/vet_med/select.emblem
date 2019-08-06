@@ -1,0 +1,12 @@
+div.thinkspace-lab_input.thinkspace-ie.ts-lab_observation
+  if lab_observation.is_disabled
+    span.ts-lab_observation-correct
+      | #{selection}
+      i.fa.fa-check.ts-lab_observation-correct-icon
+  else
+    component c_dropdown selected=selected collection=selections text=selection display_property='label' select_action='select' action_receiver=this anchor_classes='btn btn-small btn-default ts-lab_select'
+
+    if lab_observation.error_message
+      span.thinkspace-ie_errors
+        i.im.im-warning.im-error-base
+        = lab_observation.error_message

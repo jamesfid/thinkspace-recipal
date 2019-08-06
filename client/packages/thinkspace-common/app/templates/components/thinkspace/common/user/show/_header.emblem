@@ -1,0 +1,14 @@
+.title-region
+  .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+    .ts-grid_row
+      h3.title-region_title User Profile
+    .ts-grid_row
+      ul.ts-action-bar
+        li.ts-action-bar_action
+          link-to r_user_profile model
+            | Profile
+        li.ts-action-bar_action
+          link-to r_user_keys model
+            | Keys
+        / li.ts-action-bar_action
+        /   | Account

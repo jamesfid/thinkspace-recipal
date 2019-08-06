@@ -1,0 +1,1 @@
+component c_assignment_wizard model=model space_id=space_id bundle_type=bundle_type c_wizard=c_wizard step=step

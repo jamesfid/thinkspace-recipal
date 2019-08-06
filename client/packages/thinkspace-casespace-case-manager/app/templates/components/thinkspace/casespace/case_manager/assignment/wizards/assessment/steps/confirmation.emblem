@@ -1,0 +1,70 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 #{t 'builder.assessment.headings.case_confirmation'}
+      p #{t 'builder.assessment.describe.confirmation'} 
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'builder.assessment.headings.case_details'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='enable_ordering' #{t 'builder.assessment.buttons.edit'}
+      .ts-wizard_confirmation-section-content-container 
+        .ts-wizard_confirmation-field-label #{t 'builder.assessment.headings.case_name'}
+        p= model.title
+      hr
+
+    / Presently not hooked up, so removing for now.
+    / .ts-wizard_confirmation-section-container
+    /   .ts-forms_section-heading.ts-grid_row
+    /     .small-10.ts-grid_columns
+    /       h5 #{t 'builder.assessment.headings.case_settings'}
+    /     .small-2.ts-grid_columns
+    /       .ts-forms_heading-actions
+    /         a.btn.btn-defaul.btn-small click='enable_ordering' #{t 'builder.assessment.buttons.edit'}
+    /   hr
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'builder.assessment.headings.team_set'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='enable_ordering' #{t 'builder.assessment.buttons.edit'}
+      .ts-wizard_confirmation-section-content-container
+        p= team_set.title
+      hr
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'builder.assessment.headings.case_instructions'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='enable_ordering' #{t 'builder.assessment.buttons.edit'}
+      .ts-wizard_confirmation-section-content-container
+        p= model.instructions
+      hr
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'builder.assessment.headings.case_logistics'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='enable_ordering' #{t 'builder.assessment.buttons.edit'}
+
+      .ts-wizard_confirmation-section-content-container.ts-grid_row
+        .small-6.ts-grid_columns
+          .ts-wizard_confirmation-field-label #{t 'builder.assessment.headings.release_date'}
+          p= model.release_at
+        .small-6.ts-grid_columns
+          .ts-wizard_confirmation-field-label #{t 'builder.assessment.headings.due_date'}
+          p= model.due_at
+    
+    .ts-wizard_row.ts-forms_action-btns-container
+      .ts-grid_columns.small-12
+        a.btn.btn-default.btn-small.left click='back' #{t 'builder.assessment.buttons.back'}
+        a.btn.btn-primary.btn-small.right click='complete' #{t 'builder.assessment.buttons.create'}

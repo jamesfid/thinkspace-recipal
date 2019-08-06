@@ -1,0 +1,15 @@
+.tbl-balance_container {
+  margin-bottom: 2em;
+  padding: .5em 1em;
+  background-color: $ts-blue-light;
+  border-radius: $border-radius;
+
+  h6 {
+    font-weight: $ts-bold;
+    font-size: .875em;
+  }
+
+  hr {
+    border-color: white; 
+  }
+}

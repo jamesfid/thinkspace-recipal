@@ -1,0 +1,30 @@
+// Now using the diagnostic-path styles instead of its own.
+// Allow better side by side comparision since spacing is the same.
+
+// .path-viewer {
+//   .hidden {display: none;}
+// 
+//   .path-viewer_list-item {
+//     @extend .diag-path_list-item;
+//   }
+//   
+//   .path-viewer_list-item-content {
+//     @extend .diag-path_list-item-content;
+// 
+//     .path-viewer_list-item-value {
+//       @extend .diag-path_list-item-value;
+//     }
+// 
+//     .path-viewer_list-item-actions {
+//       @extend .diag-path_list-item-actions;
+// 
+//       .path-viewer_list-item-action {
+//         @extend .diag-path_list-item-action;
+//       }
+//     }
+//   }
+// 
+//   .path-viewer_list-children {
+//     @extend .diag-path_list-children;
+//   }
+// }

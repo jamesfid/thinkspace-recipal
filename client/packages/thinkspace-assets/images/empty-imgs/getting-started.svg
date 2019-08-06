@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 796 270" enable-background="new 0 0 796 270" xml:space="preserve">
+<path fill="#6DC05E" d="M792,236.3H4V262c0,2.2,1.8,4,4,4h780c2.2,0,4-1.8,4-4V236.3z"/>
+<path fill="#B4DBEB" d="M788,46H8c-2.2,0-4,1.8-4,4v183.3h788V50C792,47.8,790.2,46,788,46z"/>
+<rect x="633" y="124" fill="#EEEEEE" stroke="#464646" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" width="8" height="111"/>
+<polygon fill="#FFFFFF" stroke="#464646" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+	684,195 588,195 588,139 684,139 "/>
+<rect x="590" y="154.7" fill="none" width="92" height="12.5"/>
+<text transform="matrix(1 0 0 1 616.2741 164.285)" fill="#797979" font-family="'OmnesMedium'" font-size="14px">Space</text>
+<circle fill="#FDD88A" stroke="#464646" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" cx="73.7" cy="46.3" r="22.3"/>
+<circle fill="none" stroke="#FDD88A" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" cx="73.7" cy="46.3" r="31.7"/>
+<circle fill="none" stroke="#FFF6E4" stroke-width="3" stroke-linecap="round" stroke-miterlimit="10" cx="73.7" cy="46.3" r="41"/>
+<circle fill="#FFFFFF" cx="176.3" cy="107" r="2"/>
+<circle fill="#FFFFFF" cx="236.3" cy="68" r="1"/>
+<circle fill="#FFFFFF" cx="398.3" cy="111" r="1.5"/>
+<circle fill="#FFFFFF" cx="279.3" cy="217" r="1.5"/>
+<circle fill="#FFFFFF" cx="45.3" cy="192" r="1"/>
+<circle fill="#FFFFFF" cx="534.3" cy="90" r="2.5"/>
+<circle fill="#FFFFFF" cx="726.3" cy="112" r="1"/>
+<circle fill="#FFFFFF" cx="729.3" cy="196" r="2"/>
+<rect x="589" y="170" fill="none" width="95.5" height="11.5"/>
+<text transform="matrix(1 0 0 1 605.1104 179.7295)" fill="#63B5D6" font-family="'OmnesSemiBold'" font-size="14px">Available</text>
+<line fill="none" stroke="#464646" stroke-width="4" stroke-linecap="round" stroke-miterlimit="10" x1="4" y1="235" x2="792" y2="235"/>
+<rect x="634.5" y="197" fill="#C7C7C7" width="5" height="3"/>
+<rect x="634.5" y="134" fill="#C7C7C7" width="5" height="3"/>
+</svg>

@@ -1,0 +1,17 @@
+table
+  thead
+    tr
+      th #
+      th= roster.content.heading.column_1
+      th State
+      th.gradebook_assignment-score-header Score
+
+  tbody
+
+    each grp1 in roster.content.group_values
+      tr
+        td.ts-grid_row-number= row-number this
+        td= grp1.label
+        td: component c_state group_values=grp1 is_edit=edit_visible save_state='save_state'
+        td.gradebook_assignment-score
+          component c_score group_values=grp1 decimals=decimals is_edit=edit_visible save_score='save_score'

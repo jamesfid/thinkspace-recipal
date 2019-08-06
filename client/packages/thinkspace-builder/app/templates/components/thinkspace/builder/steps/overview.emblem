@@ -1,0 +1,76 @@
+if all_data_loaded
+  .small-12.small-centered.medium-10.large-8.ts-grid_columns.ts-grid_columns-thin
+    .ts-forms_form-container
+      .row
+        .small-12.ts-grid_columns.ts-builder_content-header 
+          h1 Case Overview
+          p Review all your settings to make sure everything looks fine.
+
+      .row
+        .small-12.ts-grid_columns.ts-builder_section-container 
+          .ts-builder_section-header
+            h1 Case Details
+            link-to r_cases_details model
+              .btn.btn-small.btn-default.right Edit Details
+          label Case name
+          p= model.title
+
+      .row
+        .small-12.ts-grid_columns.ts-builder_section-container 
+          .ts-builder_section-header 
+            h1 Phases
+            link-to r_cases_phases model
+              .btn.btn-small.btn-default.right Edit Phases
+          .ts-grid_row.ts-builder_dialogue-container
+            component c_phase_errors model=model
+          ol class='ts-builder_phase-list'
+            each phase in phases
+              component c_phase model=phase assignment=model disable_actions=true
+
+      .row
+        .small-12.ts-grid_columns.ts-builder_section-container 
+          .ts-builder_section-header 
+            h1 Instructions
+            link-to r_cases_logistics model
+              .btn.btn-small.btn-default.right Edit Instructions
+          .ts-forms_field-container
+            p== model.instructions
+
+      .row
+        .small-12.ts-grid_columns.ts-builder_section-container 
+          .ts-builder_section-header 
+            h1 Logistics
+            link-to r_cases_logistics model
+              .btn.btn-small.btn-default.right Edit Logistics
+          .row.collapse
+            .small-12.medium-6.large-6.columns
+              label Release At
+              p= friendly_release_at
+            .small-12.medium-6.large-6.columns
+              label Due At
+              p= friendly_due_at
+
+      .row
+        .small-12.ts-grid_columns.ts-builder_section-container 
+          .ts-builder_section-header 
+            h1 Final Touches
+          .ts-forms_field-container
+            component c_phase_errors model=model
+            if model.is_active
+              img.ts-builder_phase-type-img src='/assets/images/ts-icons/builder/ts-case_active-status-icons_case-active.svg'
+              h1 Case is Active!
+              p This case is currently active and can be seen by students after the set release date.  Some tools need may need additional configuration before the students can access them.
+              a.btn.btn-small.btn-default click='inactivate' Deactivate Case
+            if model.is_inactive
+              img.ts-builder_phase-type-img src='/assets/images/ts-icons/builder/ts-case_active-status-icons_case-draft.svg'
+              h1 Case is Inactive
+              p Inactive cases allow you to save and make changes until you are ready to activate. This case will not be seen by students until you activate it. 
+              a.btn.btn-small.btn-primary click='activate' Activate Case
+      .row
+        .small-12.ts-grid_columns
+          a.btn.btn-small.btn-default click='back' 
+            | Go Back
+            .tsi.tsi-left.icon-small.tsi-left-arrow-inverse.left
+          a.btn.btn-small.btn-primary.right click='exit' Finish Case
+else
+  component c_loader

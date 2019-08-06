@@ -1,0 +1,53 @@
+.team_index {
+
+  .team_index-new-team-link {
+    margin-left:   1em;
+    margin-top:    .5em;
+    a {
+      &:hover {
+        background-color: $ts-blue-dark;
+        color: white;
+      }
+    }
+  }
+
+  .team_index-filter-label {
+    margin-left: 2em;
+  }
+
+  .team_index-filter-action {
+    margin-left:   1em;
+    &:hover {
+      background-color: $ts-blue-dark;
+      color: white;
+    }
+  }
+
+  .team_index-table {
+
+    th {
+      background-color: $case_manager_table-th-color;
+      color: white;
+    }
+
+    tr {
+      &:hover {
+        background-color: $case_manager_table-hover-color;
+        color:            white;
+        a {
+          color:       white;
+          cursor:      pointer;
+          &:hover {color: #000080;}
+        }
+      }
+    }
+
+    td {color: inherit;}
+
+  }
+
+  .team_index-action-link {
+    padding-right: 1em;
+  }
+
+}

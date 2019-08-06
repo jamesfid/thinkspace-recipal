@@ -1,0 +1,18 @@
+if edit_score_visible
+  if team_ownerable
+    .gradebook_roster-team-score-change-warning: |You are changing all members of team "#{title}"
+  .ts-forms_field-container
+    .ts-forms_field-label
+      | Enter phase score
+    = input value=new_score size=input_size class='gradebook_roster-phase_score-input'
+  .btn-cluster.left-cluster
+    .btn.btn-small.btn-primary click='save'
+      | Update score
+    .btn.btn-small.btn-default click='cancel'
+      | Cancel
+else
+  span.gradebook_roster-phase-score-value title=title
+    = format-decimals score decimals
+    if can_edit
+      unless edit_score_visible
+        .tsi.tsi-right.tsi-nano.tsi-edit_grey click='toggle_edit'

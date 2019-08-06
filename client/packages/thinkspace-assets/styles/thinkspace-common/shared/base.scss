@@ -1,0 +1,176 @@
+body {
+  background-color: white;
+  bottom:           0;
+  left:             0;
+  position:         absolute;
+  right:            0;
+  top:              0;
+}
+
+li[draggable=true] {
+  cursor: move;
+}
+
+table {
+  margin-bottom:         1.25rem;
+  width:                 100%;
+  border:                2px solid $ts-black-light;
+  background:            white;
+  font-size:             1.125em;
+  border-spacing:        0;
+  @include border-radius($border-radius);
+
+  th {
+    padding:          .5em;
+    background-color: $ts-black-light;
+    text-align:       left;
+    font-weight:      500; 
+  }
+
+  td {
+    padding:        .5em;
+    vertical-align: top;
+    text-align:     left;
+    line-height:    1.25em;
+  }
+
+  tr:nth-of-type(2n) {
+    background-color: #f0f8fb; 
+  }
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  display:        inline-block;
+  padding:        .4em .4em;
+  margin-bottom:  .875em;
+  vertical-align: middle;
+  min-width:      50px;
+  font-size:      16px;
+  height:         auto;
+  @include border-radius($border-radius);
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  width:            100%;
+  min-height:       1.25em;
+  background-color: white;
+  border:           2px solid $ts-black-med;
+  margin:           0 0 .875em 0;
+  //@include transition(all ease-out 300ms);
+}
+
+textarea:hover,
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="file"]:hover,
+input[type="datetime"]:hover,
+input[type="datetime-local"]:hover,
+input[type="date"]:hover,
+input[type="month"]:hover,
+input[type="time"]:hover,
+input[type="week"]:hover,
+input[type="number"]:hover,
+input[type="email"]:hover,
+input[type="url"]:hover,
+input[type="search"]:hover,
+input[type="tel"]:hover,
+input[type="color"]:hover {
+  border-color: $ts-black-base; 
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus {
+  border-color:       $ts-blue-base;
+}
+
+table {
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="file"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"] {
+    margin-bottom: 0;
+  }
+}
+
+hr {
+  border-width: 2px 0 0;
+  border-color: $ts-black-light;
+}
+
+body.cke_editable {
+  background-color: #FFFFFF;
+}
+
+strong, b { font-weight: 500; }
+
+p>a { font-weight: $ts-medium;}
+
+h1, h2 {
+  font-weight:    $ts-heavy;
+  letter-spacing: .5px;
+}
+
+h1 {
+  font-size:      $h1_font-size;
+}
+
+h2 {
+  font-size:      $h2_font-size;
+}

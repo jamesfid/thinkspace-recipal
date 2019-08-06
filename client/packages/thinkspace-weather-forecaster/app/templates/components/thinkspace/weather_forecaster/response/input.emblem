@@ -1,0 +1,13 @@
+.thinkspace-weather-forecaster_assessment-item-input class={is_view_only:view_only} 
+
+  = input value=input_value size=input_attributes.ts-grid_columns maxlength=input_attributes.ts-grid_columns readonly=is_view_only disabled=is_view_only
+
+  if has_score
+    .thinkspace-weather-forecaster_assessment-item-input-label class=is_correct_class
+      = has_score_message
+
+  if show_errors
+    each message in errors.input_value
+      span.thinkspace-weather-forecaster_error-message
+        i.im.im-warning.im-error-base
+        = message

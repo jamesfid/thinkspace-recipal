@@ -1,0 +1,113 @@
+.ts-wizard: .ts-wizard_content
+  .ts-forms_heading
+    h1 #{t 'builder.casespace.phases.edit.headings.main_title' model.title}
+    p #{t 'builder.casespace.phases.edit.describe.edit'}
+
+  .ts-wizard_row: .ts-grid_columns.small-12.ts-forms_form-container
+    .ts-forms_section-container 
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.phases.edit.headings.details'}
+        p #{t 'builder.casespace.phases.edit.describe.details'}
+
+      .ts-forms_field-container
+        .ts-forms_field-label #{t 'builder.casespace.phases.edit.headings.title'}
+        component c_validated_input value=title errors=errors.title
+
+      .ts-forms_field-container
+        .ts-forms_field-label #{t 'builder.casespace.phases.edit.headings.max_score'}
+        component c_validated_input value=max_score errors=errors.max_score class='case_manager_phase-max-score'
+
+      / Not used anywhere presently, so commenting it out.
+      / .ts-forms_field-container
+      /   .ts-forms_field-label Description
+      /   = textarea value=description rows='4'
+
+    hr
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.phases.edit.headings.submission'}
+        p #{t 'builder.casespace.phases.edit.describe.submission'}
+
+      .ts-forms_field-container
+        label.ts-checkbox click='toggle_submit_visible'
+          component c_checkbox checked=submit_visible class='case_manager_phase-submit-button-checkbox' disable_click=true
+          | #{t 'builder.casespace.phases.edit.instruct.submit_visible'}
+          p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.submit_visible'}
+        if submit_visible
+          .ts-forms_field-subcontainer
+            .ts-forms_field-container
+              .ts-forms_field-label-wrapper
+                .ts-forms_field-label #{t 'builder.casespace.phases.edit.instruct.submit_text'}
+                p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.submit_text'}
+              component c_validated_input value=submit_text errors=errors.submit_text
+
+      .ts-forms_field-container
+        label.ts-checkbox click='toggle_configuration_validate'
+          component c_checkbox checked=configuration_validate class='case_manager_phase-validate-checkbox' disable_click=true
+          | #{t 'builder.casespace.phases.edit.instruct.configuration_validate'}
+          p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.configuration_validate'}
+
+    hr
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.phases.edit.headings.submit_events'}
+        p #{t 'builder.casespace.phases.edit.describe.submit_events'}
+      .ts-forms_field-container
+        label.ts-checkbox click='toggle_complete_phase'
+          component c_checkbox checked=complete_phase class='case_manager_phase-validate-checkbox' disable_click=true
+          | #{t 'builder.casespace.phases.edit.instruct.complete_phase'} 
+          p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.complete_phase'}
+
+      .ts-forms_field-container
+        label.ts-checkbox click='toggle_unlock_phase'
+          component c_checkbox checked=unlock_phase class='case_manager_phase-validate-checkbox' disable_click=true
+          | #{t 'builder.casespace.phases.edit.instruct.unlock_phase'}
+          p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.unlock_phase'}
+
+      .ts-forms_field-container
+        label.ts-checkbox click='toggle_auto_score'
+          component c_checkbox checked=auto_score class='case_manager_phase-validate-checkbox' disable_click=true
+          | #{t 'builder.casespace.phases.edit.instruct.auto_score'}
+          p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.auto_score'}
+
+    hr
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.phases.edit.headings.team_based'}
+        p #{t 'builder.casespace.phases.edit.describe.team_based'}
+
+      .ts-forms_field-container
+        label.ts-checkbox click='toggle_team_based'
+          component c_checkbox checked=team_based class='case_manager_phase-validate-checkbox' disable_click=true
+          | #{t 'builder.casespace.phases.edit.instruct.team_based'}
+        if team_based
+          .ts-forms_field-subcontainer
+            if has_team_categories
+              .ts-forms_field-container
+                .ts-forms_field-label-wrapper
+                  .ts-forms_field-label #{t 'builder.casespace.phases.edit.instruct.team_category'}
+                  p.ts-forms_field-description #{t 'builder.casespace.phases.edit.describe.team_category'}
+                = view 'select' selection=team_category_selected value=team_category_id content=team_categories optionValuePath='content.id' optionLabelPath='content.title' class='btn btn-small' prompt='Not team based'
+            if has_team_sets
+              .ts-forms_field-container
+                .ts-forms_field-label #{t 'builder.casespace.phases.edit.instruct.team_set'}
+                = view 'select' selection=team_set_selected value=team_set_id content=team_sets optionValuePath='content.id' optionLabelPath='content.title' class='btn btn-small' prompt='No team set.'
+    hr
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 #{t 'builder.casespace.phases.edit.headings.components'}
+
+      unless componentables_loaded
+        component c_loader i18n_path='builder.casespace.loaders.componentables'
+      if componentables_loaded
+        unless has_componentables
+          h6 #{t 'builder.casespace.phases.edit.headings.no_componentables'}
+      each componentable in componentables
+        .ts-wizard_row: .ts-grid_columns.small-12
+          component c_componentable model=componentable select='select_componentable' current_componentable=current_componentable show_link=show_phase 
+
+    .ts-wizard_row.ts-forms_action-btns-container
+    .ts-grid_columns.small-12
+      a.btn.btn-default.btn-small.right click='cancel' #{t 'builder.casespace.phases.edit.buttons.cancel'}
+      if is_valid
+        a.btn.btn-primary.btn-small.left click='save' #{t 'builder.casespace.phases.edit.buttons.save'}

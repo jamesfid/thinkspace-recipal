@@ -1,0 +1,95 @@
+- model: thinkspace/weather_forecaster/item
+  domain: true
+  associations:
+    - has_many: thinkspace/weather_forecaster/assessment_items
+  serializers:
+    - attributes: [id, name, title, description, item_header, presentation, response_metadata, help_tip]
+
+- model: thinkspace/weather_forecaster/station
+  domain: true
+  associations:
+    - has_many: thinkspace/weather_forecaster/forecast_day_actuals
+    - has_many: thinkspace/weather_forecaster/assessments
+  serializers:
+    - attributes: [id, location]
+
+- model: thinkspace/weather_forecaster/assessment
+  associations:
+    - belongs_to: thinkspace/weather_forecaster/station
+    - belongs_to: authable
+      polymorphic: true
+    - has_many: thinkspace/weather_forecaster/items
+      through:  thinkspace/weather_forecaster/assessment_items
+    - has_many: thinkspace/weather_forecaster/assessment_items
+    - has_many: thinkspace/weather_forecaster/forecasts
+  serializers:
+    - attributes: [id, title, description, authable_type, authable_id]
+
+- model: thinkspace/weather_forecaster/assessment_item
+  delegate:
+    - method: authable
+      to: thinkspace/weather_forecaster/assessment
+  associations:
+    - belongs_to: thinkspace/weather_forecaster/item
+    - belongs_to: thinkspace/weather_forecaster/assessment
+    - has_many: thinkspace/weather_forecaster/forecasts
+      through: thinkspace/weather_forecaster/assessment
+      source: thinkspace/weather_forecaster/forecasts
+  serializers:
+    - attributes: [id, title, description, item_header, presentation, help_tip]
+
+- model: thinkspace/weather_forecaster/forecast_day
+  associations:
+    - has_many: thinkspace/weather_forecaster/forecast_day_actuals
+  serializers:
+    - attributes: [id, forecast_at, state]
+
+- model: thinkspace/weather_forecaster/forecast_day_actual
+  associations:
+    - belongs_to: thinkspace/weather_forecaster/station
+    - belongs_to: thinkspace/weather_forecaster/forecast_day
+  serializers:
+    - attributes: [id, value]
+
+- model: thinkspace/weather_forecaster/forecast
+  delegate:
+    - method: authable
+      to: thinkspace/weather_forecaster/assessment
+  associations:
+    - belongs_to: thinkspace/weather_forecaster/forecast_day
+    - belongs_to: thinkspace/weather_forecaster/assessment
+    - belongs_to: thinkspace/common/user
+    - belongs_to: ownerable
+      polymorphic: true
+    - has_one:  thinkspace/weather_forecaster/station
+      through:  thinkspace/weather_forecaster/assessment
+    - has_many: thinkspace/weather_forecaster/responses
+      dependent: :destroy
+    - has_many: thinkspace/weather_forecaster/assessment_items
+      through: thinkspace/weather_forecaster/assessment
+      source: thinkspace/weather_forecaster/assessment_items
+  serializers:
+    - attributes: [id, is_locked, state, score, forecast_at, ownerable_type, ownerable_id]
+
+- model: thinkspace/weather_forecaster/response
+  delegate:
+    - method: authable
+      to: thinkspace/weather_forecaster/forecast
+  associations:
+    - belongs_to: thinkspace/weather_forecaster/forecast
+    - belongs_to: thinkspace/weather_forecaster/assessment_item
+    - has_one:    thinkspace/weather_forecaster/response_score
+      dependent: :destroy
+    - has_one:    thinkspace/weather_forecaster/item
+      through:    thinkspace/weather_forecaster/assessment_item
+  serializers:
+    - attributes: [id, value, assessment_item_id, response_score_metadata]
+
+- model: thinkspace/weather_forecaster/response_score
+  delegate:
+    - method: authable
+      to: thinkspace/weather_forecaster/response
+  associations:
+    - belongs_to: thinkspace/weather_forecaster/response
+  serializers:
+    - attributes: [id, score]

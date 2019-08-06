@@ -1,0 +1,38 @@
+.space-content_sub-heading
+  h1 Phase Summary
+table.gradebook_roster-supplement
+  thead: tr
+    th Count
+    if supplement.base.user_count
+      th Students
+    th Total Score
+    th Average Score
+    th Median Score
+  tbody: tr
+    td= supplement.base.count
+    if supplement.base.user_count
+      td= supplement.base.user_count
+    td= format-decimals supplement.base.total   decimals
+    td= format-decimals supplement.base.average decimals
+    td= format-decimals supplement.base.median  decimals
+
+if show_non_zero_supplement
+  .space-content_sub-heading
+    h1 Non-Zero Phase Summary
+  table.gradebook_roster-supplement
+    thead
+      tr
+        th Count
+        if supplement.non_zero.user_count
+          th Students
+        th Total Score
+        th Average Score
+        th Median Score
+    tbody: tr
+      td= roster.content.supplement.non_zero.count
+      if supplement.non_zero.user_count
+        td= supplement.non_zero.user_count
+      td= format-decimals supplement.non_zero.total   decimals
+      td= format-decimals supplement.non_zero.average decimals
+      td= format-decimals supplement.non_zero.median  decimals
+

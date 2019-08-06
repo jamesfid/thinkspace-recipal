@@ -1,0 +1,10 @@
+.thinkspace-weather-forecaster_assessment-item-radio class=is_correct_class  class={is_view_only:view_only} click='toggle_radio'
+
+  .thinkspace-weather-forecaster_assessment-item-radio-status
+    if is_checked
+      .tsi.tsi-small.tsi-weather-forecaster-checked-item
+    else
+      .tsi.tsi-small.tsi-weather-forecaster-unchecked-item
+
+  .thinkspace-weather-forecaster_assessment-item-radio-label
+    = response_label

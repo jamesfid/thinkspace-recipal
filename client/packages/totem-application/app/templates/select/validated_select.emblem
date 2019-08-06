@@ -1,0 +1,3 @@
+= chosen-select content=view.content multiple=view.multiple display_property=view.display_property value=view.value data_placeholder=view.data_placeholder selected_items=view.selected_items disabled_items=view.disabled_items disabled=view.disabled no_select=view.no_select validated=true select_action=view.select_action deselect_action=view.deselect_action is_object_list=view.is_object_list
+= if view.errors_partial
+  = partial view.errors_partial

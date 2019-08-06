@@ -1,0 +1,6 @@
+.ts-picker
+  input type='text' class='ts-picker_input'
+  .ts-picker_preview
+    = if show_icon
+      i.fa.fa-calendar.ts-picker_icon
+    span= friendly_value

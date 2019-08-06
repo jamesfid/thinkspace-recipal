@@ -1,0 +1,10 @@
+#application class={toolbar_is_hidden:toolbar-is-hidden toolbar_is_minimized:toolbar-is-minimized sidepocket_is_expanded:sidepocket-is-expanded sidepocket_width_class}
+  component c_toolbar is_user_profile=is_user_profile
+  component c_messages
+  #content-wrapper
+    #content
+      outlet
+  if sidepocket_is_expanded
+    component c_sidepocket current_route=current_route
+  if dock_is_visible
+    component c_dock current_route=current_route

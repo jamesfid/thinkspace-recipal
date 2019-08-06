@@ -1,0 +1,13 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+
+    .ts-forms_heading
+      h4
+        span.ts-wizard_red #{t 'builder.lab.admin.result.destroy_prompt'}
+        br
+        = admin.action_overlay_model.title
+
+  .ts-wizard_row: .ts-grid_columns.small-12
+    a.btn.btn-default.btn-small.left click='cancel' #{t 'builder.lab.admin.buttons.no'}
+    a.btn.btn-primary.btn-small.right click='delete' #{t 'builder.lab.admin.buttons.yes'}
+

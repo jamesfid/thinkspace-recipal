@@ -1,0 +1,797 @@
+.markup-library {
+  position:         fixed;
+  width:            300px;
+  z-index:          5001;
+  border:           2px solid $ts-blue-med;
+  background-color: $ts-blue-light;
+  padding:          0.25em;
+  @include border-radius($border-radius);
+
+  .markup-library_comments {
+    list-style-type: none;
+    margin-bottom:   0;
+    .markup-library_comment { 
+      &:hover {
+        background-color: $ts-blue-base;
+        cursor: pointer;
+      }
+    }
+  }
+  
+}
+
+.markup_comment {
+  width:            300px;
+  border:           2px solid $ts-blue-med;
+  background-color: $ts-blue-light;
+  padding:           0.25em;
+  @include border-radius($border-radius);
+
+  .markup_comment-commenter { font-size: 0.75em; text-align: right; }
+  p { margin-bottom: 0; }
+
+  .markup_comment-actions {
+    text-align: right;
+    .markup_comment-action { margin-right: 0.5em; }
+  }
+
+}
+
+.markup_comment-cursor-move {
+  cursor: move;
+}
+
+.markup_comment-cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+.library-manage {
+  width: 50%;
+  margin-left: 2em;
+}
+
+// Library Management Styling
+.library_categories {
+  padding-left: 1em;
+  width: 80%;
+  height: 500px;
+
+  .library_categories-header {
+    font-size: 16px;
+    font-weight: 600;
+
+    .category_header-all-count {
+      .category_header-checkbox-wrapper {
+        margin: .25em 0em;
+        display: inline-block;
+      }
+
+      .category_all-tag-count {
+        float: right;
+        display: inline-block;
+        margin-right: .75em;
+      }
+    }
+
+    .library_categories-header-action {
+      color: #bcbcbc;
+      font-weight: 500;
+      float: right;
+      display: inline-block;
+      padding: 0 1em;
+
+      &:hover {
+        cursor: pointer;
+        color: black;
+      }
+
+      .action-icon {
+        display:     inline-block;
+        //padding-top: .25em;
+      }
+
+      .action-text {
+        display:     inline-block;
+        font-size:   14px;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  .library_categories-body { 
+    height: 350px;
+  }
+
+  .library_categories-input { 
+    .library_categories-new {
+
+      .library_categories-new-confirmation {
+
+      }
+
+      .library_new-categories-btn {
+        display: inline-block;
+      }
+
+      .action-cancel {
+        //margin-left: 1em;
+        color: #bcbcbc;
+        padding: .5em 1.5em;
+        display: inline-block;
+
+        &:hover {
+          cursor: pointer;
+          color:  darken(#bcbcbc, 20%);
+        }
+      }
+    }
+
+    .library_categories-footer-action {
+      color: #bcbcbc;
+      font-weight: 500;
+      padding: 1em 0;
+
+      &:hover {
+        cursor: pointer;
+        color: black;
+      }
+
+      .action-icon {
+        display:     inline-block;
+      }
+      .action-text {
+        display:     inline-block;
+        font-size:   14px;
+        margin-left: 0.5em;
+      }
+    }
+  }
+
+  .category_checkbox-wrapper {
+    margin: .25em 0em;
+    display: inline-block;
+  }
+
+  .category_count-wrapper {
+    float: right;
+    display: inline-block;
+
+    .category_tag-count {
+      font-weight:  600;
+      text-align:   center;
+      margin:       .25em 0em;
+      margin-right: .75em;
+    }
+  }
+}
+
+.marker {
+  width: auto;
+  background-color: $ts-blue-base;
+  display: inline-block;
+  padding: .125em .5em;
+  border-radius: 3px;
+  margin-right: .25em;
+  margin-top: .5em;
+
+  .marker-text {
+    color: white;
+    display: inline-block;
+  }
+
+  .marker-action {
+    // color: #464646;
+    color: white;
+    margin-left: .25em;
+    display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.comment_dropdown-style {
+  background-color: white !important;
+  border: 0 !important;
+  font-weight: 500 !important;
+  color: $ts-blue-base !important;
+}
+
+.library_dropdown-style {
+  background-color: white !important;
+  border: 0 !important;
+  font-style: italic !important;
+  color: #bcbcbc !important;
+  display: inline-block;
+}
+
+.library_dropdown-list-style {
+  left: 8px !important;
+}
+
+.dropdown-wrapper {
+  display: inline-block;
+}
+
+.comments_scroll-wrapper {
+  height: 500px;
+}
+
+.library_add-comments-btn {
+  float: right;
+}
+
+// Markup Rework CSS below this line
+// ------------------------------------
+
+
+.ts-markup_comments {
+  .title-region {
+    position:         relative;
+    margin-bottom:    0;
+    background-color: $ts-black-light;
+    padding:          ($content-padding/2);
+
+    h1 {
+      font-size:     1.125rem;
+      margin-bottom: .25rem;
+    }
+
+    .ts-markup_sidepocket-instructions {
+      >p {
+        margin-bottom: .5rem;
+        font-size:     .75rem;
+      }
+    }
+
+    .ts-markup_header-link {
+      float:          right;
+      margin-top:     .25rem;
+      font-size:      .75rem;
+      cursor:         pointer;
+      font-weight:    $ts-bold;
+      letter-spacing: .25px;
+      color:          $ts-black-base;
+      transition:     color 0.5s ease;
+
+      .icon-tiny {
+        margin-top: 0;
+      }
+
+      &:hover {
+        color: $ts-blue-base;
+      }
+    }
+  }
+}
+
+#ts-markup_comment-gutter-wrapper {
+  position: relative;
+}
+
+.ts-markup_comment-wrapper {
+  @include clearfix;
+
+  margin-bottom:    1rem;
+
+
+}
+
+.ts-markup_comment, .ts-markup-library_comment {
+  border-top:       2px solid $ts-black-light;
+  border-bottom:    2px solid $ts-black-light;
+  border-left:      2px solid $ts-black-light;
+  background-color: white;
+  width:            100%;
+
+  &.ts-markup_editing-comment {
+    @include clearfix;
+  }
+}
+.ts-markup_comment-content {
+  cursor: pointer;
+
+  &.ts-markup_comment-condensed {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+
+  .ts-markup_comment-author {
+    float: left;
+    font-size: .875rem;
+    color: $ts-black-med;
+    font-weight: $ts-medium;
+    margin-bottom: .5rem;
+  }
+
+  .ts-markup_comment-actions {
+    float: right;
+    padding-top: .25rem;
+  }
+  .ts-markup_comment-text {
+    word-wrap: break-word;
+  }
+}
+
+.ts-markup_reply-link, .ts-markup_tags-link {
+  color:        #bcbcbc;
+  margin-left:  ($content-padding/2);
+  padding-left: .25rem;
+  font-size:    .75rem;
+  font-weight:  $ts-medium;
+  transition:   color 0.5s ease;
+
+  &:hover {
+    color:  $ts-blue-base;
+    cursor: pointer;
+  }
+}
+
+.ts-markup_tags-link {
+  margin-left:   0.5em;
+  margin-bottom: 0.25em;
+}
+
+
+.ts-markup_child-comment {
+  margin-left: ($content-padding/2);
+  border-top: 0;
+  border-left: 2px solid $ts-black-light;
+
+  @include clearfix;
+}
+
+
+.ts-markup-library {
+  border-left: 2px solid white;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.ts-markup-library_comment {
+  margin-top: -2px;
+  cursor:     pointer;
+  font-size:  .875rem;
+  word-break: break-all;
+  padding:    ($content-padding/2); 
+  transition: background-color 0.3s ease-in;
+
+  backface-visibility: hidden;
+
+  &.is-collapsed {
+    .ts-markup-library_comment-text {
+      overflow:      hidden;
+      text-overflow: ellipsis;
+      white-space:   nowrap;
+      max-height:    1.375rem;
+
+      >p:first-child {
+        margin-bottom: 0;
+        overflow:      hidden;
+        text-overflow: ellipsis;
+        white-space:   nowrap;
+      }
+    }
+  }
+
+  .ts-markup-library_comment-text {
+    > p {
+      font-size: .875rem;
+    }
+  }
+  .ts-markup_reply-link {
+    padding-left: 0;
+    margin-left:  0;
+  }
+  .ts-markup-library_comment-tags {
+    font-size:  .75rem;
+    font-style: italic;
+    color:      $ts-black-med;
+    min-height: 1em;
+  }
+  &:hover {
+    border-left:      2px solid $ts-blue-base;
+    background-color: $ts-blue-light;
+  }
+  &:active {
+    margin-bottom: 2px;
+    border-left:   4px solid $ts-green-base;
+    border-top:    2px solid $ts-green-base;
+    border-bottom: 2px solid $ts-green-base;
+  }
+  &.is-selected {
+    border-left:   2px solid $ts-green-base;
+    border-top:    2px solid $ts-green-base;
+    border-bottom: 2px solid $ts-green-base;
+    margin-bottom: 2px;
+  }
+  &:first-of-type {margin-top: 0;}
+}
+
+.ts-markup-library_list {
+  list-style-type: none;
+  margin: 0;
+
+  li {
+    &:first-of-type {
+      .ts-markup-library_comment {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.ts-markup-library_empty-container {
+  padding: .25rem ($content-padding/2);
+
+  >h1 {
+    font-size:     .875rem;
+    margin-bottom: .25rem;
+  }
+  >p {
+    margin-bottom: 0;
+    font-size:     .875rem;
+    color:         $ts-black-base;
+  }
+}
+
+.ts-markup-library_tag-list {
+  padding:       .25rem ($content-padding/2);
+  margin-bottom: .25rem;
+  >span {
+    font-size:    .75rem;
+    margin-right: .5rem;
+  }
+  .ts-markup-library_tag-item {
+    border:           1px solid $ts-black-med;
+    background-color: $ts-black-light;
+    margin-right:     .5rem;
+    padding:          .25rem .5rem;
+    font-size:        .65rem;
+    display:          inline-block;
+    border-radius:    $border-radius;
+    font-weight:      $ts-medium;
+    color:            $ts-black-base;
+    font-style:       italic;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+//  Markup Library Manager
+
+.ts-markup-manager_list-header {
+  h2 {
+    font-size: 1rem;
+    font-weight: $ts-bold;
+  }
+}
+
+.ts-markup-manager_list-content {
+  >p {
+    max-width: 42em;
+  }
+}
+
+.ts-markup-manager_sort-list {
+  margin-bottom: 1rem;
+  font-size: .875rem;
+
+  .thinkspace-dropdown .thinkspace-dropdown_anchor .thinkspace-dropdown_caret {
+    position: relative;
+    right: 0;
+    margin-left: 1rem;
+  }
+}
+
+.ts-markup-manager_comment-col {
+  @include grid-column($columns: 8, $collapse: true);
+  padding-right: 1rem;
+}
+.ts-markup-manager_uses-col {
+  @include grid-column($columns: 2, $collapse: true);
+  text-align: right;
+}
+.ts-markup-manager_actions-col {
+  @include grid-column($columns: 2, $collapse: true);
+  text-align: right;
+}
+
+.ts-markup-manager_comment-wrapper {
+  @include clearfix;
+
+
+  border-bottom: 2px solid $ts-black-light;
+  margin-bottom: 1rem;
+
+  .btn-cluster {
+    margin-bottom: 1rem;
+  }
+
+  &.is-deleting {
+    color: $ts-red-base;
+
+    .ts-markup-manager_comment-category {
+      color: $ts-red-base;
+    }
+  }
+}
+.ts-markup-manager_comment-text {
+  word-break: break-all;
+  line-height: 1.7em;
+}
+.ts-markup-manager_comment-category {
+  font-size: .875rem;
+  font-style: italic;
+  color: $ts-black-med;
+}
+
+.ts-markup-manager_comment-actions {
+  .action-wrapper {
+    display: inline-block;
+    margin-left: 1rem;
+  }
+}
+
+
+.ts-markup-manager_comment-category-edit {
+  margin-bottom: 1rem;
+  width:         50%;
+
+  .ts-markup-manager_comment-category {
+    font-style:     normal;
+    border-bottom:  2px solid $ts-black-light;
+    padding-bottom: .25em;
+    color:          $ts-black-base;
+    margin-bottom:  .25rem;
+    font-weight:    $ts-medium;
+  }
+
+  .thinkspace-dropdown .thinkspace-dropdown_anchor {
+    padding-left: 0;
+    font-size: .875rem;
+
+    .thinkspace-dropdown_text {
+      color: $ts-black-base;
+    }
+    .thinkspace-dropdown_caret {
+      position: relative;
+      right: 0;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.ts-markup-manager_confirmation {
+  padding-top: 1rem;
+  >p {
+    font-weight: $ts-bold;
+    margin-bottom: .5rem;
+    color: $ts-black-dark;
+  }
+}
+
+// Manager Categories List
+
+.ts-markup-manager_categories-new {
+  @include clearfix;
+
+  display:        block;
+  padding-bottom: 1rem;
+  border-bottom:  2px solid $ts-black-light;
+  margin-bottom:  1rem;
+}
+
+.ts-markup-manager_categories-item-all {
+  margin-bottom:  1rem;
+  padding-bottom: .5rem;
+  border-bottom:  2px solid $ts-black-light;
+}
+
+.ts-markup-manager_categories-item-actions {
+  font-size: .75rem;
+  padding-left: 2.8125rem;
+
+  span {
+    margin-right: 1rem;
+    font-weight:  $ts-medium;
+    color:        $ts-black-med;
+    cursor: pointer;
+
+    &:hover {
+      color: $ts-blue-base;
+    }
+  }
+}
+
+.ts-markup-manager_categories-item-counter {
+  float: right;
+}
+
+.ts-markup-manager_categories-item-wrapper {
+  @include clearfix;
+}
+
+/// TESTING ///
+.ts-markup_multi-comment , .ts-markup_multi-commentz { 
+  height: 90px;
+  border: 2px solid red;
+  .comment { background-color: blue; }
+  &.empty { border: 5px solid yellow; }
+}
+
+#ts-markup_comment-gutter { position: relative; }
+
+
+// Discussion
+.ts-markup_discussion {
+  position: absolute;
+}
+
+.ts-markup_discussion.ts-markup_discussion-default { 
+  border-radius:    25px;
+  border:           3px solid $ts-black-med;
+  height:           50px;
+  width:            50px;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow:       1px 1px 7px 1px #dddddd;
+  cursor:           pointer;
+  color:            $ts-black-base;
+  text-align:       center;
+  font-weight:      $ts-heavy;
+  padding-top:      .5rem;
+
+  &.is-highlighted { border-color: $ts-blue-base; color: $ts-blue-base;}
+}
+
+.ts-markup_sidepocket-no-comments  {
+  border:        2px dashed $ts-black-med;
+  margin-bottom: 1rem;
+  padding:       ($content-padding/2);
+  >h1 {
+    font-size: .875rem;
+    margin-bottom: .25rem;
+  }
+  >p {
+    margin-bottom: 0;
+    font-size:     .875rem;
+    color:         $ts-black-base;
+  }
+}
+
+.ts-markup_sidepocket-discussion {
+  // border: 2px solid $ts-black-base;
+  margin-bottom: 1rem;
+  &.is-scrolled-to { 
+    .ts-markup_sidepocket-discussion-comments {
+      border-left:         4px solid $ts-blue-base; 
+      border-top-color:    $ts-blue-base;
+      border-bottom-color: $ts-blue-base;
+    }
+  }
+
+  .ts-markup_sidepocket-discussion-heading {
+    >span {
+      color:        $ts-black-dark;
+      margin-left:  ($content-padding/2);
+      padding-left: .25rem;
+      font-size:    .75rem;
+      font-weight:  $ts-medium;
+    }
+    >a {
+      float:        right;
+      margin-right: ($content-padding/2);
+      color:        $ts-black-med;
+    }
+  }
+
+  &.is-highlighted { 
+    .ts-markup_sidepocket-discussion-comments {
+      border-color: $ts-blue-base;
+    }
+  }
+
+  .ts-markup_sidepocket-discussion-comments {
+    margin:          0 0 .25rem;
+    list-style-type: none;
+    box-shadow: 1px 1px 7px 1px #dddddd;
+    border-top: 2px solid $ts-black-med;
+    border-bottom: 2px solid $ts-black-med;
+    border-left: 2px solid $ts-black-med;
+  }
+
+  .ts-markup_sidepocket-comment {
+    @include grid-row();
+
+    border-bottom:    2px solid $ts-black-light;
+    
+    &:last-of-type { border-bottom: none; }
+
+    &.ts-markup_sidepocket-comment-reply {
+      margin-top: .25rem;
+      margin-bottom: .25rem;
+      border-top: 2px solid $ts-black-light;
+      border-bottom: 2px solid $ts-black-light;
+      border-left: 2px solid $ts-black-light;
+
+    }
+
+    &.is-collapsed {
+      .ts-markup_sidepocket-comment-value {
+        overflow:      hidden;
+        text-overflow: ellipsis;
+        white-space:   nowrap;
+        //max-height: 1.375rem;
+
+        >p:first-child {
+          margin-bottom: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+    .ts-markup_sidepocket-comment-body {
+      border-top: 1px solid $ts-black-med;
+      @include grid-row();
+      padding: 0.5em;    
+    }
+
+    .ts-markup_sidepocket-comment-container {
+      padding:          .5rem ($content-padding/2);
+      background-color: white;
+    }
+
+    .ts-markup_sidepocket-comment-author-info {
+      @include clearfix;
+      margin-bottom: .25rem;
+    }
+    .ts-markup_sidepocket-comment-avatar {
+      @include grid-column($columns: 2, $collapse: true);
+    }
+    .ts-markup_sidepocket-comment-author {
+      @include grid-column($columns: 8, $collapse: true);
+
+      font-size:      .75rem;
+      font-weight:    $ts-bold;
+      color:          $ts-black-med;
+      letter-spacing: .25px;
+    }
+    .ts-markup_sidepocket-comment-content {
+      // @include grid-column($columns: 8, $collapse: true);
+      .ts-markup_sidepocket-comment-value {
+        font-size: .875rem;
+        > p {
+          font-size: .875rem;
+        }
+      }
+      .ts-markup_sidepocket-comment-expand {
+        text-align: left;
+        font-size:  12px;
+        color:      $ts-blue-base;
+        &:hover { cursor: pointer; }
+      }
+    }
+    .ts-markup_sidepocket-comment-actions {
+      // @include grid-column($columns: 4, $collapse: true);
+      @include grid-column($columns: 2, $collapse: true);
+      .ts-markup_sidepocket-comment-add-reply {
+        text-align: right;
+        font-size:  12px;
+        color:      $ts-blue-base;
+        &:hover { cursor: pointer; }
+      }
+      .ts-markup_sidepocket-comment-action {
+        color: $ts-black-dark;
+      }
+    }
+    .ts-markup_sidepocket-comment-replies {
+      list-style-type: none;
+      margin-left: ($content-padding/2);
+    }
+  }
+}

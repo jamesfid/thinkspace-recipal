@@ -1,0 +1,55 @@
+div class={:dialogue :thinkspace-common_fu-modal-instructions show_instructions:dialogue-instruct show_error:dialogue-error show_success:dialogue-success}
+  = if show_success
+    h4.thinkspace-common_fu-modal-title Success!
+    p 
+      | We have received your file and will being processing it shortly. You will receive an email notifying you when it is complete.
+    ul.thinkspace-common_fu-files
+      = each file in files
+        li.thinkspace-common_fu-file
+          i.im.im-checkmark
+          |  
+          = file.name
+
+  = if show_error
+    h4.thinkspace-common_fu-modal-title Oops, something went wrong.  Please try again.
+    p 
+      | Check to make sure that your CSV file is in the correct format or select a different file to upload.
+    p 
+      | Please remember that the files must be in <strong>.csv</strong> format.  Excel (.xls, .xlsx), Open Office (.odt), and all others will not upload correctly.  If you're still having troubles, feel free to contact us using the support button in the bottom right of your screen. 
+    h4 Download an example roster file from <a href='https://thinkspace-prod.s3.amazonaws.com/examples/thinkspace_example_roster.csv' target='_blank'>the link found here.</a>
+    = if server_response
+      hr
+      h6 The server responded with the following message:
+      ul
+        li = server_response
+        
+  = if show_instructions
+    h4.thinkspace-common_fu-modal-title Import a Student Roster CSV File
+    p 
+      | Use the button below to select files on your computer
+      = if drop
+        |  or you can drag and drop them here.
+      = else
+        | . 
+      br
+      | The files must be in <strong>.csv</strong> format.  Excel (.xls, .xlsx), Open Office (.odt), and all others will not upload correctly.
+    p This may take up to <strong>several minutes</strong> depending on the size of the roster. You will receive an email notifying you when it is complete.
+    hr
+    p Your file will look like:
+    table
+      tr
+        th email
+        th first_name
+        th last_name
+      tr
+        td example1@sixthedge.com
+        td John
+        td Doe
+      tr
+        td example2@sixthedge.com
+        td Jane
+        td Doe
+    hr
+    h4 Download an example roster file from <a href='https://thinkspace-prod.s3.amazonaws.com/examples/thinkspace_example_roster.csv' target='_blank'>the link found here.</a>
+      
+

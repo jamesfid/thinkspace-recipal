@@ -1,0 +1,23 @@
+== content_for :header_title do
+  - if @success
+    | We have successfully imported your teams and roster for
+  - else
+    | Oops! There was an error in processing your roster for
+
+== content_for :header_deets do
+  span
+    b #{@invitable.title}
+    - unless @success
+      br
+      | Please contact us at 
+      b support@thinkspace.org
+    p Your teams have been created and the students have been automatically invited to ThinkSpace.
+
+== content_for :content_contact do
+  - unless @success
+    p #{@status}
+
+  p You can view the created teams using the button below.
+
+== content_for :footer_action, "View Teams"
+== content_for :footer_terms, "Learn more about ThinkSpace"

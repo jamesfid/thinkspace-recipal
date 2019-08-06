@@ -1,0 +1,20 @@
+if edit_state_visible
+  .ts-forms_field-label-wrapper
+    .ts-forms_field-label
+      | Choose a new state for the phase:
+  if team_ownerable
+    .gradebook_roster-team-score-change-warning: |You are changing all members of team "#{title}"
+  ul.gradebook_roster-phase-state-edit-icons
+    each phase_state in domain_phase_states
+      li.gradebook_roster-phase-state-edit-icon click='"change" phase_state.state' title='{{unbound phase_state.title}}'
+        a
+          = phase-progress-icon-from-state phase_state.state
+          | #{phase_state.title}
+    .btn.btn-small.btn-default click='cancel'
+      | Cancel
+else
+  span.gradebook_roster-phase-state-icon
+    = phase-progress-icon-from-state current_state
+    if can_edit
+      unless edit_state_visible
+        .tsi.tsi-right.tsi-nano.tsi-edit_grey click='toggle_edit'

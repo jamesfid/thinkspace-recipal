@@ -1,0 +1,46 @@
+.ts-grid_row: .ts-grid_columns.small-12
+  .ts-forms_inline-heading
+    h4 Evaluation Settings
+    .ts-forms_heading-actions
+      if is_read_only
+        .ts-forms_description-warning
+          .tsi.tsi-small.tsi-phase-warning  
+          | Evaluation is #{model.state}, cannot modify settings.
+        .btn.btn-small.btn-default click='cancel' Back
+      else
+        .btn.btn-small.btn-primary click='save' Update Settings
+        .btn.btn-small.btn-default click='cancel' Cancel
+unless is_read_only
+  .ts-forms_section-container
+    p Evaluation is currently inactive. To activate it click on button. 
+    a.btn.btn-small.btn-primary click='activate' Activate Evaluation
+
+  .ts-forms_section-container
+    .row
+      .small-12.medium-6.large-6.ts-grid_columns
+        .ts-forms_field-label What type of peer evaluation would you like this to be?
+    .row
+      .small-12.medium-6.large-6.ts-grid_columns.ts-radio_item-container
+        label.ts-radio click='set_is_categories'
+          component c_radio checked=is_categories disable_click=true
+          img.ts-radio_image src='/assets/images/ts-icons/builder/ts-builder_component-type_categories.svg'
+          .ts-checkbox_label.ts-radio_image-label Categories
+          .ts-radio_description.ts-radio_image-description Add any number of scales without points restrictions.
+      .small-12.medium-6.large-6.ts-grid_columns.ts-radio_item-container
+        label.ts-radio click='set_is_balance'
+          component c_radio checked=is_balance disable_click=true
+          img.ts-radio_image src='/assets/images/ts-icons/builder/ts-builder_component-type_balanced.svg'
+          .ts-checkbox_label.ts-radio_image-label Balance Points
+          .ts-radio_image-description
+            .ts-radio_description 
+              | Classically used for the Michaelsen method.  Points are pooled based on a per-member value.  Students cannot give the same score for everyone.
+            if is_balance
+              .ts-forms_field-subcontainer
+                label.ts-forms_field-label Points per member
+                component c_validated_input value=points_per_member errors=errors.points_per_member class="ts-forms_input-tiny"
+              .ts-radio_item-container
+                label.ts-checkbox click='toggle_points_different'
+                  component c_checkbox checked=points_different disable_click=true
+                  .ts-checkbox_label Differentiate points?
+                  .ts-radio_description If this is enabled, it will require that the student allocates a different score for each member.  For example, you could not allocate 10, 10, 10 to your peers with this enabled.
+

@@ -1,0 +1,105 @@
+prereq_configs: space
+
+variables:
+  - &CASE  HTML
+  - &PHASE_NO_SUBMIT           HTML
+  - &PHASE_ONE_COL             HTML (one column)
+  - &PHASE_TWO_COL             HTML (two columns)
+  - &PHASE_INPUTS              HTML + Inputs
+  - &PHASE_CARRY_FORWARD       HTML + Carray Forward Inputs
+  - &PHASE_OBSERVATION_LIST_1  HTML + Observation List 1
+  - &PHASE_OBSERVATION_LIST_2  HTML + Observation List 2
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_NO_SUBMIT
+    assignment:    *CASE
+    template_name: one_column_html_no_submit
+    settings:      *NO_SUBMIT
+    sections:
+      html:
+        methods: thinkspace
+        title:   HTML-Only (no submit)
+
+  - title: *PHASE_ONE_COL
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: lorem_all
+        title:   HTML-Only (with submit)
+
+  - title: *PHASE_TWO_COL
+    assignment:    *CASE
+    template_name: two_column_html_html_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html-1:
+        methods: lorem_1
+        title:   HTML Column One
+      html-2:
+        methods: lorem_2
+        title:   HTML Column Two
+
+  - title: *PHASE_INPUTS
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT_UNLOCK_NEXT
+    sections:
+      html:
+        methods: inputs
+        title:   HTML (submit unlock next)
+
+  - title: *PHASE_CARRY_FORWARD
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    default_state: locked
+    settings:
+      <<: *SUBMIT_UNLOCK_NEXT
+    sections:
+      html:
+        title:         Carry Forward (submit unlock next)
+        methods:       carry_forward
+        carry_forward: *PHASE_INPUTS
+
+  - title: *PHASE_OBSERVATION_LIST_1
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    default_state: locked
+    settings:
+      <<: *SUBMIT_AUTO_SCORE_UNLOCK_NEXT
+    sections:
+      html:
+        methods: thinkspace
+        title:   Select Text (submit unlock next)
+
+  - title: *PHASE_OBSERVATION_LIST_2
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    default_state: locked
+    settings:
+      <<: *SUBMIT_AUTO_SCORE
+    sections:
+      html:
+        methods: lorem_2
+        title:   Select Text
+
+auto_input:
+  responses:
+    - phases: *PHASE_INPUTS
+      users:  read_1
+  observations:
+    - observations_per_list: 10
+      max_notes_per_observation: 3
+      phases: *PHASE_OBSERVATION_LIST_1
+      users:  read_1

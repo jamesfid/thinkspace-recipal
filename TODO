@@ -1,0 +1,22 @@
+Projects:
+  ThinkSpace:
+    ☐ Update the superuser paginagtion on spaces#index to sort by last updated based on assignments or something. @created(Tue 06/11/2019 - 11:26 PM)
+    ☐ Consider removal of "clone: " from the title of the phases. @created(Tue 06/11/2019 - 11:27 PM)
+Archive:
+  ✔ Determine if team having an authable of a space is going to be a problem. @created(Wed 06/12/2019 - 02:00 AM) @done(19-06-12 02:15) @project(Projects.ThinkSpace)
+    * Could be something weird with cloning.
+    * Didn't seem to have anything breaking happening during testing.
+  ✔ Add a team upload notification mailer with more specifics for the instructor. @created(Wed 06/12/2019 - 01:51 AM) @done(19-06-12 02:00) @project(Projects.ThinkSpace)
+  ✔ Results phase should unlock for everyone, not just those with sent reviews. @created(Tue 06/11/2019 - 05:18 PM) @done(19-06-11 20:36) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Add in additional `ignored` state to the peer evaluation review set for UX purposes.  It would function the same as a non-approved PE for sending. @created(Tue 06/11/2019 - 05:41 PM) @done(19-06-11 20:36) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Remove the development code that allows me to toggle to ignored for testing. @created(Tue 06/11/2019 - 07:56 PM) @done(19-06-11 20:35) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Add in Holly's requested feature to allow for the same balanced points per member. @created(Tue 06/11/2019 - 05:18 PM) @done(19-06-11 23:55) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Fix the notification process to allow for sending to students who have not yet started. @created(Tue 06/11/2019 - 05:18 PM) @done(19-06-11 22:06) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Need to switch this over to accept an email/user instead of a review_set id @created(Tue 06/11/2019 - 05:19 PM) @done(19-06-11 22:06) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Add ability for an instructor to notify all non-submitted peer evaluations a reminder. @created(Tue 06/11/2019 - 05:19 PM) @done(19-06-11 22:06) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Just use static text, come up with something.  Standard template for mailer. @created(Tue 06/11/2019 - 05:19 PM) @done(19-06-11 22:06) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Add in extra prompts for activating the peer evaluation outside of the settings. @created(Mon 06/10/2019 - 11:22 PM) @done(19-06-10 23:22) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Remove debug code in `spaces_controller.rb` preventing full load of spaces#index page. @created(Mon 06/10/2019 - 08:56 PM) @done(19-06-10 23:31) @project(Projects.ThinkSpace.Peer evaluation updates)
+  ✔ Always show the toolbar in the phase editor instead of only on hover. @created(Mon 06/10/2019 - 08:59 PM) @done(19-06-10 21:25) @project(Projects.ThinkSpace.Misc updates)
+  ✔ Testing out Todo+ for VSCode to see how it works out.  Looks nice, simple, keeps it all within the editor. @created(Mon 06/10/2019 - 08:56 PM) @done(19-06-10 20:56) @project(Projects.ThinkSpace)
+  ✔ This is a task I am going to mark as finished. @created(Thu 06/06/2019 - 11:24 PM) @done(19-06-06 23:24) @project(Projects.ThinkSpace)

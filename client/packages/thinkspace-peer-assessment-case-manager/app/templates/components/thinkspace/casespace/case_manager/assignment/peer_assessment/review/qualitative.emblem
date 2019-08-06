@@ -1,0 +1,7 @@
+.thinkspace-tbl-pa_comment.ts-grid_row
+  .small-10.ts-grid_columns
+    label.ts-forms_field-label.ts-forms_field-label-small #{label}:
+    if has_value
+      p #{value}
+    else
+      p No value entered, will score as 0.

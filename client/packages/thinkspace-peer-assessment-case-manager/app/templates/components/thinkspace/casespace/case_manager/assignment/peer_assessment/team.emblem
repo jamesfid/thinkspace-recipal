@@ -1,0 +1,18 @@
+.ts-grid_row: .ts-grid_columns.small-12.medium-12.large-10
+  .thinkspace-tbl-pa_team-header style=css_style_team_header
+    unless team_set.is_sent
+      .span.right
+        component c_dropdown_split_button collection=dropdown_collection button_class='btn-square btn-default' show_button=false
+      .right
+        i.tsi.tsi-phase-complete{action 'approve_all'} title='Approve all evaluations for all students in team'
+        i.tsi.tsi-phase-incomplete{action 'unapprove_all'} title='Set all evaluations to in-progress for all students in team'
+    .thinkspace-tbl-pa_toggle-wrapper{action 'toggle'}
+      .thinkspace-tbl-pa_team-name.left #{model.title} 
+      .thinkspace-tbl-pa_status.left
+        component c_state model_state=team_set.state
+    
+  if is_expanded
+    .ts-grid_row
+      .small-12.ts-grid_columns.thinkspace-tbl-pa_team-content style=css_style_team_content
+        each user in team_members
+          component c_user model=user assessment=assessment team=model review_sets=review_sets color=model.color

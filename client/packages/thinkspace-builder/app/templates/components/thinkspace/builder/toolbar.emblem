@@ -1,0 +1,2 @@
+if builder.has_toolbar
+  component c_builder_toolbar action_handler=builder.toolbar_action_handler

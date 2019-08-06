@@ -1,0 +1,3 @@
+li.thinkspace-tbl-pa_team-set-list-item click='set_team_set' class={is_selected:is-selected}
+  h6 #{model.title} 
+  span #{model.metadata.total_teams} teams

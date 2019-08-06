@@ -1,0 +1,46 @@
+.ts-artifact_item {
+  border-bottom: 2px solid $ts-black-light;
+  padding-bottom: .25rem;
+  margin-bottom: 1rem;
+  >h1 {
+    font-size: 1rem;
+    display: inline-block;
+    color: $ts-black-dark;
+    cursor: pointer;
+
+    @include highlight-transition-all;
+
+    &:hover {
+      color: $ts-blue-base;
+    }
+  }
+
+  .ts-artifact_item-actions {
+    float: right;
+  }
+}
+
+.thinkspace-artifact_list-icon { margin-right: 0.5em; }
+
+
+.artifact_pdf-wrapper {
+  // border: 2px solid $ts-black-light;
+}
+
+.ts-icons_testing {
+  width:      16px;
+  height:     16px;
+  fill:       $ts-black-dark;
+  transition: fill ease-in 0.3s;
+
+  &:hover {
+    fill: $ts-blue-base;
+  }
+}
+
+.ts-artifact_file { position: relative; cursor: crosshair;}
+
+.ts-artifact_image-missing {
+  margin: 3rem;
+  color: $ts-red-base;
+}

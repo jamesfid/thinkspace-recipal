@@ -1,0 +1,125 @@
+.thinkspace-tbl-pa_wrapper {
+  @include clearfix;
+  &:hover { cursor: pointer; }
+}
+
+.thinkspace-tbl-pa_team-header {
+	padding: .65em .5em;
+	border:  2px solid;
+  line-height: 1.5em;
+  background-color: $ts-black-light;
+  border: 2px solid $ts-black-light;
+	border-top-left-radius: $border-radius;
+	border-top-right-radius: $border-radius;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+.thinkspace-tbl-pa_toggle-wrapper {
+  height: 100%;
+  cursor: pointer;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  &:hover {
+    .thinkspace-tbl-pa_team-name {
+      color: lighten($ts-black-dark, 25%);
+    }
+
+    .thinkspace-tbl-pa_user-name {
+      color: lighten($ts-black-dark, 25%);
+    }
+  }
+}
+.thinkspace-tbl-pa_state-tag {
+  border-radius:  12px;
+  display:        inline-block;
+  padding:        0 .875em;
+  font-size:      .65em;
+  color:          white;
+  letter-spacing: .5px;
+  font-weight:    $ts-medium;
+
+
+  &.state_neutral {
+    background-color: $ts-purple-base;
+  }
+
+  &.state_approved {
+    background-color: $ts-green-base;
+  }
+
+  &.state_submitted {
+    background-color: $ts-blue-base;
+  }
+
+  &.state_sent {
+    background-color: $ts-orange-base;
+  }
+
+  &.state_ignored {
+    background-color: $ts-red-base;
+  }
+}
+
+.thinkspace-tbl-pa_team-name { font-weight: $ts-medium; }
+
+.thinkspace-tbl-pa_team-content {
+	border: 2px solid $ts-black-light;
+  border-bottom-left-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+} 
+
+.thinkspace-tbl-pa_user-assessment-container { background-color: $ts-black-light; }
+
+.thinkspace-tbl-pa_parent-user-container {
+  padding: .65em .5em;
+  margin-bottom: -2px; // to keep overlap the strokes
+  border-top: 2px solid $ts-black-light;
+  border-bottom: 2px solid $ts-black-light;
+  background-color: white;
+  line-height: 1.5em;
+
+  
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.thinkspace-tbl-pa_review {
+  padding: .65em .75em;
+  border-left: 2px solid $ts-black-light;
+  border-top: 2px solid $ts-black-light;
+  background-color: white;
+
+}
+
+.thinkspace-tbl-pa_user-name { font-weight: $ts-medium; }
+
+.thinkspace-tbl-pa_status {
+  margin-left: 2em;
+
+  &._approved {
+    color: $ts-green-base;
+  }
+
+  &._incomplete {
+    color: $ts-red-base;
+  }
+}
+
+.thinkspace-tbl-pa_comment {
+  label {
+    font-size: .875rem;
+    font-weight: $ts-bold;
+  }
+}

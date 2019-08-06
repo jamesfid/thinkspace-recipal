@@ -1,0 +1,6 @@
+if model.reviews
+  each review in sorted_reviews
+    component c_review model=review assessment=assessment color=color
+else
+  .ts-grid_row.thinkspace-tbl-pa_review style=css_style
+    .thinkspace-tbl-pa_review-name.left No evaluations for #{user.full_name}

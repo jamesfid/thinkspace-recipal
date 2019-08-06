@@ -1,0 +1,7 @@
+.ts-grid_row
+  .ts-grid_columns.small-12
+    .space-content_container
+      partial t_header
+      partial t_select_scores
+      partial t_show_scores
+      partial t_footer

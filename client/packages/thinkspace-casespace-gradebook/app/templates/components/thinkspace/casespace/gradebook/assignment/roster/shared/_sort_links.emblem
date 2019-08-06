@@ -1,0 +1,3 @@
+.ts-forms_field-label Sort by:
+.ts-forms_inline-response
+  component c_dropdown_split_button collection=dropdown_collection text=selected_sort_order.text show_button=false button_class="btn btn-small btn-default"

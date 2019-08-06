@@ -1,0 +1,242 @@
+@mixin mixin-indented-list-item-container ($font-size: 1em, $margin-top: -2px, $line-height: 1.3em, $padding: 0em 3em 0em .5em, $border-width: 2px, $height: 50px) {
+  position:         relative;
+  padding:          $padding;
+  border:           $border-width solid $ts-black-med;
+  font-size:        $font-size;
+  height:           $height;
+  margin-top:       $margin-top;
+  line-height:      $line-height;
+  background-color: white !important;
+
+  &:hover {
+    border-color:     $ts-blue-base;
+    background-color: $ts-blue-light !important;
+
+  }
+  &:active, &:focus             {border-color: $ts-blue-dark;}
+  &.indented-list_selected-item {border: 2px solid $ts-blue-dark; margin-bottom: 2px; margin-top: 0px;}
+  &.overflow-visible            {height: 100% !important;}
+  &:first-of-type               {margin-top: 0px;}
+  &.is-deleting                 {
+    height:       150px;
+    border-color: $ts-red-base;
+    font-size:    1rem;
+
+    &:hover {background-color: white !important;}
+
+    .indented-list_item-value-observation, 
+      .indented-list_item-value-column {
+        display: block !important;
+        color: $ts-black-med !important;
+      }
+
+  }
+  &.is-editing {
+    height: 110px;
+    border-width: 2px;
+  }
+
+  &.is-mechanism {
+    background-color: $ts-blue-light !important;
+    .indented-list_item-value-observation{ font-weight: $ts-bold !important; }
+  }
+}
+
+//@mixin mixin-indented-list-has-children-status ($font-size: .875em, $margin-left: 1em, $hide: false) {
+@mixin mixin-indented-list-has-children-status ($top: 11px, $padding-bottom: 2.5px, $margin-left: 1em, $hide: false) {
+  .indented_list_has-children-status {
+    display:          if($hide, none, inline-block);
+    position:         absolute;
+    right:            55px;
+    top:              $top;
+    font-size:        0.625em;
+    color:            white;
+    margin-left:      1em;
+    background-color: $ts-green-base;
+    padding:          0.05em .75em;
+    border-radius:    100px;
+    letter-spacing:   .5px;
+    padding-bottom:   $padding-bottom;
+    cursor:           pointer;
+  }
+}
+
+@mixin mixin-indented-list-item-value ($font-size: 1em, $font-weight: $ts-medium, $margin-top: 0, $hide-column: false) {
+  .indented-list_item-value {
+    display:     inline-block;
+    overflow:    hidden;
+    white-space: nowrap;
+    width:       100%;
+    margin-top: $margin-top;
+    &.overflow-visible {
+      height:       100%;
+      overflow:     visible;
+      white-space:  normal;
+      // word-wrap: break-word;
+    }
+    .indented-list_item-value-column {
+      display:   if($hide-column, none, block);
+      font-size: ($font-size * .75);
+      color:     $ts-black-base;
+    }
+    .indented-list_item-value-observation {
+      display:     inline-block;
+      font-size:   $font-size;
+      font-weight: $font-weight;
+    }
+  }
+}
+
+@mixin mixin-indented-list-item-value-type ($font-size: 1em, $hide: false) {
+  .indented-list_item-value-type {
+    display:       if($hide, none, inline-block);
+    font-size:     $font-size;
+    padding-right: .5em;
+    margin-left:   1em;
+  }
+}
+
+@mixin mixin-indented-list-has-children ($top: 2px, $left: 0) {
+  .indented-list_has-children-action {
+    display:  inline-block;
+    position: absolute;
+    left:     $left;
+    top:      $top;
+    a,i {
+      height:     100%;
+      background: $ts-blue-base;
+      color:      white;
+    }
+  }
+}
+
+@mixin mixin-indented-list-item-actions ($top: 8px, $right: 6px, $height: 100%, $color: $ts-black-dark, $hide-remove: false, $hide-overflow: false) {
+  .indented-list_item-actions {
+    display:  inline-block;
+    position: absolute;
+    right:    $right;
+    top:      $top;
+    a,i {
+      height:        $height;
+      color:         $color;
+      // background: $ts-blue-base;
+    }
+    .indented-list_overflow-icon {
+      @if $hide-overflow {display: none;}
+      background: $ts-blue-dark !important;
+      i {background: $ts-blue-dark !important;}
+    }
+    .indented-list_remove-item {
+      @if $hide-remove   {display: none;}
+      i {
+        background: transparent !important;
+        color: $ts-black-med !important;
+        &:hover {
+          color: $ts-red-base !important;
+        }
+      }
+    }
+  }
+}
+
+.zoom-1.indented-list_item-container {
+    @include mixin-indented-list-item-container      ($font-size: .65em, $line-height: 1.3em, $padding: .25em 1.5em 0em .5em, $height: 20px, $border-width: 1px, $margin-top: -1px);
+    @include mixin-indented-list-item-value          ($hide-column: true);
+    @include mixin-indented-list-has-children-status ($top: 2px, $padding-bottom: .5px);
+    @include mixin-indented-list-item-value-type     ($hide: true);
+    @include mixin-indented-list-has-children        ($top: 0);
+    @include mixin-indented-list-item-actions        ($top: 0, $hide-remove: true);
+}
+
+  //@extend .zoom-1;
+.zoom-2.indented-list_item-container {
+  // @extend .zoom-1;
+  @include mixin-indented-list-item-container         ($font-size: .875em, $line-height: 1.3em, $padding: .5em 1.5em 0em .5em, $height: 35px);
+  @include mixin-indented-list-item-value             ($hide-column: true);
+  @include mixin-indented-list-item-actions           ($top: 2px);
+  @include mixin-indented-list-has-children-status    ($top: 6px, $padding-bottom: .5px);
+}
+
+.zoom-3.indented-list_item-container {
+    @include mixin-indented-list-item-container      ();
+    @include mixin-indented-list-item-value          ();
+    @include mixin-indented-list-has-children-status ();
+    @include mixin-indented-list-item-value-type     ($font-size: .75em);
+    @include mixin-indented-list-has-children        ();
+    @include mixin-indented-list-item-actions        ();
+}
+
+.zoom-4.indented-list_item-container {
+  @extend .zoom-3;
+  font-size: 1.15em;
+}
+
+.zoom-5.indented-list_item-container {
+  @extend .zoom-3;
+  font-size: 1.25em;
+}
+
+.zoom-6.indented-list_item-container {
+  @extend .zoom-3;
+  font-size: 1.35em;
+}
+
+.zoom-7.indented-list_item-container {
+  @extend .zoom-3;
+  font-size: 1.5em;
+}
+
+.zoom-8.indented-list_item-container {
+  @extend .zoom-3;
+  font-size: 2.0em;
+}
+
+// ### Confirm Remove ###
+.indented-list_item-container {
+  .indented-list_item-confirm-remove-container {
+    font-size:        1em;
+    height:           100%;
+    width:            100%;
+    color:            $ts-red-dark;
+    padding-top:      1em;
+
+    .warning-icon {
+      display:        inline-block;
+      vertical-align: top;
+    }
+    .indented-list_item-confirm-remove-text {
+      display:       inline-block;
+      margin:        0 0 1em .5em;
+      padding-right: 2em;
+      white-space:   normal;
+    }
+    .indented-list_item-confirm-remove-actions {
+      a {
+        margin-right: 1em;
+      }
+    }
+  }
+}
+
+// ### Edit Item ###
+.indented-list_item-container {
+  .indented-list_item-value-edit-container {
+    position:         absolute;
+    top:              0;
+    left:             0;
+    height:           100%;
+    width:            100%;
+    background-color: white;
+    padding:          1em;
+
+    .indented-list_item-value-edit-input {
+      min-width:    400px;
+      margin-right: 1em;
+    }
+    .indented-list_item-value-edit-actions {
+      a {
+        margin-right:    1em;
+      }
+    }
+  }
+}

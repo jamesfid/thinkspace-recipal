@@ -1,0 +1,3 @@
+.case-manager-loading-modal
+  h4.case-manager-loading-message One moment, we're processing the file.
+  partial 'thinkspace/common/loading/loading'

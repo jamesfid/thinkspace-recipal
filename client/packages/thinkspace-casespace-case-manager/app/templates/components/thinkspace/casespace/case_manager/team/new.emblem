@@ -1,0 +1,26 @@
+component c_space_header model=team_set.space
+.ts-grid_row 
+  .small-7.ts-grid_columns.ts-grid_columns-thick  
+    .space-content_heading
+      h4 Create New Team
+
+    .ts-forms_field-container
+      .ts-forms_field-label Name of team
+      = input value=title
+
+    .ts-forms_field-container
+      .ts-forms_field-label Team color
+      .ts-grid_row: .small-7
+        col-pick-input value=color class="ts-forms_input-small left"
+        .team-manager_teams-color-preview.left style=css_style
+
+    a.btn.btn-primary.btn-small.left click='save' Create Team
+    link-to r_team_sets_show team_set
+      a.btn.btn-default.btn-small.right  Cancel
+
+  .small-5.ts-grid_columns.ts-grid_columns-thick
+    h5 Unassigned Students
+    p Check the students you would like to add to #{title}
+    if unassigned_users_loaded
+      each student in unassigned_users
+        component c_team_member_unassigned model=student selected_members=users_to_add select_member='add_user_to_team'

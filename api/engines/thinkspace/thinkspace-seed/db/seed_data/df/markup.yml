@@ -1,0 +1,36 @@
+prereq_configs: space
+
+variables:
+  - &CASE        Markup
+  - &PHASE_HTML  Artifact/Markup with HTML
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_HTML
+    assignment:    *CASE
+    template_name: one_column_html_artifact_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      artifact:
+        instructions: '<h3>Upload your artifacts below.</h3>'
+      html:
+        methods: lorem
+
+auto_input:
+  artifacts:
+    - phases: *PHASE_HTML
+      users:   read_1
+      files:   file.pdf
+      rename:  true
+      coments: 3
+  markup_library:
+    - spaces: *SPACE
+      comments: 6
+      tags: [Tag A, Tag A, [Tag A, Tag B], Tag B, Tag C]

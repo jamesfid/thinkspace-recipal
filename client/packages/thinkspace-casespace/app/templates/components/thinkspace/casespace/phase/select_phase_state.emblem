@@ -1,0 +1,7 @@
+ul.casespace_phase-select-team-list
+  each phase_state in phase_states
+    li 
+      a.casespace_phase-select-team-item click='"select_phase_state" phase_state'
+        i.fa.fa-users
+        '
+        = phase_state.title

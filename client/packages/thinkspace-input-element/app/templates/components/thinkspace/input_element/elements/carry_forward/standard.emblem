@@ -1,0 +1,5 @@
+if has_one
+  span.ts-carry-forward #{response.defaulted_value}
+else
+  each response in responses
+    span.ts-carry-forward #{response.defaulted_value}

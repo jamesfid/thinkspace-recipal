@@ -1,0 +1,17 @@
+.ts-grid_row: .small-12: .obs-list_note
+
+  .ts-grid_row
+
+    .small-10.ts-grid_columns
+      .obs-list_note-value
+        if is_editing_note
+          component c_observation_note_edit model=model update='update' cancel='cancel'
+        else
+          = model.value
+
+    unless is_editing_note
+      if can_update
+        .obs-list_note-actions
+          a.obs-list_note-action.edit-note click='edit': i.im.im-pencil
+          a.obs-list_note-action.remove-note click='destroy': i.fa.fa-trash-o
+

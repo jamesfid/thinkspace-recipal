@@ -1,0 +1,97 @@
+.ts-menu_toggle-width {
+  position:         fixed;
+  top:              15px;
+  right:            $ts-menu-width;
+  padding:          0.35em 0.5em;
+  color:            white;
+  background-color: $ts-blue-base;
+  @include border-top-left-radius($border-radius);
+  @include border-bottom-left-radius($border-radius);
+
+  .ts-menu_icon-left { display: inline; margin-right: 0.5em; }
+  &:hover            { cursor: pointer; }
+  &.is-minimized     { right: 0; }
+}
+
+.ts-menu {
+  position:         fixed;
+  top:              0;
+  right:            0;
+  bottom:           0;
+  overflow-y:       auto;
+  background-color: white;
+  width:            $ts-menu-width;
+  border-left:      2px solid $ts-black-med;
+  border-bottom:    2px solid $ts-black-med;
+  @include border-radius($border-radius);
+
+  &.is-minimized {
+    display: none;
+  }
+
+  .ts-menu_header       { background-color: $ts-black-light; }
+  .ts-menu_footer       { margin: 1em 0;}
+  .ts-menu_btn          { display: block; }
+  .ts-menu_btn-list     { margin: 1em 0; }
+
+  .ts-menu_content { 
+    width: 100%;
+  }
+
+  .ts-menu_exit { 
+    font-size: 0.85em;
+    color:       $ts-blue-base;
+
+    &:hover { cursor: pointer; }
+  }
+
+  .ts-menu_flyout {
+    position:   fixed;
+    right:      $ts-menu-width;
+    top:        $ts-menu-flyout-top;
+    max-height: 550px;
+    overflow-y: auto;
+  }
+
+  .ts-menu_icon-left    { margin-right: 0.5em; }
+  .ts-menu_icon-right   { margin-left: 0.5em; }
+
+  .ts-menu_table {
+    border:        10px solid $ts-blue-base;
+    margin-bottom: 0;
+
+    .ts-menu_table-current-row {
+      color:       green;
+      text-align:  right;
+      font-weight: normal;
+    }
+    tr:hover {
+      cursor:           pointer;
+      background-color: $ts-menu_tr-hover-color;
+    }
+  }
+
+  .ts-menu_table-no-margin { margin: 0; }
+
+}
+
+// Modal for totem_messages:
+.ts-menu_modal {
+  position:   fixed;
+  top:        0;
+  left:       0;
+  width:      100%;
+  height:     100%;
+  z-index:    8000;
+
+  .ts-menu_modal-content {
+    margin:     10%;
+    background: white;
+    position:   relative;
+    z-index:    9000;
+    opacity:    1;
+    border:     10px solid $ts-blue-base;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+}

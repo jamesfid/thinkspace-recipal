@@ -1,0 +1,19 @@
+if item
+  if item_header
+    .thinkspace-weather-forecaster_assessment-item-header
+      = item_header
+    hr
+
+  li
+    .thinkspace-weather-forecaster_assessment-item-label class=is_correct_class: = presentation
+    if has_help_tip
+      .thinkspace-weather-forecaster_assessment-item-help-tip click='show_help'
+        .tsi.tsi-info
+        span: |Help tip
+
+    .ts-grid_row: .small-12.ts-grid_columns
+
+      .thinkspace-weather-forecaster_assessment-item-response
+        component c_response model=response metadata=metadata show_errors=show_errors is_view_only=is_view_only save='save'
+
+hr

@@ -1,0 +1,35 @@
+// Animation Classes
+.page-move-to-left {
+  -webkit-animation: move-to-left 0.5s ease both;
+  -moz-animation: move-to-left 0.5s ease both;
+  animation: move-to-left 0.5s ease both;
+}
+
+.page-move-from-right {
+  -webkit-animation: move-from-right 0.5s ease both;
+  -moz-animation: move-from-right 0.5s ease both;
+  animation: move-from-right 0.5s ease both;
+}
+
+// Keyframes
+@-webkit-keyframes move-to-left {
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@-moz-keyframes move-to-left {
+  to { -moz-transform: translateX(-100%); }
+}
+
+@keyframes move-to-left {
+  to { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes move-from-right {
+  from { -webkit-transform: translateX(100%); }
+}
+@-moz-keyframes move-from-right {
+  from { -moz-transform: translateX(100%); }
+}
+@keyframes move-from-right {
+  from { transform: translateX(100%); }
+}

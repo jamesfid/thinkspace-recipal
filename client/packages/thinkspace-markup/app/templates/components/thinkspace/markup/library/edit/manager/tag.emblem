@@ -1,0 +1,9 @@
+.ts-markup-manager_categories-item-wrapper
+  label.ts-checkbox 
+    component c_checkbox toggle_action='toggle_selected' checked=is_selected disable_click=false label=model.name
+    .ts-checkbox_label = model.name
+    .ts-markup-manager_categories-item-counter
+      = model.count
+  .ts-markup-manager_categories-item-actions
+    span Edit
+    span Delete

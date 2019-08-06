@@ -1,0 +1,25 @@
+component c_list_test_only response_manager=response_manager
+
+component c_list_header model=model list=list
+
+/ note: the observation component can be anywhere since does not render anything.
+component c_list_source_observation response_manager=response_manager
+
+.ts-grid_row
+
+  .ts-grid_columns.small-3
+
+    h5 style='text-decoration: underline;' Other Items
+    component c_list_source_another response_manager=response_manager
+
+  .ts-grid_columns.small-9
+
+    .ts-grid_row: .ts-grid_columns.small-12
+      component c_list_all_visible response_manager=response_manager
+      component c_list_new_top     response_manager=response_manager
+      component c_list_new_bottom  response_manager=response_manager
+
+    .ts-grid_row: .ts-grid_columns.small-12
+      .indented-list_list-container
+        each item in response_manager.value_items
+          component c_response_item_show response_manager=response_manager item=item

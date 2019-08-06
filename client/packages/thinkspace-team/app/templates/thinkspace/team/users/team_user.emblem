@@ -1,0 +1,5 @@
+span.team_users-team-user
+
+  i.team_users-team-user-action.team_users-team-user-remove.fa.fa-trash-o click='remove_user target=view' title='Remove user'
+
+  = user.sort_name

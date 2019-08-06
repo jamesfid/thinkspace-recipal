@@ -1,0 +1,30 @@
+### DIAGNOSTIC PATH TOOL ###
+- model: thinkspace/diagnostic_path/path
+  associations:
+    - belongs_to: authable
+      polymorphic: true
+    - has_many: thinkspace/diagnostic_path/path_items
+      dependent: :destroy
+  serializers:
+    - attributes:        [id, title]
+    - scoped_attributes: [has_path_items]
+
+- model: thinkspace/diagnostic_path/path_item
+  delegate:
+    - method: authable
+      to: thinkspace/diagnostic_path/path
+  associations:
+    - belongs_to: ownerable
+      polymorphic: true
+    - belongs_to: thinkspace/common/user
+      readonly:  true
+    - belongs_to: thinkspace/diagnostic_path/path
+    - belongs_to: path_itemable
+      polymorphic: true
+    - belongs_to: thinkspace/diagnostic_path/path_item
+      alias:       parent
+      foreign_key: parent_id
+    - has_many:    thinkspace/diagnostic_path/path_items
+      foreign_key: parent_id
+  serializers:
+    - attributes:  [id, position, description, parent_id, path_id, ownerable_id, ownerable_type, path_itemable_id, path_itemable_type, category]

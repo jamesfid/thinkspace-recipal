@@ -1,0 +1,19 @@
+/ Still figuring out how to style this part
+
+.ts-markup_sidepocket-discussion-heading
+  if is_for_phase
+    span General Discussion
+  else
+    span Discussion #{discussion_number}
+  if model.updateable
+    component c_confirmation_modal title='' subtitle='Are you sure you want to delete this discussion?' description='All related comments will be deleted as well.' modal_reveal_icon_class_names='tsi icon-tiny tsi-trash-outline_grey' confirm_text='Yes, Delete' confirm='remove'
+if comments
+  ul.ts-markup_sidepocket-discussion-comments{action 'highlight'}
+    / .tsi.tsi-left.icon-tiny.tsi-warning.right{action 'highlight'}
+    each comment in sorted_root_comments
+      component c_markup_discussion_comment model=comment discussion=model is_anonymous=is_anonymous
+
+= unless is_editable
+  a.ts-markup_reply-link{action 'add_comment'}
+    | Reply to discussion
+    

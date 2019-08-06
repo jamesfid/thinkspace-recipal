@@ -1,0 +1,35 @@
+.row.borderless-table_item-row
+  .small-12.medium-4.large-4.ts-grid_columns 
+    p.table_emphasis #{model.position_in_assignment.content.value}. #{model.title}
+  .small-12.medium-4.large-4.ts-grid_columns.ts-grid_columns-thin
+    = if date_option_is_selected
+      .row.collapse
+        .small-12.medium-7.large-7.ts-grid_columns
+          .ts-forms_field-label.ts-forms_field-label-small Unlock Date
+          component c_date_picker value=unlock_at select='select_unlock_date' show_icon=true
+        .small-12.medium-4.large-4.ts-grid_columns.right
+          .ts-forms_field-label.ts-forms_field-label-small Time
+          component c_time_picker value=unlock_at select='select_unlock_time' show_icon=true
+      .ts-forms_input-notification <strong>Note:</strong> All times are in your local computer's time.
+      .row.collapse
+        a.table_action{action 'cancel_select_option'} Cancel
+    = else
+
+      p.table_emphasis Unlock #{selected_option}
+      .table_secondary-action_label Or, unlock:
+      .table_secondary-action_options
+        each option in remaining_options
+          a.table_action{action 'select_option' option}
+            = option
+          = delimit-string '' option remaining_options ' | '
+  .small-12.medium-4.large-4.ts-grid_columns.ts-grid_columns-thin
+    .row.collapse
+      .small-12.medium-7.large-7.ts-grid_columns
+        .ts-forms_field-label.ts-forms_field-label-small Due Date
+        component c_date_picker value=due_at select='select_due_date' show_icon=true
+      .small-12.medium-4.large-4.ts-grid_columns.right
+        .ts-forms_field-label.ts-forms_field-label-small Time
+        component c_time_picker value=due_at select='select_due_time' show_icon=true
+    .ts-forms_input-notification <strong>Note:</strong> All times are in your local computer's time.
+    .row.collapse
+      a.table_action{action 'reset_due_at'} Reset Due Date

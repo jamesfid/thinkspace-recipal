@@ -1,0 +1,131 @@
+.sim_content
+  .sim_left-column
+    .sim_header-text
+      | Mountain Simulation
+    canvas id='mountain-sim-canvas' class={:sim-canvas-setup}
+    .sim_sub-header-text
+      | Simulation Controls
+    / .sim_control-header-text
+    /   | Main
+    div style='margin: 2em 0em;'
+      if sim_running
+        if sim_paused
+          .sim_button
+            .btn.btn-small.btn-primary{action 'resume_simulation'}
+              | Resume Sim
+          .sim_button
+            .btn.btn-small
+              | Clear Graph
+        else
+          .sim_button
+            .btn.btn-small.btn-primary{action 'pause_simulation'}
+              | Pause Sim
+          .sim_button
+            .btn.btn-small
+              | Clear Graph
+      else
+        if need_reset
+          .sim_button
+            .btn.btn-primary.btn-small{action 'reset_simulation'}
+              | New Trial
+        else
+          .sim_button
+            if trial_valid
+              .btn.btn-primary.btn-small{action 'start_simulation'}
+                | Start Wind
+            else
+              .btn.btn-small
+                | Start Wind
+
+        .sim_button
+          .btn.btn-small{action 'clear_graphs'}
+            | Clear Graphs
+    hr
+    .sim_sub-header-text
+      | Simulation Options
+    .sim_slider-header style='display:inline-block;width:50%;padding-right:1em;'
+      | Temperature (°C)
+      br
+      .sim_slider-description
+        | Colder
+      .sim_slider-description-right
+        | Warmer
+      input.ts-rangeslider id='temp_slider' type='range' min=start_temp_min max=start_temp_max step=slider_step_size value=start_temp disabled=sim_running
+      .sim_slider-centered-text
+        .btn.btn-tiny.sim_slider-btn{action 'step_temp_slider' false}
+            i.im.im-open-left
+        //| #{start_temp} °C
+        label id='temp_output' style='display:inline-block;'
+          | #{temp_output}
+
+        .btn.btn-tiny.sim_slider-btn{action 'step_temp_slider' true}
+          i.im.im-open-right
+      label id='temp'
+    .sim_slider-header style='display:inline-block;width:50%;padding-left:1em;'
+      | Water Vapor Pressure (mb)
+      br
+      .sim_slider-description
+        | Lower
+      .sim_slider-description-right
+        | Higher
+      input.ts-rangeslider id='humidity_slider' type='range' min=start_humidity_min max=start_humidity_max step=slider_step_size value=start_humidity disabled=sim_running
+      .sim_slider-centered-text 
+        .btn.btn-tiny.sim_slider-btn{action 'step_humidity_slider' false}
+          i.im.im-open-left
+        label id='humidity_output' style='display:inline-block;'
+          | #{humidity_output}
+        .btn.btn-tiny.sim_slider-btn{action 'step_humidity_slider' true}
+          i.im.im-open-right
+    hr
+    .sim-controls_left-col
+      .sim_sub-header-text
+        | Simulation Output
+      .sim_text
+        | Dew Point (°C): 
+        .sim_text-output
+          = if sim_running
+            | #{display_dew_point} °C
+          = else
+            | #{start_dew_point} °C
+      .sim_text
+        | Parcel Altitude (km): 
+        .sim_text-output #{display_altitude} km
+      .sim_text
+        | Graph Slope (°C/km): 
+        .sim_text-output #{factor} °C/km
+      .sim_text
+        | Cloud Base Altitude (km):
+        .sim_text-output #{display_cloud_base}
+      .sim_text
+        | Current Temperature (°C):
+        .sim_text-output 
+          | #{display_temp} °C
+      .sim_text
+        | Current Vapor Pressure (mb):
+        .sim_text-output 
+          | #{display_humidity} mb
+    .sim-controls_right-col
+      if trial_results
+        .sim_sub-header-text
+          | Simulation Results
+        .sim-mountain_result-header
+          | Start Temp (°C)
+        .sim-mountain_result-header
+          | Start Vapor Pressure (mb)
+        .sim-mountain_result-header
+          | Start Dew Point (°C)
+        .sim-mountain_result-header
+          | Cloud Base (km)
+        .sim-mountain_result-header
+          | Final Temp (°C)
+        .sim-mountain_result-header
+          | Final Vapor Pressure (mb)
+        .sim-mountain_result-header
+          | Final Dew Point (°C)
+        = each trial_result in trial_results
+          component c_result content=trial_result parent_action='toggle_graph_visible'
+  .sim_right-column
+    .sim_sub-header-text
+      | Plot Graphs
+    .sim_chart id='chart-column2'
+    .sim_chart id='chart-column1'

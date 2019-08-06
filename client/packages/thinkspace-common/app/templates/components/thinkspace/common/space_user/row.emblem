@@ -1,0 +1,15 @@
+td #{model.user.last_name}
+td #{model.user.first_name}
+td #{model.user.email}
+td #{model.user.invitation_status}
+td
+  = chosen-select content=friendly_roles value='model.friendly_role' selected_items=model.friendly_role select_action='save'
+td
+  unless model.user.is_active
+    a.btn.btn-default.btn-small click='resend' Resend
+td
+  if model.is_active
+    a.btn.btn-default.btn-small click='inactivate' Drop
+  if model.is_inactive
+    a.btn.btn-default.btn-small click='activate' Reinstate
+  

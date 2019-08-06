@@ -1,0 +1,36 @@
+prereq_configs: space
+
+variables:
+  - &CASE        Labs
+  - &PHASE       Vet Med Lab
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+  - title: *PHASE
+    assignment:    *CASE
+    template_name: two_column_lab_observation_list_submit
+    settings:
+      <<: *SUBMIT
+
+labs:
+  - phase: *PHASE
+    chart:
+      title: Lab Chart
+      categories:
+        - title: Lab A
+          results: [rbc, hgb, hct, mcv, mcv2, wbc, retic]
+    blueprint:
+      category: import[../common_imports/lab_vet_med@category]
+      results:  import[../common_imports/lab_vet_med@results]
+
+auto_input:
+  observations:
+    - observations_per_list: 3
+      max_notes_per_observation: 2
+      phases: *PHASE
+      users:  read_1

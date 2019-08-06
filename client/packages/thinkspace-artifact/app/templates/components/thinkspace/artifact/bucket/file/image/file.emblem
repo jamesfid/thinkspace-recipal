@@ -1,0 +1,8 @@
+if show_file
+  if is_loading
+    component c_loader
+  else
+    if image_url
+      img src=image_url alt=missing_msg
+    else
+      h4.ts-artifact_image-missing= missing_msg

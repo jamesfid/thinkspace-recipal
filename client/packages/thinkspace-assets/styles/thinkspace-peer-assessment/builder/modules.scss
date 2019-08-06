@@ -1,0 +1,86 @@
+.ts-pa_quant-item, .ts-pa_qual-item {
+  border-radius: $border-radius;
+  border:        2px solid white;
+}
+
+// Parent componentable is in content mdoe, so allow highlights to occur.
+.is-edit-mode-content .ts-pa_item.is-selected {
+  border: 2px solid $ts-blue-base;
+}
+
+// Preview
+.ts-pa_item-preview {
+  border-radius: $border-radius;
+}
+
+// Toolbar has items inline, hidden until the is-selected flag is on.
+.ts-pa_item-toolbar {
+  list-style-type:         none;
+  width:                   100%;
+  margin:                  0 0 1em 0;
+  display:                 block;
+  text-align:              right;
+  background-color:        $ts-blue-base;
+  border-top-left-radius:  2px;
+  border-top-right-radius: 2px;
+}
+
+.ts-pa_item-toolbar li {
+  display:        inline-block;
+  padding:        .5em .875em;
+  color:          white;
+  font-size:      .875em;
+  cursor:         pointer;
+  letter-spacing: .5px;
+
+  &:hover {
+    background-color: $ts-blue-dark;
+  }
+
+}
+
+.ts-pa_item-toolbar .ts-pa_item-toolbar-separator {
+  height:         100%;
+  border-right:   2px solid $ts-blue-light;
+  margin-right:   0;
+  color:          white;
+
+
+}
+
+// Toolbar for adding quant/qual items
+.ts-pa_builder-toolbar {
+  background-color: red;
+  position:         absolute;
+  width:            100px;
+  left:             -100px;
+}
+
+// section that contains the actual content of the items once the assessment content is being edited
+.is-edit-mode-content .ts-pa_item-content {
+  padding: 0 1em 1em;
+}
+
+// Section that contains the member you're currently assessing
+.ts-pa_team-member-preview {
+    margin-bottom: 2em;
+    span {
+        margin-bottom:  .25em;
+        color:          $ts-black-med;
+        font-style:     italic;
+        letter-spacing: .5px;
+        font-size:      1em;
+    }
+
+    h4 {
+        font-weight: $ts-heavy;
+        letter-spacing: .5px;
+    }
+}
+
+// Item settings
+.ts-pa_item-settings {
+  padding: .5em 1em 1em;
+}
+
+

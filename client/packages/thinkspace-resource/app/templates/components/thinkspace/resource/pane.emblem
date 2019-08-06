@@ -1,0 +1,47 @@
+.thinkspace-dock_pane
+  .thinkspace-dock-expansion_header
+    .thinkspace-dock-expansion_header-actions
+      .thinkspace-dock-expansion_header-action-icon.thinkspace-dock-expansion_header-close-icon click='close'
+        i.im.im-close
+    if can_manage_resources
+      partial t_pane_actions
+
+  .thinkspace-dock-expansion_display
+
+    if model.tagless_resources
+      .thinkspace-resource_pane-resources
+        fieldset
+          legend No tag (#{model.tagless_resources.length})
+          ul.thinkspace-resource_pane-resource-list
+
+            each file in model.tagless_files
+                component c_pane_file model=file
+
+            each link in model.tagless_links
+              component c_pane_link model=link
+
+    each tag in model.tags
+
+      if tag.has_resources
+        .thinkspace-resource_pane-resources
+          fieldset
+            legend #{tag.title} (#{tag.resources.length})
+            ul.thinkspace-resource_pane-resource-list
+
+              if tag.has_files
+                each file in tag.files
+                  component c_pane_file model=file
+  
+              if tag.has_links
+                each link in tag.links
+                  component c_pane_link model=link
+
+  if can_manage_resources
+    if manage_files_expanded
+      component c_manage_files model=model close='close_files_pane'
+
+    if manage_links_expanded
+      component c_manage_links model=model close='close_links_pane'
+
+    if manage_tags_expanded
+      component c_manage_tags model=model close='close_tags_pane'

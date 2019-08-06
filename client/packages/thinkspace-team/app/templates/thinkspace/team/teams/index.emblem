@@ -1,0 +1,32 @@
+.team_index
+
+  .ts-grid_row: .small-12.ts-grid_columns
+    span.team_index-new-team-link
+      link-to team_route.new
+        |New team
+
+    span.team_index-filter-label Filter by:
+    a.team_index-filter-action click='filter_by_collaboration_teams' Collaboration Teams
+    a.team_index-filter-action click='filter_by_peer_review_teams' Peer Review Teams
+    a.team_index-filter-action click='filter_teams_off' Show All
+
+  .ts-grid_row: .small-12.ts-grid_columns
+    table.team_index-table
+      thead
+        tr
+          th Team
+          th Team Category
+          th Team Description
+          th.text-right Actions
+
+      tbody
+        each team in all_teams_filtered_by_category
+          tr
+            td= team.title
+            td= team.category.title
+            td= team.description
+            td.text-right
+              link-to team_route.destroy team class='team_index-action-link'
+                |destroy
+              link-to team_route.edit team class='team_index-action-link'
+                |edit

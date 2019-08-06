@@ -1,0 +1,256 @@
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ts-forms_form-container {
+  margin-bottom: 2em;
+}
+
+.ts-forms_field-description {
+  text-indent:   0;
+  font-size:     0.85rem;
+  margin-bottom: 0;
+}
+
+/* Form Heading */
+
+.ts-forms_heading {
+  margin-bottom: 2em;
+  h4 {
+    font-weight:   $ts-heavy;
+  }
+
+  p { margin-bottom: 0;}
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.ts-forms_inline-heading {
+  margin-bottom: 2em;
+  h4 {
+    font-weight: $ts-heavy;
+    display:     inline-block;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.ts-forms_heading-actions {
+  float: right;
+  display: inline-block;
+
+  .btn {
+    margin-right: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+}
+
+
+.ts-forms_section-container { 
+  margin-bottom: 4em;
+  &.is-disabled { opacity: 0.25 }
+  &.is-active { background: none; }
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.ts-forms_section-heading {
+  margin-bottom: 2em; 
+
+  > h1 {
+    font-size: 1.125em;
+    font-weight: $ts-heavy;
+    letter-spacing: .5px;
+  }
+}
+
+.ts-forms_field-container {
+  margin-bottom: 1em;
+  max-width: 40em;
+
+  > h1 {
+    font-size: 1.125em;
+    font-weight: $ts-heavy;
+    letter-spacing: .5px;
+  }
+
+  input[type="text"], input[type="number"] { 
+    display: block;
+    margin-bottom: .5em;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  & > .ts-forms_field-subcontainer {
+    margin-left: 3.5em;
+    margin-top:  1em;
+  }
+}
+
+.ts_forms_inline-fields-container {
+  display: block;
+
+  .ts-forms_field-container { display: inline-block; }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.ts-forms_field-label-wrapper { 
+  margin-bottom: 0.875em;
+  .ts-forms_field-label { margin-bottom: 0; }
+}
+
+.ts-forms_field-label {
+  margin-bottom:  .875em;
+  font-size:      1em;
+  font-weight:    $ts-bold;
+  display:        inline-block;
+  letter-spacing: .5px;
+
+
+  &.ts-forms_field-label-big {
+    font-size: 1rem;
+    margin-bottom: 2em;
+    letter-spacing: 0;
+  }
+
+  &.ts-forms_field-label-small {
+    font-size: .875rem;
+    margin-bottom: 0;
+    letter-spacing: 0;
+  }
+}
+
+.ts-forms_inline-response {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.ts-forms_field-label-container {
+  margin-bottom: .875em;
+
+  .ts-forms_field-label {
+    margin-bottom: .25em;
+  }
+  .ts-forms_fields-label-description {
+    font-size: .875em;
+    font-weight: $ts-regular;
+  }
+}
+
+
+.ts-forms_fields-label-actions {
+  display:   inline-block;
+  float:     right;
+  font-size: .875em;
+}
+
+.ts-forms_input-notification {
+  font-size:   .75em;
+  line-height: 1.5em;
+  margin-top:  .25em;
+}
+
+.ts-forms_input-small {
+  width: 50% !important;
+}
+
+.ts-forms_input-tiny {
+  width: 25% !important;
+}
+
+.ts-forms_radio-btn, .ts-forms_checkbox-btn {
+  margin-bottom: .5em;
+
+  input[type="radio"], input[type="checkbox"] { 
+    margin-right: 1.5em;
+    cursor: pointer;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.ts-forms_actions {
+  .btn {
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+}
+
+.ts-forms_sub-choices-container {
+  padding-left: 2.8125em;
+  padding-top: $content-padding / 2;
+}
+
+.ts-forms_action-btns-container {
+  padding-top: 3em;
+  padding-bottom: 2em;
+}
+
+.ts-forms_description-warning {
+  margin-top: .65em;
+  font-style: italic;
+  font-size:  .875em;
+
+  .tsi {
+    margin-right: .75em;
+  }
+}
+
+.ts-forms_field-container-overlay {
+  top:              0;
+  bottom:           0;
+  left:             0;
+  right:            0;
+  position:         fixed;
+  max-width:        100%;
+  height:           100%;
+  background-color: white;
+  z-index:          10;
+  overflow-y:       auto;
+  overflow-x:       auto;
+}
+
+.ts-forms_field-container-overlay-content {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.centered-aligned {
+  text-align:     center;
+  vertical-align: middle;
+  margin:         .5em 0;
+}

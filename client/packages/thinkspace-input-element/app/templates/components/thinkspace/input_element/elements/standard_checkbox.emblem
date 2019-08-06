@@ -1,0 +1,8 @@
+.thinkspace-ie_checkbox
+  if view_only
+    if is_checked
+      i.checkbox.checked.fa.fa-check-square-o
+    else
+      i.checkbox.unchecked.fa.fa-square-o
+  else
+    = input checked=is_checked type='checkbox' disabled=tattrs.disabled

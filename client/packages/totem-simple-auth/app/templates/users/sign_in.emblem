@@ -1,0 +1,2 @@
+h4 Default sign in page.
+h4 Set the 'totem.simple_auth.sign_in_template' in config/environment.js.

@@ -1,0 +1,10 @@
+- model: thinkspace/diagnostic_path_viewer/viewer
+  associations:
+    - belongs_to: thinkspace/common/user
+    - belongs_to: thinkspace/diagnostic_path/path
+    - belongs_to: authable
+      polymorphic: true
+    - belongs_to: ownerable
+      polymorphic: true
+  serializers:
+    - attributes: [id, path_id, ownerable_type, ownerable_id]

@@ -1,0 +1,43 @@
+.dock-support {
+  position:   absolute;
+  left:       $toolbar-width + 2;
+  bottom:     $thinkspace-dock-bottom + 1; //Adds a little padding between the dock and the panel
+  width:      $thinkspace-dock-min-width * 1.5;
+  z-index:    $thinkspace-dock-z-index + 100;
+  background: white;
+  color:      #464646;
+  border:     2px solid $ts-blue-base;
+  @include border-radius($border-radius);
+
+  .dock-support_contact-us {
+    overflow-y:       auto;
+    margin-bottom:    0.5em;
+    padding: .5em 0;
+  }
+  &.dock-support_toolbar-minimized {
+    left: $toolbar-is-minimized-width + 2;
+  }
+}
+
+.support_toolbar-footer {
+  width:        $toolbar-width;
+  color:        white;
+  padding:      .5em 0em .5em 0em;
+  position:     fixed;
+  bottom:       0;
+  border-top:   2px solid lighten($ts-blue-base, 15%);
+  @include      highlight-transition-background;
+
+  .support_toolbar-footer-icon {
+    margin: 0em 0.5em;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($left-panel-background-color, 8%);
+  }
+
+  &.support_toolbar-footer-minimized {
+    width: $toolbar-is-minimized-width;
+  }
+}

@@ -1,0 +1,2 @@
+component ra.c_messages
+component ra.c_irat_assessment_show model=model

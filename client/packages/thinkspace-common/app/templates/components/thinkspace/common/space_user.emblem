@@ -1,0 +1,8 @@
+td []
+td #{model.user.last_name}
+td #{model.user.first_name}
+td #{model.user.email}
+td
+  = chosen-select content=roles value='model.role' selected_items=model.role select_action='save'
+
+td click='destroy' DESTROY

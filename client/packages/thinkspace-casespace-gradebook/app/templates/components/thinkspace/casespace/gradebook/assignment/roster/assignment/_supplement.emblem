@@ -1,0 +1,20 @@
+table.gradebook_roster-supplement
+  thead: tr
+    th Phase
+    th Count
+    if supplement.has_user_count
+      th Students
+    th Total
+    th Average
+    th Median
+
+  tbody
+    each phase_supplement in supplement.base
+      tr
+        td= phase_supplement.title
+        td= phase_supplement.count
+        if supplement.has_user_count
+          td= phase_supplement.user_count
+        td= format-decimals phase_supplement.total   decimals
+        td= format-decimals phase_supplement.average decimals
+        td= format-decimals phase_supplement.median  decimals

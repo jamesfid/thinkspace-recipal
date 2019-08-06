@@ -1,0 +1,8 @@
+.markup-library
+
+  h6 Markup Library
+
+  ul.markup-library_comments
+    each library in controller.library_comments
+      li.markup-library_comment click='"library_comment" library'
+        = library.comment

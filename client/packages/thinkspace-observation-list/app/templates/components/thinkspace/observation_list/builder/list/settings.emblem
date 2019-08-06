@@ -1,0 +1,35 @@
+if all_data_loaded
+  .ts-forms_form-container 
+    .ts-forms_inline-heading
+      h4 Observation Settings
+    .ts-forms_section-heading
+        h1 Merging Lists
+        p You can merge observation lists in different parts of your case by adding them to a group. 
+    if has_groups
+      .ts-forms_field-label Currently merged with
+      ul.ts-settings_list
+        = each group in model.groups
+          li.ts-settings_list-item  
+            | #{group.id} - #{group.title}
+            .tsi.tsi-micro.tsi-cross.right click="'unassign_group' group"
+            .tsi.tsi-nano.tsi-edit.tsi-left.right
+
+    .ts-forms_field-container
+      if is_creating_group
+        form submit='create_group'
+          .ts-forms_field-label Group Name
+          = input value=group_title
+          .ts-forms_actions
+            a.btn.btn-small.btn-primary click='create_group' Create group
+            a.btn.btn-small.btn-default click='cancel_is_creating_group' Cancel
+      else
+        if valid_assignable_groups
+          .ts-forms_field-container
+            component c_dropdown collection=valid_assignable_groups text='Select a group' display_property='title' select_action='assign_group' action_receiver=this anchor_classes='thinkspace-dropdown_anchor-light ts-lab_select'
+          p or 
+        .ts-forms_field-container
+          a.btn.btn-small.btn-primary click='toggle_is_creating_group' Create new group
+
+
+else
+  component c_loader

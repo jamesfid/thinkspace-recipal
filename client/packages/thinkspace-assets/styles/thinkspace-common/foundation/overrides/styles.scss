@@ -1,0 +1,83 @@
+// Make the row class responsive.
+.row {
+  margin: 0;
+  max-width: 100%;
+  .row {
+    margin: 0;
+  }
+}
+
+
+
+// Remove top-bar bottom margin.
+.top-bar {
+  margin-bottom: 0px;
+}
+
+// Fix the span.error having a negative top margin
+span.error {
+  margin-top: 0;
+  background: none;
+  input {
+    border: 2px solid #fb6b6b;
+    background-color: #fff1f1;
+    transition-duration: 300ms;
+    -webkit-transition-duration: 300ms;
+    transition-property: all;
+    -webkit-transition-property: all;
+    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-out;
+    &:hover {
+      border-color: #f92121;
+      background-color: #fecece;
+    }
+  }
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+// Custom button stuff - should be removed once we re-stylize our own.
+$button-font-color: white;
+$button-font-color-alt: darken($button-font-color, 10%);
+$button-font-weight: 300;
+$button-fade-time: 75ms;
+
+// Fixing heading weights
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  
+}
+
+label { font-size: 1em; }
+
+.button {
+  box-shadow: none;
+  padding: 0.5em 0.65em;
+  border-radius: $global-radius;
+  margin: 0px;
+  font-weight: $button-font-weight;
+  color: $button-font-color;
+  overflow: hidden;
+  background-color: #37b7e9;
+  border: none;
+  -webkit-transition: background-color $button-fade-time ease-out;
+  -moz-transition: background-color $button-fade-time ease-out;
+  transition: background-color $button-fade-time ease-out;
+  &.has-caret {
+    padding-right: 5px;
+  }
+  &.wide {
+    width: 100%;
+  }
+  &:hover {
+    background-color: darken(#82c2ee, 10%);
+  }
+}
+
+body { 
+  line-height: 1.25em;
+}
+
+.reveal-modal-bg { z-index: 5001; }
+.reveal-modal { z-index: 5003; }

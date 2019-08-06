@@ -1,0 +1,14 @@
+.btn-cluster.right-cluster
+  .btn-group.left
+    .btn.btn-tiny title="Increase Decimals" click='increase_decimals'
+      .tsi.tsi-size_22.tsi-decimal-down_white 
+    .btn.btn-tiny title="Decrease Decimals" click='decrease_decimals'
+      .tsi.tsi-size_22.tsi-decimal-up_white
+  if edit_visible
+    .btn.btn-primary.btn-small click='toggle_edit'
+      | Update Scores
+  else
+    .btn.btn-default.btn-small click='toggle_edit'
+      | Edit Scores
+      .tsi.tsi-left.icon-tiny.tsi-edit-inverse.left
+

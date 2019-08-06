@@ -1,0 +1,6 @@
+span.gradebook_phase-state-heading Phase State:
+
+span.gradebook_phase-state-action-icons
+  each phase_state in domain_phase_states
+    span.gradebook_phase-state-action click='"change" phase_state.state' title='{{unbound phase_state.title}}'
+      a= phase-progress-icon-from-state phase_state.state

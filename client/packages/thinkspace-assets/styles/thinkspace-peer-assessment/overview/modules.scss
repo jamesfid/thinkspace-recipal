@@ -1,0 +1,56 @@
+.ts-tblpa-overview_overall-score {
+  font-size: 2em;
+  font-weight: $ts-heavy;
+  margin-right: .25em;
+}
+
+.ts-tblpa-overview_category-list {
+  margin-left: 0;
+}
+
+.ts-tblpa-overview_category {
+  list-style-type: none;
+  padding: .5em 0;
+  border-bottom: 2px solid $ts-black-light;
+}
+
+.ts-tblpa-overview_category-label {
+  margin-right: 1em;
+}
+
+.ts-tblpa-overview_qualitative-comments {
+  border-left: 2px solid $ts-black-light;
+  padding-left: 2em;
+  padding-top: 1.5em;
+}
+
+.ts-tblpa-overview_qualitative-constructive-section {
+  float: right;
+  text-align: right;
+  width: 100%;
+
+  .ts-tblpa-overview_qualitative-comments {
+    border-right: 2px solid $ts-black-light;
+    border-left: none;
+    padding-right: 2em;
+    padding-left: none;
+
+  }
+}
+
+.ts-tblpa-overview_qualitative-comment {
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 2px solid;
+  border-radius: $border-radius;
+}
+
+.ts-tblpa-overview_qualitative-positive {
+  border-color: $ts-green-base;
+  background-color: $ts-green-light;
+}
+
+.ts-tblpa-overview_qualitative-constructive {
+  border-color: $ts-orange-base;
+  background-color: $ts-orange-light;
+}

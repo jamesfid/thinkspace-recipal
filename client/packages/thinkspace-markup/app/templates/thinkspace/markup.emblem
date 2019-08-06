@@ -1,0 +1,4 @@
+#markup
+  outlet
+
+component c_messages

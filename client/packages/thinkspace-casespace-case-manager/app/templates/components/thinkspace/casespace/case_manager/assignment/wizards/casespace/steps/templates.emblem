@@ -1,0 +1,20 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 #{t 'builder.casespace.headings.case_templates'}
+      p #{t 'builder.casespace.instruct.choose_template'}
+
+    unless assignment_template
+      .dialogue.dialogue-error
+        p #{t 'builder.casespace.validations.required_template'}
+
+    unless all_data_loaded
+      component c_loader i18n_path='builder.casespace.loaders.case_templates'
+    each template in assignment_templates
+      component c_template_select model=template selected_model=assignment_template select='set_template'
+
+  .ts-wizard_row.ts-forms_action-btns-container
+    .ts-grid_columns.small-12
+      a.btn.btn-default.btn-small.left click='back' #{t 'builder.casespace.buttons.back'}
+      a.btn.btn-primary.btn-small.right click='complete' #{t 'builder.casespace.buttons.next'}
+

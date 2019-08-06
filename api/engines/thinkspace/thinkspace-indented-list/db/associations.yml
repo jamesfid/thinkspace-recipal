@@ -1,0 +1,34 @@
+- model: thinkspace/indented_list/list
+  associations:
+    - belongs_to: authable
+      polymorphic: true
+    - has_many: thinkspace/indented_list/responses
+      dependent: :destroy
+    - has_many: thinkspace/indented_list/expert_responses
+      dependent: :destroy
+  serializers:
+    - attributes: [id, title, authable_type, authable_id, expert, settings]
+
+- model: thinkspace/indented_list/response
+  delegate:
+    - method: authable
+      to: thinkspace/indented_list/list
+  associations:
+    - belongs_to: ownerable
+      polymorphic: true
+    - belongs_to: thinkspace/common/user
+      readonly:  true
+    - belongs_to: thinkspace/indented_list/list
+  serializers:
+    - attributes:  [id, value, ownerable_type, ownerable_id]
+
+- model: thinkspace/indented_list/expert_response
+  delegate:
+    - method: authable
+      to: thinkspace/indented_list/list
+  associations:
+    - belongs_to: thinkspace/common/user
+      readonly:  true
+    - belongs_to: thinkspace/indented_list/list
+  serializers:
+    - attributes:  [id, value]

@@ -1,0 +1,19 @@
+span.team_assign-team-wrapper
+
+  if view.is_team_assigned.content
+    i.team_assign-team-action.team_assign-team-action-remove.fa.fa-minus click='"remove_team" target=view'
+  else
+    i.team_assign-team-action.team_assign-team-action-add.fa.fa-plus click='"add_team" target=view'
+
+  i.team_assign-team.action.team_assign-heading-toggle-users.fa.fa-users click='"toggle_users_visible" target=view' title='Show/hide users'
+
+  span.team_assign-team-label
+    = team.title
+
+if view.users_visible
+  ul.team_assign_team-users-list
+    each user in view.team_users
+      li.team_assign_team-users-list-user
+        = user.sort_name
+    else
+      h6 No Users

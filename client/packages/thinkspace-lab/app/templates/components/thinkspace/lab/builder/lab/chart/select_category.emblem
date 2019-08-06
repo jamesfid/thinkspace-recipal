@@ -1,0 +1,3 @@
+li.ts-lab_admin-sortable-category class={is_category_active:active} model_id=model.id click='"select_category" model'
+  i.fa.fa-exchange.ts-lab_admin-sortable-category-handle
+  = model.title

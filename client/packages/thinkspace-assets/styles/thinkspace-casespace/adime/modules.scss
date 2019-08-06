@@ -1,0 +1,38 @@
+.adime_header {
+  background-color: $ts-black-light;
+  padding:          0.5em 1em;
+  color:            $ts-black-base;
+  margin-bottom:    0;
+  @include          border-radius($border-radius);
+}
+
+.adime_summaries {
+
+  .adime_active {
+    background-color:               $ts-blue-light;
+    border-left:                    2px solid $ts-blue-base;
+    .adime_icon { background-color: $ts-blue-base; border-color: $ts-blue-dark; }
+  }
+
+  .adime_completed { 
+    border-left: 2px solid $ts-green-base;
+    .adime_icon { background-color: $ts-green-med; border-color: $ts-green-base; }
+  }
+
+  .adime_icon {
+    position:         absolute;
+    height:           $adime_icon-height;
+    width:            $adime_icon-height;
+    left:             $adime_icon-left;
+    top:              $adime_icon-height;
+    border:           2px solid $ts-black-med;
+    background-color: white;
+    @include border-radius($adime_icon-height / 2);
+  }
+  li {
+    position:      relative;
+    border-bottom: 1px solid $ts-black-light;
+    border-left:   2px solid $ts-black-med;
+    padding:       0.5em 1.5em;
+  } // Position all of the <li> tags relative so the icon can be placed absolutely.
+}

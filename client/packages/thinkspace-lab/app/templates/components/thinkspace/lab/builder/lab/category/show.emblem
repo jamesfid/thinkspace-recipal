@@ -1,0 +1,16 @@
+.ts-lab_admin-category-result-container class={is_category_active::hide}
+
+  .ts-wizard_row.ts-lab_admin-category-dropdown_buttons: .ts-grid_columns.small-12
+    .left:  component admin.c_dropdown_split_button collection=result_new_dropdown_collection button_class='btn-small btn-primary'
+    .right: component admin.c_dropdown_split_button collection=category_dropdown_collection button_class='btn-small btn-default'
+
+  table.ts-lab_admin-result-table.ts-lab_admin-sortable-results class=elementId
+
+    thead
+      each heading in admin.selected_category_headings
+        th= heading
+      th
+
+    tbody
+      each result in sorted_results
+        component admin.c_result_show model=result

@@ -1,0 +1,71 @@
+.small-12.small-centered.medium-10.large-8.ts-grid_columns.ts-grid_columns-thin
+  .ts-forms_form-container
+    .ts-grid_row
+      .small-12.ts-grid_columns.ts-builder_content-header 
+        .ts-builder_content-header-title
+          h1 Phases
+          .ts-builder_content-actions
+            if is_adding_phase
+              a.btn.btn-primary.btn-small click='toggle_is_adding_phase' Cancel Add Phase
+            else
+              if is_ordering
+                a.btn.btn-primary.btn-small click='save_order' Save Order
+                a.btn.btn-default.btn-small click='cancel_ordering' Cancel
+              else
+                a.btn.btn-primary.btn-small click='toggle_is_adding_phase'
+                  | Add Phase
+                  .tsi.tsi-left.icon-small.tsi-add-inverse.left
+                if is_viewing_archived
+                  a.btn.btn-default.btn-small click='toggle_is_viewing_archived' Hide Archived
+                else
+                  a.btn.btn-default.btn-small click='toggle_is_viewing_archived' Show Archived
+                a.btn.btn-default.btn-small click='toggle_is_ordering' Edit Order
+    
+    .ts-grid_row.ts-builder_dialogue-container
+      component c_phase_errors model=model
+    .ts-grid_row
+      .small-12.ts-grid_columns.ts-builder_section-container 
+        if all_data_loaded
+          if is_adding_phase
+            component c_new_phase model=model cancel='reset_is_adding_phase'
+          else
+            if model.phases
+              if model.active_phases
+                .ts-builder_section-header 
+                  h1 All Phases
+                  p These phases make up your case.  If a phase is marked as a draft, it will not be visible to your students.
+                ol class='ts-builder_phase-list'
+                  each phase in model.active_phases
+                    component c_phase model=phase is_ordering=is_ordering assignment=model
+              
+              else
+                .dialogue.dialogue-instruct All of the phases for this case are currently archived.  You can view them with the 'Show Archived' button above.
+
+              if is_viewing_archived
+                .ts-builder_section-header 
+                  h1 Archived Phases (#{model.archived_phases.length})
+                  p Archived phases are phases carried from your first attempt at creating this case. Students will not see this.
+                ol class='ts-builder_phase-list'
+                  each phase in model.archived_phases
+                    component c_phase model=phase is_ordering=is_ordering assignment=model
+            else
+              .small-12.small-centered.medium-10.large-7.ts-grid_columns
+                .ts-dialogue
+                  img.ts-builder_phase-type-img src='/assets/images/ts-builder_phases_no-phases.svg'
+                  h1 You're case is empty
+                  p  Add a phase or go back and choose a case template to get you started.
+                  
+        else
+          component c_loader
+
+    .ts-grid_row
+      .small-12.ts-grid_columns
+        if is_adding_phase
+          a.btn.btn-primary.btn-small.right click='toggle_is_adding_phase' Cancel Add Phase
+        else
+          a.btn.btn-small.btn-default click='back' 
+            | Go Back
+            .tsi.tsi-left.icon-small.tsi-left-arrow-inverse.left
+          a.btn.btn-small.btn-primary.right click='next_without_callback' 
+            | Next Step
+            .tsi.tsi-right.icon-small.tsi-right-arrow-inverse.right

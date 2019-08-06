@@ -1,0 +1,17 @@
+.row
+  .small-12.columns
+    if has_builder_messages
+      .dialogue.dialogue-instruct
+        ul
+          each message in builder_messages
+            li= message
+    unless is_edit_mode_content
+      ul.ts-builder_edit-modes
+        li.left #{component.builder_friendly_name}
+        if has_builder_content
+          li.ts-builder_edit-mode click='set_mode_content' Edit Content
+        if has_builder_settings
+          li.ts-builder_edit-mode click='set_mode_settings' Settings
+        if has_builder_preview
+          li.ts-builder_edit-mode click='set_mode_preview' Preview
+    component c_mode model=model phase_component=phase_component component=component cancel='cancel' set_mode='set_mode'

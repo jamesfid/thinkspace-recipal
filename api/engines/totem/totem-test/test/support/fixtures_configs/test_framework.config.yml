@@ -1,0 +1,6 @@
+platform_path: test/framework
+
+routes: {url: 'framework'}
+
+paths:
+  - path: test/framework/core

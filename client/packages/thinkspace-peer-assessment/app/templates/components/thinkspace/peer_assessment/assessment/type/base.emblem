@@ -1,0 +1,4 @@
+if is_confirmation
+  = partial t_confirmation
+else
+  = partial t_review

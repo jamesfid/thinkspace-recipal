@@ -1,0 +1,46 @@
+// JF - May 2019 - Pretty sure this file is not used.
+
+div class={view.is_drag_hovered:is-drag-hovered :case-manager-roster-uploader_upload-overlay :case-manager-roster-uploader_upload-drop-zone view.is_uploading:is-visible:is-hidden}
+  .case-manager-roster-uploader_upload-text
+    | Drop file(s)
+
+.btn.btn-primary.btn-small{action 'toggle_upload' target=view} 
+  | Import Roster
+
+div class={:case-manager-roster-uploader_upload-progress view.is_processing:is-visible:is-hidden}
+  partial 'thinkspace/casespace/case_manager/shared/loading_modal'
+
+div class={:case-manager-roster-uploader_upload-modal view.show_modal:is-visible:is-hidden}
+  .case-manager-roster-uploader_upload-modal-body style='text-align: center;'
+    
+    div class={:dialogue view.import_error:dialogue-error:dialogue-instruct}
+      if view.import_error
+        p 
+          | Oops! An error occured while trying to import the roster.
+          br
+          | Check that your .csv file is in the correct format or select a different file to upload.
+          br
+          a href='https://thinkspace-prod.s3.amazonaws.com/examples/thinkspace_example_roster.csv'
+            | Click here to view an example
+      else
+        p 
+          | Use the button below to import a student roster with a '.csv' format.
+          br
+          | This may take up to several minutes depending on the size of the roster.
+          br
+          ul.case-manager-roster-uploader_instruction-list
+            li You must include a settings:send_to and settings:role for each student.
+            li A 'read' role allows students to view and complete cases.
+            li An 'update' role allows a teacher's assistant full control over content and to grade cases.
+            li An 'owner' role allows an instructor to create, edit, and grade cases.
+          a href='https://thinkspace-prod.s3.amazonaws.com/examples/thinkspace_example_roster.csv'
+            | Click here to view an example
+    span.btn.btn-primary.case-manager-roster-uploader_upload-button
+      | Select A File
+      form action=view.form_action method='POST' enctype='multipart/form-data'
+        input type='hidden' name='auth_token' value=view.auth_token
+        input type='hidden' name='rosterable_id' value=view.rosterable_id
+        input type='hidden' name='rosterable_type' value=view.rosterable_type
+        input.case-manager-roster-uploader_upload-input type='file' name='files[]'
+    span.btn.btn-small.case-manager-roster-uploader_upload-cancel{action 'toggle_upload' target=view}
+      | Cancel

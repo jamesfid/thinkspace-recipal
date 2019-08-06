@@ -1,0 +1,10 @@
+li.ts-builder_header-step
+  .ts-builder_header-icon click='select'
+    if is_selected
+      .tsi.tsi-tiny.tsi-phase-current
+    else
+      if is_completed
+        .tsi.tsi-tiny.tsi-phase-completed
+      else
+        .tsi.tsi-tiny.tsi-phase-unlocked
+    span #{model.title}

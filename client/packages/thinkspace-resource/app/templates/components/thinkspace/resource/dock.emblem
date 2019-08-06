@@ -1,0 +1,7 @@
+if show_resources
+  .thinkspace-dock_addon.thinkspace-dock_addon-blue click='toggle_addon_visible'
+    .tsi.tsi-left.tsi-tiny.tsi-backpack_white
+    span.thinkspace-dock_addon-title: |(#{resource_model.resources_length}) Resources
+
+if addon_visible
+  component c_pane model=resource_model close='close' can_manage_resources=can_manage_resources

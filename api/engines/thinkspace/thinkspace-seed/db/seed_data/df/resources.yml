@@ -1,0 +1,53 @@
+prereq_configs: space
+
+variables:
+  - &CASE  Resources
+  - &PHASE_CASE_RESOURCES  HTML with Only Case Resources (syllabus)
+  - &PHASE_RESOURCES       HTML with Case and Phase Resources
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+  - title: *PHASE_CASE_RESOURCES
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: lorem_1
+
+  - title: *PHASE_RESOURCES
+    assignment:    *CASE
+    template_name: one_column_html_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: lorem_2
+
+resource_tags:
+  - assignment: *CASE
+    user: owner_1
+    tags:
+      - title: Syllabus
+        links:
+          - {title: iowa state, url: 'http://iastate.edu'}
+          - {title: thinkspace, url: 'http://thinkspace.org'}
+        files:
+          - {source: file.pdf, name: syllabus.pdf}
+  - phase: *PHASE_RESOURCES
+    user: owner_1
+    tags:
+      - title: Phase Resources
+        links:
+          - {title: Rails Guides, url: 'http://guides.rubyonrails.org'}
+        files:
+          - {source: file.pdf, name: work-sheet 1.pdf}
+          - {source: file.pdf, name: work-sheet 2.pdf}
+          - {source: file.txt, name: work-sheet 3.txt}
+          - {source: file.txt, name: work-sheet 4.txt}

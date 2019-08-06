@@ -1,0 +1,1 @@
+component c_user_show_profile model=model update_password='update_password'

@@ -1,0 +1,52 @@
+### OBSERVATION LIST ###
+- model: thinkspace/observation_list/group
+  associations:
+    - belongs_to: groupable
+      polymorphic: true
+    - has_many:   thinkspace/observation_list/group_lists
+    - has_many:   thinkspace/observation_list/lists
+      through: thinkspace/observation_list/group_lists
+  serializers:
+    - attributes: [id, title]
+
+- model: thinkspace/observation_list/group_list
+  associations:
+    - belongs_to:   thinkspace/observation_list/group
+    - belongs_to:   thinkspace/observation_list/list
+
+- model: thinkspace/observation_list/list
+  associations:
+    - belongs_to: authable
+      polymorphic: true
+    - has_many: thinkspace/observation_list/observations
+    - has_many: thinkspace/observation_list/group_lists
+    - has_many: thinkspace/observation_list/groups
+      through: thinkspace/observation_list/group_lists
+    - has_many: thinkspace/observation_list/lists
+      through: thinkspace/observation_list/groups
+      source:  thinkspace/observation_list/lists
+  serializers:
+    - attributes: [id, category, authable_id, authable_type]
+
+- model: thinkspace/observation_list/observation
+  delegate:
+    - method: authable
+      to: thinkspace/observation_list/list
+  associations:
+    - belongs_to: thinkspace/common/user
+    - belongs_to: thinkspace/observation_list/list
+    - has_many:   thinkspace/observation_list/observation_notes
+      dependent: :destroy
+    - belongs_to: ownerable
+      polymorphic: true
+  serializers:
+    - attributes: [id, position, value, created_at, ownerable_id, ownerable_type, list_id]
+
+- model: thinkspace/observation_list/observation_note
+  delegate:
+    - method: [authable, ownerable]
+      to: thinkspace/observation_list/observation
+  associations:
+    - belongs_to: thinkspace/observation_list/observation
+  serializers:
+    - attributes: [id, value]

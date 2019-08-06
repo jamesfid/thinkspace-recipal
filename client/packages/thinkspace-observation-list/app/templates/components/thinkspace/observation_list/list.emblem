@@ -1,0 +1,13 @@
+.obs-list
+  .title-region.title-region-stretched.min-height
+    partial t_title_region
+
+  .ts-grid_row
+    div.small-12.obs-list_content
+
+      if is_creating_observation
+        component c_observation_new done='create_observation' cancel='create_observation_cancel'
+
+      ol.obs-list_list
+        each observation in ownerable_observations
+          component c_observation_show model=observation update='update_observation' remove='destroy_observation' draggable_class=draggable_class

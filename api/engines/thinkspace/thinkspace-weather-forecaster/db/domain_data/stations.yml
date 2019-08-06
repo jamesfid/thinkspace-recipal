@@ -1,0 +1,1398 @@
+---
+- id: 1
+  location: KDSM
+  block_number: '72'
+  station_number: '546'
+  place: DES MOINES INTERNATIONAL
+  country: United States
+  region: '4'
+  state: IA
+  source: isu
+  created_at: 2015-07-19 20:00:48.841239000 Z
+  updated_at: 2015-07-19 20:00:48.841239000 Z
+- id: 2
+  location: K1V4
+  block_number: '72'
+  station_number: '614'
+  place: ST JOHNSBURY FAIRBANKS
+  country: United States
+  region: '4'
+  state: VT
+  source: isu
+  created_at: 2015-07-19 20:00:48.848339000 Z
+  updated_at: 2015-07-19 20:00:48.848339000 Z
+- id: 3
+  location: K2WX
+  block_number: "--"
+  station_number: "---"
+  place: BUFFALO
+  country: United States
+  region: '4'
+  state: SD
+  source: isu
+  created_at: 2015-07-19 20:00:48.853770000 Z
+  updated_at: 2015-07-19 20:00:48.853770000 Z
+- id: 4
+  location: K4BK
+  block_number: "--"
+  station_number: "---"
+  place: Brookings
+  country: United States
+  region: '4'
+  state: OR
+  source: isu
+  created_at: 2015-07-19 20:00:48.859179000 Z
+  updated_at: 2015-07-19 20:00:48.859179000 Z
+- id: 5
+  location: K4BL
+  block_number: "--"
+  station_number: "---"
+  place: Blanding
+  country: United States
+  region: '4'
+  state: UT
+  source: isu
+  created_at: 2015-07-19 20:00:48.864633000 Z
+  updated_at: 2015-07-19 20:00:48.864633000 Z
+- id: 6
+  location: K4HV
+  block_number: "--"
+  station_number: "---"
+  place: Hanksville
+  country: United States
+  region: '4'
+  state: UT
+  source: isu
+  created_at: 2015-07-19 20:00:48.869789000 Z
+  updated_at: 2015-07-19 20:00:48.869789000 Z
+- id: 7
+  location: K9V9
+  block_number: '72'
+  station_number: '653'
+  place: CHAMBERLAIN MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: SD
+  source: isu
+  created_at: 2015-07-19 20:00:48.874905000 Z
+  updated_at: 2015-07-19 20:00:48.874905000 Z
+- id: 8
+  location: KABE
+  block_number: '72'
+  station_number: '517'
+  place: LEHIGH VALLEY INTERNATIONAL  AIRPORT
+  country: United States
+  region: '4'
+  state: PA
+  source: isu
+  created_at: 2015-07-19 20:00:48.880001000 Z
+  updated_at: 2015-07-19 20:00:48.880001000 Z
+- id: 9
+  location: KABI
+  block_number: '72'
+  station_number: '266'
+  place: ABILENE REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: TX
+  source: isu
+  created_at: 2015-07-19 20:00:48.884958000 Z
+  updated_at: 2015-07-19 20:00:48.884958000 Z
+- id: 10
+  location: KABQ
+  block_number: '72'
+  station_number: '365'
+  place: ALBUQUERQUE INTERNATIONAL  AIRPORT
+  country: United States
+  region: '4'
+  state: NM
+  source: isu
+  created_at: 2015-07-19 20:00:48.890063000 Z
+  updated_at: 2015-07-19 20:00:48.890063000 Z
+- id: 11
+  location: KABR
+  block_number: '72'
+  station_number: '659'
+  place: ABERDEEN REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: SD
+  source: isu
+  created_at: 2015-07-19 20:00:48.895008000 Z
+  updated_at: 2015-07-19 20:00:48.895008000 Z
+- id: 12
+  location: KABY
+  block_number: '72'
+  station_number: '216'
+  place: ALBANY SOUTHWEST GEORGIA
+  country: United States
+  region: '4'
+  state: GA
+  source: isu
+  created_at: 2015-07-19 20:00:48.899927000 Z
+  updated_at: 2015-07-19 20:00:48.899927000 Z
+- id: 13
+  location: KACB
+  block_number: "--"
+  station_number: "---"
+  place: Bellaire, Antrim County Airport
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:48.905493000 Z
+  updated_at: 2015-07-19 20:00:48.905493000 Z
+- id: 14
+  location: KACK
+  block_number: "--"
+  station_number: "---"
+  place: NANTUCKET MEMORIAL AIRPORT
+  country: United States
+  region: '4'
+  state: MA
+  source: isu
+  created_at: 2015-07-19 20:00:48.911045000 Z
+  updated_at: 2015-07-19 20:00:48.911045000 Z
+- id: 15
+  location: KACT
+  block_number: '72'
+  station_number: '256'
+  place: WACO REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: TX
+  source: isu
+  created_at: 2015-07-19 20:00:48.916508000 Z
+  updated_at: 2015-07-19 20:00:48.916508000 Z
+- id: 16
+  location: KACV
+  block_number: "--"
+  station_number: "---"
+  place: ARCATA/EUREKA ARCATA AIRPORT
+  country: United States
+  region: '4'
+  state: CA
+  source: isu
+  created_at: 2015-07-19 20:00:48.921885000 Z
+  updated_at: 2015-07-19 20:00:48.921885000 Z
+- id: 17
+  location: KACY
+  block_number: '72'
+  station_number: '407'
+  place: ATLANTIC CITY INTERNATIONAL
+  country: United States
+  region: '4'
+  state: NJ
+  source: isu
+  created_at: 2015-07-19 20:00:48.927286000 Z
+  updated_at: 2015-07-19 20:00:48.927286000 Z
+- id: 18
+  location: KADM
+  block_number: "--"
+  station_number: "---"
+  place: Ardmore, Ardmore Municipal Airport
+  country: United States
+  region: '4'
+  state: OK
+  source: isu
+  created_at: 2015-07-19 20:00:48.932768000 Z
+  updated_at: 2015-07-19 20:00:48.932768000 Z
+- id: 19
+  location: KADS
+  block_number: "--"
+  station_number: "---"
+  place: Dallas / Addison Airport
+  country: United States
+  region: '4'
+  state: TX
+  source: isu
+  created_at: 2015-07-19 20:00:48.938379000 Z
+  updated_at: 2015-07-19 20:00:48.938379000 Z
+- id: 20
+  location: KADU
+  block_number: "--"
+  station_number: "---"
+  place: Audubon, Audubon County Airport
+  country: United States
+  region: '4'
+  state: IA
+  source: isu
+  created_at: 2015-07-19 20:00:48.943752000 Z
+  updated_at: 2015-07-19 20:00:48.943752000 Z
+- id: 21
+  location: KADW
+  block_number: '74'
+  station_number: '594'
+  place: Camp Springs / Andrews Air Force Base
+  country: United States
+  region: '4'
+  state: MD
+  source: isu
+  created_at: 2015-07-19 20:00:48.949128000 Z
+  updated_at: 2015-07-19 20:00:48.949128000 Z
+- id: 22
+  location: KAEL
+  block_number: "--"
+  station_number: "---"
+  place: Albert Lea, Albert Lea Municipal Airport
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:48.954660000 Z
+  updated_at: 2015-07-19 20:00:48.954660000 Z
+- id: 23
+  location: KAEX
+  block_number: '74'
+  station_number: '754'
+  place: ALEXANDRIA INTERNATIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: LA
+  source: isu
+  created_at: 2015-07-19 20:00:48.960172000 Z
+  updated_at: 2015-07-19 20:00:48.960172000 Z
+- id: 24
+  location: KAFF
+  block_number: '74'
+  station_number: '531'
+  place: Air Force Academy
+  country: United States
+  region: '4'
+  state: CO
+  source: isu
+  created_at: 2015-07-19 20:00:48.965519000 Z
+  updated_at: 2015-07-19 20:00:48.965519000 Z
+- id: 25
+  location: KAFJ
+  block_number: "--"
+  station_number: "---"
+  place: Washington, Washington County Airport
+  country: United States
+  region: '4'
+  state: PA
+  source: isu
+  created_at: 2015-07-19 20:00:48.970797000 Z
+  updated_at: 2015-07-19 20:00:48.970797000 Z
+- id: 26
+  location: KAFN
+  block_number: "--"
+  station_number: "---"
+  place: JAFFREY MUNI-SILVER RANCH
+  country: United States
+  region: '4'
+  state: NH
+  source: isu
+  created_at: 2015-07-19 20:00:48.976156000 Z
+  updated_at: 2015-07-19 20:00:48.976156000 Z
+- id: 27
+  location: KAFW
+  block_number: "--"
+  station_number: "---"
+  place: FORT WORTH ALLIANCE AIRPORT
+  country: United States
+  region: '4'
+  state: TX
+  source: isu
+  created_at: 2015-07-19 20:00:48.981544000 Z
+  updated_at: 2015-07-19 20:00:48.981544000 Z
+- id: 28
+  location: KAGC
+  block_number: "--"
+  station_number: "---"
+  place: PITTSBURGH ALLEGHENY CTY.
+  country: United States
+  region: '4'
+  state: PA
+  source: isu
+  created_at: 2015-07-19 20:00:48.986710000 Z
+  updated_at: 2015-07-19 20:00:48.986710000 Z
+- id: 29
+  location: KAGS
+  block_number: '72'
+  station_number: '218'
+  place: AUGUSTA BUSH FIELD
+  country: United States
+  region: '4'
+  state: GA
+  source: isu
+  created_at: 2015-07-19 20:00:48.992260000 Z
+  updated_at: 2015-07-19 20:00:48.992260000 Z
+- id: 30
+  location: KAHN
+  block_number: '72'
+  station_number: '311'
+  place: ATHENS BEN EPPS AIRPORT
+  country: United States
+  region: '4'
+  state: GA
+  source: isu
+  created_at: 2015-07-19 20:00:48.997680000 Z
+  updated_at: 2015-07-19 20:00:48.997680000 Z
+- id: 31
+  location: KAIA
+  block_number: "--"
+  station_number: "---"
+  place: ALLIANCE MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: NE
+  source: isu
+  created_at: 2015-07-19 20:00:49.003204000 Z
+  updated_at: 2015-07-19 20:00:49.003204000 Z
+- id: 32
+  location: KAID
+  block_number: "--"
+  station_number: "---"
+  place: Anderson Municipal
+  country: United States
+  region: '4'
+  state: IN
+  source: isu
+  created_at: 2015-07-19 20:00:49.008570000 Z
+  updated_at: 2015-07-19 20:00:49.008570000 Z
+- id: 33
+  location: KAIG
+  block_number: "--"
+  station_number: "---"
+  place: Antigo, Langlade County Airport
+  country: United States
+  region: '4'
+  state: WI
+  source: isu
+  created_at: 2015-07-19 20:00:49.013947000 Z
+  updated_at: 2015-07-19 20:00:49.013947000 Z
+- id: 34
+  location: KAIO
+  block_number: "--"
+  station_number: "---"
+  place: Atlantic
+  country: United States
+  region: '4'
+  state: IA
+  source: isu
+  created_at: 2015-07-19 20:00:49.019306000 Z
+  updated_at: 2015-07-19 20:00:49.019306000 Z
+- id: 35
+  location: KAIT
+  block_number: "--"
+  station_number: "---"
+  place: Aitkin, Aitkin Municipal Airport-Steve Kurtz Field
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.024729000 Z
+  updated_at: 2015-07-19 20:00:49.024729000 Z
+- id: 36
+  location: KAIZ
+  block_number: "--"
+  station_number: "---"
+  place: Kaiser Lake Ozark, Lee C Fine Memorial Airport
+  country: United States
+  region: '4'
+  state: MO
+  source: isu
+  created_at: 2015-07-19 20:00:49.030150000 Z
+  updated_at: 2015-07-19 20:00:49.030150000 Z
+- id: 37
+  location: KAKO
+  block_number: "--"
+  station_number: "---"
+  place: COLORADO PLAINS REGIONAL
+  country: United States
+  region: '4'
+  state: CO
+  source: isu
+  created_at: 2015-07-19 20:00:49.035505000 Z
+  updated_at: 2015-07-19 20:00:49.035505000 Z
+- id: 38
+  location: KALB
+  block_number: '72'
+  station_number: '518'
+  place: ALBANY INTERNATIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: NY
+  source: isu
+  created_at: 2015-07-19 20:00:49.040923000 Z
+  updated_at: 2015-07-19 20:00:49.040923000 Z
+- id: 39
+  location: KALI
+  block_number: "--"
+  station_number: "---"
+  place: ALICE INTERNATIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: TX
+  source: isu
+  created_at: 2015-07-19 20:00:49.046365000 Z
+  updated_at: 2015-07-19 20:00:49.046365000 Z
+- id: 40
+  location: KALM
+  block_number: "--"
+  station_number: "---"
+  place: Alamogordo-White
+  country: United States
+  region: '4'
+  state: NM
+  source: isu
+  created_at: 2015-07-19 20:00:49.051762000 Z
+  updated_at: 2015-07-19 20:00:49.051762000 Z
+- id: 41
+  location: KALN
+  block_number: "--"
+  station_number: "---"
+  place: Alton/St. Louis, St. Louis Regional Airport
+  country: United States
+  region: '4'
+  state: IL
+  source: isu
+  created_at: 2015-07-19 20:00:49.056959000 Z
+  updated_at: 2015-07-19 20:00:49.056959000 Z
+- id: 42
+  location: KALO
+  block_number: '72'
+  station_number: '548'
+  place: WATERLOO MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: IA
+  source: isu
+  created_at: 2015-07-19 20:00:49.061933000 Z
+  updated_at: 2015-07-19 20:00:49.061933000 Z
+- id: 43
+  location: KALS
+  block_number: '72'
+  station_number: '462'
+  place: SAN LUIS VALLEY REGIONAL
+  country: United States
+  region: '4'
+  state: CO
+  source: isu
+  created_at: 2015-07-19 20:00:49.067430000 Z
+  updated_at: 2015-07-19 20:00:49.067430000 Z
+- id: 44
+  location: KALW
+  block_number: "--"
+  station_number: "---"
+  place: WALLA WALLA REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: WA
+  source: isu
+  created_at: 2015-07-19 20:00:49.072936000 Z
+  updated_at: 2015-07-19 20:00:49.072936000 Z
+- id: 45
+  location: KAMA
+  block_number: '72'
+  station_number: '363'
+  place: AMARILLO INTERNATIONAL  AIRPORT
+  country: United States
+  region: '4'
+  state: TX
+  source: isu
+  created_at: 2015-07-19 20:00:49.078305000 Z
+  updated_at: 2015-07-19 20:00:49.078305000 Z
+- id: 46
+  location: KAMG
+  block_number: "--"
+  station_number: "---"
+  place: ALMA BACON COUNTY AIRPORT
+  country: United States
+  region: '4'
+  state: GA
+  source: isu
+  created_at: 2015-07-19 20:00:49.083781000 Z
+  updated_at: 2015-07-19 20:00:49.083781000 Z
+- id: 47
+  location: KAMN
+  block_number: "--"
+  station_number: "---"
+  place: Alma, Gratiot Community Airport
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:49.089464000 Z
+  updated_at: 2015-07-19 20:00:49.089464000 Z
+- id: 48
+  location: KAMW
+  block_number: "--"
+  station_number: "---"
+  place: AMES MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: IA
+  source: isu
+  created_at: 2015-07-19 20:00:49.095048000 Z
+  updated_at: 2015-07-19 20:00:49.095048000 Z
+- id: 49
+  location: KANB
+  block_number: "--"
+  station_number: "---"
+  place: ANNISTON METRO AIRPORT
+  country: United States
+  region: '4'
+  state: AL
+  source: isu
+  created_at: 2015-07-19 20:00:49.100627000 Z
+  updated_at: 2015-07-19 20:00:49.100627000 Z
+- id: 50
+  location: KAND
+  block_number: "--"
+  station_number: "---"
+  place: ANDERSON COUNTY AIRPORT
+  country: United States
+  region: '4'
+  state: SC
+  source: isu
+  created_at: 2015-07-19 20:00:49.106227000 Z
+  updated_at: 2015-07-19 20:00:49.106227000 Z
+- id: 51
+  location: KANE
+  block_number: "--"
+  station_number: "---"
+  place: Minneapolis / Blaine
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.111657000 Z
+  updated_at: 2015-07-19 20:00:49.111657000 Z
+- id: 52
+  location: KANW
+  block_number: "--"
+  station_number: "---"
+  place: Ainsworth Municipal
+  country: United States
+  region: '4'
+  state: NE
+  source: isu
+  created_at: 2015-07-19 20:00:49.117247000 Z
+  updated_at: 2015-07-19 20:00:49.117247000 Z
+- id: 53
+  location: KAOO
+  block_number: "--"
+  station_number: "---"
+  place: ALTOONA-BLAIR COUNTY AIRPORT
+  country: United States
+  region: '4'
+  state: PA
+  source: isu
+  created_at: 2015-07-19 20:00:49.122740000 Z
+  updated_at: 2015-07-19 20:00:49.122740000 Z
+- id: 54
+  location: KAPA
+  block_number: "--"
+  station_number: "---"
+  place: DENVER CENTENNIAL AIRPORT
+  country: United States
+  region: '4'
+  state: CO
+  source: isu
+  created_at: 2015-07-19 20:00:49.128420000 Z
+  updated_at: 2015-07-19 20:00:49.128420000 Z
+- id: 55
+  location: KAPC
+  block_number: "--"
+  station_number: "---"
+  place: NAPA COUNTY AIRPORT
+  country: United States
+  region: '4'
+  state: CA
+  source: isu
+  created_at: 2015-07-19 20:00:49.133840000 Z
+  updated_at: 2015-07-19 20:00:49.133840000 Z
+- id: 56
+  location: KAPF
+  block_number: "--"
+  station_number: "---"
+  place: NAPLES MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: FL
+  source: isu
+  created_at: 2015-07-19 20:00:49.139322000 Z
+  updated_at: 2015-07-19 20:00:49.139322000 Z
+- id: 57
+  location: KAPN
+  block_number: '72'
+  station_number: '639'
+  place: ALPENA COUNTY REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:49.144802000 Z
+  updated_at: 2015-07-19 20:00:49.144802000 Z
+- id: 58
+  location: KAQP
+  block_number: "--"
+  station_number: "---"
+  place: Appleton, Appleton Municipal Airport
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.150368000 Z
+  updated_at: 2015-07-19 20:00:49.150368000 Z
+- id: 59
+  location: KAQW
+  block_number: "--"
+  station_number: "---"
+  place: N ADAMS HARRIMAN-AND-WEST
+  country: United States
+  region: '4'
+  state: MA
+  source: isu
+  created_at: 2015-07-19 20:00:49.156007000 Z
+  updated_at: 2015-07-19 20:00:49.156007000 Z
+- id: 60
+  location: KARA
+  block_number: "--"
+  station_number: "---"
+  place: NEW IBERIA ACADIANA REGIONAL
+  country: United States
+  region: '4'
+  state: LA
+  source: isu
+  created_at: 2015-07-19 20:00:49.161387000 Z
+  updated_at: 2015-07-19 20:00:49.161387000 Z
+- id: 61
+  location: KARB
+  block_number: "--"
+  station_number: "---"
+  place: ANN ARBOR MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:49.167127000 Z
+  updated_at: 2015-07-19 20:00:49.167127000 Z
+- id: 62
+  location: KARG
+  block_number: "--"
+  station_number: "---"
+  place: Walnut Ridge, Walnut Ridge Regional Airport
+  country: United States
+  region: '4'
+  state: AR
+  source: isu
+  created_at: 2015-07-19 20:00:49.173264000 Z
+  updated_at: 2015-07-19 20:00:49.173264000 Z
+- id: 63
+  location: KARR
+  block_number: "--"
+  station_number: "---"
+  place: CHICAGO AURORA MUNICIPAL
+  country: United States
+  region: '4'
+  state: IL
+  source: isu
+  created_at: 2015-07-19 20:00:49.179561000 Z
+  updated_at: 2015-07-19 20:00:49.179561000 Z
+- id: 64
+  location: KART
+  block_number: "--"
+  station_number: "---"
+  place: WATERTOWN INTERNATIONAL  AIRPORT
+  country: United States
+  region: '4'
+  state: NY
+  source: isu
+  created_at: 2015-07-19 20:00:49.187234000 Z
+  updated_at: 2015-07-19 20:00:49.187234000 Z
+- id: 65
+  location: KARV
+  block_number: "--"
+  station_number: "---"
+  place: Minocqua/Woodruff, Lakeland Airport/Noble F. Lee Memorial Field
+  country: United States
+  region: '4'
+  state: WI
+  source: isu
+  created_at: 2015-07-19 20:00:49.195246000 Z
+  updated_at: 2015-07-19 20:00:49.195246000 Z
+- id: 66
+  location: KASE
+  block_number: "--"
+  station_number: "---"
+  place: ASPEN-PITKIN COUNTY AIRPORT
+  country: United States
+  region: '4'
+  state: CO
+  source: isu
+  created_at: 2015-07-19 20:00:49.203328000 Z
+  updated_at: 2015-07-19 20:00:49.203328000 Z
+- id: 67
+  location: KASG
+  block_number: "--"
+  station_number: "---"
+  place: Springdale Municipal
+  country: United States
+  region: '4'
+  state: AR
+  source: isu
+  created_at: 2015-07-19 20:00:49.209267000 Z
+  updated_at: 2015-07-19 20:00:49.209267000 Z
+- id: 68
+  location: KASH
+  block_number: "--"
+  station_number: "---"
+  place: Nashua, Boire Field Airport
+  country: United States
+  region: '4'
+  state: NH
+  source: isu
+  created_at: 2015-07-19 20:00:49.215155000 Z
+  updated_at: 2015-07-19 20:00:49.215155000 Z
+- id: 69
+  location: KAST
+  block_number: '72'
+  station_number: '791'
+  place: PORT OF ASTORIA AIRPORT
+  country: United States
+  region: '4'
+  state: OR
+  source: isu
+  created_at: 2015-07-19 20:00:49.221724000 Z
+  updated_at: 2015-07-19 20:00:49.221724000 Z
+- id: 70
+  location: KATL
+  block_number: '72'
+  station_number: '219'
+  place: HARTSFIELD-JACKSON ATLANTA
+  country: United States
+  region: '4'
+  state: GA
+  source: isu
+  created_at: 2015-07-19 20:00:49.227267000 Z
+  updated_at: 2015-07-19 20:00:49.227267000 Z
+- id: 71
+  location: KATS
+  block_number: "--"
+  station_number: "---"
+  place: Artesia, Artesia Municipal Airport
+  country: United States
+  region: '4'
+  state: NM
+  source: isu
+  created_at: 2015-07-19 20:00:49.233261000 Z
+  updated_at: 2015-07-19 20:00:49.233261000 Z
+- id: 72
+  location: KATW
+  block_number: "--"
+  station_number: "---"
+  place: Appleton / Outagamie
+  country: United States
+  region: '4'
+  state: WI
+  source: isu
+  created_at: 2015-07-19 20:00:49.238877000 Z
+  updated_at: 2015-07-19 20:00:49.238877000 Z
+- id: 73
+  location: KATY
+  block_number: "--"
+  station_number: "---"
+  place: WATERTOWN MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: SD
+  source: isu
+  created_at: 2015-07-19 20:00:49.244455000 Z
+  updated_at: 2015-07-19 20:00:49.244455000 Z
+- id: 74
+  location: KAUG
+  block_number: "--"
+  station_number: "---"
+  place: AUGUSTA STATE AIRPORT
+  country: United States
+  region: '4'
+  state: ME
+  source: isu
+  created_at: 2015-07-19 20:00:49.252369000 Z
+  updated_at: 2015-07-19 20:00:49.252369000 Z
+- id: 75
+  location: KAUH
+  block_number: "--"
+  station_number: "---"
+  place: Aurora, Aurora Municipal Airport
+  country: United States
+  region: '4'
+  state: NE
+  source: isu
+  created_at: 2015-07-19 20:00:49.259143000 Z
+  updated_at: 2015-07-19 20:00:49.259143000 Z
+- id: 76
+  location: KAUM
+  block_number: "--"
+  station_number: "---"
+  place: Austin Municipal
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.265430000 Z
+  updated_at: 2015-07-19 20:00:49.265430000 Z
+- id: 77
+  location: KAUO
+  block_number: "--"
+  station_number: "---"
+  place: Auburn-Opelika Airport
+  country: United States
+  region: '4'
+  state: AL
+  source: isu
+  created_at: 2015-07-19 20:00:49.272641000 Z
+  updated_at: 2015-07-19 20:00:49.272641000 Z
+- id: 78
+  location: KAUW
+  block_number: "--"
+  station_number: "---"
+  place: WAUSAU DOWNTOWN AIRPORT
+  country: United States
+  region: '4'
+  state: WI
+  source: isu
+  created_at: 2015-07-19 20:00:49.278983000 Z
+  updated_at: 2015-07-19 20:00:49.278983000 Z
+- id: 79
+  location: KAVC
+  block_number: "--"
+  station_number: "---"
+  place: South Hill, Mecklenburg-Brunswick Regional Airport
+  country: United States
+  region: '4'
+  state: VA
+  source: isu
+  created_at: 2015-07-19 20:00:49.286646000 Z
+  updated_at: 2015-07-19 20:00:49.286646000 Z
+- id: 80
+  location: KAVL
+  block_number: '72'
+  station_number: '315'
+  place: ASHEVILLE REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: NC
+  source: isu
+  created_at: 2015-07-19 20:00:49.293151000 Z
+  updated_at: 2015-07-19 20:00:49.293151000 Z
+- id: 81
+  location: KAVP
+  block_number: '72'
+  station_number: '513'
+  place: WILKES-BARRE/SCRANTON INTERNATIONAL
+  country: United States
+  region: '4'
+  state: PA
+  source: isu
+  created_at: 2015-07-19 20:00:49.298122000 Z
+  updated_at: 2015-07-19 20:00:49.298122000 Z
+- id: 82
+  location: KAVX
+  block_number: '72'
+  station_number: '292'
+  place: AVALON CATALINA AIRPORT
+  country: United States
+  region: '4'
+  state: CA
+  source: isu
+  created_at: 2015-07-19 20:00:49.302831000 Z
+  updated_at: 2015-07-19 20:00:49.302831000 Z
+- id: 83
+  location: KAWG
+  block_number: "--"
+  station_number: "---"
+  place: Washington
+  country: United States
+  region: '4'
+  state: IA
+  source: isu
+  created_at: 2015-07-19 20:00:49.308060000 Z
+  updated_at: 2015-07-19 20:00:49.308060000 Z
+- id: 84
+  location: KAWO
+  block_number: "--"
+  station_number: "---"
+  place: Arlington Municipal
+  country: United States
+  region: '4'
+  state: WA
+  source: isu
+  created_at: 2015-07-19 20:00:49.312817000 Z
+  updated_at: 2015-07-19 20:00:49.312817000 Z
+- id: 85
+  location: KAXA
+  block_number: "--"
+  station_number: "---"
+  place: Algona
+  country: United States
+  region: '4'
+  state: IA
+  source: isu
+  created_at: 2015-07-19 20:00:49.317516000 Z
+  updated_at: 2015-07-19 20:00:49.317516000 Z
+- id: 86
+  location: KAXN
+  block_number: "--"
+  station_number: "---"
+  place: CHANDLER FIELD
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.322114000 Z
+  updated_at: 2015-07-19 20:00:49.322114000 Z
+- id: 87
+  location: KAZO
+  block_number: "--"
+  station_number: "---"
+  place: KALAMAZOO/BATTLE CREEK AIRPORT
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:49.326832000 Z
+  updated_at: 2015-07-19 20:00:49.326832000 Z
+- id: 88
+  location: KBAD
+  block_number: "--"
+  station_number: "---"
+  place: Barksdale Air Force Base
+  country: United States
+  region: '4'
+  state: LA
+  source: isu
+  created_at: 2015-07-19 20:00:49.331745000 Z
+  updated_at: 2015-07-19 20:00:49.331745000 Z
+- id: 89
+  location: KBAF
+  block_number: "--"
+  station_number: "---"
+  place: WESTFIELD BARNES MUNICIPAL
+  country: United States
+  region: '4'
+  state: MA
+  source: isu
+  created_at: 2015-07-19 20:00:49.336437000 Z
+  updated_at: 2015-07-19 20:00:49.336437000 Z
+- id: 90
+  location: KBAK
+  block_number: "--"
+  station_number: "---"
+  place: Columbus / Bakalar
+  country: United States
+  region: '4'
+  state: IN
+  source: isu
+  created_at: 2015-07-19 20:00:49.341226000 Z
+  updated_at: 2015-07-19 20:00:49.341226000 Z
+- id: 91
+  location: KBAX
+  block_number: "--"
+  station_number: "---"
+  place: Bad Axe, Huron County Memorial Airport
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:49.345966000 Z
+  updated_at: 2015-07-19 20:00:49.345966000 Z
+- id: 92
+  location: KBBB
+  block_number: "--"
+  station_number: "---"
+  place: Benson Municipal
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.350730000 Z
+  updated_at: 2015-07-19 20:00:49.350730000 Z
+- id: 93
+  location: KBBW
+  block_number: "--"
+  station_number: "---"
+  place: BROKEN BOW MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: NE
+  source: isu
+  created_at: 2015-07-19 20:00:49.373967000 Z
+  updated_at: 2015-07-19 20:00:49.373967000 Z
+- id: 94
+  location: KBCB
+  block_number: "--"
+  station_number: "---"
+  place: Virginia Tech Airport
+  country: United States
+  region: '4'
+  state: VA
+  source: isu
+  created_at: 2015-07-19 20:00:49.378949000 Z
+  updated_at: 2015-07-19 20:00:49.378949000 Z
+- id: 95
+  location: KBCE
+  block_number: "--"
+  station_number: "---"
+  place: BRYCE CANYON AIRPORT
+  country: United States
+  region: '4'
+  state: UT
+  source: isu
+  created_at: 2015-07-19 20:00:49.383544000 Z
+  updated_at: 2015-07-19 20:00:49.383544000 Z
+- id: 96
+  location: KBDE
+  block_number: "--"
+  station_number: "---"
+  place: BAUDETTE INTERNATIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.388418000 Z
+  updated_at: 2015-07-19 20:00:49.388418000 Z
+- id: 97
+  location: KBDL
+  block_number: '72'
+  station_number: '508'
+  place: BRADLEY INTERNATIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: CT
+  source: isu
+  created_at: 2015-07-19 20:00:49.393119000 Z
+  updated_at: 2015-07-19 20:00:49.393119000 Z
+- id: 98
+  location: KBDR
+  block_number: '72'
+  station_number: '504'
+  place: SIKORSKY MEMORIAL AIRPORT
+  country: United States
+  region: '4'
+  state: CT
+  source: isu
+  created_at: 2015-07-19 20:00:49.397740000 Z
+  updated_at: 2015-07-19 20:00:49.397740000 Z
+- id: 99
+  location: KBED
+  block_number: '74'
+  station_number: '490'
+  place: BEDFORD HANSCOM FIELD
+  country: United States
+  region: '4'
+  state: MA
+  source: isu
+  created_at: 2015-07-19 20:00:49.402526000 Z
+  updated_at: 2015-07-19 20:00:49.402526000 Z
+- id: 100
+  location: KBEH
+  block_number: "--"
+  station_number: "---"
+  place: SOUTHWEST MICHIGAN REGIONAL
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:49.407694000 Z
+  updated_at: 2015-07-19 20:00:49.407694000 Z
+- id: 101
+  location: KBFD
+  block_number: "--"
+  station_number: "---"
+  place: BRADFORD REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: PA
+  source: isu
+  created_at: 2015-07-19 20:00:49.412495000 Z
+  updated_at: 2015-07-19 20:00:49.412495000 Z
+- id: 102
+  location: KBFF
+  block_number: '72'
+  station_number: '566'
+  place: SCOTTSBLUFF HEILIG FIELD
+  country: United States
+  region: '4'
+  state: NE
+  source: isu
+  created_at: 2015-07-19 20:00:49.417343000 Z
+  updated_at: 2015-07-19 20:00:49.417343000 Z
+- id: 103
+  location: KBFI
+  block_number: "--"
+  station_number: "---"
+  place: SEATTLE BOEING FIELD
+  country: United States
+  region: '4'
+  state: WA
+  source: isu
+  created_at: 2015-07-19 20:00:49.422057000 Z
+  updated_at: 2015-07-19 20:00:49.422057000 Z
+- id: 104
+  location: KBFL
+  block_number: '72'
+  station_number: '384'
+  place: BAKERSFIELD MEADOWS FIELD
+  country: United States
+  region: '4'
+  state: CA
+  source: isu
+  created_at: 2015-07-19 20:00:49.426738000 Z
+  updated_at: 2015-07-19 20:00:49.426738000 Z
+- id: 105
+  location: KBFM
+  block_number: "--"
+  station_number: "---"
+  place: MOBILE DOWNTOWN AIRPORT
+  country: United States
+  region: '4'
+  state: AL
+  source: isu
+  created_at: 2015-07-19 20:00:49.431370000 Z
+  updated_at: 2015-07-19 20:00:49.431370000 Z
+- id: 106
+  location: KBGD
+  block_number: "--"
+  station_number: "---"
+  place: BORGER HUTCHINSON CO AIRPORT
+  country: United States
+  region: '4'
+  state: TX
+  source: isu
+  created_at: 2015-07-19 20:00:49.436001000 Z
+  updated_at: 2015-07-19 20:00:49.436001000 Z
+- id: 107
+  location: KBGM
+  block_number: '72'
+  station_number: '515'
+  place: BINGHAMTON REGIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: NY
+  source: isu
+  created_at: 2015-07-19 20:00:49.440696000 Z
+  updated_at: 2015-07-19 20:00:49.440696000 Z
+- id: 108
+  location: KBGR
+  block_number: "--"
+  station_number: "---"
+  place: BANGOR INT'L AIRPORT
+  country: United States
+  region: '4'
+  state: ME
+  source: isu
+  created_at: 2015-07-19 20:00:49.445522000 Z
+  updated_at: 2015-07-19 20:00:49.445522000 Z
+- id: 109
+  location: KBHB
+  block_number: "--"
+  station_number: "---"
+  place: Bar Harbor, Hancock County-Bar Harbor Airport
+  country: United States
+  region: '4'
+  state: ME
+  source: isu
+  created_at: 2015-07-19 20:00:49.450318000 Z
+  updated_at: 2015-07-19 20:00:49.450318000 Z
+- id: 110
+  location: KBHM
+  block_number: '72'
+  station_number: '228'
+  place: BIRMINGHAM INT'L AIRPORT
+  country: United States
+  region: '4'
+  state: AL
+  source: isu
+  created_at: 2015-07-19 20:00:49.455110000 Z
+  updated_at: 2015-07-19 20:00:49.455110000 Z
+- id: 111
+  location: KBID
+  block_number: "--"
+  station_number: "---"
+  place: Block Island, Block Island State Airport
+  country: United States
+  region: '4'
+  state: RI
+  source: isu
+  created_at: 2015-07-19 20:00:49.459697000 Z
+  updated_at: 2015-07-19 20:00:49.459697000 Z
+- id: 112
+  location: KBIE
+  block_number: "--"
+  station_number: "---"
+  place: Beatrice Municipal
+  country: United States
+  region: '4'
+  state: NE
+  source: isu
+  created_at: 2015-07-19 20:00:49.464384000 Z
+  updated_at: 2015-07-19 20:00:49.464384000 Z
+- id: 113
+  location: KBIL
+  block_number: '72'
+  station_number: '677'
+  place: LOGAN INTERNATIONAL AIRPORT
+  country: United States
+  region: '4'
+  state: MT
+  source: isu
+  created_at: 2015-07-19 20:00:49.495736000 Z
+  updated_at: 2015-07-19 20:00:49.495736000 Z
+- id: 114
+  location: KBIS
+  block_number: '72'
+  station_number: '764'
+  place: BISMARCK MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: ND
+  source: isu
+  created_at: 2015-07-19 20:00:49.500565000 Z
+  updated_at: 2015-07-19 20:00:49.500565000 Z
+- id: 115
+  location: KBIV
+  block_number: "--"
+  station_number: "---"
+  place: HOLLAND TULIP CITY AIRPORT
+  country: United States
+  region: '4'
+  state: MI
+  source: isu
+  created_at: 2015-07-19 20:00:49.505632000 Z
+  updated_at: 2015-07-19 20:00:49.505632000 Z
+- id: 116
+  location: KBIX
+  block_number: "--"
+  station_number: "---"
+  place: Keesler Air Force Base / Biloxi
+  country: United States
+  region: '4'
+  state: MS
+  source: isu
+  created_at: 2015-07-19 20:00:49.510277000 Z
+  updated_at: 2015-07-19 20:00:49.510277000 Z
+- id: 117
+  location: KBJC
+  block_number: "--"
+  station_number: "---"
+  place: Broomfield / Jeffco
+  country: United States
+  region: '4'
+  state: CO
+  source: isu
+  created_at: 2015-07-19 20:00:49.515290000 Z
+  updated_at: 2015-07-19 20:00:49.515290000 Z
+- id: 118
+  location: KBJI
+  block_number: '72'
+  station_number: '755'
+  place: Bemidji
+  country: United States
+  region: '4'
+  state: MN
+  source: isu
+  created_at: 2015-07-19 20:00:49.520110000 Z
+  updated_at: 2015-07-19 20:00:49.520110000 Z
+- id: 119
+  location: KBJJ
+  block_number: "--"
+  station_number: "---"
+  place: WOOSTER WAYNE COUNTY AIRPORT
+  country: United States
+  region: '4'
+  state: OH
+  source: isu
+  created_at: 2015-07-19 20:00:49.524732000 Z
+  updated_at: 2015-07-19 20:00:49.524732000 Z
+- id: 120
+  location: KBKE
+  block_number: "--"
+  station_number: "---"
+  place: BAKER MUNICIPAL AIRPORT
+  country: United States
+  region: '4'
+  state: OR
+  source: isu
+  created_at: 2015-07-19 20:00:49.529377000 Z
+  updated_at: 2015-07-19 20:00:49.529377000 Z
+- id: 121
+  location: KBKF
+  block_number: "--"
+  station_number: "---"
+  place: Aurora, Buckley Air Force Base Airport
+  country: United States
+  region: '4'
+  state: CO
+  source: isu
+  created_at: 2015-07-19 20:00:49.533922000 Z
+  updated_at: 2015-07-19 20:00:49.533922000 Z
+- id: 122
+  location: KBKL
+  block_number: "--"
+  station_number: "---"
+  place: CLEVELAND BURKE LAKEFRONT
+  country: United States
+  region: '4'
+  state: OH
+  source: isu
+  created_at: 2015-07-19 20:00:49.538532000 Z
+  updated_at: 2015-07-19 20:00:49.538532000 Z
+- id: 123
+  location: KBKV
+  block_number: "--"
+  station_number: "---"
+  place: BROOKSVILLE HERNANDO CO AIRPORT
+  country: United States
+  region: '4'
+  state: FL
+  source: isu
+  created_at: 2015-07-19 20:00:49.543165000 Z
+  updated_at: 2015-07-19 20:00:49.543165000 Z
+- id: 124
+  location: KBKW
+  block_number: '72'
+  station_number: '412'
+  place: RALEIGH COUNTY MEM AIRPORT
+  country: United States
+  region: '4'
+  state: WV
+  source: isu
+  created_at: 2015-07-19 20:00:49.548170000 Z
+  updated_at: 2015-07-19 20:00:49.548170000 Z
+- id: 125
+  location: KBKX
+  block_number: "--"
+  station_number: "---"
+  place: Brookings, Brookings Municipal Airport
+  country: United States
+  region: '4'
+  state: SD
+  source: isu
+  created_at: 2015-07-19 20:00:49.552968000 Z
+  updated_at: 2015-07-19 20:00:49.552968000 Z
+- id: 126
+  location: KBLF
+  block_number: "--"
+  station_number: "---"
+  place: BLUEFIELD MERCER COUNTY AIRPORT
+  country: United States
+  region: '4'
+  state: WV
+  source: isu
+  created_at: 2015-07-19 20:00:49.557547000 Z
+  updated_at: 2015-07-19 20:00:49.557547000 Z
+- id: 127
+  location: KBLH
+  block_number: "--"
+  station_number: "---"
+  place: BLYTHE AIRPORT
+  country: United States
+  region: '4'
+  state: CA
+  source: isu
+  created_at: 2015-07-19 20:00:49.562088000 Z
+  updated_at: 2015-07-19 20:00:49.562088000 Z

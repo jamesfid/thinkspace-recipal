@@ -1,0 +1,34 @@
+.ts-signin.fade-in
+  .ts-signin_content
+    .ts-grid_row: .large-4.small-10.small-centered.ts-grid_columns      
+      h3.ts-signin_header
+        | Think
+        span.ts-signin_branding-space
+          | Space
+
+    .ts-grid_row: .large-5.small-10.small-centered.ts-grid_columns
+      .message-container
+        .message-with-img
+          .message_img.ts-login_new-tos-img
+          .message_text
+            h1 We've made some changes
+            p 
+              | Just letting you know we've updated our 
+              b 
+                a href=tos_link
+                  | Terms of Service. 
+              br
+              | Take a look before you come inside. 
+            = if authenticating
+              component c_loader type='small' header='Blasting off!' message='You will arrive shortly.'
+            = else
+              .btn-cluster.left-cluster
+                button.btn.btn-small.btn-primary{action 'accept'} 
+                  | I accept new Terms
+                button.btn.btn-small.btn-default{action 'deny'}
+                  | I do not accept
+
+            .ts-signin_help
+              | Need help? Contact us at 
+              a href='mailto:support@thinkspace.org'
+                | support@thinkspace.org

@@ -1,0 +1,7 @@
+a.btn.btn-small.btn-default.right click='toggle_all_visible'
+  if all_visible
+    i.im.im-open-up
+    | Pack all
+  else
+    i.im.im-open-down
+    | Unpack all

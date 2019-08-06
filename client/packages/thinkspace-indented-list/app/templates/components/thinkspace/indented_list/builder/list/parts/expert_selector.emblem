@@ -1,0 +1,38 @@
+if all_data_loaded
+  if has_both_selected
+    .ts-forms_field-label You sure you want to set #{selected_user.full_name}'s path from #{selected_list.authable.title} as the expert path?
+    .btn-cluster.left-cluster
+      a.btn.btn-small.btn-primary click='set_expert_response' Yes, do it
+      a.btn.btn-small.btn-default click='cancel' Cancel
+  else
+    if selected_user
+      .ts-forms_field-container
+        .ts-settings_list-item
+          span.ts-forms_field-label Expert User:
+          span.ts-forms_inline-response #{selected_user.full_name}
+          .tsi.tsi-micro.tsi-cross.right click='reset_selected_user'
+          / | You've selected #{selected_user.full_name} as the expert.p
+          / .tsi.tsi-micro.tsi-cross click='reset_selected_user'
+
+      if selected_list
+        / p
+        /   | selected list is: #{selected_list}
+        / span click='reset_selected_list' Clear
+        / .tsi.tsi-micro.tsi-cross.right click='reset_selected_list'
+        .ts-forms_field-container
+          .ts-settings_list-item
+            span.ts-forms_field-label Expert List:
+            span.ts-forms_inline-response #{selected_list}
+            .tsi.tsi-micro.tsi-cross.right click='reset_selected_list'
+      else
+        .ts-forms_field-container
+          .ts-forms_field-label Choose a phase to pull #{selected_user.full_name}'s path from?
+          ul.ts-expert_phase-list
+            each list in lists
+              li.ts-expert_phase-item click="'select_list' list" #{list.authable.title}
+    else
+      .ts-forms_field-label Choose your expert
+      component c_ownerable_selector selected_ownerables=selected_user ownerables=users searchable=true multiple=false select='select_user'
+
+else
+  component c_loader

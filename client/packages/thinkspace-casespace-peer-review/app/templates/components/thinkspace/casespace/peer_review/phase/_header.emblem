@@ -1,0 +1,5 @@
+.ts-menu_header
+  .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thin
+    h6
+      |#{dock.addon_display_name}
+      .ts-menu_exit.right click='"exit" target=dock' Exit #{dock.addon_display_name}

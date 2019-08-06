@@ -1,0 +1,11 @@
+.thinkspace-resource_link-form
+
+  h6 Title
+  = input value=title
+  h6 URL
+  = input value=url
+  h6 Tag
+  view 'select' selection=selection content=resourceable.tags optionValuePath='content.id' optionLabelPath='content.title' prompt=prompt
+
+  a.btn.btn-small.btn-primary click='save' Save 
+  a.btn.btn-small.btn-default.right click='cancel' Cancel

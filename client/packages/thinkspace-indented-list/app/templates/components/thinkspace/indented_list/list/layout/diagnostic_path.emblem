@@ -1,0 +1,16 @@
+/component c_list_test_only response_manager=response_manager
+
+.ts-grid_row: .ts-grid_columns.ts-grid_columns-thick.small-12
+  component c_list_header model=model list=list
+  component c_list_all_visible response_manager=response_manager
+  .indented-list_action-container
+    component c_list_new_top     response_manager=response_manager
+    component c_list_new_bottom  response_manager=response_manager
+
+component c_list_source_observation response_manager=response_manager
+component c_list_source_mechanism   response_manager=response_manager
+
+.indented-list_list-container
+  each item in response_manager.value_items
+    component c_response_item_show response_manager=response_manager item=item
+  .gu-list-end

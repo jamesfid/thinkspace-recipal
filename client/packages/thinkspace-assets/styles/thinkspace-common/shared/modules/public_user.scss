@@ -1,0 +1,190 @@
+.ts-signup_branding-think, .ts-signin_branding-think, .ts-password_branding-think { font-weight: $ts-heavy;}
+.ts-signup_branding-space, .ts-signin_branding-space, .ts-password_branding-space { font-weight: $ts-regular;}
+
+.ts-signup, .ts-signin, .ts-password {
+
+  .ts-signup_content, .ts-signin_content, .ts-password_content {
+    .ts-signin_terms {
+      .ts-signin_terms-impact {
+        text-align: center;
+      }
+      .ts-signin_terms-text {
+        padding: .5em 0;
+        text-align: center;
+      }
+      .ts-signin_terms-link {
+        text-align: center;
+      }
+    }
+
+    .ts-signup_header, .ts-signin_header, .ts-password_header { 
+      font-weight: $ts-heavy;
+      text-align:    center;
+      margin-bottom: 1em;
+    }
+
+    .ts-signup_signin, .ts-signin_signup { 
+      font-size: 0.9375em;
+
+      .ts-signup_signin-link, .ts-signin_signup-link { 
+        font-weight:     $ts-medium;
+        margin-left:     0.5em;
+        text-decoration: underline;
+        letter-spacing: 0.5px;
+      }
+    }
+
+    .ts-signup_server-error, .ts-signin_server-error, .ts-password_invitation {
+      color:       $ts-red-base;
+      font-weight: $ts-bold;
+      text-align:  center;
+    }
+
+    .ts-signup_invitation, .ts-signin_invitation, .ts-password_invitation {
+      background-color: $ts-green-base;
+      &.invalid { background-color: $ts-red-base; }
+      border-radius: 3px;
+      margin-bottom: 1em;
+
+      .ts-signup_invitation-img, .ts-signin_invitation-img, .ts-password_invitation-img {
+        background-image: url('/assets/images/invitation-badge.png');
+        background-size:  100%;
+        width:            101px;
+        height:           120px;
+        display:          inline-block;
+        margin:           0.25em;
+
+        &.thinkbot {
+          background-image: url('/assets/images/messages/thinkbot-message_warning.svg');
+          width: 55px;
+          height: 95px;
+        }
+        float: left;
+      }
+
+      .ts-password_invitation-img { background-image: url('/assets/images/forgot-password.png') }
+
+      .ts-signup_invitation-text, .ts-signin_invitation-text, .ts-password_invitation-text {
+        display: inline-block;
+        text-align: left;
+        color:   white;
+        padding: 1em;
+        .ts-signup_invitation-header, .ts-signin_invitation-header { color: white; }
+        .ts-password_invitation-header { color: $ts-black-dark; }
+        .ts-signup_invitation-details, .ts-signin_invitation-details, .ts-password_invitation-details { 
+          margin-bottom: 0;
+          .ts-signup_invitation-invitable, .ts-signin_invitation-invitable, .ts-password_invitation-invitable { font-weight: 500; }
+        }
+      }
+      .ts-password_invitation-text { color: $ts-black-dark; }
+
+
+    }
+    .ts-password_invitation { 
+      background:    none;
+      margin-bottom: 2em;
+
+      &.fail {
+        .ts-password_invitation-header { color: $ts-red-base; }
+        .ts-password_invitation-details-error { font-weight: 500;}
+        .ts-password_invitation-details-contact {
+          color:       $ts-blue-base;
+          font-weight: 500;
+        }
+      }
+    }
+
+
+    .ts-signup_fields, .ts-signin_fields, .ts-password_fields {
+      .ts-signup_field-label, .ts-signin_field-label, .ts-password_field-label {
+        font-weight: $ts-bold;
+        margin-bottom: .875em;
+        letter-spacing: .5px;
+        .ts-signup_field-label-link, .ts-signin_field-label-link, .ts-password_field-label-link { 
+          float:       right;
+          font-weight: normal;
+          font-size:   small;
+          padding-top: .25em;
+        }
+      }
+    .ts-checkbox {
+        font-size: .875em;
+      }
+    }
+
+    .ts-signup_submit, .ts-signin_submit, .ts-password_submit { 
+      text-align: center;
+      margin-top: 2em;
+      .ts-signup_submit-action, .ts-signin_submit-action, .ts-password_submit-action { 
+        font-weight:   500;
+        margin-bottom: 1em;
+      }
+    }
+
+    .ts-signup_help, .ts-signin_help, .ts-password_help {
+      font-size: 14px;
+      margin-top: 2em;
+    }
+  }
+}
+
+.ts-signup { margin-top: 3%; }
+.ts-signin { margin-top: 6%; }
+.ts-password { margin-top: 9%; }
+
+.ts-login_new-tos-img {
+  background-image: url('/assets/images/login-imgs/login_new-tos.svg');
+  background-size:  100%;
+  background-repeat: no-repeat;
+  width:            100px;
+  height:           120px;
+  display:          inline-block;
+  margin:           0.25em;
+}
+
+.message-container {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.message-with-img {
+  @include clearfix;
+
+  display: inline-block;
+
+  .message_img {
+    float: left;
+
+     @media #{$small-only} { 
+      display:       block;
+      float:         none;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .message_text {
+    display:        inline-block;
+    padding-left:   2rem;
+    vertical-align: middle;
+    text-align:     left;
+
+    @media #{$small-only} { 
+      display: block;
+      padding-left: 0;
+    }
+
+    >h1 {
+      font-size:      1.25rem;
+      font-weight:    $ts-heavy;
+      letter-spacing: .5px;
+    }
+
+    .ts-signin_help {
+      margin-top: 6rem;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}

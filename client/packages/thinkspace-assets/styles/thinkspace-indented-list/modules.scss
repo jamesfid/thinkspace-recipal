@@ -1,0 +1,87 @@
+.gu-mirror {border: 2px solid $ts-orange-base;}
+
+.gu-hide {}
+
+.gu-unselectable {}
+
+.gu-transit {}
+
+.gu-draggable {cursor: move;}
+
+.gu-list-end { display: none; }
+
+.indented-list_heading {
+}
+
+.indented-list_response-title {
+  h4 {
+    font-weight: $ts-heavy;
+    margin-bottom: 0;
+  }
+}
+.indented-list_new-mechanism-container {
+  margin: $content-padding;
+}
+
+.indented-list_action-container {
+  .btn:first-of-type {
+    margin-right: 1em;
+  }
+}
+
+.indented-list_list-container {
+  margin-left:  $content-padding;
+  margin-right: 1em;
+  padding:  1em 0;
+}
+
+.indented-list_highlight-itemable {
+  border:        2px double $ts-orange-base;
+  margin-top:    0px;
+  margin-bottom: 2px;
+}
+
+.indented-list_loading-items {
+  .indented-list_loading-ship {
+    width:               100%;
+    background-position: center;
+    background-image:    url('/assets/images/loading-ship.png');
+    background-repeat:   no-repeat;
+    background-size:     4em;
+    height:              2em;
+    display:             inline-block;
+  }
+  .indented-list_loading-message {
+    width:       100%;
+    text-align:  center;
+    font-size:   1em;
+    font-weight: bold;
+  }
+}
+
+.indented-list_hide {
+  display: none;
+  margin:  0;
+  padding: 0;
+}
+
+.indented-list_save-error {
+  color: red;
+  h1, h2, h3, h4, h5, h6 {color: inherit;}
+}
+
+.indented-list_item-container{
+  &.is-deleting {
+    height: 85px;
+  }
+}
+
+// testing icon
+.indented-list_item-container {
+  .indented-list_item-value-type {
+    i            {color: black;}
+    i.mechanism  {color: green;}
+    i.data       {color: deeppink;}
+    i.history    {color: purple;}
+  }
+}

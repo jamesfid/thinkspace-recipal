@@ -1,0 +1,58 @@
+.team_view {
+
+  .team_view-list {
+    list-style:    disc inside none;
+    margin-bottom: 0;
+
+    .team_view-li {
+      cursor:      pointer;
+      font-weight: normal;
+      font-size:   em-calc(20px);
+      margin-left: 2em;
+      color:       $ts-blue-dark;
+    }
+  }
+
+
+  .group-list {
+    list-style:    decimal inside none;
+    margin-bottom: 0;
+    line-height:   1em;
+  }
+
+  .group-label {
+  }
+
+  .group_1-list {
+    font-weight: bold;
+  }  
+
+  .group_2-list {
+    font-weight: normal;
+  }
+ 
+  .group_3-list {
+    font-weight: normal;
+  }
+
+  .group_4-list {
+    font-weight: normal;
+  }
+
+  .group_1-label {
+    font-size:   em-calc(16px);
+  }
+
+  .group_2-label {
+    font-size:   em-calc(15px);
+  }  
+
+  .group_3-label {
+    font-size:   em-calc(15px);
+  }  
+
+  .group_4-label {
+    font-size:   em-calc(14px);
+  }  
+
+}

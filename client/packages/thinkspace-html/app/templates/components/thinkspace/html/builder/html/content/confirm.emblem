@@ -1,0 +1,39 @@
+.html_confirm-save
+
+  .ts-grid_row: .small-12.ts-grid_columns: h5 Are you sure you want to save the changes?
+
+  .ts-grid_row: .small-12.ts-grid_columns
+
+      if controller.confirm_changes
+        h6.html_confirm-heading Input/Thinkspace Tag Summary:
+
+        if controller.has_delete
+          .error-message.dialogue.dialogue-error
+            h5
+              ' Input tags that are 'deleted' will delete all responses associated with the input.
+              ' If this is what you want, press 'save', otherwise cancel and correct.
+              ' If the deleted tag is a 'rename', this should NOT be done unless there are no associated responses.
+    
+        table.html_confirm-table
+          thead
+            th.text-center Line
+            th.text-center Action
+            th.text-left Tag
+            th.text-left Type
+            th.text-left Name
+          tbody
+            each change in controller.confirm_changes
+              tr
+                td.text-center= change.line
+                td class="text-center {{unbound change.action}}"
+                  = change.action
+                td= change.tag
+                td= change.type
+                td= change.name
+
+      else
+        p.html_confirm-no-changes No input/thinkspace tag changes.
+
+  .ts-grid_row: .small-12.ts-grid_columns
+    .html_submit.btn.btn-primary.btn-small click='save': |Save Changes
+    .html_submit.btn.btn-default.btn-small click='cancel_confirm': |Cancel

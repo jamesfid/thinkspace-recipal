@@ -1,0 +1,204 @@
+$case_manager_table-th-color:    $ts-blue-dark;
+$case_manager_text-color:        white;
+$case_manager_table-hover-color: lighten($ts-blue-dark, 15%);
+
+ul.case_manager_toolbar-links {
+  list-style-type: none;
+  margin-left: 1em;
+
+  li.case_manager_toolbar-link {
+    a {
+      color: darken($left-panel-background-color, 25%);
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+}
+
+.case_manager-dock-exit {
+  position: absolute;
+  right:    0;
+  top:      .5em;
+  cursor:   pointer;
+  color:    $ts-blue-dark;
+  &:hover {
+    background-color: $ts-blue-dark;
+    color: white;
+  }
+}
+
+.case_manager {
+
+  .title-region {
+
+    span.action {
+      padding-right: .3em;
+    }
+
+    span.title {
+      color: $ts-blue-dark;
+      padding-right: .2em;
+    }
+
+    span.parent {
+      color: #6F6F6F;
+      font-size: 60%;
+      padding-right: .2em;
+    }
+
+    span.grand-parent {
+      color: #6F6F6F;
+      font-size: 40%;
+      padding-right: .2em;
+    }
+
+  }
+
+  .title-region-crumbs {
+    margin-bottom: .5em;
+    a {
+      &:hover {
+        background-color: $ts-blue-dark;
+        color: white;
+      }
+    }
+  }
+
+  table.case_manager_templates {
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    th {
+     background-color: $case_manager_table-th-color;
+     color: white;
+    }
+
+    th.case_manager_actions {
+      text-align:    right;
+      padding-right: 2em;
+    }
+
+    tr.case_manager_link {
+      &:hover {
+        background-color: $case_manager_table-hover-color;
+        color:            white;
+        a {
+          color:       white;
+          cursor:      pointer;
+        }
+      }
+      td {color: inherit;}
+
+      .case_manager_action-link {
+        display:       inherit;
+        float:         right;
+        padding-right: 1em;
+        &:hover {color: #000080;}
+        a {&:hover {color: #000080;}}
+      }
+
+    }
+  }
+
+  .form textarea {
+    height: auto;
+  }
+
+}
+
+.case_manager_confirm-clone {
+  padding-bottom: 2em;
+  h4 {color: red;}
+  .btn {width: 100%;}
+}
+
+.case_manager_assignment-active-text {
+  margin-right: 1em;
+}
+
+input[type='checkbox'].case_manager_assignment-active-checkbox {
+  margin-top: .4em;
+}
+
+.case_manager_phase-validate-text {
+  margin-right: 1em;
+}
+
+.case_manager_phase-validate-checkbox,
+.case_manager_phase-team-based-checkbox,
+.case_manager_phase-submit-button-checkbox
+{
+  input[type='checkbox'] {
+    margin-top:   .4em;
+    margin-right: .5em;
+    float:        left;
+  }
+}
+
+.case_manager_phase-max-score {
+  input { width: auto; }
+}
+
+table.case_manager_phase-order {
+
+  th {
+    &.case_manager_phase-name{
+      width: 75%;
+    }
+  }
+
+  th.case_manager_phase-order-move {
+    padding-left:  0;
+    padding-right: 0; 
+  }
+
+  td.case_manager_phase-order-move {
+    width:         2em;
+    color:         $ts-black-dark;
+    padding-left:  0;
+    padding-right: 0;
+
+    &:hover {
+      background-color: $case_manager_table-hover-color;
+      color:            white;
+      cursor:           pointer;
+    }
+  }
+
+}
+
+ul.case_manager_phase-order {
+  list-style-type: none;
+
+  li.case_manager_phase-order-link {
+    a {
+      &:hover {
+        background-color: $case_manager_table-hover-color;
+        color:            white;
+        cursor:           pointer;
+      }
+    }
+   }
+}
+
+.case_manager_confirm-clone-title {
+  color: $ts-blue-dark;
+}
+.case_manager_confirm-clone-description {
+  color: $ts-blue-dark;
+}
+
+.case_manager_phase-table-container {
+  margin-bottom: 2em;
+}
+
+@import 'teams';

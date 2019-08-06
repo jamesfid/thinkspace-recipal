@@ -1,0 +1,2 @@
+if c_wizard_step
+  component c_wizard_step model=model title=model.title

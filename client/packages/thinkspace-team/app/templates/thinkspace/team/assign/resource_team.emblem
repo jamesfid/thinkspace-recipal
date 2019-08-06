@@ -1,0 +1,5 @@
+span.team_assign-team
+
+  i.team_assign-team-action.team_assign-team-action-trash.fa.fa-trash-o click='"remove_team" target=view' title='Remove team'
+
+  span.team_assign-team-label= team.title

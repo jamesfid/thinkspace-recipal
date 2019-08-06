@@ -1,0 +1,15 @@
+.small-12.ts-grid_columns.ts-grid_columns-thick
+	.diag-path_header
+
+	  h6.diag-path_header-text Expert Diagnostic Path
+
+	  .diag-path_header-actions
+	    a.diag-path_header-action click='toggle_collapse_all'
+	      if all_collapsed
+	        i.im.im-open-down
+	      else
+	        i.im.im-open-up
+
+	ol.diag-path_list
+	  each path_item in model.top_level_path_items
+	    component c_path_item model=path_item all_collapsed=all_collapsed

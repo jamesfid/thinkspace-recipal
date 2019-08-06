@@ -1,0 +1,512 @@
+.ts-builder {
+    background-color: white;
+    .ts-builder_content {
+        background-color: white;
+    }
+}
+
+///// Toolbar /////
+.ts-builder_toolbar {
+    position:   fixed;
+    max-width:  150px;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.ts-builder_toolbar-actions-section {
+    margin-bottom: 2em;
+
+    h1 {
+        font-size: 1em;
+        font-weight: $ts-bold;
+        letter-spacing: .5px;
+    }
+}
+.ts-builder_toolbar-actions {
+    margin: 0;
+
+    list-style-type: none;
+    li {
+        font-size:   .875em;
+        font-weight: $ts-bold;
+        display:     inline-block;
+
+        width: 100px;
+        height: 100px;
+        margin-bottom: .5em;
+
+        border-radius: $border-radius;
+        border: 2px solid white;
+        &:hover {
+            cursor: pointer;
+
+            border: 2px solid $ts-blue-base;
+            background: $ts-blue-light;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+// Preview Component
+.ts-builder .ts-builder_preview {
+    $height:       2.5em;
+    position:      relative;
+    padding-top:   $height;
+    border:        2px solid $ts-black-light;
+    border-radius: $border-radius;
+    margin-bottom: 2em;
+
+    .ts-builder_edit-modes {
+        line-height: $height;
+
+        position: absolute;
+        top: -$height;
+        left: 0;
+
+        width:  100%;
+        height: $height;
+        margin: 0;
+
+        list-style-type: none;
+
+        text-align: right;
+
+        color:                   white;
+        letter-spacing:          .5px;
+        border-top-left-radius:  2px;
+        border-top-right-radius: 2px;
+        background-color:        $ts-blue-base;
+        .ts-builder_edit-mode {
+            border-right: 2px solid white;
+            padding: 0 1em;
+            font-size: .875em;
+            font-weight: 400;
+            max-height: 36px;
+
+            &:hover {
+              cursor: pointer;
+              background-color: $ts-blue-dark;
+            }
+        }
+        .ts-builder_edit-mode:last-of-type {
+            border-right: none;
+        }
+        li {
+            display: inline-block;
+
+            padding-right: .5em;
+            padding-left: .5em;
+        }
+    }
+    &.is-selected {
+        border: 2px solid $ts-blue-base;
+        border-radius: $border-radius;
+    }
+
+    &.is-edit-mode-content {
+      border:        2px solid $ts-black-med;
+      border-radius: $border-radius;
+      padding-bottom: 1em;
+    }
+}
+
+.ts-builder_phase-edit-title {
+   
+    @media only screen and (min-width: $medium-breakpoint) {
+        margin-left: 6%;
+    }
+}
+////// Header //////
+.ts-builder .ts-builder_header {
+    margin-bottom: 1.5em;
+    background-color: $ts-black-light;
+}
+
+.ts-builder .ts-builder_header-content {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    h5 {
+        display: inline-block;
+        margin-bottom: 1em;
+    }
+}
+
+.ts-builder ul.ts-builder_header-steps {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .ts-builder_header-step {
+        display: inline-block;
+        margin-right: 1.5em;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .ts-builder_header-icon {
+        height: 1.5em;
+        .tsi { margin-bottom: 3px; }
+        span { 
+            margin-left:    .5em; 
+            font-size:      .875em;
+            font-weight:    500;
+            letter-spacing: .5px;
+            color:          #797979;
+        }
+    }
+}
+
+.ts-builder_phase-info-overview {
+    @include clearfix;
+    margin-bottom: .5rem;
+
+    >span {
+       font-size: 1rem;
+       font-weight: $ts-bold;
+       letter-spacing: .5px;
+       color: $ts-black-dark; 
+    }
+}
+
+.ts-builder_wrapper {
+    border: 2px solid $ts-black-light;
+    border-radius: $border-radius;
+    padding: $content-padding/2;
+    box-shadow: 0px 3px 24px 0px rgba(238, 238, 238, 0.39);
+}
+
+///// Templates step grid /////
+.ts-builder_template-grid {
+    margin:          0;
+    padding:         0;
+    list-style-type: none;
+}
+
+.ts-builder_template-grid .ts-builder_template-grid-template {
+    display:       inline-block;
+    cursor:        pointer;
+    margin-right:  1.25em;
+    margin-bottom: 1em;
+
+    &:hover{
+        .ts-builder_template-title  {
+            color: $ts-blue-base;
+        }
+        .ts-builder_template-thumbnail {
+            border-color: $ts-blue-base;
+        }
+    }
+
+}
+
+.ts-builder_template-title {
+    font-weight:    $ts-medium;
+    font-size:      .875em;
+    letter-spacing: .5px;
+    margin-bottom:  .5em;
+}
+
+.ts-builder_template-thumbnail {
+    // height: 200px;
+    border: 2px solid $ts-black-light;
+    width: 100%;
+}
+
+.ts-builder_template-details-back {
+    margin-bottom: 1em;
+}
+
+.ts-builder_template-details-img {
+    margin-bottom: 2em;
+
+    img {
+        -webkit-box-shadow: 0px 3px 24px 0px rgba(189,189,189,1);
+        -moz-box-shadow:    0px 3px 24px 0px rgba(189,189,189,1);
+        box-shadow:         0px 3px 24px 0px rgba(189,189,189,1);
+    }
+}
+
+.ts-builder_template-details-container {
+    h1 {
+        font-size: 1.875em;
+        font-weight: $ts-heavy;
+    }
+}
+
+
+.ts-builder_template-phase-listings {
+    margin-top: 2em;
+
+    h3 {
+        font-size: 1.15em;
+        font-weight: $ts-bold;
+        margin-bottom: 1em;
+    }
+
+    ul {
+        list-style-type: none;
+        margin-left: 0;
+    }
+
+    .ts-builder_template-phase-name {
+        margin-bottom: .875em;
+    }
+}
+
+
+///// Phase List /////
+.ts-builder_phase-list {
+    margin-left: 1em;
+
+    li.ts-builder_phase {
+        margin-top:       1em;
+        padding-bottom:   1em;
+        padding-left:     1em;
+        border-bottom: 2px solid $ts-black-light;
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+    }
+
+    .ts-builder_phase-type-img {
+        width: 100px;
+        float: none;
+        margin-right: 1.5em;
+    }
+
+    .ts-builder_phase-info {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .ts-builder_phase-name {
+        font-size:   1em;
+        font-weight: $ts-bold;
+        color:       $ts-black-dark;
+
+        &:hover {
+            color: $ts-blue-base;
+        }
+    }
+
+    .ts-builder_phase-type {
+        margin-left:   1em;
+        font-size:     .875em;
+        margin-bottom: 8px;
+        color:         $ts-black-med;
+    }
+}
+
+.ts-builder_phase-list-settings {
+
+    img { 
+        margin-right: 1em;
+        width:        20px;
+    }
+}
+
+.ts-builder_phase-date-info {
+    font-size:   .875rem;
+    font-weight: $ts-bold;
+    font-style:  italic;
+    color:       $ts-black-base;
+}
+
+.ts-builder_archived-phase-list {
+    list-style-type: none;
+    margin-left: 0;
+
+    li {
+        margin-bottom: .5em;
+        padding-bottom: 1em;
+        // border-bottom: 2px solid $ts-black-light;
+    }
+}
+
+.ts-builder_phase-list-overview {
+    margin-left: 1em;
+
+    li {
+        margin-bottom:  .5em;
+        padding-left:    1em;
+        padding-bottom: 1em;
+    }
+
+    .ts-buidler_phase-list-overview-phase {
+        display: block;
+
+        h5 {
+            margin-bottom: .25em
+        }
+    }
+}
+
+.ts-builder_phase-template-title {
+    color: $ts-black-base;
+    font-size: 1em;
+}
+
+.ts-builder_phase-actions {
+    float: right;
+
+    .tsi {
+        margin-right: .5em;
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+///// Builder Content /////
+
+.ts-builder_content-header {
+    margin-bottom: 2em;
+
+
+    h1 {
+        font-size:      1.5em;
+        font-weight:    $ts-heavy;
+        margin-bottom:  0;
+        letter-spacing: .5px;
+    }
+}
+
+.ts-builder_content-header-title {
+    display: block;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    h1 {
+        float: left;
+    }
+}
+
+.ts-builder_content-actions {
+  float: right;
+  display: inline-block;
+
+  .btn {
+    margin-right: 1em;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+}
+
+.ts-builder_dialogue-container {
+    margin-bottom: 2rem;
+    .dialogue {
+        margin-bottom: .5rem;
+    }
+}
+
+.ts-builder_section-container {
+    margin-bottom: 2em;
+
+    label {
+        font-weight: $ts-bold;
+    }
+}
+
+.ts-builder_section-header {
+    margin-bottom: 2em;
+
+    h1 {
+        font-size:      1.15em;
+        font-weight:    $ts-heavy;
+        letter-spacing: .5px;
+        display:        inline-block;
+    }
+}
+
+
+// Observation
+.ts-settings_list {
+  list-style-type: none;
+
+}
+
+.ts-settings_list-item {
+  border-bottom: 2px solid $ts-black-light;
+  padding-right: .5em;
+  padding-top:   .5em;
+}
+
+
+// Add Phase 
+.ts-builder_new-phase-container {
+  cursor: pointer;
+  padding: .5em;
+
+  @media #{$medium-up} {
+    height: 150px;
+  }
+
+  &:hover {
+    background-color: $ts-blue-light;
+
+    .ts_new-phase-title {
+      color: $ts-blue-base;
+    }
+  }
+}
+
+.ts-builder_new-phase-img-col {
+    width: 30%;
+    padding-right: 1rem;
+}
+.ts-builder_phase-type-img {
+  float: left;
+  max-width: 100px;
+  margin-right: 1.5rem;
+
+
+}
+
+.ts-builder_new-phase-info {
+    width: 70%;
+    float: right;
+
+  .ts_new-phase-title {
+    font-weight: $ts-bold;
+    margin-bottom: .5em;
+  }
+
+  .ts_new-phase-description {
+    font-size: .875em;
+
+  }
+
+}
+
+
+// Expert Path Settings
+.ts-expert_phase-list {
+    list-style-type: none;
+}
+
+.ts-expert_phase-item {
+    padding: .25em .5em;
+    border: 2px solid $ts-black-med;
+    border-radius: 4px;
+    margin-bottom: .5em;
+
+    &:hover {
+        border-color: $ts-blue-base;
+        background-color: $ts-blue-light;
+    }
+}
+
+

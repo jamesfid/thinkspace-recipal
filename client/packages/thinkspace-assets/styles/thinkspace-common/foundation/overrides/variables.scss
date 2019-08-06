@@ -1,0 +1,65 @@
+$header-font-family: "omnes-pro", sans-serif;
+$body-font-family: "omnes-pro", sans-serif;
+
+$body-font-color: #464646;
+$header-font-color: #464646;
+
+$body-font-weight: 300;
+$paragraph-font-weight: 300;
+
+//dropdown overrides
+$f-dropdown-border-width: 2px;
+
+//foundation tooltip overrides
+$has-tip-border-bottom: none;
+$has-tip-font-weight: normal;
+$has-tip-font-color: #333;
+$has-tip-cursor-type: pointer;
+
+$tooltip-padding: rem-calc(8);
+$tooltip-bg: #FFF;
+$tooltip-font-size: rem-calc(15);
+$tooltip-font-weight: normal;
+$tooltip-font-color: #63b4d6; //ts-blue-base
+$tooltip-line-height: 1.3;
+$tooltip-close-font-size: rem-calc(10);
+$tooltip-close-font-weight: normal;
+$tooltip-close-font-color: #888;
+$tooltip-font-size-sml: rem-calc(14);
+$tooltip-pip-size: 5px;
+
+// Grid
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+//$row-width: rem-calc(1000);
+//$total-columns: 12;
+$column-gutter: 1.875em * 2;
+
+
+
+// Typography
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// We use these to control header font sizes
+// $h1-font-size: rem-calc(44);
+// $h2-font-size: rem-calc(37);
+// $h3-font-size: rem-calc(27);
+// $h4-font-size: rem-calc(23);
+// $h5-font-size: rem-calc(18);
+// $h6-font-size: 1rem;
+$anchor-font-color: #63b4d6; // ts-blue-base
+$anchor-font-color-hover: scale-color(#63b4d6, $lightness: -14%);
+
+// Forms
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$input-box-shadow: none;
+
+// Reveal
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$reveal-default-width: 60%;
+
+
+// tables
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$table-head-font-color: #464646;
+$table-head-font-weight: 500;

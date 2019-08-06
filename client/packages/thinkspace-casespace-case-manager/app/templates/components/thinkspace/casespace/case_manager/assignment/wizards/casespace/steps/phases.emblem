@@ -1,0 +1,30 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      .small-6.ts-grid_columns
+        h4 #{t 'casespace.phases'}
+        p #{t 'builder.casespace.describe.phases'}
+      .small-6.ts-grid_columns
+        .ts-forms_heading-actions
+          link-to r_phase_order model class='btn btn-default btn-small'
+            |#{t 'builder.casespace.headings.order_phases'}
+          a.btn.btn-primary.btn-small click='set_is_adding'
+            i.fa.fa-plus
+            |#{t 'builder.casespace.headings.new_phase'}
+
+  .ts-grid_row: .small-12.ts-grid_columns.ts-forms_section-container
+    if is_adding
+      component c_phase_clone model=model close='reset_is_adding'
+
+    table.case_manager_phase-order
+      thead
+        tr
+          th #{t 'casespace.phase'}
+          th
+      tbody
+        each phase in model.phases
+          component c_phase model=phase
+
+  .ts-grid_row.ts-forms_action-btns-container
+      a.btn.btn-default.btn-small.left click='back' #{t 'builder.casespace.buttons.back'}
+      a.btn.btn-primary.btn-small.right click='complete' #{t 'builder.casespace.buttons.next'}

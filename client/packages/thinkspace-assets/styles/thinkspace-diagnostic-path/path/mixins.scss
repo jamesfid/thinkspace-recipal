@@ -1,0 +1,40 @@
+@mixin diag-path_item($color-base, $color-active) {
+  border: 2px solid $color-base;
+
+  .diag-path_list-item-icon {
+    background-color: $color-base;
+  }
+
+  .diag-path_list-item-actions {
+    .diag-path_list-item-action {
+      background-color: $color-base;
+      
+      &:hover {
+        background-color: $color-active;
+      }
+    }
+  }
+}
+
+@mixin diag-path_header($color-base, $color-active) {
+  background: $color-base;
+  border: 2px solid $color-base;
+
+  .diag-path_header-actions {
+    background: $color-base;
+
+    .diag-path_header-action {
+      border-color: $color-base;
+
+      &:hover {
+        border-color:     $color-active;
+        background-color: $color-active;
+      }
+    }
+  }
+}
+
+@mixin diag-path_list($color-base, $color-lite) {
+  background: $color-lite;
+  border-color: $color-base;
+}

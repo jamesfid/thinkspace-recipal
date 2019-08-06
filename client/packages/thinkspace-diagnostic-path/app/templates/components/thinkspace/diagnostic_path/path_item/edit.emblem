@@ -1,0 +1,6 @@
+.diag-path_list-item-value-edit
+  = input value=value placeholder=placeholder class='sortable-exclude'
+
+.diag-path_list-item-value-edit-actions
+  a.btn.btn-small.sortable-exclude click='cancel' Cancel
+  a.btn.btn-small.btn-primary.sortable-exclude click='done' Done

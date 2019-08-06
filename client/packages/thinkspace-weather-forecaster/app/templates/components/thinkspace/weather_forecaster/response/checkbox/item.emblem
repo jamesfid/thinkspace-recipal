@@ -1,0 +1,10 @@
+.thinkspace-weather-forecaster_assessment-item-checkbox class=is_correct_class class={is_view_only:view_only} click='toggle_checkbox'
+
+  .thinkspace-weather-forecaster_assessment-item-checkbox-status
+    if is_checked
+      .tsi.tsi-small.tsi-weather-forecaster-checked-item
+    else
+      .tsi.tsi-small.tsi-weather-forecaster-unchecked-item
+
+  .thinkspace-weather-forecaster_assessment-item-checkbox-label
+    = response_label

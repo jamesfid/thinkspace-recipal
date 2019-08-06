@@ -1,0 +1,114 @@
+.ts-wizard {
+  @include fluid-grid-row;
+
+  .ts-wizard_content { 
+    @include grid-column($columns: 6, $center: true); 
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      @include grid-column($columns: 8, $center: true); 
+    }
+
+    @media only screen and (max-width: $small-breakpoint) {
+      @include grid-column($columns: 12, $center: true); 
+    }
+
+  }
+  .ts-wizard_row     { @include fluid-grid-row; }
+  .ts-wizard_columns { @include grid-column($columns: 12); }
+
+  h1 { font-weight: $ts-heavy; font-size: $header-font-size; }
+  h2 { font-size: $header-font-size - 0.25rem;}
+  h3 { font-size: $header-font-size - 0.5rem; }
+
+  //input { margin: 0; }
+  //.ts-validated-input_input-errors { margin: 0; }
+}
+
+.ts-wizard-title-region {
+  background-color: $ts-black-light;
+  margin-bottom:    $content-padding;
+  padding:          .5em 0;
+  min-height:       $ts-min-height-title-region;
+
+  .ts-wizard-title-region_row     { @include fluid-grid-row; }
+  .ts-wizard-title-region_columns { @include grid-column($columns: 6); }
+
+  h1 { font-size: 1.25rem; font-weight: $ts-regular; }
+  span.emphasis { font-weight: $ts-bold; }
+}
+
+.ts-wizard_confirmation-section-container {
+  margin-bottom: 2em;
+}
+
+.ts-wizard_confirmation-section-content-container {
+
+}
+
+.ts-wizard_confirmation-field-label {
+  margin-bottom: .25em;
+  font-size:     1em;
+  font-weight:   $ts-bold;
+  display: inline-block;
+  letter-spacing: .5px;
+}
+
+.ts-wizard_clone-phase-template-container {
+  position: fixed;
+  left: 0;
+  top: 105px;
+  height: 100%;
+  border-right: 2px solid $ts-black-light;
+
+}
+
+.ts-wizard_clone-phase-template-heading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: $content-padding $content-padding .5em;
+  background-color: white;
+  border-bottom: 2px solid $ts-black-light;
+  z-index: 10;
+
+  .tsi {
+    position: absolute;
+    top: $content-padding;
+    right: ($content-padding/2);
+  }
+}
+
+.ts-wizard_clone-phase-template-list {
+  position: absolute;
+  top: 138px;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 15em;
+  padding-top: .875em;
+  width: 100%;
+  overflow: auto;
+}
+
+.ts-wizard_clone-phase-template-title {
+  cursor: pointer;
+  padding: .75em $content-padding;
+  font-size: 1.05em;
+  font-weight: $ts-medium;
+  letter-spacing: .5px;
+
+  &:nth-child(even) {
+    background-color: $ts-blue-light;
+  }
+
+  &:hover {
+    background-color: $ts-blue-base;
+    color:            white;
+  }
+}
+
+.ts-wizard_green {color: $ts-green-base;}
+.ts-wizard_red   {color: $ts-red-base;}
+.ts-wizard_bold  {font-weight: $ts-heavy;}
+
+.ts-wizard_form-button-container {margin-top: 1em;}

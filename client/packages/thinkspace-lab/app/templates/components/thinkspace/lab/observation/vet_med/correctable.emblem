@@ -1,0 +1,20 @@
+div class={:thinkspace-lab_input lab_observation.is_correct:correct:incorrect}
+
+  if correction_visible
+    span.thinkspace-lab_correctable-input class={lab_observation.is_correct:correct:incorrect}
+      = input type='text' value=input_value disabled=lab_observation.is_disabled key-up='set_input_value'
+      / Removing unless 'enter' usage becomes invalid (e.g. must press enter to submit)
+      / unless lab_observation.is_disabled
+        / i.fa.fa-check.thinkspace-lab_correctable-input-save   click='save' title='Save'
+        / i.fa.fa-close.thinkspace-lab_correctable-input-cancel click='cancel' title='Cancel'
+    p Round to nearest decimal.
+
+  else
+    unless lab_observation.is_view_only
+      a tabindex='0' click='show' #{prompt_correct}
+
+
+.ts-lab_modal.reveal-modal aria-hidden='true' aria-labelledby='Lab Help' data-reveal='' role='dialog' 
+  p Remember: this value is corrected by dividing the test result hematocrit value by the normal hematocrit value for the species you are dealing with (canine: 45, feline: 40, bovine: 35). Multiply this ratio by the reticulocyte count to complete the calculation. 
+  a.btn.btn-default.btn-medium.right click='close_help_modal' Done
+  a.close-reveal-modal aria-label='Close'  ×

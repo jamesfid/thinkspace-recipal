@@ -1,0 +1,21 @@
+tr.ts-lab_result
+  td.ts-lab_status-icon
+    if lab_result.is_focused
+      i.fa.fa-arrow-right.ts-lab_focus-icon
+    else
+      if lab_result.is_disabled
+        i.fa.fa-check.ts-lab_correct-icon
+  if model.is_html
+    td= lab-result-value model 'title'
+    td colspan=category.colspan_for_html
+      = model.html
+  else
+    each column in category.columns
+      td
+        if column.observation
+          component c_observation column=column result=model lab=lab lab_result=lab_result
+        else
+          if column.range
+            = lab-result-range model column.source
+          else
+            = lab-result-value model column.source

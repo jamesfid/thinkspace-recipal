@@ -1,0 +1,3 @@
+ol.ts-ra_questions
+  each qm in question_managers
+    component ra.c_irat_question qm=qm

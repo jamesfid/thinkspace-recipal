@@ -1,0 +1,26 @@
+#application {
+  &.toolbar-is-hidden { 
+    #content-wrapper, .thinkspace-dock { margin-left: $toolbar-is-hidden-width !important; }
+    #toolbar { width: $toolbar-is-hidden-width; z-index: inherit; }
+  }
+
+  &.sidepocket-is-minimized {
+    #content-wrapper { margin-right: $toolbar-is-minimized-width; }
+  }
+
+  &.sidepocket-is-expanded {
+    &.sidepocket_width-1 { 
+      #content-wrapper { margin-right: 15%; } 
+      #sidepocket { 
+        width: 15%; 
+      }
+    }
+    &.sidepocket_width-2 {
+      #content-wrapper { margin-right: 15% * 2 }
+      #sidepocket { 
+        width: 15% * 2; 
+      }
+    }
+  }
+
+}

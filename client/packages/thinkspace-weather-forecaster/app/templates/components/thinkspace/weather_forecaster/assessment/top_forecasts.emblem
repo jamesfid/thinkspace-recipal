@@ -1,0 +1,19 @@
+.thinkspace-weather-forecaster_assessment-forecast-top-forecasts-header
+  |Top 10 scores from the class for this weather forecast.
+
+.thinkspace-weather-forecaster_assessment-forecast-top-forecasts
+
+  table
+
+    thead
+      tr
+        th Student
+        th.text-right Score
+
+    tbody
+
+      each top_forecast in top_forecasts_sorted
+        tr
+          td=top_forecast.title
+          td.text-right=top_forecast.score
+

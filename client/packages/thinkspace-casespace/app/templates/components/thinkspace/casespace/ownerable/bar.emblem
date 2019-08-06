@@ -1,0 +1,2 @@
+if has_bar
+  component c_bar_type

@@ -1,0 +1,40 @@
+.ts-forms_section-heading
+  h5 Quantitative Section Options
+
+div class={is_categories:active}
+  .ts-forms_field-container
+    label.ts-radio click="'set_type' 'categories'"
+      component c_radio checked=is_categories disable_click=true
+      | Categories
+      .ts-radio_description
+        | Have your students assess each other based on different categories or questions. E.g., Promptness, Participation, etc.. 
+
+
+    if is_categories
+      .thinkspace-tbl-pa_quantitative-type-setting-container
+        component c_categories model=model options=options
+
+div class={is_balance:active}
+  .ts-forms_field-container
+    label.ts-radio click="'set_type' 'balance'"
+      component c_radio checked=is_balance disable_click=true
+      | Balance points
+      .ts-radio_description
+        | Students will have a set number of points to distribute among their peers. You can set a fixed number of total points or have it based on the number of members in a student's team.
+
+    if is_balance
+      .thinkspace-tbl-pa_quantitative-type-setting-container
+        component c_balance model=model options=options
+
+
+div class={is_free:active}
+  .ts-forms_field-container
+    label.ts-radio click="'set_type' 'free'"
+      component c_radio checked=is_free disable_click=true
+      | Free scoring
+      .ts-radio_description
+        | No categories and no need for balancing points between team members. There will be, however, a maximum number of total points.
+
+    if is_free
+      .thinkspace-tbl-pa_quantitative-type-setting-container
+        component c_free model=model options=options

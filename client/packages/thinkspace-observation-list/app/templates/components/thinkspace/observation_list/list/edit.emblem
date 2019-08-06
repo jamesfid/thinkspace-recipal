@@ -1,0 +1,33 @@
+if is_current
+
+  .ts-forms_field-container-overlay
+
+    .ts-wizard-title-region: .ts-wizard-title-region_row
+      .small-3.ts-grid_columns.ts-grid_columns-thick
+        h1 #{t 'builder.casespace.mode.edit'}
+      .ts-wizard-title-region_columns: h1
+        | #{model.authable.title} |  
+        span.emphasis  Observation List
+      .small-3.ts-grid_columns.ts-grid_columns-thick
+        a.btn.btn-default.btn-small.right  click='cancel' #{t 'builder.casespace.buttons.back'}
+
+    .ts-forms_field-container-overlay-content
+
+      .ts-wizard: .ts-wizard_content
+
+        .ts-wizard_row: .ts-grid_columns.small-12
+          .ts-forms_field-container
+            .ts-forms_field-label-container
+              .ts-forms_field-label Observation category
+              .ts-forms_fields-label-description Choose category for the observations taken in this phase
+
+            .tsi-wrapper
+              each category in categories
+                component c_category_radio category=category input_value=input_value check='check' uncheck='uncheck' 
+
+        .ts-wizard_row: .ts-grid_columns.small-12
+          a.btn.btn-primary.btn-small click='save' Update Observation List
+
+else
+  if show_link
+    a click='select' Edit Observation List

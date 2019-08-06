@@ -1,0 +1,27 @@
+.ts-ra_question-text
+  = qm.question
+
+  if qm.rm.room_users
+    .ts-ra_question-chat click='toggle_chat'
+      if qm.chat_displayed
+        |Close Chat
+      else
+        |Chat
+
+if qm.is_ifat
+  component ra.c_shared_radio_ifat_buttons qm=qm select='select_answer'
+else
+  component ra.c_shared_radio_buttons qm=qm select='select_answer'
+
+component ra.c_trat_justification qm=qm focus_in='focus_justification' save='save_justification' cancel='cancel_justification'
+
+if qm.question_disabled_by
+  .ts-ra_question-justfication-disabled-by
+    |Question locked by: #{qm.question_disabled_by}
+
+unless viewonly
+  unless qm.answers_disabled
+    each message in errors.answer_id
+      span.ts-ra_question-error-message
+        i.im.im-warning.im-error-base
+        = message

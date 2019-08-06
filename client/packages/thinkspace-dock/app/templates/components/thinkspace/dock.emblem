@@ -1,0 +1,5 @@
+.thinkspace-dock
+  .thinkspace-dock_addons
+    each addon in addons
+      .thinkspace-dock_inline-pane
+        component addon.path

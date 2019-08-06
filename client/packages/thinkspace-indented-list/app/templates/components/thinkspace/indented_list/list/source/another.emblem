@@ -1,0 +1,6 @@
+if response_manager.updateable
+  each item in other_list_items
+    .indented-list_new-item.gu-draggable model_type=item.description
+      .indented_list-item
+        h6 style='margin: 0;'
+          |#{item.drag_text}

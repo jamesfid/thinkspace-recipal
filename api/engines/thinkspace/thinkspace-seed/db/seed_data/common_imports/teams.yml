@@ -1,0 +1,35 @@
+import:
+  - &TEAM_SET_OWNER owner_1
+  # Team Sets
+  - &TEAM_SET_A team_set_a
+  - &TEAM_SET_B team_set_b
+  - &TEAM_SET_C team_set_c
+  - &ALL_TEAM_SETS [*TEAM_SET_A, *TEAM_SET_B, *TEAM_SET_C]
+  # Teams
+  - &TEAM_1 Team 1 (read_123)
+  - &TEAM_2 Team 2 (read_456)
+  - &TEAM_3 Team 3 (read_789)
+  - &ALL_TEAMS [*TEAM_1, *TEAM_2, *TEAM_3]
+  # Team users
+  - &TEAM_1_USERS [read_1, read_2, read_3]
+  - &TEAM_2_USERS [read_4, read_5, read_6]
+  - &TEAM_3_USERS [read_7, read_8, read_9]
+  # Phase Team Categories
+  - &TEAM_COLLABORATION collaboration
+  - &TEAM_PEER_REVIEW   peer_review
+
+# replace_with_parent_variables
+
+team_sets: &TEAM_SETS
+  - {title: *TEAM_SET_A, space: *SPACE, user: *TEAM_SET_OWNER}
+  - {title: *TEAM_SET_B, space: *SPACE, user: *TEAM_SET_OWNER}
+  - {title: *TEAM_SET_C, space: *SPACE, user: *TEAM_SET_OWNER}
+
+team_set_teams: &TEAM_SET_TEAMS
+  - {title: *TEAM_1, users: *TEAM_1_USERS, team_set: *TEAM_SET_A, space: *SPACE}
+  - {title: *TEAM_2, users: *TEAM_2_USERS, team_set: *TEAM_SET_A, space: *SPACE}
+  - {title: *TEAM_3, users: *TEAM_3_USERS, team_set: *TEAM_SET_A, space: *SPACE}
+
+teams:
+  team_sets:      *TEAM_SETS
+  team_set_teams: *TEAM_SET_TEAMS

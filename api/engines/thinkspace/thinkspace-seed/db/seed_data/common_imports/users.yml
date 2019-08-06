@@ -1,0 +1,46 @@
+superusers: &SUPERUSERS
+  - &SUPERUSER {first_name: superuser, last_name: superuser-last-name, superuser: true}
+
+owners: &OWNERS
+  - &OWNER_1 {first_name: owner_1, last_name: owner-1-last-name, role: owner}
+  # - &OWNER_2 {first_name: owner_2, last_name: owner-2-last-name, role: owner}
+  # - &OWNER_3 {first_name: owner_3, last_name: owner-3-last-name, role: owner}
+
+readers: &READERS
+  - &READ_1 {first_name: read_1, last_name: read-1-last-name}
+  - &READ_2 {first_name: read_2, last_name: read-2-last-name}
+  - &READ_3 {first_name: read_3, last_name: read-3-last-name}
+  - &READ_4 {first_name: read_4, last_name: read-4-last-name}
+  - &READ_5 {first_name: read_5, last_name: read-5-last-name}
+  - &READ_6 {first_name: read_6, last_name: read-6-last-name}
+  - &READ_7 {first_name: read_7, last_name: read-7-last-name}
+  - &READ_8 {first_name: read_8, last_name: read-8-last-name}
+  - &READ_9 {first_name: read_9, last_name: read-9-last-name}
+
+superuser: [*SUPERUSER]
+
+owner_1: [*OWNER_1]
+# owner_2: [*OWNER_2]
+# owner_3: [*OWNER_3]
+
+read_1: [*READ_1]
+read_2: [*READ_2]
+read_3: [*READ_3]
+read_4: [*READ_4]
+read_5: [*READ_5]
+read_6: [*READ_6]
+read_7: [*READ_7]
+read_8: [*READ_8]
+read_9: [*READ_9]
+
+read_123: [*READ_1, *READ_2, *READ_3]
+read_456: [*READ_4, *READ_5, *READ_6]
+read_789: [*READ_7, *READ_8, *READ_9]
+
+repeat_john_doe: {repeat: 20, first_name: john, last_name: doe}
+repeat_jane_doe: {repeat: 20, first_name: jane, last_name: doe}
+
+import:
+  - *SUPERUSERS
+  - *OWNERS
+  - *READERS

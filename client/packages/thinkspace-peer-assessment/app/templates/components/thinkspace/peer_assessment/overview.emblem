@@ -1,0 +1,2 @@
+if all_data_loaded
+  component c_overview_type model=model calculated_overview=calculated_overview assessment=assessment

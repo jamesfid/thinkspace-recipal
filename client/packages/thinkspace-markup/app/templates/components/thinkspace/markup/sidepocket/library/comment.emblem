@@ -1,0 +1,21 @@
+.ts-markup-library_comment-text {{{model.comment}}}
+= if is_overflowing
+  .ts-markup_reply-link{action 'toggle_expand' bubbles=false}
+    = if is_collapsed
+      | See full comment
+    = else
+      | See less
+
+.ts-markup_tags-link.right{action 'toggle_tagging' bubbles=false}
+  if is_tagging
+    | Update tags
+  else
+    | Add tags
+
+if is_tagging
+  = chosen-select content=library_tags value='tags' data_placeholder='Add Tags' no_select=true selected_items=tags multiple=true
+else
+  .ts-markup-library_comment-tags
+    each tag in model.all_tags
+      span.ts-markup-library_tag
+        = delimit-string tag tag model.all_tags ' • '

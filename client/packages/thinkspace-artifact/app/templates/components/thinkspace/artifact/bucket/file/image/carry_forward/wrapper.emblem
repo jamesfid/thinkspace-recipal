@@ -1,0 +1,11 @@
+.ts-wizard_row
+
+  if is_expert
+    .ts-grid_columns.small-6
+      component c_image_file tag_attrs=tag_attrs is_expert=false
+    .ts-grid_columns.small-6
+      component c_image_file tag_attrs=tag_attrs is_expert=true
+
+  else
+    .ts-grid_columns.small-12
+      component c_image_file tag_attrs=tag_attrs is_expert=false

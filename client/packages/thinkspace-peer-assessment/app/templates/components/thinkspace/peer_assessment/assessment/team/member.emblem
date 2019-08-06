@@ -1,0 +1,4 @@
+component c_user_avatar model=model
+.team-members_name #{model.full_name}
+if is_balance
+  .team-members_score #{points_expended}

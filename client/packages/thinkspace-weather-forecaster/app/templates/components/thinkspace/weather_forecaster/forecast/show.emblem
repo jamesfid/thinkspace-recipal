@@ -1,0 +1,7 @@
+ol
+  each assessment_item in assessment.assessment_items
+    component c_assessment_item model=assessment_item forecast=model show_errors=show_errors is_view_only=is_view_only show_help='show_help' save='save'
+
+unless is_view_only
+  .thinkspace-weather-forecaster_assessment-submit-forecast
+    .btn.btn-primary.btn-small click='submit' Submit Forecast

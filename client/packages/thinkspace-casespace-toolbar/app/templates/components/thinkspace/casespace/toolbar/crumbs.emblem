@@ -1,0 +1,12 @@
+/ .toolbar_breadcrumbs
+/   partial t_user_actions
+/   if current_space
+/     partial t_space
+/     if current_assignment
+/       partial t_assignment
+/       if current_phase
+/         partial t_phase
+
+if current_space
+  partial t_space
+partial t_user_actions

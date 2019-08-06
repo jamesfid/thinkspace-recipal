@@ -1,0 +1,20 @@
+partial dock.t_toggle_width
+
+.ts-menu.peer-review class=dock.addon_maximized:is-maximized:is-minimized
+  .peer-review_phase.ts-menu_content
+
+    partial t_header
+
+    .peer-review_body
+  
+      .ts-grid_row: .small-12.ts-grid_columns
+        h6.peer-review_viewing-as Viewing the work of:
+
+      .ts-grid_row: .small-12.ts-grid_columns
+        if current_phase
+          if current_phase.team_ownerable
+            partial t_team_select
+          else
+            partial t_user_select
+
+    partial t_footer

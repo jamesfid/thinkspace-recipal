@@ -1,0 +1,75 @@
+prereq_configs: space
+
+variables:
+  - &CASE                       Indented List + Expert
+  - &PHASE_OBSERVATION_LIST_1   HTML + Observation List 1
+  - &PHASE_OBSERVATION_LIST_2   HTML + Observation List 2
+  - &PHASE_INDENTED_LIST_USER   User Indented List
+  - &PHASE_INDENTED_LIST_EXPERT Expert Indented List
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_OBSERVATION_LIST_1
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: thinkspace
+      obs-list:
+        category: {name: M}
+
+  - title: *PHASE_OBSERVATION_LIST_2
+    assignment:    *CASE
+    template_name: two_column_html_observation_list_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: lorem
+      obs-list:
+        category: {name: D}
+
+  - title: *PHASE_INDENTED_LIST_USER
+    assignment:    *CASE
+    template_name: two_column_indented_list_observation_list_submit
+    settings:
+      <<: *SUBMIT
+
+  - title: *PHASE_INDENTED_LIST_EXPERT
+    assignment:    *CASE
+    template_name: one_column_indented_list
+    settings:
+      <<: *SUBMIT
+    sections:
+      indented-list:
+        expert: true
+        phase: *PHASE_INDENTED_LIST_USER
+
+auto_input:
+  observations:
+    - phases: [*PHASE_OBSERVATION_LIST_1, *PHASE_OBSERVATION_LIST_2]
+      users:                     read_1
+      observations_per_list:     4
+      max_notes_per_observation: 1
+    - phases: [*PHASE_OBSERVATION_LIST_1, *PHASE_OBSERVATION_LIST_2]
+      users:                     owner_1
+      observations_per_list:     5
+      max_notes_per_observation: 1
+
+  indented_list_responses:
+    - phases: *PHASE_INDENTED_LIST_USER
+      users:  read_1
+      indent: 3
+    - phases: *PHASE_INDENTED_LIST_USER
+      users:  owner_1
+      indent: 3
+    - expert: owner_1
+      phase: *PHASE_INDENTED_LIST_EXPERT

@@ -1,0 +1,17 @@
+platform_path: test/framework
+
+classes:
+  base_serializer:    Test::Framework::Serializer::Base
+  serializer_options: Totem::Core::Serializers::Options
+
+authorization:
+  authorize_by: cancan
+  cancan:
+    serializers:
+      modules:
+        serializer:    Totem::Core::Serializers::ActiveModelSerializer
+
+routes: {url: 'framework'}
+
+paths:
+  - path: test/framework/core

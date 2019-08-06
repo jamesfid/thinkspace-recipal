@@ -1,0 +1,29 @@
+####################
+#      ALL         #
+####################
+.env
+.DS_Store
+.env-production
+.env-staging
+*.mp4
+*.mov
+*.pdf
+
+####################
+#      CLIENT      #
+####################
+# Compiled output.
+/client/dist
+/client/tmp
+
+# Dependencies.
+/client/node_modules
+/client/bower_components
+
+# Misc.
+/client/.sass-cache
+/client/connect.lock
+/client/coverage/*
+/client/libpeerconnection.log
+/client/npm-debug.log
+/client/testem.log

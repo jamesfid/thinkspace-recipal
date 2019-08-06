@@ -1,0 +1,40 @@
+.ts-wizard-title-region: .ts-wizard-title-region_row
+  .small-3.ts-grid_columns.ts-grid_columns-thick
+    h1 Build Mode 
+  .ts-wizard-title-region_columns: h1
+    | #{model.title} |  
+    span.emphasis Phase Order
+
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 Edit Phase Order
+      p Change the order of your phases using the buttons on the left.
+
+    .ts-forms_section-container
+      table.case_manager_phase-order
+        thead
+          tr
+            th
+            th
+            th
+            th
+            th Phase
+        tbody
+          each phase in model.phases
+            tr
+              td.text-center.case_manager_phase-order-move{action 'move_up' phase}
+                .tsi.tsi-up-arrow.icon-small title='Move up'
+              td.text-center.case_manager_phase-order-move{action 'move_down' phase}
+                .tsi.tsi-down-arrow.icon-small title='Move down'
+
+              td.text-center.case_manager_phase-order-move{action 'move_top' phase}
+                .tsi.tsi-up-top.icon-small title='Move to top'
+              td.text-center.case_manager_phase-order-move{action 'move_bottom' phase}
+                .tsi.tsi-down-bottom.icon-small title='Move to bottom'
+              td= phase.title
+
+  .ts-wizard_row
+    .ts-grid_columns.small-12
+      .btn.btn-default.btn-small.right  click='cancel' Cancel
+      .btn.btn-primary.btn-small.left click='save' Update Order

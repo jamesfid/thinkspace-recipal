@@ -1,0 +1,14 @@
+partial 'thinkspace/team/shared/validation_errors'
+
+.ts-grid_row: .small-12.ts-grid_columns: .form
+  fieldset
+    legend Delete Team
+    .ts-grid_row: .small-12.ts-grid_columns
+      h6
+        | Are you sure you want to delete this team?
+        span.team_team-delete-name= title
+
+    .ts-grid_row
+      .small-2.ts-grid_columns: .btn.btn-primary.btn-small{action 'destroy' team} Delete
+      .small-2.ts-grid_columns: .btn.btn-primary.btn-small{action 'cancel'} Cancel
+      .small-8.ts-grid_columns

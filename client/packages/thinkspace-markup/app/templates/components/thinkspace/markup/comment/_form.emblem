@@ -1,0 +1,14 @@
+.markup_comment-input
+  = input value=model.comment placeholder='Enter comment'
+
+.markup_comment-actions
+
+  a.btn.btn-small.markup_comment-action.left click='toggle_library_visible'
+    i.fa.fa-folder-open-o: |Library
+
+  a.btn.btn-small.btn-primary.markup_comment-action click='save': |Save
+
+  a.btn.btn-small.markup_comment-action click='cancel': |Cancel
+
+if library_is_visible
+  partial t_library

@@ -1,0 +1,7 @@
+if message_present
+
+  .dock-totem-messages
+
+    each message in messages
+      if message.visible
+        component c_message model=message

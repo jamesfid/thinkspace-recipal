@@ -1,0 +1,28 @@
+if lab_observation.show_input
+
+  div.thinkspace-lab_input.thinkspace-ie.ts-lab_observation
+    if lab_observation.is_disabled
+      span.ts-lab_observation-correct
+        | #{input_value}
+        i.fa.fa-check.ts-lab_observation-correct-icon
+    else
+      = input type='text' value=input_value disabled=lab_observation.is_disabled placeholder='Enter Abnormality' class='ts-lab_input'
+
+      if show_incorrect
+        span.thinkspace-lab_input-help-text #{incorrect_text}
+      else
+        unless show_correct
+          span.ts-lab_input-tip Press enter to submit answer.
+
+      if show_correct
+        if show_correct_values
+          span.thinkspace-lab_input-help-text  #{correct_values.firstObject}
+
+        else
+          .thinkspace-lab_input-correct-values-link click='show_correct_values'
+            = correct_link_text
+
+    if lab_observation.error_message
+      span.thinkspace-ie_errors
+        i.im.im-warning.im-error-base
+        = lab_observation.error_message

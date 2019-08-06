@@ -1,0 +1,8 @@
+.obs-list_new
+
+  .ts-grid_row: .small-12
+    = textarea value=note_content placeholder='Type a note that will compliment the observation.'
+
+  .ts-grid_row: .small-12
+    a.btn.btn-small.btn-primary click='done' Done
+    a.btn.btn-small click='cancel' Cancel

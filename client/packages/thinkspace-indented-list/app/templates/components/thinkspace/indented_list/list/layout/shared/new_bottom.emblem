@@ -1,0 +1,4 @@
+if response_manager.updateable
+  a.btn.btn-small.btn-default.left click='new'
+    i.fa.fa-plus
+    |Bottom

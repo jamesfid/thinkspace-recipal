@@ -1,0 +1,569 @@
+$sidepocket_comments-header-height:         50px;  
+$sidepocket_leave-comment-height:           120px;      
+$sidepocket_library-header-height:          75px;
+$sidepocket_library-comment-wrapper-height: 250px;
+
+$sidepocket_comment-list-top:      $sidepocket_comments-header-height;
+$sidepocket_comment-list-bottom:   $sidepocket_leave-comment-height + $sidepocket_library-header-height + $sidepocket_library-comment-wrapper-height;
+$sidepocket_leave-comment-bottom:  $sidepocket_library-header-height + $sidepocket_library-comment-wrapper-height;
+$sidepocket_library-header-bottom: $sidepocket_library-comment-wrapper-height;
+
+///////// SIDEPOCKET COMMENT IMPLEMENTATION STYLING /////////
+.sidepocket_comments {
+  height: 100%;
+  //height: calc(100% - 1em); // Calc needs numbers not variables, this is half of $thinkspace-dock-height.
+
+  .sidepocket_comments-header {
+    border-bottom:    1px solid #bcbcbc;
+    height:           $sidepocket_comments-header-height;
+    padding:          10px 1em;
+    border:           1px solid #bcbcbc;
+    background-color: #fbfbfb;
+  }
+
+
+  .gutter-comment {
+    border:       2px solid #bcbcbc;
+    border-left:  3px solid $ts-blue-base;
+    border-right: 0;
+    padding:      .5em;
+    padding-left: 0;
+    margin-top:   .25em;
+
+    &.editing-comment {
+      border-left: 3px solid $ts-red-base;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    .comment-content {
+      display: inline-block;
+      width: 85%;
+      font-size: 12px;
+      font-weight: 250;
+
+      .comment-minimized-text {
+        max-height: 30px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        //padding-right: .25em;
+      }
+      
+      .comment_poster {
+        display: inline-block;
+        font-size: small;
+        color: #bcbcbc;
+      }
+
+      .comment_actions {
+        display: inline-block;
+        float: right;
+        margin-right: 2em;
+
+        .comment_icon-wrapper {
+          margin: 0em .35em;
+          color: #bcbcbc;
+          display: inline-block;
+
+          &:hover {
+            color: darken(#bcbcbc, 20%);
+          }
+        }
+      }
+
+    }
+
+    .comment-picture {
+      vertical-align: top;
+      display: inline-block;
+      width: 15%;
+      padding-left: .25em;
+    }
+
+
+  }
+
+  .sidepocket_leave-comment {
+    position:         absolute;
+    bottom:           $sidepocket_leave-comment-bottom;
+    width:            100%;
+    height:           $sidepocket_leave-comment-height;
+    border:           1px solid #bcbcbc;
+    background-color: #fbfbfb;
+    padding:          0.25em 1em 0em 1em;
+
+    &.sidepocket_leave-comment-expanded {
+      height: 5%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: #eeeeee;
+      }
+    }
+
+    .sidepocket_leave-comment-header {
+      font-size: 14px;
+      font-weight: 400;
+
+      //vertical-align: center;
+      margin-bottom: .25em;
+
+      .sidepocket_comment-header-icon {
+        float: right;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .sidepocket_comment-btn {
+    //margin: 1em;
+    display: inline-block;
+  }
+
+
+
+  .sidepocket_library-comment-wrapper {
+    width:      100%;
+  }
+
+  .sidepocket_library-empty {
+    font-size:   14px;
+    font-weight: 500;
+    margin:      auto;
+    padding:     1em;
+    text-align:  center;
+  }
+
+  .sidepocket_library-header {
+    border:           1px solid #bcbcbc;
+    background-color: #fbfbfb;
+
+    .sidepocket_library-header-text {
+      float: left;
+      padding-left: 1em;
+    }
+
+    .sidepocket_library-header-link {
+      display: inline-block;
+      float: right;
+      padding-right: 1em;
+    }
+  }
+}
+
+.comment-text {
+  font-size: 10px;
+}
+
+.gutter-library-comment {
+  border: 1px solid #bcbcbc;
+  border-left: 3px solid $ts-blue-base;
+  padding: .5em;
+  padding-left: 0;
+  margin: .25em;
+  margin-bottom: .15em;
+  margin-left: 0;
+  min-height: 50px;
+
+  &.editing-comment {
+    border-left: 3px solid $ts-red-base;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #eeeeee;
+  }
+
+  .comment-content {
+    display: inline-block;
+    width: 75%;
+    font-size: 12px;
+    font-weight: 250;
+    margin-left: .5em;
+
+    .comment-minimized-text {
+      max-height: 35px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding-left: 1em;
+      display: inline-block;
+      //padding-right: .25em;
+    }
+
+    .comment-expanded-text {
+      font-size: 12px;
+      font-weight: 250;
+    }
+
+  }
+
+}
+
+.library_action {
+  display: inline-block;
+  float: right;
+}
+
+.library_wrapper-top {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.library_wrapper-btm {
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.comment-mimimized-text {
+  padding-left: 1em;
+  display: inline-block;
+}
+
+.library_header {
+  width: 100%;
+
+  .library_header-sort {
+    display: inline-block;
+    margin-left: 1em;
+
+    .library_header-text {
+      font-weight: 600;
+    }
+    .library_header-dropdown {
+      display:   inline-block;
+      color:     #bcbcbc;
+      font-size: 12px;
+    }
+  }
+
+  .library_header-input {
+    display: inline-block;
+    margin-left: 10em;
+    width: 70%;
+
+    .library_header-text-input {
+      display: inline-block;
+      //margin: .5em 2em;
+      //margin-left: 0;
+      width: 70%;
+    }
+  }
+}
+
+.library_manager-comment-wrapper {
+  //position: fixed;
+  //height:   80%;
+  //width: 80%;
+  .library_manager-comments-empty {
+    font-weight: 600;
+    width:       50%;
+    text-align:  center;
+    //margin: auto;
+  }
+
+}
+
+
+.library_manager {
+  position:         fixed;
+  background-color: white;
+  //overflow-y:       auto;
+  bottom:           0;
+  left:             0;
+  right:            0;
+  top:              0;
+  //width:            100%;
+
+  .library_manage-header-wrapper {
+    margin-bottom: 3em;
+    margin-top:    2em;
+
+    .library_manage-header-bold {
+      font-weight: 600;
+      font-size:   22px;
+      margin-left: .75em;
+      margin-bottom: 1em;
+    }
+
+    .library_manage-header-text {
+      margin-left: 1em;
+    }
+  }
+
+  .library_manage {
+    //width: 80%;
+    margin-left: 1em;
+
+    .library_manage-header {
+      @include grid-row();
+      margin:        0;
+      margin-bottom: .5em;
+
+      .library_manage-comment-col {
+        @include grid-column($columns: 8, $collapse: true);
+      }
+      .library_manage-uses-col {
+        @include grid-column($columns: 2, $collapse: true);
+        padding-left: 3em;
+      }
+      .library_manage-last-used-col {
+        @include grid-column($columns: 2, $collapse: true);
+      }
+    }
+
+    .library_comment-wrapper {
+      @include grid-row();
+
+      border-bottom: 1px solid #bcbcbc;
+      border-left: 4px solid $ts-green-base;
+      margin: 0 0 .25em 0;
+
+      &.is-deleting {
+        color: #bcbcbc;
+      }
+
+      .library_comment-content {
+        @include grid-column($columns: 8, $collapse: true);
+        //margin-left: .5em;
+        padding: 0em 1.5em 0em .5em;
+
+        border-right: 1px solid #bcbcbc;
+
+        .library_comment-content-text {
+          font-size: 14px;
+          font-weight: 450;
+          @include grid-row();
+
+          margin-bottom: .5em;
+        }
+
+        .library_comment-content-functions {
+          @include grid-row();
+          margin-bottom: .5em;
+          font-size: 12px;
+          font-weight: 250;
+          color: #bcbcbc;
+
+          .library_comment-content-category {
+            @include grid-column($columns: 9, $collapse: true);
+          }
+          .library_comment-content-action {
+            @include grid-column($columns: 3, $collapse: true);
+            vertical-align: bottom;
+
+            .action-wrapper {
+              display: inline-block;
+              margin: 0em .5em;
+              float: right;
+
+              &:hover {
+                cursor: pointer;
+                color: darken(#bcbcbc, 20%);
+              }
+
+            }
+          }
+
+        }
+
+        .library_comment-content-input {
+          @include grid-row();
+          margin-bottom: 1em;
+          margin-top: 1.5em;
+
+          .delete-message {
+            color: black;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 1em;
+
+            .delete-icon {
+              display: inline-block;
+            }
+
+            .delete-text {
+              display: inline-block;
+              padding-left: 1em;
+            }
+          }
+
+          .action-cancel {
+            margin-left: 1em;
+            padding: .5em 2em;
+            display: inline-block;
+
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+
+      }
+
+      .library_comment-uses {
+        @include grid-column($columns: 2, $collapse: true);
+        padding-left: 3em;
+        display: inline-block;
+      }
+
+      .library_comment-last {
+        @include grid-column($columns: 2, $collapse: true);
+        display: inline-block;
+      }
+
+
+    }
+
+  }
+}
+
+.sidepocket_library-comment {
+  border: 1px solid #bcbcbc;
+  border-left: 3px solid $ts-blue-base;
+  padding: .5em;
+  padding-left: 0;
+  margin: .25em;
+  margin-bottom: .5em;
+  margin-left: 0;
+
+  &:hover {
+    cursor: pointer;
+    //background-color: #eeeeee;
+  }
+
+  .library-comment_content {
+    display: inline-block;
+    width: 85%;
+    font-size: 12px;
+    font-weight: 250;
+    padding-left: 1em;
+
+    .library-comment_minimized-text {
+      max-height: 30px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .library-comment_expanded-text {
+      margin-left: .5em;
+    }
+
+    .library-comment_actions {
+      margin-top: 1em;
+      .library-comment_marker {
+        display: inline-block;
+        font-size: 10px;
+        background-color: $ts-blue-base;
+        color: white;
+        border-radius: 3px;
+        padding: 0em .25em;
+        margin: 0em .125em;
+      }
+
+      .library-comment-action {
+        vertical-align: top;
+        display:        inline-block;
+        float:          right;
+        padding:        .25em;
+        border-radius:  3px;
+
+        &:hover { 
+          cursor: pointer;
+          background-color: #eeeeee;
+        }
+      }
+    }
+  }
+}
+
+.library_close-btn {
+  float: right;
+}
+
+.library-comment_tag {
+  font-size: 12px;
+  font-color: #bcbcbc;
+  font-style: italic;
+  display: inline-block;
+  margin: .125em .25em;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .library-comment_tag-text {
+    display: inline-block;
+  }
+
+  .library-comment_tag-action {
+    display: inline-block;
+  }
+}
+
+.sidepocket_library-dropdown-style {
+  background-color: #fbfbfb !important;
+  border: 0 !important;
+  font-style: italic !important;
+  color: #bcbcbc !important;
+  display: inline-block;
+}
+
+.gutter-comment-reply {
+  margin-left: 1em;
+  border:      1px solid #bcbcbc;
+  border-left: 3px solid $ts-blue-base;
+  padding:     .25em;
+
+  .gutter-comment-reply_text-input {
+    width:       90%;
+    padding-top: 0.125em;
+  }
+
+  .gutter-comment-reply_actions {
+    .gutter-comment-reply_cancel {
+      display:     inline-block;
+      color:       #bcbcbc;
+      margin-left: 1em;
+      padding:     .25em .5em;
+
+      &:hover {
+        color:  darken(#bcbcbc, 20%);
+        cursor: pointer;
+      }
+    }
+
+  }
+
+
+}
+
+.child-comment {
+  margin-left: 1em;
+  margin-top:  0 !important;
+  border-top:  0 !important;
+}
+
+.gutter-comment_reply-comment {
+  color:         #bcbcbc;
+  margin-left:   .8em;
+  font-size:     12px;
+  margin-bottom: .5em;
+
+  &:hover {
+    color:  darken(#bcbcbc, 20%);
+    cursor: pointer;
+  }
+
+  &.gutter-comment_child {
+    margin-left: 2em;
+  }
+}

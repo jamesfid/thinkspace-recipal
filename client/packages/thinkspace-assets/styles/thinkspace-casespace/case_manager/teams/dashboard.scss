@@ -1,0 +1,27 @@
+.title-region {
+  .team_dashboard-return-link {
+    font-size: .5em;
+    float:     right;
+  }  
+}
+
+.team_dashboard {
+  
+  .team_dashboard-list {
+    list-style:  disc inside none;
+
+    .team_dashboard-list-item {
+      font-size: em-calc(24px);
+    }
+
+    .team_dashboard-link {
+      cursor: pointer;
+    }
+
+  }
+
+  .team_dashboard-assign-label {
+    text-decoration: underline;
+  }
+
+}

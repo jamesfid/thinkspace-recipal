@@ -1,0 +1,10 @@
+### HTML TOOL ###
+- model: thinkspace/html/content
+  associations:
+    - has_many: thinkspace/input_element/elements
+      as:       componentable
+    - belongs_to: authable
+      polymorphic: true
+  serializers:
+    - attributes: [id, html_content, authable_type, authable_id]
+

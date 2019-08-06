@@ -1,0 +1,15 @@
+/////
+// path_subtle-grow
+// Used to give the path_list placeholder a slight 'bounce' effect.
+/////
+@include keyframes(diag-path_subtle-grow) {
+  0% {
+    @include transform( scale(1) );
+    background-color: orchid;
+  }
+
+  100% {
+    @include transform( scale(0.985) );
+    background-color: darken(orchid, 15%);
+  }
+}

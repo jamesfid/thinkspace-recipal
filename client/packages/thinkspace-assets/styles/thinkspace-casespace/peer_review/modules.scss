@@ -1,0 +1,18 @@
+.peer-review {
+   height: 90%;
+
+  .peer-review_btn    { display: block; }
+  .peer-review_body   { margin: 0.5em 0; }
+  .peer-review_footer {
+    text-align:       center;
+    margin:           1.5em 0;
+
+    .peer-review_footer-note { margin-top: 1em; background-color: $ts-red-light; }
+  }
+
+  .peer-review_icon-left    { margin-right: 0.5em; }
+  .peer-review_icon-right   { margin-left: 0.5em; }
+  .peer-review_current-user { float: left; }
+  .peer-review_heading      { margin-bottom: 0; }
+  .peer-review_viewing-as   { font-weight: normal; }
+}

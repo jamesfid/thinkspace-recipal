@@ -1,0 +1,8 @@
+
+component c_validated_input value=input_score errors=errors.input_score disabled=view_attrs.disabled readonly=view_attrs.readonly size=view_attrs.size class=view_attrs.class maxlength=view_attrs.maxlength style=view_attrs.style
+
+if is_valid
+  a.btn.btn-small.btn-primary.ts-menu_btn click='save' Save
+else
+  / Hide save button if they have errors to save space. 
+  / a.btn.btn-small.btn-primary.btn-locked.ts-menu_btn Save

@@ -1,0 +1,75 @@
+if all_data_loaded
+  .ts-forms_form-container
+    .ts-builder_content-header
+      .row
+        .small-12.small-centered.medium-10.large-10.columns
+          .small-12.medium-12.large-2.ts-grid_columns
+            link-to r_cases_phases assignment
+              a.btn.btn-small.btn-link.left
+                | Back to phases
+                .tsi.tsi-left.icon-small.tsi-left-arrow.left
+          .small-12.medium-6.large-6.ts-grid_columns
+            h1.ts-builder_phase-edit-title 
+              if is_edit_mode_content
+                | Edit Phase
+              if is_edit_mode_settings
+                | Edit Phase Settings
+          .small-12.medium-6.large-4.ts-grid_columns
+            .btn-cluster.right-cluster
+              if is_edit_mode_content
+                a.btn.btn-small.btn-primary click='set_edit_mode_settings' Edit Settings
+                link-to r_phases_show assignment model
+                  .btn.btn-small.btn-default.right Preview Phase
+                
+      .row
+        .small-12.small-centered.medium-10.large-10.columns
+          if has_next_phase
+            a.btn.btn-small.btn-default.right click='next_phase' 
+             | Next Phase
+             .tsi.tsi-right.icon-small.tsi-right-arrow-inverse.right
+          if has_previous_phase
+            a.btn.btn-small.btn-default.left click='previous_phase' 
+              | Prev Phase
+              .tsi.tsi-left.icon-small.tsi-left-arrow-inverse.left
+    .row
+      .small-12.small-centered.medium-10.large-8.ts-grid_columns.ts-grid_columns-thin.ts-builder_dialogue-container
+        if model.has_team_category_without_team_set
+          .dialogue.dialogue-error
+            h1 Missing Teams
+            p 
+              | This phase is team-based, but you haven't set a team set yet.
+              a click='set_edit_mode_settings'  Choose a team set.
+        if model.is_inactive 
+          .dialogue.dialogue-instruct
+            h1 Inactive Phases
+            p 
+              | This phase is still set to draft mode and will not be seen by your students.
+              a click='set_edit_mode_settings'  Activate the phase.
+    .row
+      .small-12.small-centered.medium-10.large-10.columns.ts-builder_phase-info-overview
+        .ts-builder_phase-list-settings.left
+          if model.is_inactive
+            img src='/assets/images/ts-icons/phase-settings/ts-builder_phase-settings_draft.svg' alt_text="Draft mode" title="Draft mode"
+          else
+            img src='/assets/images/ts-icons/phase-settings/ts-builder_phase-settings_active.svg' alt_text="Active mode" title="Active mode"
+          if model.has_auto_score
+            img src='/assets/images/ts-icons/phase-settings/ts-builder_phase-settings_auto-scoring.svg' alt_text="Auto-scoring" title="Auto-scoring"
+          if model.has_team_category
+            img src='/assets/images/ts-icons/phase-settings/ts-builder_phase-settings_tbl.svg' alt_text="Team-based" title="Team-based"
+          if model.has_team_category_without_team_set
+            img src='/assets/images/ts-icons/phase-settings/ts-builder_phase-settings_tbl-empty.svg' alt_text="Team-Based with no team" title="Team-based with no team"
+        span.right #{model.position_in_assignment.value} of #{model.assignment.active_phases.length}           
+    if is_edit_mode_content
+      .row
+        .small-12.small-centered.medium-10.large-10.columns
+          .ts-builder_wrapper
+            component c_phases_edit_layout template=template
+
+    if is_edit_mode_settings
+      .row
+        .small-12.small-centered.medium-10.large-10.columns
+          .ts-builder_wrapper
+            component c_phases_edit_settings model=model back='set_edit_mode_content'
+
+else
+  component c_loader

@@ -1,0 +1,66 @@
+.small-12.small-centered.medium-12.large-8.ts-grid_columns.ts-grid_columns-thin
+  .ts-forms_form-container
+    .row
+      .small-12.ts-grid_columns.ts-builder_content-header 
+        h1 Case Logistics
+        p Let's set up the logistics for this case.
+
+    .row
+      .small-12.ts-grid_columns.ts-forms_section-container
+        .ts-forms_field-label-container 
+          label.ts-forms_field-label 
+            | Case Instructions
+          .ts-forms_fields-label-description Give the students some general instructions for this case.
+        view ckeditor_view value=instructions height='200'
+    hr
+    .row
+      .small-12.ts-grid_columns.ts-forms_section-container
+        .ts-forms_field-label-container 
+          .ts-forms_field-label Release Date Logistics
+          .ts-forms_fields-label-description Set the day and time the case will be released to the students.
+        .row.collapse
+          .small-12.medium-6.large-6.columns
+            component c_date_picker value=release_at select='select_release_date'
+          .small-12.medium-2.large-2.columns
+            p.centered-aligned at
+          .small-12.medium-4.large-4.columns
+            component c_time_picker value=release_at select='select_release_time'
+            .ts-forms_input-notification Note: All times are in your local computer's time.
+    hr
+    .row
+      .small-12.ts-grid_columns.ts-forms_section-container
+        .ts-forms_field-label-container 
+          .ts-forms_field-label Due Date Logistics
+          .ts-forms_fields-label-description Set the day and time that the case will no longer be visible to the students.
+        .row.collapse
+          .small-12.medium-6.large-6.columns
+            component c_date_picker value=due_at select='select_due_date'
+          .small-12.medium-2.large-2.columns
+            p.centered-aligned at
+          .small-12.medium-4.large-4.columns
+            component c_time_picker value=due_at select='select_due_time'
+            .ts-forms_input-notification Note: All times are in your local computer's time.
+    hr
+    .row
+      .small-12.ts-grid_columns.ts-forms_section-container
+        .ts-forms_field-label-container 
+          .ts-forms_field-label Phase Specific Unlock & Due Dates
+          .ts-forms_fields-label-description Set unlock logic and due dates for individual phases.
+        .row.collapse
+          .btn.btn-small.btn-default click='toggle_phase_logistics'
+            if showing_phase_logistics
+              | Hide Phase Logistics
+              .tsi.tsi-right.icon-small.tsi-up-caret-inverse.right
+            else
+              | Show Phase Logistics
+              .tsi.tsi-right.icon-small.tsi-down-caret-inverse.right
+          if showing_phase_logistics
+            component c_logistics_phases model=model.active_phases select_unlock_at='select_unlock_at' register_phase='register_phase' class='borderless-table'
+    .row
+      .small-12.ts-grid_columns
+        a.btn.btn-small.btn-default click='back' 
+          | Go back
+          .tsi.tsi-left.icon-small.tsi-left-arrow-inverse.left
+        a.btn.btn-small.btn-primary.right click='next' 
+          | Next step
+          .tsi.tsi-right.icon-small.tsi-right-arrow-inverse.right

@@ -1,0 +1,18 @@
+= if view.hide_input
+  .date-picker-input-hidden
+    input type='text' class='datepicker' data-value=placeholder
+= else
+  .date-picker-input
+    input type='text' class='datepicker' data-value=placeholder
+
+= unless view.hide_button
+  .date-picker-action
+    .date-test
+    a.btn.btn-primary.btn-small{action 'toggle_date' target=view bubbles=false}
+      i.im.im-calender
+      |  Change Date
+
+= if view.time_picker
+  h6 = view.time_picker_header_with_zone
+  .date-picker_time-picker
+    input type='text' class='date-pick_time-picker-input' data-value=placeholder

@@ -1,0 +1,58 @@
+.ts-signin.fade-in
+  .ts-signin_content
+    .ts-grid_row: .large-4.small-10.small-centered.ts-grid_columns
+      h2.ts-signin_header
+        | Think
+        span.ts-signin_branding-space
+          | Space
+      = if referred_from_signup
+        .ts-signin_invitation
+          .ts-grid_row
+            .small-4.ts-grid_columns
+              .ts-signin_invitation-img
+            .small-8.ts-grid_columns
+              .ts-signin_invitation-text
+                h5.ts-signin_invitation-header
+                  | Account creation successful!
+                p.ts-signin_invitation-details
+                  | Log in to join
+                  = if invitable_present
+                    br
+                    span.ts-signin_invitation-invitable
+                      = invitable
+                  = else
+                    span.ts-signin_branding-think
+                      | Think
+                    | Space!
+
+      p.ts-signin_signup
+        | Don't have an account?
+        = link-to 'users.sign_up' class='ts-signin_signup-link'
+          | Create one to join
+
+      form#ts-signin_form.ts-signin_fields
+        .ts-validated-input_container
+          component c_validated_input value=email type='email' initial_validate=false label='Email Address' disabled=authenticating errors=errors.email poll=true tabindex='1'
+        .ts-validated-input_container
+          label.ts-signin_field-label
+            | Password
+            = link-to 'users/password.new' class='ts-signin_field-label-link'
+              | Forgot Password?
+          component c_validated_input value=password type='password' initial_validate=false disabled=authenticating errors=errors.password tabindex='2' poll=true
+          / component c_checkbox label='Keep me logged in' toggle_action='toggle_persist_login' disabled=authenticating
+
+
+      .ts-signin_submit
+        = if authenticating
+          component c_loader type='small' header='Blasting off!' message='You will arrive shortly.'
+        = else
+          button.ts-signin_submit-action.btn.btn-husky.btn-primary{action 'submit'} form='ts-signin_form' type='submit' tabindex='3'
+            | Log In to ThinkSpace
+          if has_terms
+            .ts-signin_terms
+              a href=tos.link target='_blank'
+                | Terms of Service
+          .ts-signin_help
+            | Need help? Contact us at
+            a href='mailto:support@thinkspace.org'
+              | support@thinkspace.org

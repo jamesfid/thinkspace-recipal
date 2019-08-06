@@ -1,0 +1,16 @@
+.gradebook_action-bar
+  partial t_sort_links
+  partial t_table_options
+
+if show_scores
+  .ts-grid_row: .small-12.ts-grid_columns
+    if roster.content.heading_sort_by
+      partial t_group_sort_by
+    else
+      partial t_group
+
+    if roster.content.supplement
+      .ts-grid_row: .small-12.ts-grid_columns
+        .space-content_sub-heading
+          h1 Case Summary
+        partial t_supplement

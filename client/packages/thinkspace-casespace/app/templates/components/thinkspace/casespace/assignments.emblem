@@ -1,0 +1,38 @@
+if all_data_loaded
+  .ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick  
+    .space-content_heading-small
+      h5 Cases
+      if can.create
+        .space-content_actions
+          link-to r_assignments_new model
+            a.btn.btn-primary.btn-small
+              .tsi.tsi-left.tsi-size_16.tsi-add-inverse.left
+              | New Case
+
+    if model.assignments
+      .space-content_container
+        .space-content_heading
+          h4 Active Cases
+        if model.active_assignments
+          ul.assignment-list.primary-list
+            each assignment in model.active_assignments
+              component c_assignment model=assignment
+        else
+          h5 No active cases.
+
+      if model.inactive_assignments
+        .space-content_container
+          .space-content_heading
+            h4 Drafts
+            p These cases will not be seen by your students until you activate them. 
+          ul.assignment-list.primary-list
+            each assignment in model.inactive_assignments
+              component c_assignment model=assignment
+    else
+      .space-content_container
+          .space-content_heading
+            h4 You have no cases.
+            p Click on the 'New Case' button to create one.
+else
+  .ts-grid_row: .small-6.ts-grid_columns.ts-grid_columns-thick.small-centered
+    component c_loader

@@ -1,0 +1,43 @@
+div.obs-list_list-item-content
+  div.obs-list_list-item-title
+    if model.is_used
+      span.obs-list_list-item-is-used: i.im.im-checkmark
+    / span.obs-list_list-item-category-icon= model.category_icon
+    / |  - 
+    span.obs-list_list-item-phase: span.obs-list_list-item-phase-title= model.list.authable.title
+    / |  - 
+    / Note: div.obs-item-date is updated by the component's 'update_time' function (interval 60 seconds).
+    /       Do not change the class on this div (e.g. 'obs-item-date') without changing the component.
+    / span.obs-list_list-item-date: .obs-item-date #{ago model.created_at}
+
+    .obs-list_list-item-actions
+      unless is_destroying_obs
+        if show_dropdown
+          component c_dropdown_split_button collection=dropdown_collection button_class='btn-square btn-default' show_button=false
+      else
+        .btn-group
+          |Delete? 
+          a.obs-list_list-item-remove-action.btn.btn-warning.btn-small click='destroy_observation' Yes 
+          a.obs-list_list-item-remove-action.btn.btn-default.btn-small click='destroy_observation_cancel' No
+
+  .ts-grid_row
+    .small-12
+      div.obs-list_list-item-value class={is_expanded:is-expanded}
+        if is_editing_obs
+          component c_observation_edit model=model done='update_observation' cancel='update_observation_cancel'
+        else
+          = model.value
+          / |(#{model.position}-#{model.id}) #{model.value}
+
+  if are_notes_visible
+    .ts-grid_row: .small-12: ul.obs-list_notes
+      each note in model.observation_notes
+        component c_observation_note_show model=note observation=model edit='edit_note_start' update='update_note' remove='destroy_note' cancel='update_note_cancel'
+      if is_creating_note
+        .obs-list_note-new
+          component c_observation_note_new done='create_note' cancel='create_note_cancel'
+      else
+        if can_update
+          .a.btn.btn-small.btn-ownership.new-note-action click='create_note_start'
+            i.im.im-plus
+            |Note

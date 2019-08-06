@@ -1,0 +1,67 @@
+.ts-validated-input_container {
+  margin-bottom: 1em;
+}
+
+.ts-validated-input {
+  // vertical-align: top;
+  // width:          auto;
+  // &.ts-validated-input_has-errors {
+  //   border: 1px solid red;
+  // }
+
+  // .ts-validated-input_label {
+  //   font-size: 0.875em;
+  //   font-weight: 900;
+  //   color: gray;
+
+  //   .ts-validated-input_label-summary {
+  //     font-size: 0.25em;
+  //     color: gray;
+  //     margin: 0;
+  //     padding: 0.5em 0 0.75em 0;
+  //   }
+  // }
+
+  // &.is-focused {
+  //   .ts-validated-input_label {
+  //     color: black;
+
+  //     .ts-validated-input_label-summary {
+  //       color: black;
+  //     }
+  //   }
+  // }
+  .ts-validated-input_label { 
+    font-weight: $ts-bold;
+    margin-bottom: .875em;
+    letter-spacing: .5px;
+  }
+
+
+  &.has-errors {
+
+    .ts-validated-input_label { color: $ts-red-base; }
+
+    .ts-validated-input_input {
+      margin-bottom: 0;
+      border: 2px solid $ts-red-base;
+    }
+
+  }
+
+
+  .ts-validated-input_input-errors {
+    color:                      white;
+    background-color:           $ts-red-base;
+    list-style-type:            none;
+    list-style:                 none;
+    padding:                    0.45em 1em;
+    margin:                     -3px 0 0.875em 0; //the -3px hides the 3px border radius
+    font-size:                  small;
+    border-bottom-left-radius:  7px;
+    border-bottom-right-radius: 7px;
+    font-weight:                normal;
+
+    i { margin-right: .5em;}
+  }
+}

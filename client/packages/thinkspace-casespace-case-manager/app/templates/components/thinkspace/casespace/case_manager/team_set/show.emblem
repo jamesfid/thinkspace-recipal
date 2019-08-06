@@ -1,0 +1,48 @@
+component c_space_header model=model.space
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+
+  .space-content_heading-small
+    link-to r_team_sets model.space
+      h5 Team Set 
+
+      unless model.is_locked
+        .space-content_actions
+          link-to r_team_sets_edit model.space model class='btn btn-default btn-small'
+            | Edit Team Set
+          link-to r_teams_new model.space model class='btn btn-primary btn-small'
+            .tsi.tsi-left.icon-small.tsi-add-inverse.left
+            | Create Team
+
+  .space-content_heading
+    .ts-grid_row
+      h4.left #{model.title} 
+    p #{model.metadata.total_teams} total teams
+
+  .team-manager_team-section-container
+    h5 Unlocked Teams
+    p Teams that are used as templates for phases.  These can be edited.
+    if all_data_loaded
+      ul.small-block-grid-4
+        each team in model.unlocked_teams
+          component c_team_snapshot model=team space=model.space selected_user=selected_user deselect_user='deselect_user'
+    else
+      component c_loader message='Loading unlocked team data...'
+
+  .team-manager_team-section-container
+    h5 Unassigned Students
+    p You can click on a student and then on a team to assign them to that team.
+    if all_data_loaded
+      each user in unassigned_users
+        component c_user_avatar model=user select_user='select_user' selected_user=selected_user size='small' clickable=true
+    else
+      component c_loader message='Loading user data...'
+
+  .team-manager_team-section-container    
+    h5 Locked Teams
+    p Teams that are current locked for use in an case (e.g. peer evaluation).  These teams cannot be modified.
+    if all_data_loaded
+      ul.small-block-grid-4
+        each team in model.locked_teams
+          component c_team_snapshot model=team space=model.space selected_user=selected_user deselect_user='deselect_user'
+    else
+      component c_loader message='Loading locked team data...'

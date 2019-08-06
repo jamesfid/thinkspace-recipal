@@ -1,0 +1,25 @@
+span.team_viewers-team-wrapper
+
+  i.team_viewers-team-toggle-viewers.fa.fa-users click='"toggle_viewers_visible" target=view' title='Show/hide viewers'
+
+  span.team_viewers-team-label
+    | #{review_team.title}
+    '
+    a.team_viewers-team-teams-select click='"select_team" review_team' (select)
+
+  if view.viewers_visible
+
+    if view.has_team_viewers
+      ol.team_viewers-team-teams-list
+        h6.team_viewers-team-teams-list-heading Peer Review Teams
+        each viewer_team in view.teams_sorted
+           = view viewers_team_team_view review_team=review_team viewer_team=viewer_team
+    else
+      unless view.has_user_viewers
+        h6.team_viewers-team-teams-list-heading-no-teams No Teams
+
+    if view.has_user_viewers
+      ol.team_viewers-team-users-list
+        h6.team_viewers-team-users-list-heading Peer Review Users
+        each viewer_user in view.users_sorted
+           = view viewers_team_user_view review_team=review_team viewer_user=viewer_user

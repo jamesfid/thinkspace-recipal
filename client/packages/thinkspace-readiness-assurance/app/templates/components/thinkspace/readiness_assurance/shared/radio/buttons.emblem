@@ -1,0 +1,4 @@
+.ts-ra_radio-buttons class={qm.answers_disabled:ts-ra_radio-buttons-disabled}
+
+  each choice in qm.choices
+    component ra.c_shared_radio_button qm=qm choice=choice select='select'

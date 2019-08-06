@@ -1,0 +1,20 @@
+span.ts-ra_radio-button
+  .ts-ra_radio-button-status click='select'
+    if selected
+      .tsi.tsi-small.tsi-ra-item-checked
+    else
+      .tsi.tsi-small.tsi-ra-item-unchecked
+
+    span.ts-ra_admin-team-title #{team.title} (#{users.length})
+
+  span.ts-ra_admin-team-title
+    if show_users
+      i.tsi.tsi-up-caret.ts-ra_admin-room-users-collapsed click='toggle_show_users'
+    else
+      i.tsi.tsi-down-caret.ts-ra_admin-room-users-collapsed click='toggle_show_users'
+
+ul.ts-ra_admin-user-list
+  each user in sorted_users
+    component am.c_admin_shared_team_users_user user=user show_users=show_users team_selected=selected selected_users=selected_users select='select_user'
+  else
+    |None.

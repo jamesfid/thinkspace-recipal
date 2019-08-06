@@ -1,0 +1,50 @@
+/////
+// recent-activity-list
+/////
+.recent-activity-list {
+  list-style-type: none;
+
+  .recent-activity-list-link {
+    margin-right:  em-calc(10px);
+    margin-bottom: em-calc(5px);
+
+    i {
+      font-size:    em-calc(20px);
+      margin-top:   em-calc(5px);
+      margin-right: em-calc(5px);
+    }
+
+    .recent-activity-list-link-addition-icon {
+        color: $ts-orange-base;
+    }
+
+    .recent-activity-list-link-complete-icon {
+        color: $ts-green-base;
+    }
+
+    .recent-activity-list-link-achievement-icon {
+        color: white;
+    }
+
+    .recent-activity-list-link-elapsed-time {
+      font-size: em-calc(14px);
+      color:     $ts-black-dark;
+    }
+
+    &.recent-activity-list-link-achievement {
+      @include border-radius($border-radius);
+      color:            white;
+      background-color: $ts-green-base;
+
+      a {
+        color:           white;
+        text-decoration: underline;
+      }
+
+      .recent-activity-list-link-elapsed-time {
+        color: white;
+      }
+    }
+  }
+}
+

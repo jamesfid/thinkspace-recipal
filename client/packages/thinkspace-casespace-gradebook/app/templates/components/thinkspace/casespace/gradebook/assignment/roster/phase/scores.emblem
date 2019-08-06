@@ -1,0 +1,36 @@
+/ .ts-grid_row
+/   .small-12.ts-grid_columns
+/     h3.gradebook_roster-phase-title
+/       if model.team_ownerable
+/         i.fa.fa-users.gradebook_roster-phase-title-team-icon title='Team based phase'
+/       | Phase: #{model.title}
+
+.space-content_heading
+  .btn.btn-small.btn-link click='view_phase_list'
+    | Back to phase list
+    .tsi.tsi-left.icon-small.tsi-left-arrow.left 
+  h4 
+    if model.team_ownerable
+      i.fa.fa-users.gradebook_roster-phase-title-team-icon title='Team based phase'
+    | #{model.position_in_assignment.value}. #{model.title}
+
+.gradebook_action-bar
+  partial t_sort_links
+  partial t_table_options
+
+if show_scores
+  .ts-grid_row: .small-12.ts-grid_columns
+    if roster.content.heading_sort_by
+      if is_group_1
+        partial t_group_1_sort_by
+      else
+        partial t_group_2_sort_by
+    else
+      if is_group_1
+        partial t_group_1
+      else
+        partial t_group_2
+
+    if roster.content.supplement
+      .ts-grid_row: .small-12.ts-grid_columns
+        partial t_supplement

@@ -1,0 +1,61 @@
+.ts-full-page {
+
+}
+
+.ts-full-page_header {
+  padding-top: 2em;
+  margin-bottom: 2em;
+
+  .ts-branding {
+    font-size:   1.25rem;
+    color:       $ts-black-base;
+    font-weight: $ts-heavy;
+  }
+}
+
+.ts-full-page_header-content {
+  float: left;
+  >h1 {
+    font-size: 1.4375rem;
+    font-weight: $ts-heavy;
+    margin-bottom: 0;
+  }
+
+  >p {
+    margin-bottom: 0;
+  }
+}
+
+.ts-full-page_header-actions {
+  float: right;
+}
+
+.ts-full-page_content-side {
+  margin-bottom: 2rem;
+}
+
+.ts-full-page_content-heading {
+  @include clearfix;
+
+  display:       block;
+  margin-bottom: 1rem;
+
+  >h1 {
+    font-size:   1.25rem;
+    font-weight: $ts-bold;
+    float:       left;
+  }
+}
+
+.ts-full-page_side-heading {
+  @include clearfix;
+
+  display:       block;
+  margin-bottom: 1rem;
+  line-height:   1.75rem;
+
+  >h1 {
+    font-size: 1rem;
+    float:     left;
+  }
+}

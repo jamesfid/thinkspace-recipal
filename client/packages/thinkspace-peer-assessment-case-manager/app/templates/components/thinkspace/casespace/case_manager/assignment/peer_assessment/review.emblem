@@ -1,0 +1,54 @@
+.ts-grid_row.thinkspace-tbl-pa_review style=css_style
+  .thinkspace-tbl-pa_wrapper
+    unless model.is_sent
+      .right
+        if model.is_approvable
+          i.tsi.tsi-phase-complete{action 'approve'} title='Approve this evaluation'
+        if model.is_unapprovable
+          i.tsi.tsi-phase-incomplete{action 'unapprove'} title='Set this evaluation as in-progress'
+        if model.is_ignoreable
+          i.tsi.tsi-trash{action 'ignore'} title='Ignore this single evaluation'
+    .thinkspace-tbl-pa_toggle-wrapper{action 'toggle'}
+      .thinkspace-tbl-pa_review-name.left Evaluation for #{model.reviewable.full_name} 
+      .thinkspace-tbl-pa_status.left
+        component c_state model_state=model.state
+
+  / if is_expanded
+  /   .ts-grid_row: .small-12.ts-grid_columns
+  /     .ts-grid_row: .small-11.ts-grid_columns.right
+  /       if assessment.quantitative_items
+  /         h6 Quantitative Item(s)
+  /         each item in assessment.quantitative_items
+  /           component c_review_qual_item model=item assessment=assessment review=model
+
+  /   .ts-grid_row: .small-12.ts-grid_columns
+  /     .ts-grid_row: .small-11.ts-grid_columns.right
+  /       if assessment.positive_qualitative_items
+  /         h6 Positive comment(s)
+  /         each item in assessment.positive_qualitative_items
+  /           component c_review_comment model=item assessment=assessment review=model type='positive'
+
+  /     .ts-grid_row: .small-11.ts-grid_columns.right
+  /       if assessment.constructive_qualitative_items
+  /         h6 Constructive comment(s)
+  /         each item in assessment.constructive_qualitative_items
+  /           component c_review_comment model=item assessment=assessment review=model type='constructive'
+
+  if is_expanded
+    .ts-forms_field-container
+      if assessment.quantitative_items
+        .ts-forms_field-label Quantitative Item(s)
+        each item in assessment.quantitative_items
+          component c_review_qual_item model=item assessment=assessment review=model
+
+    .ts-forms_field-container
+      if assessment.positive_qualitative_items
+        .ts-forms_field-label Positive comment(s)
+        each item in assessment.positive_qualitative_items
+          component c_review_comment model=item assessment=assessment review=model type='positive'
+
+    .ts-forms_field-container
+      if assessment.constructive_qualitative_items
+        .ts-forms_field-label Constructive comment(s)
+        each item in assessment.constructive_qualitative_items
+          component c_review_comment model=item assessment=assessment review=model type='constructive'

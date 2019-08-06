@@ -1,0 +1,42 @@
+- model: thinkspace/lab/chart
+  associations:
+    - has_many: thinkspace/lab/categories
+    - belongs_to: authable
+      polymorphic: true
+  serializers:
+    - attributes: [id, title, authable_type, authable_id]
+
+- model: thinkspace/lab/category
+  delegate:
+    - method: authable
+      to: thinkspace/lab/chart
+  associations:
+    - belongs_to: thinkspace/lab/chart
+    - has_many:   thinkspace/lab/results
+  serializers:
+    - attributes: [id, title, description, value, position]
+
+- model: thinkspace/lab/result
+  delegate:
+    - method: authable
+      to: thinkspace/lab/category
+  associations:
+    - belongs_to: thinkspace/lab/category
+    - has_one:    thinkspace/lab/chart
+      through:    thinkspace/lab/category
+    - has_many:   thinkspace/lab/observations
+  serializers:
+    - attributes: [id, title, position, values]
+
+- model: thinkspace/lab/observation
+  delegate:
+    - method: authable
+      to: thinkspace/lab/result
+  associations:
+    - belongs_to: thinkspace/lab/result
+    - has_one: thinkspace/lab/category
+      through: thinkspace/lab/result
+    - belongs_to: ownerable
+      polymorphic: true
+  serializers:
+    - attributes: [id, attempts, value, state, all_correct, detail, archive, ownerable_type, ownerable_id]

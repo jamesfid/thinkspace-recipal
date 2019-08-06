@@ -1,0 +1,13 @@
+.team-members-container {
+	p {
+		cursor: pointer;
+
+		&:hover {
+			color: $ts-blue-base;
+		}
+
+		&:active {
+			color: $ts-blue-dark;
+		}
+	}
+}

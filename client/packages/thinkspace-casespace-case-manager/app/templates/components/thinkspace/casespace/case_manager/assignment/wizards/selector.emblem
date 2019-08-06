@@ -1,0 +1,30 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 #{t 'builder.selector.headings.new_case'}
+    
+    .ts-forms_field-container
+      .ts-forms_field-label.ts-forms_field-label-big #{t 'builder.selector.ask.case_type'}
+      
+      .ts-forms_field-container
+        label.ts-radio click="'set_bundle_type' 'casespace'"
+          .ts-radio_button
+            input type="radio"
+          | #{t 'builder.selector.headings.casespace_type'}
+          .ts-radio_description
+            | #{t 'builder.selector.describe.casespace'}
+
+      .ts-forms_field-container
+        label.ts-radio click="'set_bundle_type' 'assessment'"
+          .ts-radio_button
+            input type="radio"
+          | #{t 'builder.selector.headings.assessment_type'}
+          .ts-radio_description
+            | #{t 'builder.selector.describe.peer_assessment'}
+            .ts-radio_description-warning 
+              .tsi.tsi-small.tsi-phase-warning
+              | #{t 'builder.selector.instruct.team_set_required'}
+
+  .ts-wizard_row.ts-forms_action-btns-container
+  .ts-grid_columns.small-12
+    a.btn.btn-default.btn-small.left click='cancel' #{t 'builder.selector.buttons.cancel'}

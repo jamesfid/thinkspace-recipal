@@ -1,0 +1,7 @@
+.ts-forms_field-container
+  .ts-forms_field-label
+    | Category #{model.id}
+  = input value=label key-up='set_label'
+
+  a.btn.btn-small.btn-link.right click='remove_qualitative_item' Delete Category
+  

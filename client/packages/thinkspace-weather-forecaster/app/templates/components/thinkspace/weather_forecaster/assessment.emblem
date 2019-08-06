@@ -1,0 +1,24 @@
+.thinkspace-weather-forecaster_assessment-items
+
+  if view_forecast
+    .ts-grid_row
+      .small-7.ts-grid_columns.ts-grid_columns-thick
+        component c_assessment_show model=model forecast=view_forecast current_forecast=current_forecast show_help='show_help'
+
+      .small-5.ts-grid_columns.ts-grid_columns-thick
+        if show_help
+          component c_help_tip help_tip=help_tip close='hide_help'
+        else
+
+          .thinkspace-weather-forecaster_assessment-header
+  
+            span.thinkspace-weather-forecaster_assessment-header-item class={show_attempts:current} click='select_attempts'
+              |Your Forecast Attempts
+            span.thinkspace-weather-forecaster_assessment-header-item class={show_top_forecasts:current} click='select_top_forecasts'
+              |Top Class Forecasts
+
+          if show_attempts
+            component c_attempts model=model forecast=view_forecast current_forecast=current_forecast select='select_forecast'
+
+          if show_top_forecasts
+            component c_top_forecasts model=model top_forecasts=top_forecasts

@@ -1,0 +1,24 @@
+div.diag-path_list-item-content class={model.is_history:history-item model.is_data:data-item}
+
+  .diag-path_list-item-icon= model.category_icon
+  
+  div.diag-path_list-item-value class={is_expanded:is-expanded:is-collapsed}
+    = model.itemable.value
+
+  .diag-path_list-item-actions.sortable-exclude 
+    if is_overflown
+      a.diag-path_list-item-action.sortable-exclude click='toggle_expand'
+       if is_expanded
+          i.im.im-contract
+       else
+          i.im.im-expand
+    if model.path_items
+      a.diag-path_list-item-action.sortable-exclude click='toggle_collapse'
+        if is_collapsed
+          i.im.im-open-down.sortable-exclude
+        else
+          i.im.im-open-up.sortable-exclude
+
+ol.diag-path_list-children class={is_collapsed:hidden}
+  each child in model.path_items
+    component c_path_item model=child

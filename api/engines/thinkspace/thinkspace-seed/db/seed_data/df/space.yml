@@ -1,0 +1,11 @@
+variables:
+  - &SPACE Seed Space
+
+spaces:
+  - title: *SPACE
+
+space_users:
+  - spaces: *SPACE
+    users: import[../common_imports/users]
+
+teams: import[../common_imports/teams@teams]

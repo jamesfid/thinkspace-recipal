@@ -1,0 +1,52 @@
+platform_path: thinkspace
+
+modules:
+  action_authorize:             Thinkspace::Casespace::Concerns::Authorize::Phases
+  action_authorize_teams:       Thinkspace::Casespace::Concerns::Authorize::Teams
+  action_authorize_markup:      Thinkspace::Casespace::Concerns::Authorize::Markup
+  scope_by_ownerables:          Thinkspace::Authorization::ScopeByOwnerables
+  deep_clone_helper:            Thinkspace::Common::DeepCloneHelper
+  delete_ownerable_data_helper: Thinkspace::Common::DeleteOwnerableDataHelper
+
+authentication:
+  classes:
+    user_model:           Thinkspace::Common::User
+    api_session_model:    Thinkspace::Common::ApiSession
+    password_reset_model: Thinkspace::Common::PasswordReset
+
+authorization:
+  cancan:
+    classes:
+      ability:        Thinkspace::Authorization::Ability
+      ability_engine: Thinkspace::Authorization::AbilityEngine
+    config_filename: thinkspace.abilities
+
+routes:
+  url: api
+  match:
+    '*ember':
+      to:          totem/core/application#serve_index_from_redis
+      constraints: false
+
+paths:
+  - path: thinkspace/authorization
+  - path: thinkspace/common
+  - path: thinkspace/artifact
+  - path: thinkspace/diagnostic_path
+  - path: thinkspace/diagnostic_path_viewer
+  - path: thinkspace/weather_forecaster
+  - path: thinkspace/html
+  - path: thinkspace/importer
+  - path: thinkspace/indented_list
+  - path: thinkspace/input_element
+  - path: thinkspace/lab
+  - path: thinkspace/markup
+  - path: thinkspace/observation_list
+  - path: thinkspace/resource
+  - path: thinkspace/team
+  - path: thinkspace/peer_assessment
+  - path: thinkspace/simulation
+  - path: thinkspace/casespace
+  - path: thinkspace/builder
+  # - path: thinkspace/pub_sub
+  - path: thinkspace/reporter

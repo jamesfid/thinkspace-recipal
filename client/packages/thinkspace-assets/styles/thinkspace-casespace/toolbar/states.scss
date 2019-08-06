@@ -1,0 +1,3 @@
+.is-opening {
+  @include animation(fly-out-open 2s);
+}

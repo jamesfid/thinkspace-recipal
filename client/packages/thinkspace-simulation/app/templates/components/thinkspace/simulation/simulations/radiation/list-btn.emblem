@@ -1,0 +1,2 @@
+.btn{action 'toggle_active'} class=btn_style
+  = content

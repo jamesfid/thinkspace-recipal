@@ -1,0 +1,15 @@
+if all_data_loaded
+  .ts-forms_section-container 
+    .ts-builder_section-header 
+      h1 Add new phase
+      p Choose a phase template to add to your case.
+    each phase_template in phase_templates
+      .small-12.medium-6.large-6.ts-grid_columns.ts-builder_new-phase-container click="'clone' phase_template"
+        .ts-builder_new-phase-img-col
+          img.ts-builder_phase-type-img src='/assets/images/ts-icons/phase-types/ts-builder_phase-types_html.svg'
+        .ts-builder_new-phase-info
+          p.ts_new-phase-title #{phase_template.title}
+          p.ts_new-phase-description #{phase_template.description}
+
+else
+  component c_loader

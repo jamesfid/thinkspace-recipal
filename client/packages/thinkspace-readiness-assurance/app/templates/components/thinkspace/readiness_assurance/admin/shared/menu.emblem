@@ -1,0 +1,12 @@
+.ts-ra_admin-menu
+
+  ul.ts-action-bar
+    if clear
+      li.ts-action-bar_action
+        a click='clear' Clear
+    each config in menu
+      li.ts-action-bar_action class={config.active:active}
+        a click="'select' config" #{config.title}
+
+  each config in selected_components
+    component config.component config=config done='done'

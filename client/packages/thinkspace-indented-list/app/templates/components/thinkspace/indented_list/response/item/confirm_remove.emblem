@@ -1,0 +1,11 @@
+.indented-list_item-confirm-remove-container
+
+  .ts-grid_row: .ts-grid_columns.small-12
+    .im.im-warning.warning-icon
+    .indented-list_item-confirm-remove-text
+      |Do you really want to remove this item?
+
+  .ts-grid_row: .ts-grid_columns.small-12
+    .indented-list_item-confirm-remove-actions
+      a.btn.btn-small.btn-primary.left click='ok' Delete
+      a.btn.btn-small click='cancel' Cancel

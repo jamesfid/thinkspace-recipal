@@ -1,0 +1,2 @@
+.ts-ra_admin-view-messages-content
+  component am.c_shared_messages_view rooms=admin_message_rooms

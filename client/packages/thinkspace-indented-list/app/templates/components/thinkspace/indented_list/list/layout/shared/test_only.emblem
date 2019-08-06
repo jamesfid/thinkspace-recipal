@@ -1,0 +1,48 @@
+.ts-grid_row style='margin-top: -30px; display: inline-table;'
+
+  h6
+    'Testing Controls
+    if response_manager.readonly
+     span style='color: #fb6b6b;' (readonly)
+
+  .ts-grid_columns.small-4
+
+    if response_manager.updateable
+      .span style='margin-right: 1em; cursor: pointer; font-size: .8em;' click='toggle_save'
+        if send_response_to_server
+          span style='color: #6dc05e;' Save response ON
+        else
+          span style='color: #fb6b6b;' Saving responses OFF
+
+      .span style='margin-right: 1em; cursor: pointer; font-size: .8em;' click='toggle_confirm_remove'
+        if confirm_remove
+          span style='color: #6dc05e;' Confirm remove ON
+        else
+          span style='color: #fb6b6b;' Confirm remove OFF
+
+    .span style='color: #63b4d6; cursor: pointer; font-size: .8em;' click='reset_overflow'
+      |Reset Overflow
+
+  .ts-grid_columns.small-8
+
+    span.test-indent-px.right style='margin-right: 2em;'
+      p style='font-weight: 500; margin-bottom: 0; text-align: center;' Zoom  -  #{zoom_level}
+      .btn-group
+        a.btn.btn-tiny.phase-header_button click='zoom_out' 
+          | -
+        a.btn.btn-tiny.phase-header_button click='zoom_in' 
+          | +
+
+    span.test-indent-px.right style='margin-right: 2em;'
+      p style='font-weight: 500; margin-bottom: 0; text-align: center;' Indent  -  #{indent_px}px
+      .btn-group
+        a.btn.btn-tiny.phase-header_button.indent-px.px-10 click='indent_px_10' 10
+        a.btn.btn-tiny.phase-header_button.indent-px.px-20 click='indent_px_20' 20
+        a.btn.btn-tiny.phase-header_button.indent-px.px-30 click='indent_px_30' 30
+        a.btn.btn-tiny.phase-header_button.indent-px.px-40 click='indent_px_40' 40
+        a.btn.btn-tiny.phase-header_button   click='indent_up'
+          | +
+        a.btn.btn-tiny.phase-header_button click='indent_down'
+          | -
+
+hr style='margin: 0;'

@@ -1,0 +1,50 @@
+.tbl-confirmation-review_item-container {
+	cursor: pointer;
+  border-bottom: 2px solid $ts-black-light;
+
+	&:hover { background-color: $ts-blue-light;}
+}
+
+.tbl-confirmation-review_item-header {
+	h5 { 
+		margin-top: .65em;
+		font-weight: $ts-bold;
+	}
+}
+
+.tbl-confirmation-review_item-comments {
+	margin-bottom: 1.25em;
+}
+
+.tbl-confirmation-review_category-container {
+  margin-bottom: 1em;
+
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  li {
+    padding: .5em 1em;
+    font-size: .875em;
+
+    &:nth-child(even) {
+      background-color: $ts-blue-light;
+    }
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.tbl-confirmation-review_category-label {
+  float: left;
+}
+
+.tbl-confirmation-review_category-value {
+  float: right;
+  font-weight: $ts-bold;
+}

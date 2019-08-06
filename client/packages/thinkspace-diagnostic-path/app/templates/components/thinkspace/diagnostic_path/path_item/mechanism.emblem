@@ -1,0 +1,4 @@
+div.diag-path_list-item-content
+  .diag-path_list-item-icon
+    i.fa.fa-circle-o.mechanism title='Mechanism'
+  div.diag-path_list-item-value Add New Mechanism

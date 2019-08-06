@@ -1,0 +1,5 @@
+if can_access_addon
+
+  div{action 'toggle_addon_visible'} class={:thinkspace-dock_addon :thinkspace-dock_addon-blue is_addon_visible:darken is_addon_visible:addon_open}
+    .tsi.tsi-left.tsi-tiny.tsi-comments_white
+    span.thinkspace-dock_addon-title= addon_display_name

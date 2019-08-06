@@ -1,0 +1,65 @@
+@import 'totem-ember/master';
+@import 'thinkspace-common/master';
+
+.ember-application {
+  .intercom-reset a, .intercom-reset abbr, .intercom-reset acronym, .intercom-reset address, .intercom-reset applet, .intercom-reset article, .intercom-reset aside, .intercom-reset audio, .intercom-reset b, .intercom-reset big, .intercom-reset blockquote, .intercom-reset button, .intercom-reset canvas, .intercom-reset caption, .intercom-reset center, .intercom-reset cite, .intercom-reset code, .intercom-reset dd, .intercom-reset del, .intercom-reset details, .intercom-reset dfn, .intercom-reset div, .intercom-reset div.form, .intercom-reset dl, .intercom-reset dt, .intercom-reset em, .intercom-reset fieldset, .intercom-reset figcaption, .intercom-reset figure, .intercom-reset footer, .intercom-reset form, .intercom-reset h1, .intercom-reset h2, .intercom-reset h3, .intercom-reset h4, .intercom-reset h5, .intercom-reset h6, .intercom-reset header, .intercom-reset hgroup, .intercom-reset i, .intercom-reset iframe, .intercom-reset img, .intercom-reset input, .intercom-reset input[type], .intercom-reset ins, .intercom-reset kbd, .intercom-reset label, .intercom-reset legend, .intercom-reset li, .intercom-reset mark, .intercom-reset menu, .intercom-reset nav, .intercom-reset object, .intercom-reset ol, .intercom-reset p, .intercom-reset pre, .intercom-reset q, .intercom-reset s, .intercom-reset samp, .intercom-reset section, .intercom-reset small, .intercom-reset span, .intercom-reset strike, .intercom-reset strong, .intercom-reset sub, .intercom-reset summary, .intercom-reset sup, .intercom-reset table, .intercom-reset tbody, .intercom-reset td, .intercom-reset textarea, .intercom-reset tfoot, .intercom-reset th, .intercom-reset thead, .intercom-reset time, .intercom-reset tr, .intercom-reset tt, .intercom-reset u, .intercom-reset ul, .intercom-reset var, .intercom-reset video {
+
+    font-family: omnes-pro, sans-serif;
+
+  }
+
+  #intercom-container {
+    .intercom-active-admin-name {
+      font-size: 0.875em;
+      font-weight: 500;
+    }
+
+    .intercom-sheet-header-generic-title,  .intercom-sheet-header-title { font-family: omnes-pro, sans-serif; }
+
+    .intercom-sheet-body { border-left: 2px solid $ts-blue-base; }
+
+    .intercom-composer-textarea {
+
+      &.intercom-composer-focused { border: 1px solid $ts-blue-base; }
+
+      textarea { 
+        font-family: omnes-pro, sans-serif;
+        font-size:   15px;
+      }
+    }
+
+    .intercom-comment-by-user .intercom-comment-body-container {
+      background-color: $ts-blue-base;
+      .intercom-comment-body, .intercom-embed-body { font-size: 15px; }
+    }
+    .intercom-comment-by-user .intercom-comment-caret:after { border-left-color: $ts-blue-base; }
+
+    .intercom-comment-body-container .intercom-comment-body {
+      p { font-size: 15px; }
+    }
+
+    .intercom-launcher-button {
+      background-color: $ts-blue-base;
+      border-color:     $ts-blue-base;
+
+    }
+    .intercom-announcement-body-container a.intercom-h2b-button, #intercom-container .intercom-composer-send-button, #intercom-container .intercom-conversations-new-conversation-button, #intercom-container .intercom-new-anonymous-user input[type=submit], #intercom-container .intercom-small-announcement-body-container a.intercom-h2b-button {
+      background:   $ts-blue-base;
+      border-color: $ts-blue-base;
+    }
+    .intercom-conversations-new-conversation-button {
+      @include highlight-transition-all;
+      @include border-radius($border-radius);
+      border:         2px solid;
+      border-color:   $ts-black-med;
+      color:          $btn-color;
+      text-align:     $btn-text-align;
+      letter-spacing: $btn-letter-spacing;
+      font-weight:    500;
+      font-size:      $btn-medium-font-size;
+      box-shadow:     none;
+      @include button($ts-blue-base, $ts-blue-dark);
+    }
+    .intercom-conversations-item-user-avatar { background-color: $ts-purple-base; }
+  }
+}

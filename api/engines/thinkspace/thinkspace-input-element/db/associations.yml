@@ -1,0 +1,23 @@
+- model: thinkspace/input_element/element
+  delegate:
+    - method: authable
+      to: componentable
+  associations:
+    - belongs_to: componentable
+      polymorphic: true
+    - has_many:    thinkspace/input_element/responses
+      dependent:   :destroy
+  serializers:
+    - attributes: [id, name, element_type, componentable_type, componentable_id]
+
+- model: thinkspace/input_element/response
+  delegate:
+    - method: authable
+      to: thinkspace/input_element/element
+  associations:
+    - belongs_to: thinkspace/input_element/element
+    - belongs_to: thinkspace/common/user
+    - belongs_to: ownerable
+      polymorphic: true
+  serializers:
+    - attributes: [id, value, ownerable_id, ownerable_type]

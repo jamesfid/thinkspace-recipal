@@ -1,0 +1,139 @@
+source 'https://rubygems.org'
+ruby '2.5.5'
+
+# Base
+gem 'rails', '4.2.11.1'
+gem 'pg',    '0.20'
+
+# For rails 4.2 (implements controller class method 'respond_to')
+gem 'responders', '2.4.1'
+
+group :production do
+  gem 'passenger',    '6.0.2'
+  gem 'newrelic_rpm', '6.4.0.356'
+  gem 'dalli',        '2.7.10'
+end
+
+group :development do
+  gem 'thin',         '1.7.2'
+  gem 'quiet_assets', '1.1.0'
+  gem 'rails-erd',    '1.6.0'
+  gem 'web-console',  '2.3.0'
+end
+
+group :development, :test do
+  gem 'byebug', '11.0.1'
+end
+
+# Server to Server API (rails-to-oauth)
+gem 'rest-client', '2.0.2'
+
+# CORS - config in application.rb
+gem 'rack-cors', '1.0.3', require: 'rack/cors'
+
+# Redis for serving Index.
+gem 'redis', '4.1.2'
+
+# Auditing
+gem 'paper_trail', '3.0.9'
+
+# Clone Records
+gem 'deep_cloneable', '2.4.0'
+
+# Amazon SQS
+gem 'aws-sdk', '1.67.0'
+
+# Slim for Mailer Views
+gem 'slim', '4.0.1'
+
+# State Machine
+gem 'aasm', '5.0.5'
+
+# Delayed Job (background processing)
+gem 'delayed_job_active_record', '4.1.3'
+
+# Tagging gem
+gem 'acts-as-taggable-on', '3.5.0'
+
+# Pagination
+gem 'kaminari', '1.1.1'
+
+# Paperclip
+gem 'paperclip', '4.3.0'
+
+# Paperclip Image URLs in Development
+group :development do
+  gem 'sprockets-rails', '3.2.1', require: 'sprockets/railtie'
+  gem 'non-digest-assets', '1.0.10'
+end
+
+# For quickly parsing CSVs into arrays of hashes
+gem 'smarter_csv', '1.2.6'
+
+# Spreadsheet
+gem 'spreadsheet', '1.2.4'
+
+# Secure Token
+gem 'has_secure_token', '1.0.0'
+
+# Throttling
+gem 'rack-attack', '6.0.0'
+
+# Pasword Strength
+gem 'zxcvbn-ruby', '1.0.0', require: 'zxcvbn'
+
+# ################## #
+# ### LOCAL GEMS ### #
+# ################## #
+# [10/28/2013] AMS is under-going a complete re-write.
+# Using a local version to freeze at commit ref that works with totem.
+gem 'active_model_serializers', path: 'vendor/active_model_serializers-0.8.1'
+
+# [02/06/2014] Cancan with Rails 4 related changes (still version 1.6.10).
+# Pull request at https://github.com/bryanrite/cancan.git
+gem 'cancan', path: 'vendor/cancan-1.6.10'
+
+# ############# #
+# ### TOTEM ### #
+# ############# #
+gem 'totem',                          path: 'engines/totem'
+gem 'totem-core',                     path: 'engines/totem/totem-core'
+gem 'totem-authentication-session',   path: 'engines/totem/totem-authentication-session'
+gem 'totem-authorization-cancan',     path: 'engines/totem/totem-authorization-cancan'
+# gem 'totem-pub-sub',                  path: 'engines/totem/totem-pub-sub'
+
+group :development, :test do
+  gem 'totem-seed', path: 'engines/totem/totem-seed'
+  gem 'totem-test', path: 'engines/totem/totem-test'
+end
+
+# ################## #
+# ### THINKSPACE ### #
+# ################## #
+gem 'thinkspace',                         path: 'engines/thinkspace'
+gem 'thinkspace-authorization',           path: 'engines/thinkspace/thinkspace-authorization'
+gem 'thinkspace-common',                  path: 'engines/thinkspace/thinkspace-common'
+gem 'thinkspace-artifact',                path: 'engines/thinkspace/thinkspace-artifact'
+gem 'thinkspace-diagnostic-path',         path: 'engines/thinkspace/thinkspace-diagnostic-path'
+gem 'thinkspace-diagnostic-path-viewer',  path: 'engines/thinkspace/thinkspace-diagnostic-path-viewer'
+gem 'thinkspace-weather-forecaster',      path: 'engines/thinkspace/thinkspace-weather-forecaster'
+gem 'thinkspace-html',                    path: 'engines/thinkspace/thinkspace-html'
+gem 'thinkspace-importer',                path: 'engines/thinkspace/thinkspace-importer'
+gem 'thinkspace-indented-list',           path: 'engines/thinkspace/thinkspace-indented-list'
+gem 'thinkspace-input-element',           path: 'engines/thinkspace/thinkspace-input-element'
+gem 'thinkspace-lab',                     path: 'engines/thinkspace/thinkspace-lab'
+gem 'thinkspace-markup',                  path: 'engines/thinkspace/thinkspace-markup'
+gem 'thinkspace-observation-list',        path: 'engines/thinkspace/thinkspace-observation-list'
+gem 'thinkspace-resource',                path: 'engines/thinkspace/thinkspace-resource'
+gem 'thinkspace-team',                    path: 'engines/thinkspace/thinkspace-team'
+gem 'thinkspace-peer-assessment',         path: 'engines/thinkspace/thinkspace-peer-assessment'
+gem 'thinkspace-simulation',              path: 'engines/thinkspace/thinkspace-simulation'
+gem 'thinkspace-casespace',               path: 'engines/thinkspace/thinkspace-casespace'
+gem 'thinkspace-builder',                 path: 'engines/thinkspace/thinkspace-builder'
+# gem 'thinkspace-pub-sub',                 path: 'engines/thinkspace/thinkspace-pub-sub'
+gem 'thinkspace-reporter',                path: 'engines/thinkspace/thinkspace-reporter'
+
+group :development, :test do
+  gem 'thinkspace-seed', path: 'engines/thinkspace/thinkspace-seed'
+  gem 'thinkspace-test', path: 'engines/thinkspace/thinkspace-test'
+end

@@ -1,0 +1,311 @@
+/////
+// TS Diagnostic Path module
+// namespace: diag-path
+// selector:  diag-path_
+// convention: interpolation0___interpolation1__ (ie: path_header, path_list-item, path_list-item-content)
+// notes: all submodules could be split into partials and included below if wanted (ie: _path_item-header.scss)
+// Submodule modifiers are indicated by a repetition of the submodule name appended with the modifier name 
+// and affects only the submodule (i.e. .phase-progress_section.phase-progress_section-pink) 
+/////
+
+// TODO: MOVE TO VARIABLES!
+$path-item-color: $ts-purple-base;
+
+/////
+// .diag-path_header
+// Appears at the top of the path, contains a title, etc.
+/////
+.diag-path_header {
+  @include border-top-right-radius($border-radius);
+  @include border-top-left-radius($border-radius);
+  border:                  2px solid $ts-blue-base;
+  background:              $ts-blue-base;
+
+  &.expert-path {
+    @include diag-path_header($ts-green-base, $ts-green-dark);
+  }
+
+  &.student-path {
+    @include diag-path_header($ts-blue-base, $ts-blue-dark);
+  }
+
+  .diag-path_header-text {
+    display: inline-block;
+    margin:  0;
+    padding: .3em;
+    width:   80%;
+    color:   white;
+
+    .diag-path_header-edit-input {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .diag-path_header-actions {
+    display:                 inline-block;
+    float:                   right;
+    border-top-right-radius: $border-radius;
+    background:              $ts-blue-base;
+    color:                   white;
+
+    .diag-path_header-action {
+      @include highlight-transition-all;
+      display:      inline-block;
+      padding:      0.25em 0.3em;
+      padding-bottom: .45em;
+      border-width: 2px 2px 0px 2px;
+      border-style: solid;
+      border-color: $ts-blue-base;
+      color:        white;
+
+      &:hover {
+        border-color:     $ts-blue-dark;
+        background-color: $ts-blue-dark;
+      }
+    }
+
+    :last-child {
+      border-top-right-radius: 3px;
+    }
+  }
+}
+
+/////
+// .diag-path_list
+// This is the container (likely <ol>) that will contain the path items.
+/////
+.diag-path_list {
+  @include border-bottom-right-radius($border-radius);
+  @include border-bottom-left-radius($border-radius);
+  margin-left: 0;
+  padding:         .5em .5em;
+  border:          2px solid $ts-blue-base;
+  background:      $ts-blue-light;
+  list-style-type: none;
+
+  .hidden {display: none}
+
+  &.expert-path {
+    @include diag-path_list($ts-green-base, $ts-green-dark);
+  }
+
+  &.student-path {
+    @include diag-path_list($ts-blue-base, $ts-blue-dark);
+  }
+
+  .placeholder {
+    @include border-radius($border-radius);
+    @include animation(diag-path_subtle-grow 1s linear 0s infinite alternate);
+    position:         relative;
+    margin:           em-calc(5px) 0;
+    padding:          em-calc(5px);
+    border-radius:    $border-radius;
+    background-color: $path-item-color;
+    list-style-type:  none;
+    opacity:          0.75;
+    height: 1em;
+  }
+
+  .diag-path_list:last-of-type {
+    .diag-path_list-item {
+      margin-bottom: 0;
+    }
+  }
+
+  // This had to be different than .diag-path_list for the children, otherwise jquery-sortable chokes with the recursion error.
+  .diag-path_list-children {
+    padding:         0;
+    border:          none;
+    list-style-type: none;
+  }
+
+  .placeholder-path-item {
+    opacity: 0.7;
+  }
+}
+
+/////
+// .diag-path_list-item
+// Provides the guidelines for the path.
+/////
+.diag-path_list-item {
+  @include border-left-radius($border-radius);
+  border-left:     1px solid lighten($path-item-color,15%);
+  list-style-type: none;
+
+  &.sortable-original-item { & > .diag-path_list-item-content { border-style: dashed; } }
+}
+
+.diag-path_list-item-mechanism { 
+  & > .diag-path_list-item-content {
+    border: 2px solid $ts-blue-base;
+    .diag-path_list-item-icon { background: $ts-blue-base; }
+    .diag-path_list-item-value { font-weight: 500; }
+    .diag-path_list-item-actions  {
+      .diag-path_list-item-action { background: $ts-blue-base; }
+    }
+  }
+}
+
+/////
+// .diag-path_list-item-content
+// Wrapper that contains the meat and potatoes of the path item, such as its text, icon, etc.
+/////
+.diag-path_list-item-content {
+  @include border-radius($border-radius);
+  position:        relative;
+  margin-bottom:   em-calc(5px);
+  padding:         0em 6em 0em 2em;
+  border:          2px solid $path-item-color;
+  background:      white;
+  list-style-type: none;
+
+  &.green-item {
+    @include diag-path_item($ts-green-base, $ts-green-dark);
+  }
+
+  &.blue-item {
+    @include diag-path_item($ts-blue-base, $ts-blue-dark);
+  }
+
+  &.red-item {
+    @include diag-path_item($ts-red-base, $ts-red-dark);
+  }
+
+  &.orange-item {
+    @include diag-path_item($ts-orange-base, $ts-orange-dark);
+  }
+
+  &.black-item {
+    @include diag-path_item($ts-black-base, $ts-black-dark);
+  }
+  &.history-item {
+    @include diag-path_item($path-item-color, darken($path-item-color,10%))
+  }
+  &.data-item {
+    @include diag-path_item($deep_pink, darken($deep_pink,10%))
+  }
+
+  .diag-path_list-item-value {
+    //@include ellipsis;
+    display:     inline-block;
+    overflow:    hidden;
+    width:       100%;
+    height:      1.4em;
+    background:  white;
+    white-space: nowrap;
+
+    .diag-path_list-item-value-edit {
+      @include box-sizing(border-box);
+      margin-top: 0.875em;
+      width:      100%;
+      height:     auto;
+    }
+
+    &.is-expanded {
+      overflow:    visible;
+      white-space: normal;
+      word-wrap:   break-word;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.edit-visible {
+      overflow:    visible;
+      white-space: normal;
+      word-wrap:   break-word;
+      width:       100%;
+      height:      100%;
+
+      .diag-path_list-item-value-edit {
+        textarea {
+          resize: both;
+        }
+      }
+
+      .diag-path_list-item-value-edit-actions {
+        text-align:    right;
+        margin-bottom: 1em;
+        a {
+          margin-right: 1em;
+        }
+      }
+    }
+
+  }
+
+  .diag-path_list-item-icon {
+    position:   absolute;
+    top:        0;
+    left:       0;
+    display:    inline-block;
+    float:      left;
+    padding:    0.15em .25em;
+    background: $path-item-color;
+    color:      white;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+
+  .diag-path_list-item-actions {
+    position: absolute;
+    top:      0;
+    right:    0;
+    display:  inline-block;
+    float:    right;
+    margin:   em-calc(-1px) em-calc(-1px) 0 0;
+
+    .diag-path_list-item-action {
+      @include highlight-transition-background;
+      padding: 0.05em 0.3125em 0.375em 0.3125em;
+      background-color: $path-item-color;
+      color:            white;
+
+
+      &:hover {
+        background-color: darken($path-item-color, 15%);
+      }
+    }
+  }
+
+  .diag-path_list-item-value-confirm-destroy {
+    .diag-path_list-item-value-confirm-destroy-message {
+      margin-top: 2em;
+      color:      $ts-red-dark;
+      .warning-icon {display: inline; margin-right: 1em;}
+      .text {font-weight: bold;}
+    }
+    .diag-path_list-item-value-edit-actions {
+        text-align:    right;
+        margin-bottom: 1em;
+        a {margin-right: 1em;}
+    }
+  }
+
+}
+
+.diag-path_loader {
+  left:       0;
+  right:      0;
+  max-width:  62.5rem;
+  text-align: center;
+
+  position:         fixed;
+  background-color: $ts-blue-base;
+  z-index:          5001;
+}
+
+.diag-path_mechanism { 
+  .dialogue { margin-bottom: 0; }
+  p { margin-bottom: 0; }
+  .diag-path_mechanism-list { margin: 0; }
+  .diag-path_list-item-mechanism { border: none; margin: 1em 0; }
+}

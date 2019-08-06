@@ -1,0 +1,49 @@
+/////
+// Activity Feed
+/////
+.activity-feed_list {
+  list-style-type: none;
+
+  .activity-feed_list-link {
+    margin-right:  em-calc(10px);
+    margin-bottom: em-calc(5px);
+
+    i {
+      font-size:    em-calc(20px);
+      margin-top:   em-calc(5px);
+      margin-right: em-calc(5px);
+    }
+
+    .activity-feed_link-addition-icon {
+        color: $ts-orange-base;
+    }
+
+    .activity-feed_link-complete-icon {
+        color: $ts-green-base;
+    }
+
+    .activity-feed_link-achievement-icon {
+        color: white;
+    }
+
+    .activity-feed_link-elapsed-time {
+      font-size: em-calc(14px);
+      color:     $ts-black-dark;
+    }
+
+    &.activity-feed_link-achievement {
+      @include border-radius($border-radius);
+      color:            white;
+      background-color: $ts-green-base;
+
+      a {
+        color:           white;
+        text-decoration: underline;
+      }
+
+      .activity-feed_link-elapsed-time {
+        color: white;
+      }
+    }
+  }
+}

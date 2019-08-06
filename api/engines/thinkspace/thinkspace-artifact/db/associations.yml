@@ -1,0 +1,21 @@
+- model: thinkspace/artifact/bucket
+  associations:
+    - belongs_to: authable
+      polymorphic: true
+    - belongs_to: thinkspace/common/user
+    - has_many:   thinkspace/artifact/files
+  serializers:
+    - attributes: [id, instructions, authable_id, authable_type]
+
+- model: thinkspace/artifact/file
+  delegate:
+    - method: authable
+      to: thinkspace/artifact/bucket
+  associations:
+    - belongs_to: thinkspace/common/user
+    - belongs_to: thinkspace/artifact/bucket
+    - belongs_to: ownerable
+      polymorphic: true
+  serializers:
+    - attributes: [id, url, title, content_type, size, attachment_updated_at, user_id, ownerable_id, ownerable_type]
+    - scoped_attributes: [updateable]

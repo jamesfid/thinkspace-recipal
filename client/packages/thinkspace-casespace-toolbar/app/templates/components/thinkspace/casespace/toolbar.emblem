@@ -1,0 +1,36 @@
+#navbar
+  nav class='navigation-left'
+    .nav-link.ts-logo
+      link-to 'thinkspace/common/spaces'
+        .ts-branding.ts-branding-color
+          == t 'thinkspace.branding'
+    .nav-link 
+      link-to 'thinkspace/common/spaces'
+        | Spaces
+    .nav-link click='toggle_support'
+      a Support
+    unless session.user.has_key
+      .nav-link.nav-link_key-activation
+        link-to 'users.show.keys' session.user
+          | Add Account Key
+  nav class='navigation-right'
+    .nav-link click='toggle_users'
+      a.navbar_user-account
+        .navbar_user-avatar
+          .tsi.tsi-spaceman-outline.icon-large
+        .navbar_user-info
+          span.navbar_user-name = session.user.full_name
+          br
+          span.navbar_user-meta = session.user.email
+        i.im.im-open-down.toolbar_breadcrumb-arrow
+    #user-expansion class={user_expansion_visible:is-visible:is-hidden}
+      ul.navbar_account-menu click='hide_expansions' 
+        li.toolbar_breadcrumb-flyout-link
+          link-to 'users.show.profile' session.user
+            | User Profile
+        li.toolbar_breadcrumb-flyout-link click='sign_out'
+          a Sign Out
+        if show_switch_user
+          li.toolbar_breadcrumb-flyout-link
+            component c_switch_user
+component c_ownerable_bar

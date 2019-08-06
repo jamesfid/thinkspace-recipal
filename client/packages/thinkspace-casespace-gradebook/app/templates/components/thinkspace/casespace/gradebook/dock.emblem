@@ -1,0 +1,12 @@
+if can_access_addon
+  div{action 'toggle_addon_visible'} class={:thinkspace-dock_addon :thinkspace-dock_addon-green addon_visible:darken addon_visible:addon_open}
+    .tsi.tsi-left.tsi-tiny.tsi-gradebook_white
+    span.thinkspace-dock_addon-title= addon_display_name
+
+  / if addon_visible
+  /   if current_phase
+  /     if can_grade_phase  / If has current phase, then only show gradebook when the phase#show is generated.
+  /       component c_phase dock=this
+  /   else
+  /     if can_grade_assignment
+  /       component c_assignment dock=this

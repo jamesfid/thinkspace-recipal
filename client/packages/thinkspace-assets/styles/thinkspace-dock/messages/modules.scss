@@ -1,0 +1,86 @@
+.dock-totem-messages {
+  position: fixed;
+  right:    1.875em;
+  bottom:   $thinkspace-dock-bottom + .5em;
+  width:    $thinkspace-dock-min-width * 1.5;
+  z-index:  $thinkspace-dock-z-index + 100;
+  
+  .error, .info, .warn, .debug, .fatal {
+    background-color: white; 
+    color: $ts-black-base;
+  }
+  .error, .fatal {border-color: $ts-red-base;}
+  .info {border-color: $ts-green-base;}
+  .warn {border-color: $ts-orange-base;}
+  .debug {border-color: $ts-blue-base;}
+  .fatal {background-color: $ts-red-base;   color: white;}
+
+  .dock-totem-messages_message {
+    // @include border-radius($border-radius);
+    position: relative;
+    overflow-y:       auto;
+    margin-bottom:    0.5em;
+    padding:          0.5em 2em 0.5em 0.5em;
+    cursor:           pointer;
+
+    font-weight: 400;
+    box-shadow: 2px 1px 7px 1px #EFEFEF;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    border-left: 4px solid;
+
+    &.error {border-color: $ts-red-base;}
+    &.info {border-color: $ts-green-base;}
+
+    .ts-message_image {
+      float:             left;
+      background-repeat: no-repeat;
+      width:             50px;
+      height:            75px;
+      margin-right:      .875rem;
+    }
+
+    .ts-message_image-error-1 {
+      background-image: url('/assets/images/messages/thinkbot-message_warning.svg');
+    }
+
+    .ts-message_image-info-1 {
+      background-image: url('/assets/images/messages/thinkbot-message_success.svg');
+    }
+
+    .ts-message_image-timeout {
+      background-image: url('/assets/images/messages/thinkbot-message_timeout.svg');
+    }
+
+
+    .ts-message_header {
+      display: inline;
+      color: $ts-black-dark;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0;
+      margin-top: 11px;
+    }
+
+
+    .dock-totem-messages_message-dismiss {
+      // float:     right;
+      // font-size: em-calc(18px);
+      position: absolute;
+      right: 6px;
+      top: 6px;
+
+      .im.im-close { color: $ts-black-med; }
+
+      .dock-totem-messages_message-suppress {
+        font-size: 8px;
+      }
+    }
+  }
+
+  .dock-totem-messages_clear-messages {
+    float:         right;
+    margin-bottom: 0.5em;
+    padding:       0.5em;
+  }
+}

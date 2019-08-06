@@ -1,0 +1,11 @@
+.thinkspace-weather-forecaster_assessment-item-checkboxes
+
+  each choice in choices
+    .ts-grid_row: .small-12.ts-grid_columns
+      component c_radio_item input_value=input_value check='check' uncheck='uncheck' response_id=choice.id response_label=choice.label is_view_only=is_view_only model=model
+
+  if show_errors
+    each message in errors.input_value
+      span.thinkspace-weather-forecaster_error-message
+        i.im.im-warning.im-error-base
+        = message

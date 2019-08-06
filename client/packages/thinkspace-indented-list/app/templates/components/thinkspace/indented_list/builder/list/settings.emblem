@@ -1,0 +1,30 @@
+.ts-forms_form-container 
+  .ts-forms_inline-heading
+    h4 List Settings
+    .ts-forms_heading-actions
+      a.btn.btn-small.btn-primary click='create_group' Save settings
+      a.btn.btn-small.btn-default click='cancel_is_creating_group' Cancel
+  .ts-forms_section-container
+    .row
+      .small-12.medium-6.large-6.ts-grid_columns
+        .ts-forms_field-label What type of path would you like this to be?
+    .row
+      .small-12.medium-6.large-6.ts-grid_columns.ts-radio_item-container
+        label.ts-radio click='set_is_not_expert'
+          component c_radio checked=is_not_expert disable_click=true
+          img.ts-radio_image src='/assets/images/ts-builder_student.svg'
+          .ts-checkbox_label.ts-radio_image-label Student Path
+          .ts-radio_description.ts-radio_image-description Allows student to build their own path using observations.
+      .small-12.medium-6.large-6.ts-grid_columns.ts-radio_item-container
+        label.ts-radio click='set_is_expert'
+          component c_radio checked=is_expert disable_click=true
+          img.ts-radio_image src='/assets/images/ts-builder_expert.svg'
+          .ts-checkbox_label.ts-radio_image-label Expert Path
+          .ts-radio_image-description
+            .ts-radio_description 
+              | Use a path you've created to allow the student to compare their answers to an expert. 
+            if is_expert
+              if is_setting_expert_response
+                component c_expert_selector model=model
+              else
+                a.btn.btn-small.btn-default click='set_is_setting_expert_response' Set expert response

@@ -1,0 +1,1 @@
+component c_user_password_show model=model goto_users_password_success='goto_users_password_success' goto_users_password_fail='goto_users_password_fail'

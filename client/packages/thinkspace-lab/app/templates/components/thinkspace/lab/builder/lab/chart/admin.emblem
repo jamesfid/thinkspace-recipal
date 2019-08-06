@@ -1,0 +1,6 @@
+if is_active
+  component admin.c_chart_show model=model
+
+else
+  if show_link
+    a click='select' #{t 'builder.lab.admin.link'} #{model.title}

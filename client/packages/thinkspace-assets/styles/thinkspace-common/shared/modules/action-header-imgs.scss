@@ -1,0 +1,17 @@
+.action-header-img {
+  background-size:  100%;
+  width:            235px;
+  height:           150px;
+  display:          inline-block;
+  margin:           0.25em;
+  .ts-cloning-img {
+    height: 100%;
+    background-image: url('/assets/images/action-header/cloning.png');
+    background-image: url('/assets/images/action-header/cloning.svg');
+  }
+  .ts-delete-case-img {
+    height: 100%;
+    background-image: url('/assets/images/action-header/delete-case.png');
+    background-image: url('/assets/images/action-header/delete-case.svg');
+  }
+}

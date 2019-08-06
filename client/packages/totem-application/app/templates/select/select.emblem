@@ -1,0 +1,8 @@
+= if view.show_empty_option
+  = view 'select/option' empty=true is_record=view.is_record_list class_names=view.option_class_names selected_items=view.selected_items disabled_items=view.disabled_items data_placeholder=view.no_select_option_text
+= if view.optgroup
+  = each group in view.groups
+    = view 'select/optgroup' optgroups=view.optgroups content=group is_record_list=view.is_record_list display_property=view.display_property selected_items=view.selected_items disabled_items=view.disabled_items data_placeholder=view.data_placeholder option_class_names=view.option_class_names
+= else
+  = each item in view.content
+    = view 'select/option' is_record=view.is_record_list content=item content_display_property=view.display_property class_names=view.option_class_names selected_items=view.selected_items disabled_items=view.disabled_items data_placeholder=view.data_placeholder

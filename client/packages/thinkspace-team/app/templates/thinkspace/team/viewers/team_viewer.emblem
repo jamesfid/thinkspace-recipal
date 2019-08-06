@@ -1,0 +1,9 @@
+span.team_viewers-team-team-wrapper
+
+  if view.is_team_assigned.content
+    i.team_viewers-team-team-action.team_viewers-team-team-remove.fa.fa-minus click='"remove_team" target=view' title='Remove team from peer review team'
+  else
+    i.team_viewers-team-team-action.team_viewers-team-team-add.fa.fa-plus click='"add_team" target=view' title='Add team to peer review team'
+
+  span.team_viewers-team-team-label
+    = team.title

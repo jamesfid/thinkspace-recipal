@@ -1,0 +1,11 @@
+if has_one
+  table
+    thead
+    tbody
+      tr: td= response.value
+else
+  table
+    thead
+    tbody
+      each response in responses
+        tr: td= response.value

@@ -1,0 +1,20 @@
+#toolbar-overlay {
+  @include transition(opacity 0.15s);
+  position:         fixed;
+  top:              0;
+  bottom:           0;
+  left:             $toolbar-width;
+  right:            0;
+  z-index:          4999;
+  background-color: white;
+
+  &.is-visible {
+    opacity: 0.75;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    display: none;
+  }
+
+}

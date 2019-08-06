@@ -1,0 +1,308 @@
+ .ts-ra_admin-reminder-interval {
+  .ts-ra_admin-message-title {margin: 0 0 0 2em;}
+   display:        inline-block;
+   vertical-align: top;
+ }
+
+ .ts-ra_admin-reminders {
+  .ts-ra_admin-message-title {margin: 0 0 0 2em;}
+   display:        inline-block;  
+   vertical-align: top;
+ }
+
+.ts-ra_admin-timer-buttons {
+  margin-left: 2em;
+}
+
+.ts-ra_admin-selected-send-errors {
+  margin-bottom: 1em;
+}
+
+.ts-ra_admin-team-title {
+  cursor: pointer;
+}
+
+.ts-ra_admin-due-at.error {
+  .ts-picker {
+    background-color: $ts-red-light;
+  }
+}
+
+.ts-ra_admin-message-error {
+  font-size:     .85em;
+  font-style:    italic;
+  color:         $ts-red-base;
+  &:last-of-type {margin-bottom: 1em;}
+}
+
+.ts-ra_admin-view-messages-content {
+  padding-top:      .3em;
+  padding-bottom:   1em;
+  background-color: $ts-red-light;
+}
+
+.ts-ra_admin-timers-content {
+  background-color: $ts-blue-light;
+  table {margin-bottom: .25em;}
+  th {background-color: $ts-blue-light;}
+  .ts-ra_admin-timer-about-to-fire {color: $ts-red-base;}
+}
+
+.ts-ra_admin-phase-states-content {
+  padding-bottom: 1em;
+  background-color: lightcyan;
+}
+
+.ts-ra_admin-message-content {
+  padding-bottom: 1em;
+  background-color: $ts-blue-light;
+}
+
+.ts-ra_admin-tracker-content {
+  padding-bottom:   1em;
+  background-color: lightgoldenrodyellow;
+  ul {
+    list-style: none;
+  }
+  .ts-ra_tracker-title {
+    margin-top:  1em;
+    font-weight: 500;
+  }
+  .ts-ra_tracker-username {
+    display:     inline-block;
+    font-weight: 400;
+  }
+  .ts-ra_tracker-time {
+    display:     inline-block;
+    font-size:   90%;
+    color:       $ts-blue-dark;
+    margin-left: 2em;
+    font-weight: 400;
+  }
+}
+
+.ts-ra_admin-select-users {
+  .ts-ra_admin-select-users-user {
+  }
+  .ts-ra_admin-select-users-team {
+    margin-left: 1em;
+    .ts-ra_admin-select-users-team-title {
+      font-size: 80%;
+      color:     $ts-blue-dark;
+    }
+    a {
+      font-size:   .75em;
+      font-style:  italic;
+      margin-left: .5em;
+    }
+  }
+}
+
+.ts-ra_admin-message-title {
+  font-weight: 500;
+  margin-top:  1em;
+  .ts-ra_admin-message-title-optional {
+    margin-left: 1em;
+    font-size:   .9em;
+    font-style:  italic;;
+  }
+  a {font-size: .85em;}
+}
+.ts-ra_admin-message-title-action {
+  margin-right: 1em;
+}
+
+
+//
+//
+//
+
+.ts-ra_admin-irat-to-trat-content {
+  padding-bottom: 1em;
+  background-color: $ts-orange-light;
+  .ts-ra_admin-manage-section {
+    margin-top: 2em;
+  }
+  .ts-ra_admin-manage-submit-time-due {
+    font-weight: 500;
+    .due-text {margin-right: 1em;}
+    a {margin-right: .3em;}
+  }
+  .ta-ra_admin-transition-error {
+    color: $ts-red-base;
+  }
+  .ts-ra_admin-after-radio-buttons {
+    margin-left: 1em;
+  }
+  .ts-ra-admin-after-time {
+    margin-left: 2em;
+    font-style:  italic;
+    font-weight: bold;
+    color:       $ts-blue-base;
+  }
+}
+
+.ts-ra_admin-summary-content {
+  padding-bottom:   1em;
+  background-color: $ts-blue-light;
+  .ts-ra_admin-summary-toggle  {cursor: pointer;}
+  .ts-ra_admin-summary-section {margin-top: 1em;}
+  .ts-ra_dashbaord-summary-answer-counts {
+    .ts-ra_admin-correct-answer {padding-left: 0; padding-right: 0; width: 1.5em;}
+    .ts-ra_admin-correct-answer-icon {height: 1.5em; width: 1.5em;}
+  }
+  .ts-ra_admin-summary-table {
+    .ts-ra_admin-summary-title {
+      width: 200px;
+    }
+    .ts-ra_admin-summary-answer {
+      width: 150px;
+    }
+    .ts-ra_admin-summary-justification {
+      width: 250px;
+      .ts-ra_admin-summary-justification-content {
+        pre {
+          font-size:   .875em;
+          font-family: inherit;
+        }
+      }
+    }
+    .ts-ra_admin-summary-chat {
+       width: 250px;
+      .ts-ra_admin-summary-chat-header {
+        font-size: .875em;
+        font-style: italic;
+        color:     $ts-blue-dark;
+      }
+      .ts-ra_admin-summary-chat-message {
+        pre {
+          font-size:   .875em;
+          font-family: inherit;
+        }
+      }
+    }
+  }
+}
+
+.ts-ra_admin-teams-content {
+  background-color: $ts-green-light;
+  .ts-ra_admin-teams-toggle {cursor: pointer;}
+}
+
+
+.ts-ra_admin-main-menu {
+  .active {
+    color: $ts-blue-dark;
+    text-decoration: underline;
+  }
+}
+
+.title-region.ts_ra-title-region {
+  margin-bottom: 0;
+  min-height: auto;
+}
+
+.ts-ra_admin-menu {
+  ul {margin-top: 0;}
+  .active {
+    color: $ts-blue-dark;
+    text-decoration: underline;
+  }
+}
+
+.ts-ra_admin-title {
+  font-size: 1.25em;
+  font-weight: 500;
+}
+.ts-ra_admin-model-route {
+  float: right;
+  font-size: 1em;
+}
+
+//
+// Admin Team Members.
+//
+
+.ts-ra_admin-toggle-all-users {
+  font-weight: 500;
+  cursor:      pointer;
+  color:       $ts-blue-dark;
+  text-align:  center;
+  margin-left: 2em;
+}
+
+.ts-ra_admin-room-users-refresh  {width: 20px; height: 20px}
+
+.ts-ra_admin-room-users-collapsed {width: 20px; height: 20px}
+
+.ts-ra_admin-room-users {
+  border:     1px solid $ts-blue-dark;
+  margin-top: 1em;
+  .ts-ra_admin-room-users-header {
+    font-weight: 500;
+    cursor:      pointer;
+    color:       $ts-blue-dark;
+    .ts-ra_admin-room_users-number {
+      vertical-align: top;
+      font-size:      1.5em;
+      font-weight:    bold;
+    }
+    .ts-ra_admin-room_users-number-change {
+      color:              $ts-green-base;
+      animation-duration: 15s;
+      animation-name:     ts-ra_admin_color_number_of_users_change;
+    }
+  }
+}
+
+@keyframes ts-ra_admin_color_number_of_users_change { from {color: $ts-red-base;} }
+
+.ts-ra_admin-user-list {
+  list-style:    none;
+  margin-bottom: 0;
+  .ts-ra_admin-user-present {
+    height: 1.5em;
+  }
+  .ts-ra_admin-user-not-present {
+    height: 1.5em;
+  }
+}
+
+ol.ts-ra_admin-user-list {list-style: outside decimal;}
+
+.ts-ra_admin-room-user-changes {
+  .ts-ra_admin-room-user-join {
+    color:              green;
+    opacity:            0;
+    animation-duration: 15s;
+    animation-name:     ts-ra_admin_hide_user_changes;
+  }
+  .ts-ra_admin-room-user-left {
+    color:              red;
+    opacity:            0;
+    animation-duration: 15s;
+    animation-name:     ts-ra_admin_hide_user_changes;
+  }
+}
+
+@keyframes ts-ra_admin_hide_user_changes { from {opacity: 1;} }
+
+// Summary: Answer Counts
+.ts-ra_dashbaord-summary-answer-counts {
+  border: 1px solid $ts-blue-dark;
+  table {margin-bottom: 0;}
+  .max-count {
+    font-weight: bold;
+    color:       $ts-green-base;
+  }
+}
+
+// Summary: Team Answers
+.ts-ra_dashbaord-summary-team-answers {
+  border: 1px solid $ts-blue-dark;
+  table {margin-bottom: 0;}
+  .not-answered {
+    font-weight: 500;
+    color:       $ts-red-base;
+  }
+}

@@ -1,0 +1,11 @@
+if can_comment
+  div style='width: 960px; float: left;'
+    if is_loading
+      component c_loader
+    div id=file_container_id class={is_loading:is-hidden:is-visible :ts-artifact_file}
+      if show_file
+        unless is_loading
+          each discussion in sorted_discussions
+            component c_markup_discussion_markers_default model=discussion discussions=sorted_discussions
+else
+  div id=file_container_id

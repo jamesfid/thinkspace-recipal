@@ -1,0 +1,24 @@
+if title
+  .ts-ra_admin-message-title= title
+
+.ts-ra_admin-manage-select-teams-links
+  .ts-ra_admin-menu
+    ul.ts-action-bar
+      li.ts-action-bar_action
+        a click='select_all'   Select all users
+      li.ts-action-bar_action
+        a click='deselect_all' Remove all users
+      li.ts-action-bar_action
+        if show_all
+          a click='hide_all' Hide all teams
+        else
+          a click='show_all' Show all teams
+
+.ts-ra_admin-teams
+  each row in user_member_rows
+    .ts-grid_row
+      each user in row
+        .ts-grid_columns class=columns_class
+          component am.c_admin_shared_users_user user=user show_all=show_all selected_users=users select='select'
+  else
+    |No users assigned.

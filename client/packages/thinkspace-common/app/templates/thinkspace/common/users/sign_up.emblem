@@ -1,0 +1,1 @@
+component 'thinkspace/common/user/new' invitable=provided_invitable invitation_present=invitation_present user_email=email token=provided_token sign_in_transition='sign_in_transition'

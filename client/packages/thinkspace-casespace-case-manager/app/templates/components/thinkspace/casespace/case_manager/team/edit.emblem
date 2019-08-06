@@ -1,0 +1,38 @@
+component c_space_header model=model.authable
+.ts-grid_row
+  .small-7.ts-grid_columns.ts-grid_columns-thick  
+    .space-content_heading
+      h4.left Edit Team
+
+      .space-content_actions
+        a.btn.btn-link.btn-small click='destroy'
+          | Delete Team
+
+    .ts-forms_field-container
+      .ts-forms_field-label Name of team
+      = input value=title
+
+    .ts-forms_field-container
+      .ts-forms_field-label Team color
+      .ts-grid_row: .small-7
+        col-pick-input value=color class="ts-forms_input-small left"
+        .team-manager_teams-color-preview.left style=css_style
+
+    .ts-forms_field-container
+      h5 #{model.title} Members
+      p Check the students you would like to remove from #{model.title}
+      each user in model.users
+        component c_team_member_unassigned model=user selected_members=users_to_remove select_member='remove_user_from_team'
+
+    a.btn.btn-primary.btn-small.left click='save' Update Team
+
+    link-to r_team_sets_show model.team_set
+      a.btn.btn-default.btn-small.right Cancel
+
+
+  .small-5.ts-grid_columns.ts-grid_columns-thick
+    h5 Unassigned Students
+    p Check the students you would like to add to #{title}
+    if unassigned_users_loaded
+      each student in unassigned_users
+        component c_team_member_unassigned model=student selected_members=users_to_add select_member='add_user_to_team'

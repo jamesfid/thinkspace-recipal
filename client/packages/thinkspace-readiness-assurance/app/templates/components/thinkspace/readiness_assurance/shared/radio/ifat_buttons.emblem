@@ -1,0 +1,17 @@
+.ts-ra_radio-buttons-score
+  if has_selections
+    span.ts-ra_radio-buttons-score-message class={is_correct:ifat-correct:ifat-incorrect}
+      if is_correct
+        span.ifat-message Correct!
+      else
+        span.ifat-message
+          'Incorrect!
+          unless qm.readonly
+            |Please try again.
+  |Score: #{score}
+
+
+.ts-ra_radio-buttons class={qm.answers_disabled:ts-ra_radio-buttons-disabled}
+
+  each choice in qm.choices
+    component ra.c_shared_radio_ifat_button qm=qm choice=choice select='select'

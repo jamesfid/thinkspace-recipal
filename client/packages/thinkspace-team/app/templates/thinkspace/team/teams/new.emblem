@@ -1,0 +1,34 @@
+.ts-grid_row: .small-12.ts-grid_columns: .form
+  fieldset
+    legend Team Information
+    partial 'thinkspace/team/shared/validation_errors'
+
+    .ts-grid_row: .small-12.ts-grid_columns
+      h6 Title (required)
+      = input value=title
+
+    .ts-grid_row: .small-12.ts-grid_columns
+      h6 Team Category (required)
+      ul
+        each category in team_categories_sorted
+          li: label
+            = radio-button value=category.id checked=category_id
+            = category.title
+
+
+      / h6 Team Category (required)
+      / .ts-grid_row
+      /   each category in team_categories_sorted
+      /     .small-3.ts-grid_columns: label
+      /       = radio-button value=category.id checked=category_id
+      /       = category.title
+
+    .ts-grid_row: .small-12.ts-grid_columns
+      h6 Description
+      = textarea value=description rows='2'
+
+    .ts-grid_row
+      .small-2.ts-grid_columns: button.btn.btn-primary.btn-small disabled=view.save_disabled click='save' Save
+      .small-2.ts-grid_columns: button.btn.btn-primary.btn-small click='cancel' Cancel
+      .small-8.ts-grid_columns
+

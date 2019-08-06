@@ -1,0 +1,49 @@
+.ts-markup-manager_comment-wrapper class={is_deleting:is-deleting}
+  .ts-markup-manager_comment-col
+    if is_editing
+      h6 Edit Comment
+      component c_validated_input value=comment type='textarea'
+    else
+      .ts-markup-manager_comment-text
+        == comment
+      .ts-markup-manager_comment-category
+        if model.all_tags
+          each tag in model.all_tags
+            component c_tag_marker model=tag is_editing=is_editing remove_tag='remove_tag'
+            = delimit-string '' tag model.all_tags ' • '
+        else
+          | No category
+
+    if is_editing
+      .ts-markup-manager_comment-category-edit
+        h6 Categories
+        if model.all_tags
+          each tag in model.all_tags
+            .ts-markup-manager_comment-category
+              component c_tag_marker model=tag is_editing=is_editing remove_tag='remove_tag'
+              .tsi.tsi-micro.tsi-cross_grey.right click='remove_tag'
+        component c_common_dropdown text='Add Category' anchor_class='comment_dropdown-style' collection=dropdown_tags select_action='add_tag' action_receiver=this class='dropdown-wrapper'
+    
+    if requires_input
+      if is_editing
+        .btn-cluster.left-cluster
+          .btn.btn-primary.btn-small{action 'confirm_edit'}
+            | Update Comment
+          .btn.btn-default.btn-small{action 'cancel_edit'}
+            | Cancel
+      else
+        .ts-markup-manager_confirmation
+          p Are you sure you want to delete this comment?
+          .btn-cluster.left-cluster
+            .btn.btn-primary.btn-small{action 'confirm_delete'}
+              | Yes, delete comment
+            .btn.btn-default.btn-small{action 'cancel_delete'}
+              | Cancel
+  .ts-markup-manager_uses-col
+    = uses
+  .ts-markup-manager_actions-col
+    .ts-markup-manager_comment-actions
+      .action-wrapper
+        .tsi.tsi-micro.tsi-edit_black{action 'edit' bubbles=false} title='Edit comment'
+      .action-wrapper
+        .tsi.tsi-micro.tsi-trash-outline_black{action 'delete' bubbles=false} title='Delete comment'

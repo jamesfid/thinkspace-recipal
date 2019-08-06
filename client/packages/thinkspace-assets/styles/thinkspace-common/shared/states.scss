@@ -1,0 +1,21 @@
+
+
+.is-locked {
+  &:hover {
+    cursor: not-allowed;
+  }
+  a {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.btn.is-disabled {
+  @include button($ts-black-med, $ts-black-base, $ts-black-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  &.is-expert { color: $ts-green-base; }
+  &.is-primary { margin-bottom: 0em; }
+}

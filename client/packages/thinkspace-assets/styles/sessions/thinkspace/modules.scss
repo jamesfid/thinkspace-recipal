@@ -1,0 +1,200 @@
+body {
+  top:      0;
+  left:     0;
+  right:    0;
+  bottom:   0;
+  position: absolute;
+  background-color: white;
+}
+
+.session {
+  @include border-radius(3px);
+  @include clearfix;
+  @include grid-column(4, true, true);
+}
+
+.session_thinkspace {
+
+  margin-top:       10em;
+  z-index:          5;
+  @include border-radius($border-radius);
+
+  form {
+    margin-top:    1em;
+    margin-bottom: 2em;
+  }
+
+  label {
+    font-family:   'omnes-pro', sans-serif;
+    color:         $ts-black-dark;
+    font-weight:   500;
+    margin-bottom: 1em;
+
+    &.session_check-box {
+      margin-left: 0.5em;
+    }
+  }
+
+  input {
+    height:        3em;
+    border-radius: 3px;
+    border:        2px solid $ts-black-base;
+    margin-bottom: 2em;
+
+    &[type="checkbox"] {
+      height: auto;
+    }
+  }
+
+  .submit-button {
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+////////////////////////////////
+////////////////////////////////
+// commented out
+/*
+
+.session_thinkspace {
+  background-color: $content-background-color;
+  margin-top: 10em;
+  //background-color: $ts-blue-med;
+  z-index:          5;
+  @include border-radius($border-radius);
+
+
+  .header-row { 
+    background-color: $ts-blue-base;
+    margin-bottom:    1em;
+    @include border-top-left-radius($border-radius);
+    @include border-top-right-radius($border-radius);
+  }
+
+  .panel {
+    padding: 0.25em;
+    .panel-list { list-style-type: none; }
+  }
+
+  label {
+    font-family: 'omnes-pro', sans-serif;
+    color: $ts-black-dark;
+    font-weight: 500;
+    margin-bottom: 1em;
+
+    &.session_check-box {
+      margin-left: 0.5em;
+    }
+  }
+
+  h1, h2, h3 {
+    font-family: 'omnes-pro', sans-serif;
+    color:       white;
+  }
+
+  h1, h2, h3 {
+    font-weight:   700;
+    margin-top:    0.25em;
+    margin-bottom: 0.25em;
+  }
+
+  input {
+    height: 3em;
+    border-radius: 3px;
+    border: 2px solid $ts-black-base;
+
+    &[type="checkbox"] {
+      height: auto;
+    }
+  }
+
+  .session_sign-in {
+    //background-color: $ts-blue-base;
+    font-family:      'omnes-pro', sans-serif;
+    margin-top: 2em;
+
+    &:hover {
+      background-color: darken($ts-blue-base, 5%) !important; 
+    }
+  }
+
+  .devise-link {
+    color: $ts-blue-med;
+    &:hover { color: $ts-blue-base;}
+  }
+}
+
+
+.thinkspace_thin {
+  font-weight: 300;
+}
+
+.sign-up-header.thinkspace {
+
+}
+
+.callout {
+  margin-bottom: 2em;
+  font-family: 'omnes-pro', sans-serif;
+
+  .callout_bubble {
+    display: inline-block;
+    background-color: white;
+    border-radius: 80px;
+    border: 4px solid $ts-blue-base;
+    padding: 1em;
+    position: absolute;
+    top: -16px;
+
+    .callout_img {
+      background-image: url(image-path("helmet-small.png"));
+      background-size: 100%;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .callout_content {
+    background-color: $ts-blue-med;
+    padding: 0.5em 2em 0.5em 5em;
+    margin-left: 4em;
+    color: white;
+    border-radius: 3px;
+    .callout_content-header {
+      font-family: 'omnes-pro', sans-serif;
+      font-weight: 600;
+      color: white;
+      margin-top: 0.5em;
+    }
+    .callout_content-text {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &.callout-success {
+    .callout_bubble {
+      border-color: $ts-green-dark;
+    }
+    .callout_content {
+      background-color: $ts-green-med;
+    }
+  }
+
+  &.callout-failure {
+    .callout_bubble {
+      border-color: $ts-red-dark;
+    }
+    .callout_content {
+      background-color: $ts-red-med;
+    }
+  }
+}
+*/

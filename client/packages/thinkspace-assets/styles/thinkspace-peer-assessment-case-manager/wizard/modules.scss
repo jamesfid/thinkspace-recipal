@@ -1,0 +1,50 @@
+.thinkspace-tbl-pa_quantitative-type-setting-container {
+  padding-top: $content-padding;
+  margin-left: 4.5em;
+  margin-bottom: 4em;
+  border-bottom: 2px solid $ts-black-light;
+}
+
+.thinkspace-tbl-pa_qualitative-comment-container {
+  padding-top: $content-padding;
+  margin-left: 2.5em;
+  margin-bottom: 4em;
+}
+
+
+.thinkspace-tbl-pa_team-set-list {
+  list-style-type: none;
+  margin-left: 0;
+}
+
+.thinkspace-tbl-pa_team-set-list-item {
+  border: 2px solid $ts-black-med;
+  border-radius: $border-radius;
+  padding: .5em 1em;
+  margin-bottom: 1em;
+  cursor: pointer;
+
+  h6 { float: left;}
+
+  span { float: right;}
+
+  &:hover {
+    border-color: $ts-blue-base;
+    background-color: $ts-blue-light;
+  }
+
+  &:active {
+    border-color: $ts-blue-dark;
+    background-color: $ts-blue-light;
+  }
+
+  &.is-selected {
+    border-color: $ts-blue-base;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

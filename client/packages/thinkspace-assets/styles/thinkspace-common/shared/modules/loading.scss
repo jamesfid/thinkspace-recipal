@@ -1,0 +1,317 @@
+.loading-container {
+  position:relative;
+  width:240px;
+  height:29px;
+  margin-top:5px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.loading-bars {
+  position:absolute;
+  top:0;
+  background-color:#4F9CCF;
+  width:29px;
+  height:29px;
+  -moz-animation-name:bounce-loading;
+  -moz-animation-duration:1.3s;
+  -moz-animation-iteration-count:infinite;
+  -moz-animation-direction:linear;
+  -moz-transform:scale(.3);
+  -webkit-animation-name:bounce-loading;
+  -webkit-animation-duration:1.3s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:linear;
+  -webkit-transform:scale(.3);
+  animation-name:bounce-loading;
+  animation-duration:1.3s;
+  animation-iteration-count:infinite;
+  animation-direction:linear;
+  transform:scale(.3);
+}
+
+.loading-bar-1 {
+  left:0;
+  animation-delay:0.52s;
+  -moz-animation-delay:0.52s;
+  -webkit-animation-delay:0.52s;
+}
+
+.loading-bar-2 {
+  left:30px;
+  animation-delay:0.65s;
+  -moz-animation-delay:0.65s;
+  -webkit-animation-delay:0.65s;
+}
+
+.loading-bar-3 {
+  left:60px;
+  animation-delay:0.78s;
+  -moz-animation-delay:0.78s;
+  -webkit-animation-delay:0.78s;
+}
+
+.loading-bar-4 {
+  left:90px;
+  animation-delay:0.91s;
+  -moz-animation-delay:0.91s;
+  -webkit-animation-delay:0.91s;
+}
+
+.loading-bar-5 {
+  left:120px;
+  animation-delay:1.04s;
+  -moz-animation-delay:1.04s;
+  -webkit-animation-delay:1.04s;
+}
+
+.loading-bar-6 {
+  left:150px;
+  animation-delay:1.17s;
+  -moz-animation-delay:1.17s;
+  -webkit-animation-delay:1.17s;
+}
+
+.loading-bar-7 {
+  left:180px;
+  animation-delay:1.3s;
+  -moz-animation-delay:1.3s;
+  -webkit-animation-delay:1.3s;
+}
+
+.loading-bar-8 {
+  left:210px;
+  animation-delay:1.43s;
+  -moz-animation-delay:1.43s;
+  -webkit-animation-delay:1.43s;
+}
+
+@keyframes bounce-loading {
+  0% {
+    transform:scale(1);
+    background-color:#4F9CCF;
+  }
+
+  100% {
+    transform:scale(.3);
+    background-color:#E3F6FF;
+  }
+}
+
+@-moz-keyframes bounce-loading {
+  0% {
+    -moz-transform:scale(1);
+    background-color:#4F9CCF;
+  }
+
+  100% {
+    -moz-transform:scale(.3);
+    background-color:#E3F6FF;
+  }
+}
+
+@-webkit-keyframes bounce-loading {
+  0% {
+    -webkit-transform:scale(1);
+    background-color:#4F9CCF;
+  }
+
+  100% {
+    -webkit-transform:scale(.3);
+    background-color:#E3F6FF;
+  }
+}
+
+.thinkspace-common_loading {
+  position:         absolute;
+  top:              0;
+  left:             0;
+  right:            0;
+  bottom:           0;
+
+  .thinkspace-common_loading-branding {
+    color:      white;
+    font-size:  120px;
+    text-align: center;
+
+    .thinkspace-common_loading-branding-think {font-weight: 900;}
+
+  }
+
+  .thinkspace-common_loading-content {
+
+    position:   absolute;
+    top:        25%;
+    transform:  translateY(-25%);
+    width:      100%;
+    text-align: center;
+
+    .thinkspace-common_loading-ship {
+
+      background-image: url('/assets/images/loading-ship.png');
+      background-size:  100%;
+      width:            267px;
+      height:           132px;
+      display:          inline-block;
+      margin:           0.25em;
+    }
+
+    .thinkspace-common_loading-header { text-align: center; font-weight: $ts-heavy;}
+    .thinkspace-common_loading-message { text-align: center; }
+  }
+}
+
+.thinkspace-common_loading-small {
+  .thinkspace-common_loading-content {
+    width:      100%;
+    text-align: center;
+
+    .thinkspace-common_loading-ship {
+
+      background-image: url('/assets/images/loading-ship.png');
+      background-size:  100%;
+      width:            267px;
+      height:           132px;
+      display:          inline-block;
+      margin:           0.25em;
+    }
+
+    .thinkspace-common_loading-header { text-align: center; }
+    .thinkspace-common_loading-message { text-align: center; }
+  }
+}
+
+
+// Loader animation
+$loop:        1.5s;
+$size:        200px;
+$static_size: 50%;
+$ball_size:   25px;
+$ball_scale:  .5;
+
+.ts-loader { 
+  .spinner {
+    margin: 0; 
+  } 
+}
+
+.ts-loader.ts-loader_center {
+  .spinner {
+    display: block;
+    margin:  0 auto;
+  }
+}
+
+.spinner {
+  width:    $size;
+  height:   $size;
+  margin:   50px auto;
+  position: relative;
+}
+
+.ball-1 {
+  height:    $static_size;
+  width:     $static_size;
+  left:      50%;
+  top:       50%;
+  position:  absolute;
+  z-index:   1;
+  animation: shrink 3*$loop infinite linear;
+}
+
+.ball-1:before {
+  content:       '';
+  background:    $ts-blue-base;
+  border-radius: 50%;
+  height:        100%;
+  width:         100%;
+  position:      absolute;
+  top:           -50%;
+  left:          -50%;
+}
+
+@mixin electron {
+  position:      absolute;
+  /* background: rgba(0,0,255,.5); */
+  width:         100%;
+  height:        100%;
+  z-index:       0;
+  
+  &:before {
+    content:       '';  
+    height:        $ball_size;
+    width:         $ball_size;
+    border-radius: 50%;
+    background:    #333;
+    top:           0;
+    left:          0;
+    margin:        0 auto;
+    position:      absolute;
+  }
+}
+
+.ball-2,
+.ball-3,
+.ball-4 {
+  @include electron;
+}
+
+.ball-2 { &:before { background: $ts-red-base; } }
+.ball-3 { &:before { background: $ts-orange-base; } }
+.ball-4 { &:before { background: $ts-purple-base; } }
+
+.ball-2 {
+  animation: zindex $loop ($loop/2) infinite steps(2, end);
+}
+
+$delay_3: -($loop / 3 * 2);
+
+.ball-3 {
+  transform: rotate(120deg);  
+  animation: zindex $loop ($delay_3 + ($loop/ 2)) infinite steps(2, end);
+}
+
+$delay_4: -($loop / 3);
+
+.ball-4 {
+  transform: rotate(240deg);   
+  animation: zindex $loop ($delay_4 + ($loop/ 2)) infinite steps(2, end);
+}
+
+.ball-2:before {
+  transform: rotate(0);
+  animation: position $loop infinite ease, size $loop -($loop / 4 * 3) infinite ease;
+}
+
+.ball-3:before {
+  animation: position $loop $delay_3 infinite ease, size $loop ($delay_3 / 4 * 3) infinite ease;
+}
+
+.ball-4:before {
+  animation: position $loop $delay_4 infinite ease, size $loop ($delay_4 / 4) infinite ease;
+}
+
+@keyframes position {
+  50% {
+    top: $size - $ball_size;
+    left: $size - $ball_size;
+  }
+}
+
+@keyframes size {
+  50% {
+    transform: scale($ball_scale, $ball_scale);
+  }
+}
+
+@keyframes zindex {
+  100% {
+    z-index: 10;
+  }
+}
+
+@keyframes shrink {
+  50% {
+    transform: scale(.9,.9)
+  }
+}

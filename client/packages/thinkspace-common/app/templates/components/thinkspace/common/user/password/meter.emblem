@@ -1,0 +1,5 @@
+.ts-password-meter
+  = if password
+    .ts-password-meter-bar
+      meter max="4" value=password_score
+    .ts-password-meter-text= password_score_text

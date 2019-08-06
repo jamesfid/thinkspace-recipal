@@ -1,0 +1,23 @@
+if confirm_visible
+  partial t_edit_confirm
+
+.ts-forms_inline-heading class={editor_loaded:is-visible:is-hidden confirm_visible:is-hidden:is-visible}
+  h4 Edit Content
+  .ts-forms_heading-actions
+    .html_submit.btn.btn-primary.btn-small click='next': |Update Content
+    .html_submit.btn.btn-default.btn-small click='cancel': |Cancel
+div.html_html-editor class={editor_loaded:is-visible:is-hidden confirm_visible:is-hidden:is-visible}
+
+  if has_errors
+    .error-message.dialogue.dialogue-error
+      = validation_message
+      ul
+        each message in error_messages
+          li: i.im.im-warning.im-error-base
+            |#{message.message} (line: #{message.line})
+
+  = textarea value=model.html_content class='html_html-edit-content'
+
+  / .ts-grid_row: .small-12.ts-grid_columns
+  /   .html_submit.btn.btn-primary.btn-small click='next': |Update Content
+  /   .html_submit.btn.btn-default.btn-small click='cancel': |Cancel

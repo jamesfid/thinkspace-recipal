@@ -1,0 +1,16 @@
+.tsi-hover-color {
+  &:hover {
+    cursor: pointer;
+    @include tsi-hover-color(assignments);
+    @include tsi-hover-color(phases);
+    @include tsi-hover-color(spaceship);
+    @include tsi-hover-color(spaceman);
+    @include tsi-hover-color(expand);
+    @include tsi-hover-color(hub);
+    @include tsi-hover-color(pages);
+    @include tsi-hover-color(activities);
+    @include tsi-hover-color(courses);
+    @include tsi-hover-color(collapse);
+    @include tsi-hover-color(gear);
+  }
+}

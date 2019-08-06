@@ -1,0 +1,15 @@
+.ts-forms_section-heading
+  h5 Qualitative
+
+.ts-forms_field-container
+  label.ts-checkbox click='toggle_has_individual_comments'
+    component c_checkbox checked=has_individual_comments disable_click=true
+    | Individual team member comments
+    .ts-radio_description
+      | Allow students to give each peer feedback.
+  if has_individual_comments
+    .thinkspace-tbl-pa_qualitative-comment-container
+      if has_qualitative_items
+        each item in model
+          component c_qualitative_item model=item assessment=assessment
+      a.btn.btn-default.btn-small click='add' + Add Comment

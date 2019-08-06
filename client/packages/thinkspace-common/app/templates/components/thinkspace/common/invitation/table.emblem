@@ -1,0 +1,11 @@
+thead
+  tr
+    th Email
+    th Role
+    th Sent
+    th Expires
+    th Resend
+    th Destroy
+tbody
+  each invitation in model
+    component c_invitation_row model=invitation

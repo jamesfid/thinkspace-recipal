@@ -1,0 +1,15 @@
+.sim-mountain_result-wrapper style=style click='parent_action'
+  .sim-mountain_result-divider
+    | #{start_temp}
+  .sim-mountain_result-divider
+    | #{start_humidity}
+  .sim-mountain_result-divider
+    | #{start_dew_point}
+  .sim-mountain_result-divider
+    | #{cloud_base}
+  .sim-mountain_result-divider
+    | #{final_temp}
+  .sim-mountain_result-divider
+    | #{final_humidity}
+  .sim-mountain_result-divider
+    | #{final_dew_point}

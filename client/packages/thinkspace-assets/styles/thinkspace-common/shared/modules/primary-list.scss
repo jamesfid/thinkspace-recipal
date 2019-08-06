@@ -1,0 +1,49 @@
+/////
+// primary-list
+/////
+
+.primary-list {
+  margin: 0;
+  list-style-type: none;
+
+  .primary-list_link {
+    @include highlight-transition-all;
+    @include border-radius($border-radius);
+    margin-bottom: 0.9375em;
+    padding:       0 0.9375em;
+    border:        2px solid $primary-list-border-color;
+    
+    .primary-list_link-item {
+      @include highlight-transition-all;
+      padding-top:    .9em;
+      padding-bottom: em-calc(10px);
+
+      &:first-of-type {
+        padding-top:    em-calc(10px);
+      }
+
+      .primary-list_link-item-title {
+        @include highlight-transition-all;
+        color:     $ts-blue-base;
+        word-wrap: break-word;
+      }
+
+      .primary-list_link-item-value { color: $ts-black-base; font-size: .875rem; font-weight: $ts-medium; }
+      .primary-list_link-item-value-ago { color: $ts-blue-dark; margin-left: .5em; }
+      .primary-list_link-item-heading { font-weight: $ts-bold; color: $ts-black-base; font-size: .75rem; }
+    }
+
+    &:hover {
+      border-color:     $primary-list-border-color-hover;
+      background-color: $ts-blue-light;
+
+      .primary-list_link-item {
+        color: $ts-black-dark;
+      }
+
+      .primary-list_link-item-title {
+        color: $ts-blue-dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.ts-markup-library
+  .title-region
+    .ts-grid_row
+      .small-12.ts-grid_columns
+        h1 Library
+    .ts-grid_row
+      .small-12.ts-grid_columns.ts-markup_sidepocket-instructions
+        p Use saved comments by clicking on them and then clicking a discussion.
+    .ts-grid_row
+      .small-12.ts-grid_columns
+        component c_dropdown collection=wrapped_library_tags select_action='select_tag' action_receiver=this text='Filter by Tag' class="btn-tiny btn-default left"
+        link-to r_libraries_edit model class="ts-markup_header-link"
+          | Manage Library
+
+
+  ul.ts-markup-library_list
+    if has_filtered_library_comments
+      if has_selected_library_tags
+        .ts-markup-library_tag-list
+          span Showing comments for tags:
+          each tag in selected_library_tags
+            .ts-markup-library_tag-item  
+              span #{tag}
+              .tsi.tsi-right.tsi-nano.tsi-cross_grey click="'deselect_tag' tag"
+      each comment in filtered_library_comments
+        component c_library_comment model=comment select='select' library=controller
+    else
+      if all_data_loaded
+        if has_selected_library_tags
+          .ts-markup-library_empty-container
+            h1 No comments with that tag
+            p No comments are found found for selected tag(s). Add some using the Library Manager.
+        else
+          .ts-markup-library_empty-container
+            h1 No comments in your library  
+            p Your library seems to be empty. Add some using the Library Manager or click on the star on one of your comments. 
+      else
+        component c_loader

@@ -1,0 +1,1 @@
+require 'totem/seed/engine'

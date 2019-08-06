@@ -1,0 +1,9 @@
+.ts-builder
+  component c_builder_header
+
+  .row
+    component c_builder_toolbar
+    .ts-builder_content
+      outlet
+
+component c_messages

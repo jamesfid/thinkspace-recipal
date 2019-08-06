@@ -1,0 +1,45 @@
+- model: thinkspace/markup/comment
+  associations:
+    - belongs_to:  commenterable
+      polymorphic: true
+    - belongs_to:  thinkspace/common/user
+    - has_many:    thinkspace/markup/comments
+      foreign_key: parent_id
+      dependent:   :destroy
+    - belongs_to:  thinkspace/markup/comment
+      alias:       parent
+      foreign_key: parent_id
+    - belongs_to:  thinkspace/markup/discussion
+  serializers:
+    - attributes: [id, created_at, user_id, discussion_id, position, parent_id, comment, commenterable_id, commenterable_type, updated_at]
+    - scoped_attributes: [updateable]
+
+- model: thinkspace/markup/discussion
+  associations:
+    - belongs_to:  discussionable
+      polymorphic: true
+    - belongs_to:  creatorable
+      polymorphic: true
+    - belongs_to:  authable
+      polymorphic: true
+    - belongs_to:  ownerable
+      polymorphic: true
+    - belongs_to:  thinkspace/common/user
+    - has_many:    thinkspace/markup/comments
+      dependent:   :destroy
+  serializers:
+    - attributes: [id, created_at, value, user_id, ownerable_id, ownerable_type, authable_id, authable_type, creatorable_id, creatorable_type, discussionable_id, discussionable_type, updated_at]
+    - scoped_attributes: [updateable]
+
+- model: thinkspace/markup/library
+  associations:
+    - belongs_to: thinkspace/common/user
+    - has_many: thinkspace/markup/library_comments
+  serializers:
+    - attributes: [id, user_id, all_tags]
+
+- model: thinkspace/markup/library_comment
+  associations:
+    - belongs_to: thinkspace/markup/library
+  serializers:
+    - attributes: [id, comment, last_used, uses, all_tags, created_at]

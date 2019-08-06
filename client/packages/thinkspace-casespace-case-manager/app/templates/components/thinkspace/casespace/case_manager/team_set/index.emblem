@@ -1,0 +1,71 @@
+component c_space_header model=model
+
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick
+
+  .space-content_heading-small
+    h5 Team Manager
+    .space-content_actions
+      component c_file_upload form_action=import_form_action btn_text=import_btn_text loading_text=import_loading_text api_params=import_params modal_template=c_file_upload_modal close_on_success=false class='space-content_action'
+      link-to r_team_sets_new
+        a.btn.btn-primary.btn-small
+          .tsi.tsi-left.icon-small.tsi-add-inverse.left
+          span Create Team Set
+
+  .space-content_heading
+    h4 Team Sets
+    p Keep your teams organized within sets.
+
+  .team-manager_team-section-container
+    h5 Unlocked Team Sets
+    p Teams sets that are editable. 
+    
+  if model.unlocked_team_sets
+    ul.primary-list
+      each team_set in model.unlocked_team_sets
+        li.primary-list_link
+          link-to r_team_sets_show team_set
+            .ts-grid_row
+              .small-4.ts-grid_columns.primary-list_link-item 
+                h5.primary-list_link-item-title #{team_set.title}
+
+              .small-4.ts-grid_columns.primary-list_link-item
+                h6.primary-list_link-item-heading Total teams
+                if team_set.metadata.total_teams
+                  h5.primary-list_link-item-value #{team_set.total_teams_count}
+                else
+                  h5.primary-list_link-item-value None
+
+              .small-4.ts-grid_columns.primary-list_link-item
+                h6.primary-list_link-item-heading Unassigned students
+                if team_set.metadata.unassigned_users
+                  h5.primary-list_link-item-value #{team_set.unassigned_users_count}
+                else
+                  h5.primary-list_link-item-value None
+  else
+    h5 You presently do not have any team sets for this space.
+
+  if model.locked_team_sets
+    .team-manager_team-section-container
+      h5 Locked Team Sets
+      p Teams sets that are no longer editable (teams included).  Typically these are created when you make a Peer Evaluation case.
+    ul.primary-list
+      each team_set in model.locked_team_sets
+        li.primary-list_link
+          link-to r_team_sets_show team_set
+            .ts-grid_row
+              .small-4.ts-grid_columns.primary-list_link-item 
+                h5.primary-list_link-item-title #{team_set.title}
+
+              .small-4.ts-grid_columns.primary-list_link-item
+                h6.primary-list_link-item-heading Total teams
+                if team_set.metadata.total_teams
+                  h5.primary-list_link-item-value #{team_set.total_teams_count}
+                else
+                  h5.primary-list_link-item-value None
+
+              .small-4.ts-grid_columns.primary-list_link-item
+                h6.primary-list_link-item-heading Unassigned students
+                if team_set.metadata.unassigned_users
+                  h5.primary-list_link-item-value #{team_set.unassigned_users_count}
+                else
+                  h5.primary-list_link-item-value None

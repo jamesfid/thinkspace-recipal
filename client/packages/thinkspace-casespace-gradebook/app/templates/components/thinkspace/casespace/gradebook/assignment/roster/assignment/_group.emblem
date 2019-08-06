@@ -1,0 +1,23 @@
+table
+  thead
+    partial t_header
+
+  tbody
+    each grp1 in roster.content.group_values
+      tr
+        td.ts-grid_row-number= row-number this
+        td= grp1.label
+        each grp2 in grp1.content
+          td
+            unless grp2.multiple_scores
+              each grp3 in grp2.content
+                each grp4 in grp3.content
+                  component c_score group_values=grp4 decimals=decimals is_edit=edit_visible save_score='save_score'
+            else
+              |(
+              each grp3 in grp2.content
+                each grp4 in grp3.content
+                  component c_score group_values=grp4 decimals=decimals is_edit=edit_visible save_score='save_score'
+                  '
+              |)
+        td= format-decimals grp1.total decimals

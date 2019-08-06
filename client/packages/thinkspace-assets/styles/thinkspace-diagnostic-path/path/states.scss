@@ -1,0 +1,16 @@
+.is-being-dropped-on {
+  border: dashed 2px $ts-black-base;
+}
+
+.is-being-dragged {
+  opacity: 0.5;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+
+

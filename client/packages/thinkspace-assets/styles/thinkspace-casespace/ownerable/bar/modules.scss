@@ -1,0 +1,198 @@
+$height: 55px;
+
+.ts-ownerable-bar {
+  background-color: $ts-black-base;
+  height:           60px;
+  line-height:      50px;
+  position:         fixed;
+  top:              60px;
+  z-index:          5000;
+
+  @include fluid-grid-row;
+  .ts-ownerable-bar_ownerable {
+    position:         relative;
+    display:          inline-block;
+    float:            left;
+    min-width:        300px;
+    margin-right:     $content-padding;
+    height:           $height;
+    background-color: $ts-black-base;
+    transition: background-color 0.5s ease;
+
+
+    .ts-ownerable-bar_ownerable-info {
+      padding-left: $content-padding;
+      padding-top:  .25em;
+      height:       100%;
+      color:        white;
+
+      >span {
+        font-size:      .875em;
+        letter-spacing: .5px;
+        font-weight:    $ts-medium;
+      }
+    }
+
+    .ts-ownerable-bar_ownerable-label {
+      font-size:      .75em;
+      display:        block;
+      margin-bottom:  0;
+      letter-spacing: .5px;
+    }
+
+    .ts-ownerable-bar_ownerable-name {
+      font-size:      1em;
+      font-weight:    $ts-bold;
+      margin-bottom:  0;
+      letter-spacing: .5px;
+    }
+
+    .ts-ownerable-bar_ownerable-icon {
+      position: absolute;
+      top:      20px;
+      right:    20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $ts-black-med;
+    }
+  }
+  .ts-ownerable-bar_actions {
+    height:        100%;
+  }
+
+  .ts-ownerable-bar_showcard {
+    padding:        2px $content-padding 0;
+    color:          white;
+    cursor:         pointer;
+    font-weight:    $ts-medium;
+    letter-spacing: .5px;
+    font-size:      .875em;
+    height:         55px;
+    transition:     background-color 0.5s ease;
+
+    &:hover {
+      background-color: white;
+      color: $ts-black-base;
+    }
+  }
+}
+
+// TODO: Move to a scorecard specific sheet?
+$ts-scorecard-padding: 1em;
+
+.ts-scorecard {
+  background-color: white;
+  border-bottom:    2px solid $ts-black-med;
+  padding:          0 $content-padding;
+  height:           60px;
+  line-height:      50px;
+  position:         fixed;
+  top:              120px;
+  z-index:          4999;
+
+  .ts-scorecard_flyout {
+    display:          block;
+    position:         absolute;
+    left:             0;
+    margin-top:       .65rem;
+    width:            400px;
+    background-color: white;
+    z-index:          5000;
+    box-shadow: 0px 3px 24px 0px rgba(238, 238, 238, 0.39);
+
+    >table {
+      margin-bottom: 0;
+      padding:       0;
+      border-radius: $border-radius;
+      border:        2px solid $ts-black-med;
+      font-size: 1rem;
+    }
+  }
+
+}
+
+.ts-scorecard_branding {
+  position: absolute;
+  right: $content-padding;
+}
+
+.ts-scorecard_actions {
+  margin-bottom: 0;
+  margin-left:   0;
+}
+
+.ts-scorecard .ts-scorecard_actions .ts-scorecard_action {
+  float: left;
+  position: relative;
+  display:  inline-block;
+  cursor: pointer;
+  padding: .25em $content-padding;
+
+  &:first-of-type {
+    padding-left: 0;
+
+      margin-top: -1px;
+    &:hover { 
+      background-color: transparent;}
+  }
+
+  &:hover {
+    background-color: $ts-black-light;
+  }
+
+  .ts-scorecard_action-title {
+    // padding: $ts-scorecard-padding;
+    display: block;
+    font-size: .875rem;
+    font-weight: $ts-medium;
+  }
+  .ts-scorecard_action-value {
+    font-size: 1.25rem;
+    font-weight: $ts-bold;
+    position: relative;
+
+  }
+
+  .ts-scorecard_action-value-icon {
+    position: absolute;
+    top: 7px;
+    right: 0;
+  }
+
+  .ts-validated-input {
+    display: inline-block;
+    margin-right: 1rem;
+
+    .ts-validated-input_input-errors {
+      color:            $ts-red-base;
+      background-color: transparent;
+      padding:          0;
+      margin:           .25rem 0 0;
+    }
+  }
+
+  .ts-validated-input_input {
+    display:          inline-block;
+    width:            16px;
+    margin-bottom:    0;
+    padding:          0 6px;
+    border-radius:    0;
+    border-top:       none;
+    border-left:      none;
+    border-right:     none;
+    font-size:        1.25rem;
+    font-weight:      500;
+    background-color: transparent;
+
+    &:focus {
+      background-color: transparent;
+    }
+
+    .btn {
+      display: inline-block;
+    }
+  }
+
+}

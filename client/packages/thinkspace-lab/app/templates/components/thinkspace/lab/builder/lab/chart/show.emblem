@@ -1,0 +1,26 @@
+if all_data_loaded
+  .ts-forms_field-container-overlay-content
+
+    if admin.has_action_overlay
+      component admin.c_action_overlay
+
+    .lab_category-results-wrapper class={admin.has_action_overlay:hide}
+      .ts-wizard_row style='margin-top: -1.5em;': .ts-grid_columns.small-12
+
+        .ts-wizard_row: .ts-grid_columns.small-12
+          a.btn.btn-primary.btn-small.right click='category_new'
+            i.fa.fa-plus
+            = t 'builder.lab.admin.new_category'
+
+        .ts-wizard_row: .ts-grid_columns.small-12
+          ul.ts-lab_admin-sortable-categories
+            each category in sorted_categories
+              component admin.c_category_select model=category
+
+        hr.ts-lab_admin-chart-categories-bottom-sep
+
+        .ts-wizard_row: .ts-grid_columns.small-12
+          each category in categories
+            component admin.c_category_show model=category
+else
+  component c_loader

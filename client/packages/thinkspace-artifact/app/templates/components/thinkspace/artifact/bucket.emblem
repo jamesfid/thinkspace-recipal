@@ -1,0 +1,15 @@
+.small-12.ts-grid_columns.ts-grid_columns-thick
+  if model.has_instructions
+    .dialogue.dialogue-instruct: h5 {{{model.instructions}}}
+
+  if model.files
+    h6 Uploaded Files 
+    ul.primary-list
+      each file in model.files
+        component c_bucket_file model=file
+  else
+    .ts-artifact_empty-wrapper
+      img.ts-artifact_empty-img src='/assets/images/ts-icons/phase-actions/artifact_upload_upload-file.svg' alt="Upload File" title="Upload File"
+      h5 No files uploaded yet
+      p Upload a PDF to the phase before moving on to the next phase. 
+      component c_bucket_upload model=model

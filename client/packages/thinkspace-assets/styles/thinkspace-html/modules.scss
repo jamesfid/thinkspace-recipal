@@ -1,0 +1,50 @@
+.html_content { 
+  position:   relative;
+  min-height: 2em;
+
+  // Gets rid of the current HTML (to remove scroll bar and clutter) when editing.
+  &.is-content-hidden {
+    .html_content { display: none; }
+    .html_admin { bottom: 0; left: 0; }
+  }
+
+  .columns:first-of-type { padding: 0; }
+
+  // Has the action buttons, positioned absolute to not take up height.
+  // Edit-toggle reveals when html_content is hovered.
+  .html_admin {
+    position:         relative;
+    top:              0;
+    right:            0;
+    z-index:          5001;
+
+    .html_edit-toggle {
+      position: absolute;
+      right:    0;
+      top:      15px;
+      display:  none;
+    }
+  }
+
+  .html_submit {margin-right: 1em;}
+
+  // When a HTML tool is hovered, display the edit button.
+  &:hover {
+    .html_edit-toggle { display: block; }
+  }
+
+}
+
+// Add top margin top CKEditor to make it look a bit nicer.
+.html_html-editor { 
+  margin-top: 1.9em; 
+  margin-bottom: 2em;
+}
+
+table.html_confirm-table {
+  .delete {color: red}
+}
+
+.html_confirm-save {
+  margin-bottom: 2em;
+}

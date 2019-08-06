@@ -1,0 +1,17 @@
+each item in model
+  component c_quantitative_item model=item assessment=assessment
+
+.ts-forms_field-container 
+  a.btn.btn-default.btn-small click='add' + Add Category
+
+.ts-forms_field-label Choose the range for your scale
+.ts_forms_inline-fields-container
+  .ts-forms_field-container
+    .ts-forms_field-label Minimum
+    = input class="ts-forms_input-small" value=points_min type='number' key-up='set_points_min'
+
+  .ts-forms_field-container
+    .ts-forms_field-label Maximum
+    = input class="ts-forms_input-small" value=points_max type='number' key-up='set_points_max'
+
+partial t_points_descriptive

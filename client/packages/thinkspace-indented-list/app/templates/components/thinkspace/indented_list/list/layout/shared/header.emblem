@@ -1,0 +1,4 @@
+.indented-list_heading
+  h4 #{list_title}
+
+  p Drag our observations on to the area to create our path.

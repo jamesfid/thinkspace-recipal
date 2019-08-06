@@ -1,0 +1,29 @@
+.ts-grid_row.team-manager_team-snapshot
+  .small-12
+    .team-manager_team-snapshot-header
+      .small-1.ts-grid_columns
+        .team-manager_teams-color-preview.is-small.is-left style=css_style
+      .small-9.ts-grid_columns
+        h6.left #{model.title}
+      .small-2.ts-grid_columns
+        unless model.is_locked
+          link-to r_teams_edit space model.team_set model
+            a.btn.btn-default.btn-tiny.right Edit
+    if has_users
+      .team-manager_team-member-list 
+          each user in model.users
+            component c_user_avatar model=user size='small'
+    .team-manager_team-snapshot-actions
+      if is_expanded
+        a click='toggle_expanded' Hide names
+      else
+        a click='toggle_expanded' Show names
+      if is_expanded
+        .team-manager_team-snapshot-expanded-list
+          each user in model.users
+            li
+              component c_user_avatar model=user size='small'
+              span #{user.full_name}
+        
+
+ 

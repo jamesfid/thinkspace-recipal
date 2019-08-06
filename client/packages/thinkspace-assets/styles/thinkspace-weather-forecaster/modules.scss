@@ -1,0 +1,204 @@
+//
+// Correct and incorrect forecast attempts
+//
+$weather_forecaster-correct-color:                 $ts-green-base;
+$weather_forecaster-incorrect-color:               #FF5050;
+$weather_forecaster-incorrect-input-message-color: #FF0000;
+
+.thinkspace-weather-forecaster_assessment-item-checkbox, .thinkspace-weather-forecaster_assessment-item-radio {
+  &.correct {
+    .thinkspace-weather-forecaster_assessment-item-checkbox-label, .thinkspace-weather-forecaster_assessment-item-radio-label
+      {color: $weather_forecaster-correct-color; font-weight: bold; border: 2px solid;}
+  }
+  &.incorrect {
+    .thinkspace-weather-forecaster_assessment-item-checkbox-label,.thinkspace-weather-forecaster_assessment-item-radio-label
+      {color: $weather_forecaster-incorrect-color; font-weight: bold; text-decoration: line-through;}
+  }
+}
+
+.thinkspace-weather-forecaster_assessment-item-input-label {
+  &.correct   {color: $weather_forecaster-correct-color; font-weight: bold;}
+  &.incorrect {color: $weather_forecaster-incorrect-input-message-color;}
+}
+
+.thinkspace-weather-forecaster_assessment-item-label {
+  margin-bottom: .875em;
+  padding-top: 1em;
+  font-weight:   $ts-medium;
+  &.correct   {color: $weather_forecaster-correct-color; font-weight: $ts-bold;}
+  &.incorrect {color: $weather_forecaster-incorrect-color; font-weight: $ts-bold;}
+}
+
+//
+// Main
+//
+.thinkspace-weather-forecaster_assessment-title {
+  color:     $ts-blue-dark;
+  margin:    .5em;
+  font-size: 1.5em;
+}
+
+.thinkspace-weather-forecaster_assessment-station {
+  font-size: 1em;
+  padding-top: 1em;
+
+  span { font-weight: $ts-bold; }
+}
+
+.thinkspace-weather-forecaster_assessment-header {
+  .thinkspace-weather-forecaster_assessment-header-item {
+    cursor:       pointer;
+    color:        $ts-black-med;
+    margin-right: 2em;
+    font-weight:  500;
+    font-size:    1.125rem;
+
+    &:hover { color: $ts-blue-base; }
+
+    &.current {
+      color: $ts-black-dark;
+      border-bottom: 2px solid $ts-blue-base;
+    }
+  }
+}
+
+.thinkspace-weather-forecaster_assessment-forecast-attempts-header, .thinkspace-weather-forecaster_assessment-forecast-top-forecasts-header {
+  font-size:     1rem;
+  margin-top:    1em;
+  margin-bottom: 2em;
+}
+
+.thinkspace-weather-forecaster_assessment-forecast-attempts {
+  tr {
+    cursor: pointer;
+    &:hover {
+      background-color: $ts-blue-light;
+      td {color: $ts-blue-base;}
+    }
+    .status {
+      .tsi {display: inline-table;}
+      i.completed {vertical-align: top;}
+    }
+    &:last-of-type {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+  tr.selected {
+    // td {border-top: 2px solid $ts-blue-base; border-bottom: 2px solid $ts-blue-base;}
+    // td:first-child {border-left:  2px solid $ts-blue-base;}
+    // td:last-child  {border-right: 2px solid $ts-blue-base;}
+  }
+}
+
+
+.thinkspace-weather-forecaster_assessment-items {
+
+  hr {margin-left: -1em;}
+
+  .thinkspace-weather-forecaster_assessment-item-header {
+    h4 {font-weight: bold; font-style: italic;}
+  }
+
+  .thinkspace-weather-forecaster_assessment-item-help-tip {
+    display: inline-block;
+    color:     #808080;
+    font-size: 85%;
+    line-height: 1em;
+    cursor:    pointer;
+    margin-bottom: 1em;
+    color: $ts-black-base;
+    .tsi-info { 
+      float: left; 
+      height: 16px; 
+      width: 16px;
+      margin-right: .5em;
+    }
+    span {
+      float: left;
+      font-weight: $ts-medium;
+    }
+
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+
+  .thinkspace-weather-forecaster_assessment-item-response {
+    input {
+      width:  auto;
+      height: auto;
+    }
+
+    .thinkspace-weather-forecaster_error {
+      input, textarea {
+        background: $ts-red-light;
+      }
+      span.thinkspace-weather-forecaster_error-message {
+        font-weight:      normal;
+        font-size:        em-calc(12px);
+        background-color: $ts-red-med;
+        display:          block;
+        padding:          0.25em 0.5em;
+      }
+    }
+
+    .thinkspace-weather-forecaster_assessment-item-input.view_only {
+      input {cursor: not-allowed;}
+    }
+
+    .thinkspace-weather-forecaster_assessment-item-checkbox.view_only, .thinkspace-weather-forecaster_assessment-item-radio.view_only {
+      color:  #808080;
+      cursor: not-allowed;
+    }
+
+    .thinkspace-weather-forecaster_assessment-item-checkbox, .thinkspace-weather-forecaster_assessment-item-radio {
+      cursor: pointer;
+      padding: .25em 0;
+      &:hover {
+        background-color: $ts-blue-light;
+      }
+
+      .thinkspace-weather-forecaster_assessment-item-checkbox-status, .thinkspace-weather-forecaster_assessment-item-radio-status {
+        display:      inline-block;
+        margin-right: 1em;
+      }
+      .thinkspace-weather-forecaster_assessment-item-checkbox-label, .thinkspace-weather-forecaster_assessment-item-radio-label {
+        vertical-align: top;
+        display:        inline-block;
+      }
+    }
+
+  }
+
+}
+
+.tsi {
+
+  &.tsi-weather-forecaster-checked-item {
+    background-image: image-url('ts-icons/phase-current.png');
+    background-repeat: no-repeat;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+      background-image: image-url('ts-icons/phase-current_2x.png');
+    }
+  }
+
+  &.tsi-weather-forecaster-unchecked-item {
+    background-image: image-url('ts-icons/phase-incomplete.png');
+    background-repeat: no-repeat;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+      background-image: image-url('ts-icons/phase-incomplete_2x.png');
+    }
+  }
+
+}
+
+.thinkspace-weather-forecaster_help-tip-content {
+  padding-top: 2em;
+  margin-bottom: 4em;
+
+}

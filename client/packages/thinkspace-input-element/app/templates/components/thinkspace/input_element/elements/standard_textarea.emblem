@@ -1,0 +1,7 @@
+= textarea value=input_value style=tattrs.style rows=tattrs.ts-grid_rows cols=tattrs.cols readonly=tattrs.readonly disabled=tattrs.disabled
+
+if show_errors
+  each message in errors.input_value
+    span.thinkspace-ie_errors
+      i.im.im-warning.im-error-base
+      = message

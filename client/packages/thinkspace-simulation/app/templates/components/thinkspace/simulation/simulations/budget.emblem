@@ -1,0 +1,63 @@
+.sim_content
+  .sim_left-column
+    .sim_header-text
+      | Budget Simulation
+    canvas id='budget-sim-canvas' class={:sim-canvas-setup}
+    .sim_sub-header-text
+      | Simulation Controls
+    .sim_control-header-text
+      | Main
+    = if simulation_started
+      = if simulation_concluded
+        .btn.btn-small.budget-sim_btn{action 'reset_simulation'}
+          | Reset Simulation
+      = else
+        = if simulation_paused
+          .btn.btn-primary.btn-small.budget-sim_btn{action 'resume_simulation'}
+            | Resume Simulation
+        = else
+          .btn.btn-primary.btn-small.budget-sim_btn{action 'pause_simulation'}
+            | Pause Simulation
+    = else
+      .btn.btn-small.btn-primary.budget-sim_btn{action 'start_simulation'}
+        | Start Simulation
+    .btn.btn-small{action 'hour_forward'}
+      | 1 Hour Forward
+    hr
+    .sim_control-header-text
+      | Simulation Options
+    .sim_slider-header
+      | Faucet Inflow:
+      br
+      div style='width:60%;margin:auto;'
+        .sim_slider-description
+          | Smaller
+        .sim_slider-description-right
+          | Larger
+        input.ts-rangeslider id='inflow_slider' type='range' min=min_inflow max=max_inflow step=slider_step_size value=inflow disabled=inflow_controllable
+      .sim_slider-centered-text
+        .btn.btn-tiny.sim_slider-btn{action 'step_slider' false}
+          i.im.im-open-left
+        | #{inflow} L/hr
+        .btn.btn-tiny.sim_slider-btn{action 'step_slider' true}
+          i.im.im-open-right
+    hr
+    .sim_control-header-text
+      | Simulation Output
+    .sim_text
+      | Time: 
+      .sim_text-output
+        | #{hrs_elapsed} hrs
+    .sim_text
+      | Water Level: 
+      .sim_text-output
+        | #{water_level} L
+    .sim_text
+      | Drain:
+      .sim_text-output
+        | 1 L/hr
+  .sim_right-column
+    .sim_sub-header-text
+        | Plot Graphs
+    .sim_chart id='chart-column1'
+    .sim_chart id='chart-column2'

@@ -1,0 +1,12 @@
+.ts-wizard-title-region: .ts-wizard-title-region_row
+  .small-3.ts-grid_columns.ts-grid_columns-thick
+    h1 Build Mode
+
+  .ts-wizard-title-region_columns: h1
+    | #{model.space.title} |  
+    span.emphasis  #{wizard_manager.page_title}
+  .small-3.ts-grid_columns.ts-grid_columns-thick
+    a.btn.btn-default.btn-small.right click='exit' Exit
+
+if c_wizard
+  component c_wizard model=model space_id=space_id step=step

@@ -1,0 +1,34 @@
+.ts-markup_sidepocket-comment-container
+  .ts-markup_sidepocket-comment-author-info
+    / .ts-markup_sidepocket-comment-avatar = model.commenterable.initials
+    .ts-markup_sidepocket-comment-author = model.commenterable.full_name
+    .ts-markup_sidepocket_comment-actions
+      = if can_update
+        .tsi.tsi-right.tsi-nano.tsi-bookmark_grey.right{action 'add_to_library' bubbles=false} title='Add to library'
+        /.tsi.tsi-right.tsi-nano.tsi-trash-outline_grey.right{action 'remove' bubbles=false} title='Delete comment'
+        component c_confirmation_modal title='' subtitle='Are you sure you want to delete this comment?' description='This and all sub-comments will be deleted.' modal_reveal_icon_class_names='tsi tsi-right tsi-nano tsi-trash-outline_grey right' confirm_text='Yes, Delete' confirm='remove'
+        .tsi.tsi-right.tsi-nano.tsi-edit_grey.right{action 'edit' bubbles=false} title='Edit comment'
+  .ts-markup_sidepocket-comment-content
+    .ts-markup_sidepocket-comment-value
+      = if is_editing
+        = textarea value=comment_text
+        .btn-cluster.left-cluster 
+          .btn.btn-primary.btn-tiny{action 'save' bubbles=false}
+            | Save Comment
+          .btn.btn-default.btn-tiny{action 'cancel' bubbles=false}
+            | Cancel
+      = else
+        | {{{model.comment}}}
+
+= unless is_editing        
+  = if is_overflowing
+    .ts-markup_reply-link{action 'toggle_expand' bubbles=false}
+      = if is_collapsed
+        | See full comment
+      = else
+        | See less
+=if has_children
+  ul.ts-markup_sidepocket-comment-replies
+    =each child in children
+      component c_markup_discussion_comment model=child discussion=discussion is_anonymous=is_anonymous 
+

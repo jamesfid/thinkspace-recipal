@@ -1,0 +1,1 @@
+component c_user_password_new model=model goto_users_password_confirmation='goto_users_password_confirmation'

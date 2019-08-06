@@ -1,0 +1,2 @@
+li.ts-lab_category class={is_active:active} click='"select" model'
+  = model.title

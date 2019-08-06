@@ -1,0 +1,354 @@
+/////
+// obs-list
+/////
+$column-margin:      .9375em;
+$note-context-color: $ts-green-base;
+
+.obs-list {
+  /////
+  // Title Region
+  /////
+  .title-region {
+    margin-bottom: 0;
+    border-left: 2px solid white;
+    min-height: 127px;
+
+  }
+
+  .obs-list_header-description {
+      margin-bottom: 1.25em;
+      font-size: .875em;
+      font-weight: 300;
+  }
+
+  .obs-list_header-actions {
+      margin-bottom: .65em;
+    
+  }
+
+  /////
+  // List Region
+  /////
+  .obs-list_list {
+    margin-left: 0;
+    margin-bottom:   0;
+    border-left: 2px solid white;
+    list-style-type: none;
+
+    .sortable-original-item {
+
+      opacity: 0.6;
+      border: 2px solid orchid;
+      border-radius: 3px;
+    }
+
+    .placeholder {
+
+      background-color: orchid;
+      border-radius: 3px;
+      height: 15px;
+      opacity: 0.7;
+
+      margin-right:     -$column-margin;
+      margin-left:      -$column-margin;
+      padding-right:    $column-margin;
+      padding-left:     $column-margin;
+    }
+
+    .obs-list_list-item:nth-child(even) {
+      background-color: white;
+      /* used to normalize the background of the odd li to extend to the edge of its container */
+    }
+
+    .obs-list_list-item:nth-child(odd) {
+      background-color: $ts-blue-light;
+    }
+
+    /////
+    // Notes
+    /////
+    .obs-list_notes {
+      margin-left:     0;
+      list-style-type: none;
+    }
+
+    .new-note-action {
+
+      margin-bottom: 0.5em;
+    }
+
+    .obs-list_note {
+      margin:           0 0 1em 0;
+      border:           2px solid $note-context-color;
+      border-radius:    5px;
+      background-color: $ts-green-light;
+      color:            $note-context-color;
+
+      .obs-list_note-value {
+        padding: 0.5em;
+        word-wrap: break-word;
+
+        textarea {
+          margin-top: 0.875em;
+          resize: none;
+        }
+        .btn {
+          float: left;
+          margin-bottom: 1em;
+          margin-right: 1em;
+        }
+
+      }
+
+      .obs-list_note-actions {
+        float: right;
+
+        .obs-list_note-action {
+          @include highlight-transition-background;
+          display:     inline-block;
+          background: $ts-green-base;
+          padding: 0 .35em;
+
+          i {
+            display: inline;
+            color:   white;
+          }
+
+          &:hover {
+            background: $ts-green-dark;
+          }
+
+          &:first-of-type {
+            @include border-bottom-left-radius($border-radius);
+          }
+        }
+      }
+    }
+
+    .obs-list_note-new {
+      .obs-list_new {
+        border-left: none;
+      }
+
+      textarea {
+        height: auto;
+        border-radius: 5px;
+        resize: none;
+      }
+      .btn {
+        float: left;
+        margin-bottom: 1em;
+        margin-right: 1em;
+      }
+    }
+  }
+
+  /////
+  // Note Actions 
+  /////
+  .obs-list_list-note-action-content{
+    position: relative;
+    display: inline;
+    margin-left: 0.25em;
+
+    .obs-list_list-note-btn {
+      @include highlight-transition-all;
+      @include border-radius($border-radius);
+      padding: .15em .35em;
+      background: $ts-blue-base;
+      color: white;
+
+      &:hover {
+        background: $ts-blue-dark;
+        border-color: $ts-blue-dark;
+      }
+    }
+
+    .obs-list_list-note-actions {
+      @include border-bottom-radius($border-radius);
+      position: absolute;
+      top: 23px;
+      left: 0;
+      z-index: 5000;
+      display: none;
+      margin-left: 0;
+      width: 100%;
+      border: 2px solid $ts-blue-base;
+      background: $ts-blue-light;
+      list-style-type: none;
+
+      .obs-list_list-note-action-item {
+        @include highlight-transition-background;
+        margin: 0;
+        padding:0 em-calc(3px);
+
+        &:hover {
+          background-color: $ts-blue-med;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+////// Everything below this must be at the root level (or nested under .obs-list_list-item.)
+////// If it is not, when jquery-sortable adds a  clone of a list-item to the 'body' it will render incorrectly due to the nestedness of the CSS.
+.obs-list_list-item {
+  //margin-right:  -$column-margin;
+  //margin-left:   -$column-margin;
+  padding-right:   $content-padding/2;
+  padding-left:    $content-padding/2;
+  list-style-type: none;
+  border:          2px solid $ts-black-med;
+  margin-top:      -2px;
+  font-size:       .875em;
+
+  // &:first-of-type {border-top: none;}
+}
+
+
+/////
+// List Items
+/////
+.obs-list_list-item-content {
+  &:hover {
+    @include cursor-grab;
+  }
+}
+
+.obs-list_list-item-title {
+
+  .obs-list_list-item-is-used { 
+    margin-right: .5em;
+    color: $ts-green-base;
+  }
+
+  .obs-list_list-item-category-icon {
+    i.history    {color: Orchid;}
+    i.data       {color: DeepPink;}
+    i.mechanism  {color: Green;}
+  }
+
+  .obs-list_list-item-user {
+    color: $ts-blue-base;
+    
+  }
+  .obs-list_list-item-date {
+    display: inline-block;
+    color: $ts-black-base;
+    font-size: .875em;
+    
+  }
+
+  .obs-list_list-item-phase {
+    .obs-list_list-item-phase-title {
+      color: $ts-black-base;
+      font-size: .875em;
+    }
+  }
+
+  .obs-list_list-item-actions {
+    float: right;
+    margin-top: .875em;
+    margin-left: .875em; 
+
+    .obs-list_list-item-action {
+      @include highlight-transition-all;
+      display:    inline;
+      padding:    .15em .35em;
+      background: $ts-blue-base;
+      color:      $ts-black-light;
+
+      .obs-list_list-item-note-count { margin-left: 0.5em; font-weight: 500; }
+
+      &.has-notes {
+        background: $ts-green-base;
+        &.is-expanded {
+          background-color: $ts-green-dark;
+        }
+      }
+
+      &.is-expanded {
+        background-color: $ts-blue-dark;
+      }
+
+      &:first-of-type {
+        @include border-top-left-radius($border-radius);
+        @include border-bottom-left-radius($border-radius);
+
+      }
+
+      &:last-of-type {
+        @include border-top-right-radius($border-radius);
+        @include border-bottom-right-radius($border-radius);
+      }
+
+      &.is-expanded {
+        &:hover {
+          background-color: $ts-blue-base;
+
+          &.has-notes {
+            background-color: $ts-green-base;
+          }
+        }
+      }
+
+      &:hover {
+        background-color: $ts-blue-dark;
+
+        &.has-notes {
+          background-color: $ts-green-dark;
+        }
+      }
+
+    }
+  }
+}
+
+.obs-list_edit {
+  textarea {
+    height: auto;
+    border-radius: 5px;
+    resize: none;
+  }
+  .btn {
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+}
+
+.obs-list_new {
+  padding-top: $content-padding;
+  border-left: 2px solid $ts-black-light;
+
+  textarea {
+    height: auto;
+    border-radius: 5px;
+    resize: none;
+  }
+  .btn {
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+}
+
+.obs-list_list-item-value {
+  //@include ellipsis;
+  overflow: hidden;
+  margin-bottom: .5em;
+  white-space: nowrap;
+
+  textarea {
+    resize: none;
+  }
+
+  &.is-expanded {
+    overflow:    visible;
+    white-space: normal;
+    word-wrap:   break-word;
+  }
+}

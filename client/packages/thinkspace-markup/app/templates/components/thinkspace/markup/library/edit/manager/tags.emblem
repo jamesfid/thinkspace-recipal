@@ -1,0 +1,30 @@
+.ts-markup-manager_categories
+  .ts-full-page_side-heading
+    h1 Categories
+    .btn-cluster.right-cluster
+      .btn.btn-link.btn-small{action 'add_category'}
+        | New Category
+        .tsi.tsi-left.icon-tiny.tsi-add.left
+  .ts-full-page_side-content
+    if is_adding_category
+      .ts-markup-manager_categories-new
+        h6 Category Name
+        component c_validated_input value=category_name
+        .btn-cluster.left-cluster
+          .btn.btn-primary.btn-small{action 'confirm_category_add'}
+            | Add Category
+          .btn.btn-default.btn-small{action 'cancel_category_add'}
+            | Cancel
+    .ts-markup-manager_categories-item-all
+      label.ts-checkbox 
+        component c_checkbox checked=all_selected disable_click=false
+        .ts-checkbox_label All
+        .ts-markup-manager_categories-item-counter
+          = all_tag_count.count
+    if sorted_tags
+      each tag in sorted_tags
+        component c_clickable_tag model=tag click_action='select_tag_action' tag_count=tag_count all_selected=all_selected
+        
+    else
+      | Comment categories can be used to organize your library. Create a new category to get started!
+

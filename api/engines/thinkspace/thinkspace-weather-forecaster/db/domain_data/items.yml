@@ -1,0 +1,349 @@
+---
+- id: 1
+  name: QUE_1006
+  title: Morning Temperature
+  score_var: TEMP_12
+  description: 
+  item_header: 
+  presentation: What will be the 12Z temperature (°F) tomorrow?
+  response_metadata:
+    type: input
+    attributes:
+      columns: '3'
+      prompt: 
+      value: ''
+      type: string
+    validations:
+      numericality:
+        only_integer: true
+        greater_than_or_equal_to: -50
+        less_than_or_equal_to: 150
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip:
+    html: "<div class='thinkspace-weather-forecaster_help-tip-content'>What does 12Z mean?</div>"
+  created_at: 2015-07-19 20:00:27.731493000 Z
+  updated_at: 2015-07-19 20:00:27.731493000 Z
+- id: 2
+  name: QUE_1009
+  title: Temperature Influences
+  score_var: CLOUD_18
+  description: 
+  item_header: 
+  presentation: Cloud cover to inhibit radiational cooling tonight will
+  response_metadata:
+    type: radio
+    choices:
+    - id: '1'
+      label: be significant
+      qid: QUE_1011_A1
+    - id: '2'
+      label: not be significant
+      qid: QUE_1012_A2
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.737951000 Z
+  updated_at: 2015-07-19 20:00:27.737951000 Z
+- id: 3
+  name: QUE_1013
+  title: Frontal Passage
+  score_var: FRONT_12
+  description: 
+  item_header: 
+  presentation: A frontal passage by 12Z tomorrow may also affect the temperature.
+    I predict there will have been the passage (within about 140 miles of the reporting
+    station)
+  response_metadata:
+    type: radio
+    choices:
+    - id: '1'
+      label: 'a warm front '
+      qid: QUE_1015_A1
+    - id: '2'
+      label: a cold front
+      qid: QUE_1016_A2
+    - id: '3'
+      label: an occluded front
+      qid: QUE_1017_A3
+    - id: '4'
+      label: a stationary front
+      qid: QUE_1018_A4
+    - id: '5'
+      label: no front
+      qid: QUE_1019_A5
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.743398000 Z
+  updated_at: 2015-07-19 20:00:27.743398000 Z
+- id: 4
+  name: QUE_1021
+  title: Advection at 12Z
+  score_var: ADVECT_12
+  description: 
+  item_header: 
+  presentation: Advection may also change temperature. I predict 12Z temperature change
+    will
+  response_metadata:
+    type: radio
+    choices:
+    - id: '1'
+      label: be affected by warm air advection.
+      qid: QUE_1023_A1
+    - id: '2'
+      label: be affected by cold air advection.
+      qid: QUE_1024_A2
+    - id: '3'
+      label: not be significantly affected by advection.
+      qid: QUE_1025_A3
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.748877000 Z
+  updated_at: 2015-07-19 20:00:27.748877000 Z
+- id: 5
+  name: QUE_1026
+  title: 18Z Temperature
+  score_var: TEMP_18
+  description: 
+  item_header: 
+  presentation: What will be the 18Z temperature (°F) tomorrow?
+  response_metadata:
+    type: input
+    attributes:
+      columns: '3'
+      prompt: 
+      value: ''
+      type: string
+    validations:
+      numericality:
+        only_integer: true
+        greater_than_or_equal_to: -50
+        less_than_or_equal_to: 150
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.754038000 Z
+  updated_at: 2015-07-19 20:00:27.754038000 Z
+- id: 6
+  name: QUE_1029
+  title: Cloudiness
+  score_var: CLOUD_18
+  description: 
+  item_header: 
+  presentation: For 18Z tomorrow, I predict cloudiness will
+  response_metadata:
+    type: radio
+    choices:
+    - id: '1'
+      label: hold down the daytime temperature.
+      qid: QUE_1031_A1
+    - id: '2'
+      label: not affect the daytime temperature.
+      qid: QUE_1031_A2
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.759017000 Z
+  updated_at: 2015-07-19 20:00:27.759017000 Z
+- id: 7
+  name: QUE_1032
+  title: Frontal Passage at 18Z
+  score_var: FRONT_18
+  description: 
+  item_header: 
+  presentation: A frontal passage by 18Z tomorrow may also affect the temperature.
+    I predict there will have been the passage of (within about 140 miles of the reporting
+    station)
+  response_metadata:
+    type: radio
+    choices:
+    - id: '1'
+      label: 'a warm front '
+      qid: QUE_1034_A1
+    - id: '2'
+      label: a cold front
+      qid: QUE_1035_A2
+    - id: '3'
+      label: an occluded front
+      qid: QUE_1036_A3
+    - id: '4'
+      label: a stationary front
+      qid: QUE_1037_A4
+    - id: '5'
+      label: no front
+      qid: QUE_1038_A5
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.764234000 Z
+  updated_at: 2015-07-19 20:00:27.764234000 Z
+- id: 8
+  name: QUE_1040
+  title: Advection at 18Z
+  score_var: ADVECT_18
+  description: 
+  item_header: 
+  presentation: Advection may also change temperature. I predict 18Z temperature change
+    will
+  response_metadata:
+    type: radio
+    choices:
+    - id: '1'
+      label: be affected by warm air advection.
+      qid: QUE_1042_A1
+    - id: '2'
+      label: be affected by cold air advection.
+      qid: QUE_1043_A2
+    - id: '3'
+      label: not be significantly affected by advection.
+      qid: QUE_1044_A3
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.769854000 Z
+  updated_at: 2015-07-19 20:00:27.769854000 Z
+- id: 9
+  name: QUE_1045
+  title: Wind Speed at 18Z knots
+  score_var: WSPD_18
+  description: 
+  item_header: 
+  presentation: Enter the expected wind speed at 18Z (knots)
+  response_metadata:
+    type: input
+    attributes:
+      columns: '3'
+      prompt: 
+      value: ''
+      type: string
+    validations:
+      numericality:
+        only_integer: true
+        greater_than_or_equal_to: -50
+        less_than_or_equal_to: 200
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.774977000 Z
+  updated_at: 2015-07-19 20:00:27.774977000 Z
+- id: 10
+  name: QUE_1048
+  title: Wind Direction at 18Z
+  score_var: WDIR_18
+  description: 
+  item_header: 
+  presentation: Select wind direction at 18Z
+  response_metadata:
+    type: radio
+    choices:
+    - id: N
+      label: N
+      qid: QUE_1050_A1
+      actual_id: '1'
+    - id: NE
+      label: NE
+      qid: QUE_1051_A2
+      actual_id: '2'
+    - id: E
+      label: E
+      qid: QUE_1052_A3
+      actual_id: '3'
+    - id: SE
+      label: SE
+      qid: QUE_1053_A4
+      actual_id: '4'
+    - id: S
+      label: S
+      qid: QUE_1054_A5
+      actual_id: '5'
+    - id: SW
+      label: SW
+      qid: QUE_1055_A6
+      actual_id: '6'
+    - id: W
+      label: W
+      qid: QUE_1056_A7
+      actual_id: '7'
+    - id: NW
+      label: NW
+      qid: QUE_1057_A8
+      actual_id: '8'
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.780509000 Z
+  updated_at: 2015-07-19 20:00:27.780509000 Z
+- id: 11
+  name: QUE_1058
+  title: Precipitation
+  score_var: PRECIP
+  description: 
+  item_header: 
+  presentation: Will there be precipitation between 12Z tomorrow and 12Z the next
+    day?
+  response_metadata:
+    type: radio
+    choices:
+    - id: '1'
+      label: 'Yes'
+      qid: QUE_1060_A1
+    - id: '2'
+      label: 'No'
+      qid: QUE_1061_A2
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.786951000 Z
+  updated_at: 2015-07-19 20:00:27.786951000 Z
+- id: 12
+  name: QUE_1062
+  title: Precipitation Influences
+  score_var: FAVOR_PRECIP
+  description: 
+  item_header: 
+  presentation: The following factors will favor precipitation between 12Z tomorrow
+    and 12Z the next day. <br/>Marking the box means YES. It is possible to have any
+    combination including all NOs.
+  response_metadata:
+    type: checkbox
+    choices:
+    - id: '1'
+      label: Moisture Supply
+      qid: QUE_1064_A1
+    - id: '2'
+      label: Frontal Position
+      qid: QUE_1066_A2
+    - id: '3'
+      label: Unstable Atmosphere
+      qid: QUE_1068_A3
+  processing:
+    response_qid: QUE_1003
+    incorrect: 1
+    correct: 3
+  help_tip: 
+  created_at: 2015-07-19 20:00:27.792399000 Z
+  updated_at: 2015-07-19 20:00:27.792399000 Z

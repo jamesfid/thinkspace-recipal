@@ -1,0 +1,108 @@
+.sim_content {
+  margin: 1.5em;
+  .sim_left-column {
+    @include grid-column(6, true, false);
+    display: inline-block;
+  }
+  .sim_right-column {
+    @include grid-column(6, true, false);
+    display: inline-block;
+    vertical-align: top;
+  }
+  .sim_sub-header-text {
+    font-size: 16px;
+    font-weight: 500;
+    margin: .5em 0em;
+  }
+
+  .sim_control-header-text {
+    font-size: 14px;
+    margin: .5em 0em;
+  }
+
+  .sim_slider-centered-text {
+    margin-bottom: 1em;
+    text-align:    center;
+    font-weight:    450;
+  }
+
+  .sim_header-text {
+    font-size: 20px;
+    font-weight: $ts-bold;
+    font-family: 'omnes-pro', sans-serif;
+    margin-bottom: .5em;
+
+
+    .sim_header-description {
+      font-weight: normal;
+      font-size: 14px;
+      font-family: 'omnes-pro', sans-serif;
+      margin: .5em 1em;
+      margin-left: 0;
+    }
+  }
+
+  .sim_text {
+    font-size: 14px;
+    .sim_text-output {
+      float: right;
+    }
+  }
+
+  .sim_slider-header {
+    font-size: 16px;
+    font-weight: 400;
+    .sim_slider-description {
+      font-size: 12px;
+      display: inline-block;
+      font-weight: 400;
+      margin-bottom: 1em;
+    }
+
+    .sim_slider-description-right {
+      font-size: 12px;
+      display: inline-block;
+      font-weight: 400;
+      float:right;
+      margin-bottom: 1em;
+    }
+  }
+
+  .sim_chart {
+    width: 525;
+    height: 400px;
+    //margin-left: 10%;
+  }
+
+  .sim_button {
+    position: relative;
+    display: inline-block;
+    //margin: .5em;
+    //width: 33%;
+    margin-right: .5em;
+  }
+
+  .sim_slider-btn {
+    padding-right: 0;
+
+    &:first-of-type {
+      margin-right: 1em;
+    }
+
+    &:last-of-type {
+      margin-left: 1em;
+    }
+  }
+}
+
+.sim-controls_left-col {
+  width: 50%;
+  display: inline-block;
+  padding-right: 1em;
+}
+
+.sim-controls_right-col {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}

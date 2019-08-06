@@ -1,0 +1,16 @@
+.ts-grid_row
+  .small-12.ts-grid_columns.ts-grid_columns-thin.obs-list_header-title
+    h5 Observations
+
+.ts-grid_row
+  .small-12.ts-grid_columns.ts-grid_columns-thin: .obs-list_header-description
+    |Observations help you keep track of findings from the content.
+
+unless has_path
+  unless is_view_only
+    .ts-grid_row
+      .small-12.ts-grid_columns.ts-grid_columns-thin: .obs-list_header-actions
+        if totem_scope.view_user_ids_blank
+          .btn.btn-primary.btn-small click='create_observation_start'
+            i.im.im-plus
+            |New Observation

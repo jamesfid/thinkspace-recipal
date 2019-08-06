@@ -1,0 +1,57 @@
+.borderless-table {
+  margin: 0;
+  padding-top: 2rem;
+}
+
+.borderless-table_header-row {
+  border-bottom: 2px solid $ts-black-light;
+  padding-bottom: .5rem;
+
+  h1 {
+    font-size:      .875rem;
+    font-weight:    $ts-heavy;
+    letter-spacing: .5px;
+    margin-bottom:  0;
+  }
+
+  .table_header-description {
+    font-size: .875rem;
+    margin-bottom: 0;
+  }
+}
+
+.table_action {
+  font-size: .875rem;
+  font-weight: $ts-medium;
+}
+
+.borderless-table_item-list {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+
+.borderless-table_item-row {
+  padding: 1rem 0;
+  border-bottom: 2px solid $ts-black-light;
+}
+
+.ts-picker .ts-picker_preview {
+  font-size: .875rem;
+}
+
+.table_emphasis {
+  font-weight: $ts-bold;
+}
+
+.table_secondary-action_label {
+  font-size:      .875rem;
+  font-weight:    $ts-bold;
+  letter-spacing: .5px;
+  color:          $ts-black-base;
+}
+
+.table_secondary-action_options {
+  color: $ts-black-med;
+  line-height: .875rem;
+}

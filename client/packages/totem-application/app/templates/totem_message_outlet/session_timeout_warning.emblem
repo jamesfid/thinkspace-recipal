@@ -1,0 +1,14 @@
+.totem_message_outlet-container
+
+  .totem_message_outlet-messages
+    each message in totem_outlet_messages
+      h4= message.message
+
+    .totem_model-time-remaining
+      if seconds_remaining_before_sign_out
+        ' Seconds remaining:
+        = seconds_remaining_before_sign_out
+
+  .totem_message_outlet-footer
+    button.btn.sign-out Sign out
+    button.btn Continue.......

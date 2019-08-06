@@ -1,0 +1,3 @@
+---
+classes:
+- source: engines/thinkspace-authorization/app/concerns/thinkspace/authorization/ability_files

@@ -1,0 +1,77 @@
+.team-manager_teams-color-preview {
+  margin-left: 1em;
+  height: 40px;
+  width: 40px;
+  border: 2px solid $ts-black-light;
+  border-radius: $border-radius;
+
+  &.is-small {
+    height: 20px;
+    width: 20px;
+  }
+
+  &.is-left {
+    float: left;
+    margin-right: 1em;
+    margin-left: 0;
+  }
+
+}
+
+.team-manager_team-section-container { margin-bottom: 2em; }
+
+.team-manager_team-snapshot {
+  padding: 0.9375em;
+  border: 2px solid $ts-black-med;
+  border-radius: $border-radius;
+}
+
+.team-manager_team-snapshot-header {
+  h6 { 
+    margin-top: 0;
+    margin-left: .5em;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.team-manager_team-snapshot-actions {
+  border-top: 2px solid $ts-black-light;
+  padding-top: .25em;
+
+  a {
+    font-size: .875em;
+    color: $ts-blue-base;
+
+    &:hover {
+      color: $ts-blue-dark;
+    }
+  }
+} 
+
+.team-manager_unassigned-student {
+  display:       block;
+  padding:       .25em 1em;
+  margin-bottom: .5em;
+  cursor:        pointer;
+
+  &:hover { color: $ts-blue-base; }
+  &:active { color: $ts-blue-dark; }
+  &.is-selected {
+    border: 2px solid $ts-blue-base;
+    border-radius: $border-radius;
+    color: $ts-blue-base;
+  }
+}
+
+.team-manager_team-member-list {
+  margin-bottom: .5em;
+}
+
+.team-manager_team-snapshot-expanded-list {
+  padding-top: 1em;
+}

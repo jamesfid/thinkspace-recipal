@@ -1,0 +1,51 @@
+prereq_configs: space
+
+variables:
+  - &CASE            Simulations
+  - &PHASE_RADIATION Radiation Simulation
+  - &PHASE_BUDGET    Budget Simulation
+  - &PHASE_MOUNTAIN  Mountain Simulation
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_RADIATION
+    assignment:    *CASE
+    template_name: one_column_html_and_simulation_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: thinkspace
+      simulation:
+        title: *PHASE_RADIATION
+        path:  radiation
+
+  - title: *PHASE_BUDGET
+    assignment:    *CASE
+    template_name: one_column_html_and_simulation_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: thinkspace
+      simulation:
+        title: *PHASE_BUDGET
+        path:  budget
+
+  - title: *PHASE_MOUNTAIN
+    assignment:    *CASE
+    template_name: one_column_html_and_simulation_submit
+    settings:
+      <<: *SUBMIT
+    sections:
+      html:
+        methods: thinkspace
+      simulation:
+        title: *PHASE_MOUNTAIN
+        path:  mountain

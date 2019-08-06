@@ -1,0 +1,4 @@
+if response_manager.updateable
+  .indented-list_new-item.gu-draggable
+    .indented_list-item
+      h6 Add New Mechanism

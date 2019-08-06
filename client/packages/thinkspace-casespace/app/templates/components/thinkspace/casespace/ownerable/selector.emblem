@@ -1,0 +1,30 @@
+.ts-ownerable-selector
+  if is_not_menu_only
+    .ts-ownerable-selector_selection
+      if multiple
+        if has_selected_ownerables
+          span Handle multiple display for selected ownerables.
+        else
+          span.ts-ownerable-selector_selection-text click='toggle_is_selecting_ownerables' Click to select...
+      else
+        if has_selected_ownerables
+          span Currently selected: #{selected_ownerables.full_name}
+        else
+          span.ts-ownerable-selector_selection-text click='toggle_is_selecting_ownerables' Click to select...
+
+  if is_selecting_ownerables
+    .ts-ownerable-selector_menu
+      if is_searchable
+        = input value=search placeholder='Type to search' class="ts-ownerable-selector_search ts-ownerable-selector_list-item"
+      if filtered_ownerables
+        ul.ts-ownerable-selector_list
+          unless is_searching
+            component c_selector_ownerable model=current_user select='select' class="ts-ownerable-selector_list-item"
+          each ownerable in filtered_ownerables
+            component c_selector_ownerable model=ownerable select='select' class="ts-ownerable-selector_list-item"
+      else
+        if is_searching
+          .ts-ownerable-selector_list-item There are no results that match this search.
+        else
+          component c_loader
+

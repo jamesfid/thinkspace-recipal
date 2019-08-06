@@ -1,0 +1,178 @@
+//
+// Assessment.
+//
+
+ol.ts-ra_questions {
+  font-weight: 500;
+}
+
+.ts-ra_question {
+  margin-top: 1em;
+}
+
+.ts-ra_question-justification {}
+
+.ts-ra_question-text {
+  font-weight: 500;
+}
+
+.ts-ra_question-chat {
+  font-style: italic;
+  font-size:  85%;
+  color:      $ts-blue-dark;
+  float:      right;
+  cursor:     pointer;
+}
+
+.ts-ra_question-justfication-disabled-by {
+  font-size:  70%;
+  color:      $ts-red-base;
+  font-style: italic;
+}
+
+.ts-ra_question-error-message {
+  color: $ts-red-base;
+  font-size: 85%;
+}
+
+//
+// Radio Buttons.
+//
+
+.ts-ra_radio-buttons-score {
+  font-size: .7em;
+  font-style: italic;
+  text-align: right;
+  .ts-ra_radio-buttons-score-message {
+    font-weight: bolder;
+    &.ifat-correct   {color: $ts-green-dark;}
+    &.ifat-incorrect {color: $ts-red-dark;}
+  }
+  .ifat-message {margin-right: .5em;}
+}
+
+.ts-ra_radio-buttons-disabled {
+  background-color: lightgray;
+  .ts-ra_radio-button-status {
+    cursor:  text;
+    opacity: .5;
+  }
+}
+
+.ts-ra_radio-button {
+  .ts-ra_radio-button-status {
+    cursor:       pointer;
+    display:      inline-block;
+    margin-right: 1em;
+    &.ts-ra_admin-radio-button-status {margin-right: 0;}
+  }
+  .ts-ra_radio-button-label {
+    font-weight:    400;
+    vertical-align: top;
+    display:        inline-block;
+    &.selectable {cursor: pointer;}
+  }
+  &.ifat-radio-button-correct   {background-color: $ts-green-light;}
+  &.ifat-radio-button-incorrect {background-color: $ts-red-light;}
+}
+
+.ts-ra_radio-button-column {
+  width:      150px;
+  display:    inline-block;
+  margin-top: .5em;
+}
+
+//
+// Chat.
+//
+
+.ts-ra_chat {
+  padding: 5px;
+  border: 1px solid $ts-blue-base;
+}
+.ts-ra_chat-header {
+  font-weight:   500;
+  margin-bottom: 1em;
+  .ts-ra_chat-header-question {
+    display: inline-block;
+  }
+  .ts-ra_chat-header-close {
+    display:   inline-block;
+    float:     right;
+    font-size: 80%;
+  }
+}
+
+.ts-ra_chat-input {
+  text-align: center;
+}
+.ts-ra_chat-username {
+  display:   inline-block;
+  font-size: 80%;
+  color:     $ts-blue-dark;
+}
+.ts-ra_chat-time {
+  display:   inline-block;
+  font-size: 80%;
+  color:     $ts-blue-dark;
+  float:     right;
+}
+.ts-ra_chat-message {
+}
+
+//
+// Radio Button Icons. 
+//
+
+.tsi {
+  &.tsi-ra-item-checked {
+    background-image: image-url('ts-icons/phase-current.png');
+    background-repeat: no-repeat;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+      background-image: image-url('ts-icons/phase-current_2x.png');
+    }
+  }
+  &.tsi-ra-item-unchecked {
+    background-image: image-url('ts-icons/phase-incomplete.png');
+    background-repeat: no-repeat;
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+      background-image: image-url('ts-icons/phase-incomplete_2x.png');
+    }
+  }
+}
+
+//
+// Room Users e.g. Team Members.
+//
+
+.ts-ra_room-users-refresh  {width: 20px; height: 20px}
+
+.ts-ra_room-users-collapsed {width: 20px; height: 20px}
+
+.ts-ra_room-users-header {
+  font-weight: bold;
+  cursor:      pointer;
+  color:       $ts-blue-dark;
+}
+
+.ts-ra_room-user-changes {
+  position: absolute;
+  .ts-ra_room-user-join {
+    color:              green;
+    opacity:            0;
+    animation-duration: 15s;
+    animation-name:     ts-ra_hide_user_changes;
+  }
+  .ts-ra_room-user-left {
+    color:              red;
+    opacity:            0;
+    animation-duration: 15s;
+    animation-name:     ts-ra_hide_user_changes;
+  }
+}
+
+@keyframes ts-ra_hide_user_changes {
+  from {
+    opacity: 1;
+  }
+}

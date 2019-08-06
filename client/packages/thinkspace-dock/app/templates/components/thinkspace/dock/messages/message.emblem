@@ -1,0 +1,10 @@
+.ts-message.dock-totem-messages_message class={model.type is_debug:debug-on}
+  .ts-message_image class={image_class}
+  h1.ts-message_header #{type_header}
+  .ts-message_content
+    if is_debug
+      = model.timestamp
+    = model.message
+  span.dock-totem-messages_message-dismiss
+    i.im.im-lock.dock-totem-message_message-suppress{action 'suppress'}
+    i.im.im-close

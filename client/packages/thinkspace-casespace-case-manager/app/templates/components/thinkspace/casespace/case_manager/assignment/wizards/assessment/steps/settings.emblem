@@ -1,0 +1,34 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 #{t 'builder.assessment.headings.settings'}
+      p #{t 'builder.assessment.describe.settings'}
+
+    .ts-forms_field-container
+      .ts-forms_field-label.ts-forms_field-label-big #{t 'builder.assessment.instruct.method'}
+      
+      .ts-forms_field-container
+        label.ts-radio click="'set_methodology' 'michaelsen'"
+          component c_radio checked=is_michaelsen disable_click=true
+          | #{t 'builder.assessment.headings.method_michaelsen'}
+          .ts-radio_description
+            | #{t 'builder.assessment.describe.method_michaelsen'}
+
+      .ts-forms_field-container
+        label.ts-radio click="'set_methodology' 'custom'"
+          component c_radio checked=is_custom disable_click=true
+          | #{t 'builder.assessment.headings.method_custom'}
+          .ts-radio_description
+            | #{t 'builder.assessment.describe.method_custom'}
+
+    .ts-forms_section-container class={has_methodology:is-active:is-disabled}
+      component c_quantitative model=quantitative options=options assessment=model type=type
+    .ts-forms_section-container class={has_methodology:is-active:is-disabled}
+      component c_qualitative model=qualitative options=options assessment=model has_individual_comments=has_individual_comments
+
+  .ts-wizard_row.ts-forms_action-btns-container
+    .ts-grid_columns.small-12
+      a.btn.btn-default.btn-small.left click='back' #{t 'builder.assessment.buttons.back'}
+      a.btn.btn-primary.btn-small.right click='complete' #{t 'builder.assessment.buttons.next'}
+
+      

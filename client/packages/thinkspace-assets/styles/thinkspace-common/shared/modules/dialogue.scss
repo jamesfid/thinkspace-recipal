@@ -1,0 +1,68 @@
+/////
+// dialogue
+/////
+
+.dialogue {
+  border-top-right-radius:    $border-radius;
+  border-bottom-right-radius: $border-radius;
+  position:                   relative;
+  display:                    block;
+  margin-top:                 $dialogue-margin-top;
+  margin-bottom:              $dialogue-margin-bottom;
+  padding:                    $dialogue-padding;
+
+  > h1 {
+    font-size:      1rem;
+    font-weight:    $ts-heavy;
+    letter-spacing: .5px;
+    margin-bottom:  0;
+  }
+  > p {
+    font-size:     .875rem;
+    margin-bottom: .25rem;
+  }
+  >.btn {
+    margin-top: .5rem;
+  }
+
+  &.dialogue-instruct {
+    @include dialogue($ts-orange-light, $ts-orange-base);
+  }
+
+  &.dialogue-success {
+    @include dialogue($ts-green-light, $ts-green-base);
+  }
+
+  &.dialogue-error {
+    @include dialogue($ts-red-light, $ts-red-base);
+    ul.field-errors {font-size: inherit;}
+  }
+
+  &.dialogue-general {
+    @include dialogue($ts-blue-light, $ts-blue-base);
+  }
+
+  &.dialogue-actionless {
+    @include dialogue($ts-black-light, $ts-black-med);
+  }
+
+  &.dialogue_inline { margin-bottom: 0; }
+}
+
+.ts-dialogue {
+  margin-bottom: 8em;
+  padding-top: 4em;
+
+  > img {
+    width: 128px;
+    margin-right: 2em;
+  }
+
+  > h1 {
+    font-size:      1.15em;
+    font-weight:    $ts-heavy;
+    letter-spacing: .5px;
+    display:        inline-block;
+  }
+
+}

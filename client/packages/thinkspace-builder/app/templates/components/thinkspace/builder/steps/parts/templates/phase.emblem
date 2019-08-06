@@ -1,0 +1,8 @@
+li.ts-builder_template-phase-name
+  if is_selected
+    .tsi.tsi-tiny.tsi-phase-current.tsi-left
+    span #{phase_template.title}
+  else
+    .ts-buidler_template-phase-wrapper click='select'
+      .tsi.tsi-tiny.tsi-phase-unlocked.tsi-left
+      span #{phase_template.title}

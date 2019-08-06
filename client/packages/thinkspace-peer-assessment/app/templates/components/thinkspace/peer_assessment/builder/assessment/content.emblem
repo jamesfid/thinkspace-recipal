@@ -1,0 +1,33 @@
+.row.collapse
+  .small-12.medium-10.large-7.columns
+    .ts-forms_inline-heading
+      h4 Edit Evaluation
+      .ts-forms_heading-actions
+        a.btn.btn-small.btn-primary click='save' Save Changes
+        a.btn.btn-small.btn-default click='cancel' Cancel
+        
+    .ts-pa_team-member-preview
+      span Now assessing
+      h4 Thinkbot
+
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 Quantitative Evaluation
+        p Use the scale(s) to assess each of your team members.
+
+      each item in quant_items
+        component c_quant_preview model=item assessment=model edit_mode='content'
+        hr
+
+    .ts-forms_section-container
+      .ts-forms_section-heading
+        h5 Qualitative Evaluation
+        p Comments are anonymous.
+
+      each item in qual_items
+        component c_qual_preview model=item assessment=model edit_mode='content'
+        hr
+
+  .small-12.medium-2.large-4.columns
+    h6 Team Panel
+    p This area is reserved for displaying the student's team.

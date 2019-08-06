@@ -1,0 +1,8 @@
+.thinkspace-ie_radio
+  if is_checked
+    .tsi.tsi-small.tsi-input-element-radio-checked
+  else
+    if view_only
+      .tsi.tsi-small.tsi-input-element-radio-unchecked
+    else
+      .tsi.tsi-small.tsi-input-element-radio-unchecked click='check'

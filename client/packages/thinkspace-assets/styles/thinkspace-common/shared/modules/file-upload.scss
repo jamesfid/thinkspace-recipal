@@ -1,0 +1,46 @@
+.thinkspace-common_fu-modal {
+
+  &.drag-hovered {
+    background-color: $ts-blue-light;
+    border:           5px dashed $ts-blue-base;
+    border-radius:    5px;
+  }
+
+  .thinkspace-common_fu-files {list-style-type: none;}
+
+  .thinkspace-common_fu-modal-loading-icon {
+    color:     $ts-blue-base;
+    font-size: 2em;
+  }
+
+  .thinkspace-common_fu-modal-instructions {margin-top: 1em;}
+
+  .thinkspace-common_fu-loading { 
+    text-align: center; 
+    margin-bottom: 2rem;
+
+    >i {
+      margin-right: 1rem;
+    }
+  }
+
+  .thinkspace-common_fu-upload { text-align: center; }
+
+  .thinkspace-common_fu-upload-action {
+    &:hover { cursor: pointer; }
+
+    .thinkspace-common_fu-form {margin-bottom: 0;}
+
+    .thinkspace-common_fu-file-input {
+      position: absolute;
+      top:      0;
+      right:    0;
+      bottom:   0;
+      opacity:  0;
+      margin:   0;
+      display:  block;
+      &:hover { cursor:   pointer; }
+
+    }
+  }
+}

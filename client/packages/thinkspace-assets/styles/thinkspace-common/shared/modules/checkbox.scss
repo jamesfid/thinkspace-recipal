@@ -1,0 +1,82 @@
+/////
+// checkbox, radio
+/////
+
+.checkbox,.radio {
+  margin-bottom: .5em; 
+}
+.checkbox > label,.radio > label {
+  display:     inline-block;
+  margin-left: 1.5em; 
+}
+
+.checkbox-img {
+  display:             inline-block;
+  position:            absolute;
+  margin:              .3em .4em 0 0;
+  padding:             0;
+  width:               16px;
+  height:              16px;
+  background-image:    url('images/ts-checkmarks-sprite.svg');
+  background-position: 0 0;
+  background-repeat:   no-repeat;
+  cursor:              pointer;
+}
+table {
+  .checkbox-img {
+    margin: 0;
+  }
+}
+.checkbox-img:hover       { background-position: 0 -16px; }
+.checkbox-img:active      { background-position: 0 -32px; }
+.checkbox-img.is-pressed  { background-position: 0 -48px; }
+.checkbox-img.is-disabled { background-position: 0 -54px; }
+
+.common-checkbox {
+  cursor: pointer;
+
+  .checkbox {
+    display: inline-block;
+    .checkbox-img { 
+      position: relative; 
+      top: 1px; //vertically center with the label
+    }
+  }
+  .common-checkbox_label { 
+    display: inline-block;
+    font-size: 0.9375em;
+   }
+
+  &:hover {
+    .checkbox-img { 
+      background-position: 0 -16px; 
+
+      &.is-pressed  { background-position: 0 -48px; } //override hover styles
+      &.is-disabled { background-position: 0 -54px; } //override hover styles
+    }
+    .common-checkbox_label { color: $ts-black-dark; }
+  }
+}
+
+.dropdown-checkbox-img {
+  position: static;
+  margin: 0 .4em;
+}
+
+.radio-img {
+  position:            absolute;
+  display:             inline-block;
+  margin:              .3em .4em 0 0;
+  padding:             0;
+  width:               16px;
+  height:              16px;
+  background-image:    url('/assets/thinkspace/common/ts-radiobtn-sprite.svg');
+  background-position: 0 0;
+  background-repeat:   no-repeat;
+  cursor:              pointer;
+}
+.radio-img:hover       { background-position: 0 -16px; }
+.radio-img:active      { background-position: 0 -32px; }
+.radio-img.is-pressed  { background-position: 0 -48px; }
+.radio-img.is-disabled { background-position: 0 -54px; }
+

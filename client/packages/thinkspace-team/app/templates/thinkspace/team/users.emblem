@@ -1,0 +1,40 @@
+.team_users
+
+  .ts-grid_row: .small-12-columns
+    span.team_users-filter-label Filter by:
+    a.team_users-filter-action click='filter_by_collaboration_teams' Collaboration Teams
+    a.team_users-filter-action click='filter_by_peer_review_teams' Peer Review Teams
+    a.team_users-filter-action click='filter_teams_off' Show All
+    hr.team_users-filter-separator
+
+  .ts-grid_row
+    .small-6.ts-grid_columns
+    .small-6.ts-grid_columns
+      span.team_users-user-filter-label Filter by:
+      a.team_users-user-filter-action click='filter_by_unassigned_users' Unassigned
+      a.team_users-user-filter-action click='filter_by_assigned_users' Assigned
+      a.team_users-user-filter-action click='filter_users_off' Show All
+
+  .ts-grid_row
+    .small-6.ts-grid_columns
+      span.team_users-heading
+        span.team_users-heading-label All Teams
+      hr.team_users-filter-separator
+
+    .small-6.ts-grid_columns
+      span.team_users-heading
+        i.team_users-heading-show-users.fa.fa-users click='toggle_user_teams_visible' title='Show/hide teams'
+        span.team_users-heading-label All Users
+      hr.team_users-filter-separator
+
+  .ts-grid_row
+
+    .small-6.ts-grid_columns
+
+      each team in filtered_teams
+        = view users_team_view team=team
+
+    .small-6.ts-grid_columns
+
+      each user in resource_users
+        = view users_user_view user=user

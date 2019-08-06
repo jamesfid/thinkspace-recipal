@@ -1,0 +1,24 @@
+.ts-forms_field-container
+  .ts-forms_field-label-container
+    .ts-forms_field-label Total average points per team member
+    .ts-forms_field-label-description If you enter 10 points and you have 4 members on your team you will have 40 points to distribute.
+  = input class="ts-forms_input-tiny" value=points_per_member type='number' key-up='set_points_per_member'
+
+.ts-forms_field-label Choose the range for your scale
+.ts_forms_inline-fields-container
+  .ts-forms_field-container
+    .ts-forms_field-label Minimum
+    = input class="ts-forms_input-small" value=points_min type='number' key-up='set_points_min'
+
+  .ts-forms_field-container
+    .ts-forms_field-label Maximum
+    = input class="ts-forms_input-small" value=points_max type='number' key-up='set_points_max'
+
+partial t_points_descriptive
+
+.ts-forms_field-container
+  label.ts-checkbox click='toggle_points_different'
+    component c_checkbox checked=points_different disable_click=true
+    | Team members must all have different points
+    .ts-radio_description
+      | If a student assigns the same amount of points to more than one team member, they will receive an error message.

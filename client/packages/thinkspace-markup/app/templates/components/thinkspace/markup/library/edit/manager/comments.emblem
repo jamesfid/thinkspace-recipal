@@ -1,0 +1,2 @@
+each library_comment in comments
+  component c_library_comment model=library_comment remove_tag='remove_tag' add_tag='add_tag' all_library_tags=model.all_tags

@@ -1,0 +1,19 @@
+####################
+#      API         #
+####################
+# Ignore bundler config.
+.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp
+
+# Ignore Paperclip
+/public/paperclip
+
+# Spreadsheets for development.
+/spreadsheets
+
+# Ignore engine files.
+/engines/thinkspace-common/lib/tasks/files/*
+!/engines/thinkspace/thinkspace-seed/db/seed_data/files/file.pdf

@@ -1,0 +1,6 @@
+if ready
+  each row in qms_rows
+    .ts-grid_row
+      each qms in row
+        .ts-grid_columns.ts-grid_columns-thick class=columns_class
+          component am.c_trat_summary_answers_answer assessment=assessment qms=qms

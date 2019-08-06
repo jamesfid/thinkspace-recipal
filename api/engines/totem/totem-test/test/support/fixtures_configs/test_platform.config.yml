@@ -1,0 +1,6 @@
+platform_path: test/platform
+
+routes: {url: 'platform'}
+
+paths:
+  - path: test/platform/main

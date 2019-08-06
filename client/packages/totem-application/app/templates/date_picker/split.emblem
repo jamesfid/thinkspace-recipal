@@ -1,0 +1,22 @@
+.row
+  .small-6.columns: h6= view.date_picker_header
+  .small-6.columns
+    if view.time_picker
+      h6= view.time_picker_header
+
+.row
+  .small-6.columns
+    if view.hide_input
+      .date-picker-input-hidden: input.datepicker type='text'
+    else
+      .date-picker-input: input.datepicker type='text'
+
+    unless view.hide_button
+      .date-picker-action
+        a.btn.btn-primary.btn-small{action 'toggle_date' target=view bubbles=false}
+          i.im.im-calender
+          |Change Date
+
+  .small-6.columns
+    if view.time_picker
+      .date-picker_time-picker: input.date-pick_time-picker-input type='text'

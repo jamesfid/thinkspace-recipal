@@ -1,0 +1,36 @@
+.title-region {
+  .ts-action-bar {
+    margin: 2em 0 0 0;
+  }
+}
+
+.ts-action-bar {
+  margin: 0;
+
+  .ts-action-bar_action {
+    display:        inline-block; 
+    margin-right:   1.875em; 
+    font-size:      .875em;
+    font-weight:    $ts-bold;
+    letter-spacing: .5px;
+
+    a {
+    	color: $ts-black-base;
+      transition: all 0.29s ease-in-out 0s;
+
+	    &.active { 
+	    	color: $ts-blue-base;
+	    	border-bottom: 2px solid $ts-blue-base; 
+
+	    	&:hover {
+	    		color: $ts-blue-base;
+	    	}
+
+	    }
+
+	    &:hover {
+	    	color: $ts-blue-base;
+	    }
+  	}
+  }
+}

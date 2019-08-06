@@ -1,0 +1,15 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 #{t 'builder.assessment.headings.new_assessment'}
+      p #{t 'builder.assessment.describe.details'}
+
+    .ts-forms_field-container
+      .ts-forms_field-label #{t 'builder.assessment.instruct.name_case'}
+      component c_validated_input value=title errors=errors.title
+      
+  .ts-wizard_row.ts-forms_action-btns-container
+    .ts-grid_columns.small-12
+      a.btn.btn-default.btn-small.left click='back' #{t 'builder.assessment.buttons.back'}
+      a.btn.btn-primary.btn-small.right click='complete' #{t 'builder.assessment.buttons.next'}
+      

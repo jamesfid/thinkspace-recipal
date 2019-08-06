@@ -1,0 +1,19 @@
+if is_editing
+  .thinkspace-tbl-pa_comment-edit.ts-grid_row
+    .small-12.ts-grid_columns
+      = input value=value 
+    .small-12.ts-grid_columns
+      .btn-cluster.left-cluster
+        a.btn.btn-primary.btn-small{action 'save'} Update Comment
+        a.btn.btn-default.btn-small{action 'cancel'} Cancel
+else
+  .thinkspace-tbl-pa_comment.ts-grid_row
+    .small-10.ts-grid_columns
+      label #{label}
+      if has_value
+        p #{value}
+      else
+        p No value was entered.
+    .small-2.ts-grid_columns
+      if is_not_sent
+        a.btn.btn-primary.btn-tiny.right{action 'edit'} Edit comment

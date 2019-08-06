@@ -1,0 +1,9 @@
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick.text-center
+  .ts-ra_question-justification
+    h6 Justification
+    = textarea value=input_value disabled=justification_disabled
+
+.ts-grid_row: .small-12.ts-grid_columns.ts-grid_columns-thick.text-center
+  if show_save
+    a.btn.btn-primary.btn-small.right click='save' Save
+    a.btn.btn-primary.btn-small.left  click='cancel' Cancel

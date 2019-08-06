@@ -1,0 +1,63 @@
+.ts-wizard: .ts-wizard_content
+  .ts-wizard_row: .ts-grid_columns.small-12
+    .ts-forms_heading
+      h4 #{t 'builder.casespace.headings.case_confirmation'}
+      p #{t 'builder.casespace.describe.confirmation' build_mode}
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'builder.casespace.headings.case_details'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='"go_to_step" "details"' #{t 'builder.casespace.headings.edit_details'}
+      .ts-wizard_confirmation-section-content-container 
+        .ts-wizard_confirmation-field-label #{t 'builder.casespace.headings.case_name'}
+        p= model.title
+      hr
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'casespace.phase'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='"go_to_step" "phases"' #{t 'builder.casespace.headings.edit_phases'}
+      hr
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'builder.casespace.headings.case_instructions'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='"go_to_step" "logistics"' #{t 'builder.casespace.headings.edit_instructions'}
+      .ts-wizard_confirmation-section-content-container
+        p= model.instructions
+      hr
+
+    .ts-wizard_confirmation-section-container
+      .ts-forms_section-heading.ts-grid_row
+        .small-10.ts-grid_columns
+          h5 #{t 'builder.casespace.headings.date_logistics'}
+        .small-2.ts-grid_columns
+          .ts-forms_heading-actions
+            a.btn.btn-defaul.btn-small click='"go_to_step" "logistics"' #{t 'builder.casespace.headings.edit_dates'}
+
+      .ts-wizard_confirmation-section-content-container.ts-grid_row
+        .small-6.ts-grid_columns
+          .ts-wizard_confirmation-field-label #{t 'builder.casespace.headings.release_date'}
+          p= model.release_at
+        .small-6.ts-grid_columns
+          .ts-wizard_confirmation-field-label #{t 'builder.casespace.headings.due_date'}
+          p= model.due_at
+
+      .ts-wizard_confirmation-section-content-container 
+        .ts-wizard_confirmation-field-label #{t 'builder.casespace.headings.state'}
+        p= model.state
+
+    
+    .ts-wizard_row.ts-forms_action-btns-container
+      .ts-grid_columns.small-12
+        a.btn.btn-default.btn-small.left click='back' #{t 'builder.casespace.buttons.back'}
+        a.btn.btn-primary.btn-small.right click='complete' #{button_text}

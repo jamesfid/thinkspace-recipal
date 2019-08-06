@@ -1,0 +1,26 @@
+unless result_edit
+  a.ts-lab_admin-result-display-value click='edit'
+    = display_value
+
+if is_edit
+
+  div class={result_edit::ts-lab_admin-result-value-edit-content}
+
+    .ts-wizard_row: .ts-grid_columns.small-12
+      .ts-forms_field-label #{t 'builder.lab.admin.form.correctable.correct_value'}
+      component admin.c_validated_input value=correct_value errors=errors.correct_value show_errors=show_errors
+
+    .ts-wizard_row: .ts-grid_columns.small-12
+      .ts-forms_field-label #{t 'builder.lab.admin.form.correctable.max_attempts'}
+      component admin.c_validated_input value=max_attempts errors=errors.max_attempts show_errors=show_errors
+
+    if error_messages
+      .ts-validated-input.has-errors
+        ul.ts-validated-input_input-errors
+          each message in error_messages
+            li.ts-validated-input_input-error= message
+
+    unless result_edit
+      .ts-wizard_form-button-container
+        a.btn.btn-default.btn-small.left click='cancel' #{t 'builder.lab.admin.buttons.cancel'}
+        a.btn.btn-primary.btn-small.right click='save' #{t 'builder.lab.admin.buttons.save'}

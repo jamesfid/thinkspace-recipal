@@ -1,0 +1,7 @@
+span.team_users-user_team
+
+  i.team_users-user-team-action.team_users-user-team-remove.fa.fa-minus click='"remove_team" target=view' title='Remove team from user'
+
+  = team.title
+  small
+    |  (#{team.category.title})

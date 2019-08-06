@@ -1,0 +1,100 @@
+// Foundation row mixin with responsiveness.  Order is important here for overriding.
+@mixin fluid-grid-row {
+  @include grid-row;
+  margin: 0;
+  max-width: 100%;
+}
+
+@mixin highlight-transition-background {
+  transition-property: background-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+@mixin highlight-transition-border {
+  transition-property: border-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+@mixin highlight-transition-all {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+@mixin button($color_base: #efefef, $color_active: #797979, $text_color: white) {
+  border-color: $color_base;
+  background: $color_base;
+  color: $text_color;
+  &:hover {
+    background: $color_active;
+    border-color: $color_active;
+  }
+  &:active {
+    background: white;
+    border-color: $color_active;
+    color: $color_active;
+    outline: none;
+  }
+  &:focus {
+    background: white;
+    border-color: $color_active;
+    color: $color_active;
+  }
+  &:focus:hover {
+    color: $ts-black-dark;
+  }
+
+  // &.active {
+  //   background: white;
+  //   border-color: $color_active;
+  //   color: $color_active;
+  // }
+}
+
+@mixin hover-color($color-base, $border-width) {
+  &:hover{
+    color: $color-base;
+    border: em-calc($border-width) solid $color-base;
+  }
+}
+
+@mixin button-size($padding, $font_size) {
+  padding: $padding;
+  font-size: $font_size;
+}
+
+@mixin dialogue($color_base, $color_accent) {
+  border-left: 5px solid $color_accent;
+  background-color: $color_base;
+}
+
+@mixin close-button($color_base: #efefef, $color_active: #797979) {
+  color: $color_base;
+  &:hover {
+    color: $color_active;
+  }
+  &:active {
+    color: white;
+  }
+}
+
+@mixin unselectable {
+  -moz-user-select:    none;
+  -webkit-user-select: none;
+  -ms-user-select:     none;
+}
+
+// raf added
+@mixin border-radius($radius) {border-radius: $radius;}
+@mixin border-left-radius($radius) {border-left-radius: $radius;}
+@mixin border-right-radius($radius) {border-right-radius: $radius;}
+@mixin border-top-radius($radius) {border-top-radius: $radius;}
+@mixin border-bottom-radius($radius) {border-bottom-radius: $radius;}
+@mixin border-top-left-radius($radius) {border-top-left-radius: $radius;}
+@mixin border-top-right-radius($radius) {border-top-right-radius: $radius;}
+@mixin border-bottom-left-radius($radius) {border-bottom-left-radius: $radius;}
+@mixin border-bottom-right-radius($radius) {border-bottom-right-radius: $radius;}
+@mixin transform($foo) {}
+@mixin transition($foo: false, $bar: false, $baz: false) {}

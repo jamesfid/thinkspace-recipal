@@ -1,0 +1,40 @@
+.sim_content
+  .sim_left-column
+    .sim_header-text
+      | Radiation Simulation
+    canvas id='radiation-sim-canvas' class={:sim-canvas-setup}
+    .sim_sub-header-text
+      | Simulation Controls
+    .sim_control-header-text
+      | Main
+    .btn.btn-primary.btn-small.radiation-sim_btn{action 'plot_point'}
+      | Plot Point
+    .btn.btn-small{action 'clear_graph'}
+      | Clear Graph
+    hr
+    .radiation-sim_radio-header-left
+      | Surface Type
+      label
+        = radio-button checked=cur_surface value='sand'
+        |   Sand
+      label
+        = radio-button checked=cur_surface value='snow'
+        |   Snow
+      label
+        = radio-button checked=cur_surface value='plowed'
+        |   Plowed
+      label
+        = radio-button checked=cur_surface value='grass'
+        |   Grass
+    .radiation-sim_radio-header-right
+      | Time of Day
+      label
+        = radio-button checked=cur_time_of_day value='day'
+        |   Day
+      label
+        = radio-button checked=cur_time_of_day value='night'
+        |   Night
+  .sim_right-column
+    .sim_sub-header-text
+      | Plot Graph
+    .radiation-sim_chart id='chart-div'

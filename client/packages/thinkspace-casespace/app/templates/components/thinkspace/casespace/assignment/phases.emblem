@@ -1,0 +1,13 @@
+.small-12.large-5.ts-grid_columns.ts-grid_columns-thick
+  .casespace-assignment_phase-header
+    h1 Phase List
+    .top-right click='toggle_details'
+      if display_phase_details
+        a.action-link Hide Phase Logic
+      else
+        a.action-link Show Phase Logic
+    p.casespace-assignment_phase-tagline A list of the total phases that make up this case.  Click on one to jump in.
+
+  .casespace-assignment_phase-list
+    each phase in model.active_phases
+      component c_assignment_phase model=phase assignment=model r_phases_show=r_phases_show display_phase_details=display_phase_details

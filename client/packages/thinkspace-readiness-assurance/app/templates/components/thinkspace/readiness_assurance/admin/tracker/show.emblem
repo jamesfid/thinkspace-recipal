@@ -1,0 +1,13 @@
+.ts-ra_admin-tracker-content
+  ul
+    each tracker in track_users
+      li
+        .ts-ra_tracker-title= tracker.title
+        ol
+          each user in tracker.users
+            li
+              .ts-ra_tracker-username= user.username
+              .ts-ra_tracker-time=user.date
+
+    else
+      .ts-ra_admin-message-title No track users.

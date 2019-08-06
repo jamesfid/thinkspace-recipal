@@ -1,0 +1,222 @@
+# Rails app:
+#   config/database.yml:
+#     development_old_db:
+#       <<: *default
+#       database: old_ts_development
+#   Gemfile_totem.rb:
+#     gem 'totem-db-migrate', '0.5.0', path: 'your-path/repos/totem-api/totem-db-migrate'
+
+# rake db:drop db:create db:schema:load  #=> assumes no new migrations (or can do rake totem:db:reset[none])
+# rake totem:db:copy:old_to_new[thinkspace,migrate,to_components] #=> 07/10/2015 elapsed time: 00:05:40
+# rake totem:db:copy:make[thinkspace,migrate,to_components] S=phase_components
+# rake totem:db:domain:create[thinkspace*]
+#
+# - To compare domain_data/model.yml and database (does not update):
+# rake totem:db:domain:compare
+# - To see old-new table comparision:
+# rake totem:db:copy:tables[thinkspace,migrate,to_components] S=compare
+# - If testing only (add read_1, update_1, owner_1 to all spaces):
+# rake totem:db:copy:make[thinkspace,migrate,to_components] S=test_users
+
+# should: remove the old database from config/database.yml (could also remove gem totem-db-migrate)
+
+# Schema example: desktop/repos/totem-api/totem-db-migrate/bin/totem-schema-diff -c repos,thinkspace-api,migrate,to_components --migrate
+schema_diff:
+  ignore_tables:
+    - delayed_jobs
+    - versions
+    - thinkspace_wips_casespace_phase_templates
+  convert_old_to_new_table_names:
+    _wips:           ''
+    _tools:          ''
+    _helpers:        ''
+    _helper_embeds:  ''
+    _resources:      _resource
+    _path_viewer:    _diagnostic_path_viewer
+    team_categories: team_team_categories
+  convert_table_names_to_paths:
+    namespaces: [thinkspace, wips, common, artifact, markup, importer, comment, input_element, lab, casespace, tools,
+        helpers, helper_embeds, resources, resource, html, path_viewer, diagnostic_path, observation_list, weather_forecaster,
+      ]
+    diagnostic_path/viewer/: diagnostic_path_viewer/
+    /team_: /team/
+
+###########################################################
+#################### PATHS ################################
+###########################################################
+old_database_key_suffix:     old_db  # suffix added to key in config/database.yml e.g. "#{Rails.env}_#{suffix}" -> development_old_db
+delete_all:                  true
+debug:                       false
+print_new_table_seq_changes: true
+print_old_tables_not_copied: true
+
+before_all: before_all
+after_all:  after_all
+
+paths:
+  # Tables dropped:
+  # thinkspace/comment/comments                                       
+  # thinkspace/common/helpers                                         
+  # thinkspace/common/tools                                           
+  # thinkspace/common/user_invitations                                
+  # thinkspace/wips/casespace/phase_template_sections                 
+  # thinkspace/wips/casespace/phase_tool_helper_embeds                
+  # thinkspace/wips/casespace/phase_tool_helpers                      
+  # thinkspace/wips/casespace/phase_tools                   
+
+  # Tables new:
+  # thinkspace/casespace/phase_components                             
+  # thinkspace/common/api_sessions                                    
+  # thinkspace/common/components                                      
+  # thinkspace/common/invitations                                     
+  # thinkspace/lab/categories                                         
+  # thinkspace/lab/charts                                             
+  # thinkspace/lab/observations                                       
+  # thinkspace/lab/results                                            
+  # thinkspace/peer_assessment_assessments                            
+  # thinkspace/peer_assessment_overviews                              
+  # thinkspace/peer_assessment_review_sets                            
+  # thinkspace/peer_assessment_reviews                                
+  # thinkspace/peer_assessment_team_sets                              
+  # thinkspace/simulation_simulations                                 
+  # thinkspace/team/team_sets                                         
+  # thinkspace/weather_forecaster/assessment_items                    
+  # thinkspace/weather_forecaster/assessments                         
+  # thinkspace/weather_forecaster/forecast_day_actuals                
+  # thinkspace/weather_forecaster/forecast_days                       
+  # thinkspace/weather_forecaster/forecasts                           
+  # thinkspace/weather_forecaster/items                               
+  # thinkspace/weather_forecaster/response_scores                     
+  # thinkspace/weather_forecaster/responses                           
+  # thinkspace/weather_forecaster/stations                          
+
+  # Table names the same:
+
+    # team
+    # Copy the team categories before the phases so can update each phase's team_category_id.
+  - old_path: thinkspace/team/categories
+    new_path: thinkspace/team/team_categories
+  - old_path: thinkspace/team/team_teamables
+  - old_path: thinkspace/team/team_users
+  - old_path: thinkspace/team/team_viewers
+  - old_path: thinkspace/team/teams
+    removed: [category_id]
+    added:   [team_set_id, color, state]
+    before_create: before_create_thinkspace_team_teams
+
+    # common
+  - old_path: thinkspace/common/configurations
+  - old_path: thinkspace/common/space_space_types
+  - old_path: thinkspace/common/space_types
+    before_create: before_create_thinkspace_common_space_types
+  - old_path: thinkspace/common/space_users
+  - old_path: thinkspace/common/spaces
+  - old_path: thinkspace/common/users
+    removed: [authentication_token]
+
+    # importer
+  - old_path: thinkspace/importer/files
+
+    # markup
+  - old_path: thinkspace/markup/comments
+
+  # Tables renamed:
+
+    # resources
+  - old_path: thinkspace/resources/file_tags
+    new_path: thinkspace/resource/file_tags
+  - old_path: thinkspace/resources/files
+    new_path: thinkspace/resource/files
+    added:   [file_fingerprint]
+  - old_path: thinkspace/resources/link_tags
+    new_path: thinkspace/resource/link_tags
+  - old_path: thinkspace/resources/links
+    new_path: thinkspace/resource/links
+  - old_path: thinkspace/resources/tags
+    new_path: thinkspace/resource/tags
+
+    # team
+  - old_path: thinkspace/team/categories
+    new_path: thinkspace/team/team_categories
+
+    # artifact
+  - old_path: thinkspace/tools/artifact/buckets
+    new_path: thinkspace/artifact/buckets
+  - old_path: thinkspace/tools/artifact/files
+    new_path: thinkspace/artifact/files
+    before_create: before_create_thinkspace_artifact_files
+
+    # diagnostic_path
+  - old_path: thinkspace/tools/diagnostic_path/path_items
+    new_path: thinkspace/diagnostic_path/path_items
+  - old_path: thinkspace/tools/diagnostic_path/paths
+    new_path: thinkspace/diagnostic_path/paths
+
+    # input_element
+  - old_path: thinkspace/tools/helper_embeds/input_element/elements
+    new_path: thinkspace/input_element/elements
+    added:   [componentable_id, componentable_type]
+    removed: [helper_embedable_id, helper_embedable_type]
+    before_create: before_create_thinkspace_input_element_elements
+  - old_path: thinkspace/tools/helper_embeds/input_element/responses
+    new_path: thinkspace/input_element/responses
+
+    # observation_list
+  - old_path: thinkspace/tools/helpers/observation_list/group_lists
+    new_path: thinkspace/observation_list/group_lists
+  - old_path: thinkspace/tools/helpers/observation_list/groups
+    new_path: thinkspace/observation_list/groups
+  - old_path: thinkspace/tools/helpers/observation_list/lists
+    new_path: thinkspace/observation_list/lists
+    added:   [category]
+    removed: [view_generator]
+    before_create: before_create_thinkspace_observation_list_lists
+    allow_nil_polymorphic: true
+  - old_path: thinkspace/tools/helpers/observation_list/observation_notes
+    new_path: thinkspace/observation_list/observation_notes
+  - old_path: thinkspace/tools/helpers/observation_list/observations
+    new_path: thinkspace/observation_list/observations
+    removed: [category]
+
+    # html
+  - old_path: thinkspace/tools/html/contents
+    new_path: thinkspace/html/contents
+    added:   [html_content]
+    removed: [tool_content, view_generator]
+    before_create: before_create_thinkspace_html_contents
+
+    # path_viewer
+  - old_path: thinkspace/tools/path_viewer/viewers
+    new_path: thinkspace/diagnostic_path_viewer/viewers
+    added:   [authable_id, authable_type, ownerable_id, ownerable_type]
+    before_create: before_create_thinkspace_diagnostic_path_viewer_viewers
+
+    # casespace
+  - old_path: thinkspace/wips/casespace/assignments
+    new_path: thinkspace/casespace/assignments
+    added:   [bundle_type]
+
+    # add the phase's team category association and new phase template id
+  - old_path: thinkspace/wips/casespace/phases
+    new_path: thinkspace/casespace/phases
+    added:   [team_category_id]
+    removed: [team_based]
+    before_create: before_create_thinkspace_casespace_phases
+
+  - old_path: thinkspace/wips/casespace/case_manager_templates
+    new_path: thinkspace/casespace/case_manager_templates
+
+  - old_path: thinkspace/wips/casespace/phase_scores
+    new_path: thinkspace/casespace/phase_scores
+    added:   [phase_state_id]
+    removed: [ownerable_id, ownerable_type, phase_id]
+    before_create: before_create_thinkspace_casespace_phase_scores
+
+  - old_path: thinkspace/wips/casespace/phase_states
+    new_path: thinkspace/casespace/phase_states
+
+  # New phase templates are built in the helper and not copied.
+  # - old_path: thinkspace/wips/casespace/phase_templates
+  #   new_path: thinkspace/casespace/phase_templates
+  #   added:   [domain, name, template]
+  #   # before_create: before_create_thinkspace_casespace_phase_templates

@@ -1,0 +1,6 @@
+if can_access_addon
+  div{action 'toggle_addon_visible'} class={:thinkspace-dock_addon :thinkspace-dock_addon-green addon_visible:darken addon_visible:addon_open}
+    span.thinkspace-dock_addon-title= addon_display_name
+
+  / if addon_visible
+  /   component c_phase dock=this

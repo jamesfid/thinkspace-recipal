@@ -1,0 +1,208 @@
+.full {
+  @include grid-column($total-columns);
+}
+
+#footer {
+  z-index: 5000;
+}
+
+#top-bar {
+  padding-left:  0px;
+  padding-right: 0px;
+  @extend .full;
+}
+
+#application {
+  position: absolute;
+  top:      0;
+  bottom:   0;
+  @include clearfix;
+  @include fluid-grid-row;
+}
+
+// Order is important, overrides for Foundation's mixins must come after their declaration.
+#sidepocket {
+  background-color: #FFFFFF;
+  bottom:           0;
+  top:              60px;
+  right:            0;
+  position:         fixed;
+  z-index:          4999;
+  //overflow-y:       hidden;
+  height: 100%;
+  border-left:      2px solid white;
+  margin-bottom:    $sidepocket-bottom;
+
+  &.has-sticky-addon {
+    top: 120px;
+  }
+}
+
+// Order is important, overrides for Foundation's mixins must come after their declaration.
+#navbar {
+  background-color: $left-panel-background-color;
+  border-bottom: 1px solid #48A3C7;
+  top:              0;
+  @include clearfix;
+
+  .toolbar_header-minimized { 
+    padding:       0;
+    text-align:    center;
+    border-bottom: 2px solid lighten($ts-blue-base, 15%);
+
+    .ts-branding {
+      font-weight:      400;
+      padding:          0.25em;
+      margin-bottom:    0;
+      @include border-radius($border-radius);
+    }
+
+    &:hover { cursor: pointer; }
+  }
+
+  .toolbar_minimized-link {
+    text-align:    center;
+    color:         white;
+    border-bottom: 2px solid lighten($ts-blue-base, 15%);
+    border-top: none;
+    display:       block;
+    font-size:     1.5em;
+    line-height:   1.5em;
+    padding:       0.4em 0;
+
+    .tsi { display: block; margin: 0 auto; }
+
+    //&:last-of-type { border-bottom: none; }
+  }
+
+  .toolbar_hide {
+    position:  absolute;
+    right:     1em;
+    top:       0;
+    color:     white;
+    font-size: 0.75em;
+    i { margin-right: 0.5em; }
+    &:hover { cursor: pointer; }
+  }
+
+  .toolbar_show {
+    position:  absolute;
+    top:       0;
+    left:      0.5em;
+    color:     white;
+    font-size: 0.75em;
+    i { margin-left: 0.25em; }
+  }
+
+
+}
+
+#content-wrapper {
+  background-color: $content-background-color;
+  transform-style:  preserve-3d;
+  overflow-y:       auto;
+  margin-top:       60px;
+
+  margin-bottom: $content-wrapper-margin-bottom;
+
+  &.has-sticky-addon {
+    margin-top: 120px;
+  }
+
+  #content {
+    background-color: $content-background-color;
+    position:         relative;
+    //padding-bottom: 2em; // Cannot have this with the sticky columns.  Any way around this?
+    
+  }
+}
+
+.ts-componentable, .ts-clearfix { @include clearfix(); }
+
+.error-message {
+  color:     black;
+  font-size: 12px;
+
+  ul {
+    list-style-type: none;
+    font-weight:     normal;
+  }
+}
+
+.tool-border {
+  border-left: 1px solid $ts-black-med;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+
+/////
+// DI Additions
+/////
+.row-group {
+  margin-bottom: $row-group-margin-bottom;
+
+  &.row-group-half {
+    margin-bottom: $row-group-margin-bottom / 2;
+  }
+  
+  &.row-group-quarter {
+    margin-bottom: $row-group-margin-bottom / 4;
+  }
+}
+
+strong.semi {
+  font-weight: 500;
+}
+
+.indent, .indent {
+  padding-left: $indent-padding-left;
+
+  &.indent-double {
+    padding-left: $indent-padding-left * 2;
+  }
+}
+
+// .header is used to align an image next to some <h#> tags like:
+//     | <h1>
+// IMG | <h2>
+//     | <h3>
+.header {
+
+  .header_image {
+    display: inline-block;
+    img { vertical-align: inherit; margin: 0.5em 0.5em; }
+  }
+
+  .header_text {
+    display: inline-block;
+  }
+}
+
+table {
+  &.table-inline {
+    width: auto;
+  }
+
+  &.table-unstyled {
+    border:                   none;
+    margin-bottom:            0;
+    thead, th, tr { background-color: transparent; }
+  }
+
+  td {
+    &.td-unstyled { padding: 0; }
+    &.td-underlined { border-bottom: 2px solid $ts-black-med; }
+    &.td-vertical-align-middle { vertical-align: middle; }
+  }
+}
+
+small.semi {
+  font-size: 75%;
+}
+
+.centered {
+  text-align: center;
+}

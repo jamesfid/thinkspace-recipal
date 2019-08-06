@@ -1,0 +1,453 @@
+$lab-incorrect-color: #FF5050;
+$lab-no-value-color:  #FFFF00;
+$lab-correct-color:   $ts-green-base;
+
+table.thinkspace-lab {
+  font-size:    1em;
+  table-layout: fixed;
+}
+
+.thinkspace-lab_chart-categories-top-sep {
+  margin-bottom: 1em;
+}
+.thinkspace-lab_chart-categories-bottom-sep {
+  margin-top:    1em;
+  margin-bottom: 2em;
+}
+
+.thinkspace-lab_chart-categories {
+  margin-bottom: 0;
+  margin-left: 0;
+  .thinkspace-lab_chart-category {
+    display:       inline;
+    margin-right: 1em;
+    border-radius: 1em;
+    padding-left:  1em;
+    padding-right: 1em;
+    &:hover {
+      padding: .25em 1em .55em;
+      background-color: $ts-blue-med;
+      cursor: pointer;
+    }
+  }
+  .thinkspace-lab_chart-category.active {
+    padding: .25em 1em .55em;
+    background-color: $ts-blue-dark;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+.thinkspace-lab_input-help-text  { @include unselectable; word-wrap: break-word; }
+
+.thinkspace-lab_category-title {
+  margin-bottom: 1em;
+  color:       $ts-blue-dark;
+  font-weight: $ts-bold;
+
+}
+
+.thinkspace-lab-user-inputs-select-header {
+  font-size:       70%;
+  color:           $ts-blue-dark;
+  text-decoration: underline;
+}
+
+
+ul.thinkspace-lab_user-inputs {
+  list-style: none;
+
+  .thinkspace-lab_user-input {
+    font-size: .875em;
+    i {color: white;}
+    &:hover {
+      background-color: $ts-blue-dark;
+      color:            white;
+      cursor:           pointer;
+    }
+    .thinkspace-lab_user-input-delete {
+      float:         right;
+      margin-top:    .2em;
+      margin-right:  .2em;
+      padding-left:  .3em;
+      padding-right: .3em;
+      &:hover {
+        background-color: white;
+        color:            red;
+        cursor:           pointer;
+      }
+    }
+  }
+
+}
+
+.thinkspace-lab_correct-message {
+  background-color: $lab-correct-color;
+  color:            white;
+  font-size:        .8em;
+  padding-left:     1em;
+  padding-right:    1em;
+  i {margin-right: 1em;}
+}
+
+.thinkspace-lab_incorrect-message {
+  background-color: $lab-incorrect-color;
+  color:            white;
+  font-size:        .8em;
+  padding-left:     1em;
+  padding-right:    1em;
+  i {margin-right: 1em;}
+}
+
+.thinkspace-lab_no-value-message {
+  background-color: $lab-no-value-color;
+  font-size:        .8em;
+  padding-left:     1em;
+  padding-right:    1em;
+  i {margin-right: 1em;}
+}
+
+.thinkspace-lab_user-input-row {
+  margin:  0;
+  padding: 0;
+  .columns {
+    margin:  0;
+    padding: 0;
+  }
+}
+
+.thinkspace-lab_user-input-actions {
+  padding-left: 0;
+  i {
+    cursor:      pointer;
+    width:       1.5em;
+    text-align:  center;
+    font-weight: bold;
+    &:hover {
+      background-color: $ts-blue-dark;
+      color:            white;
+      cursor:           pointer;
+    }
+  }
+}
+
+.thinkspace-lab_input.incorrect.show_message {
+  input, textarea, select {
+    border-color: $lab-incorrect-color;
+  }
+}
+
+.thinkspace-lab_input.incorrect {
+  .thinkspace-lab_input-disabled-text {
+    border:        2px solid;
+    border-color:  $lab-incorrect-color;
+    border-radius: 4px;
+    font-size:     1.5em;
+    min-height:    1.5em;
+    font-weight:   bolder;
+    padding:       5px;
+    text-align:    center;
+    color:         red;
+  }
+}
+
+.thinkspace-lab_input.correct {
+   select, input {
+     &:disabled {
+      background-color: $ts-black-med;
+      color: white;
+     }
+   }
+  .thinkspace-lab_input-disabled-text {
+    border:        2px solid;
+    border-color:  $lab-correct-color;
+    border-radius: 4px;
+    font-size:     1.5em;
+    min-height:    1.5em;
+    font-weight:   bolder;
+    padding:       5px;
+    text-align:    center;
+    color:         green;
+  }
+}
+
+
+//.thinkspace-lab_input.correct.show_message {
+//  input, textarea, select {
+//    border-color: $lab-correct-color;
+//  }
+//  select {
+//    color: green;
+//  }
+//}
+
+.thinkspace-lab_input {
+  input, textarea {
+    font-size: .875em;
+  }
+}
+
+.thinkspace-lab_all-correct {
+  font-size: .875em;
+  color:     $lab-correct-color;
+}
+
+.thinkspace-lab_exceeded-attempts {
+  font-size: .875em;
+  color:     $lab-incorrect-color;
+}
+
+.thinkspace-lab_input-correct-values-link {
+  color: $ts-blue-dark;
+  &:hover {cursor: pointer; background-color: $ts-blue-dark; color: white}
+}
+
+
+.thinkspace-lab_correctable-input.incorrect {
+
+  .thinkspace-lab_correctable-input-save {
+    display:       inline-table;
+    padding-left:  .5em;
+    padding-right: .5em;
+    color:         green;
+    &:hover {cursor: pointer; background-color: $ts-blue-light;}
+  }
+
+  .thinkspace-lab_correctable-input-cancel {
+    display:       inline-table;
+    padding-left:  .5em;
+    padding-right: .5em;
+    color:         red;
+    &:hover {cursor: pointer; background-color: $ts-blue-light;}
+  }
+}
+
+//
+// ADMIN
+//
+
+.ts-lab_admin-result-table {
+  table-layout: auto;
+}
+
+.ts-lab_admin-category-dropdown_buttons {
+  margin-top: -1.5em; 
+}
+
+.ts-lab_admin-chart-categories-bottom-sep {
+}
+
+.ts-lab_admin-result-value-edit-content {
+  position:         fixed;
+  width:            auto;
+  margin-top:       .5em;
+  padding-top:      1em;
+  padding-left:     2em;
+  padding-right:    2em;
+  padding-bottom:   2em;
+  border-radius:    1em;
+  background-color: $ts-blue-med;
+  z-index:          10;
+}
+
+.ts-lab_admin-chart-categories {
+  margin-bottom: 0;
+  margin-left: 0;
+  .ts-lab_admin-chart-category {
+    display:       inline;
+    margin-right: 1em;
+    border-radius: 1em;
+    padding-left:  1em;
+    padding-right: 1em;
+    &:hover {
+      padding: .25em 1em .55em;
+      background-color: $ts-blue-med;
+      cursor: pointer;
+    }
+    .active {
+      padding: .25em 1em .55em;
+      background-color: $ts-blue-dark;
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
+
+ul.ts-lab_admin-sortable-categories {
+  margin-bottom: 0;
+  li.ts-lab_admin-sortable-category {
+    display:       inline;
+    margin-right:  1em;
+    border-radius: 1em;
+    padding:       .25em 1em .55em;
+    border:        1px solid $ts-blue-med;
+    &:hover {
+      background-color: $ts-blue-med;
+      cursor:           pointer;
+    }
+    &.active {
+      padding:          .25em 1em .55em;
+      background-color: $ts-blue-dark;
+      border:           1px solid $ts-blue-dark;
+      cursor:           pointer;
+      color:            white;
+    }
+  }
+  .ts-lab_admin-sortable-category-handle {
+    padding-right: 5px;
+    cursor: move;
+    &:hover {color: $ts-red-base;}
+  }
+  li.placeholder {
+    list-style: none;
+    position:   relative;
+    display:    inline;
+    margin:     0;
+    padding:    0;
+    border:     none;
+    &:before {
+      position:            absolute;
+      content:             '';
+      width:               0;
+      height:              0;
+      margin-top:          -5px;
+      right:               -5px;
+      top:                 -5px;
+      border:              10px solid transparent;
+      border-top-color:    $ts-red-base;
+      border-bottom-color: none;
+    }
+  }
+}
+
+.ts-lab_admin-sortable-results {
+  th, td {padding: 6px 2px;}
+  cursor:  move;
+  tr.dragged {
+    opacity:          .8;
+    background-color: lightgray;
+    td {min-width: 5em;}
+    td a {color: $ts-red-base !important;}
+    td.action-button {display: none;}
+  }
+  tr.placeholder {
+    position: relative;
+    margin:   0;
+    padding:  0;
+    border: none;
+    &:before {
+      position:           absolute;
+      content:            '';
+      width:              0;
+      height:             0;
+      margin-top:         -5px;
+      left:               -5px;
+      top:                -4px;
+      border:             10px solid transparent;
+      border-left-color:  $ts-red-base;
+      border-right-color: none;
+    }
+  }
+}
+
+.ts-lab_admin-result-display-value {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+// NEW ADDITIONS
+.ts-lab_status {
+  width: 25px;
+}
+
+.ts-lab_observation { 
+  .ts-lab_observation-correct { 
+    border-bottom: 2px solid $ts-black-med;
+    width:         100%; 
+    display:       block;
+    padding:       0 0 0.5em 0.5em;
+    position:      relative;
+
+    .ts-lab_observation-correct-icon { 
+      position: absolute;
+      right:    0;
+      color:    $ts-green-base;
+    }
+  }
+
+  .ts-lab_input { font-size: 1em; }
+}
+
+.ts-lab_focus-icon { color: $ts-blue-base; }
+.ts-lab_correct-icon { color: $ts-green-base; }
+
+.ts-lab_categories {
+  border-bottom: 2px solid $ts-black-med;
+  margin: 0 0 1em 0;
+
+  .ts-lab_category {
+    display:                 inline-block;
+    list-style-type:         none;
+    font-size:               1em;
+    background:              $ts-black-light;
+    padding:                 0.5em 0.75em;
+    border-top-left-radius:  $border-radius;
+    border-top-right-radius: $border-radius;
+    border-width:            2px 2px 0 2px;
+    border-style:            solid;
+    border-color:            $ts-black-med;
+    font-weight:             $ts-medium;
+
+
+    &.active { 
+      background: white;
+      margin-bottom: -2px; // Offset the border width on parent.
+      border-bottom: 2px solid white;
+    }
+
+    &:hover { cursor: pointer; }
+    &:first-of-type { border-right: 0; }
+    &:last-of-type { border-left: 0; }
+  }
+}
+
+.ts-lab_keyboard-shortcuts {
+  font-style: italic;
+  font-size:  0.875em;
+
+  .ts-lab_keyboard-tips {
+    .ts-lab_keyboard-tip {
+      display:      inline-block;
+      font-style:   normal;
+      font-size:    0.875em;
+      padding:      0.5em;
+      margin-right: 0.5em;
+
+      .ts-lab_keyboard-tip-key {
+        border:        1px solid $ts-black-med;
+        border-radius: $border-radius;
+        color:         $ts-black-med;
+        padding:       0.25em;
+        margin-right:  0.25em;
+      }
+
+    }
+  }
+
+  .ts-lab_keyboard-tip-icon { 
+    font-size:    2em;
+    margin-right: 0.5em;
+    color:        $ts-black-med;
+  }
+
+  .ts-lab_keyboard-tip-text {
+    position: relative;
+    bottom: 3px;
+  }
+
+  .ts-lab_keyboard-tip-toggle { 
+    i { font-size: 0.5em; margin-left: 0.5em; }
+  }
+}
+
+.ts-lab_input-tip { font-size: 0.75em; }

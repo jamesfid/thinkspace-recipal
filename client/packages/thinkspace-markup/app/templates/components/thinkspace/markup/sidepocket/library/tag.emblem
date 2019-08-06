@@ -1,0 +1,5 @@
+.library-comment_tag{action 'remove_tag'}
+  .library-comment_tag-text
+    = content
+  .library-comment_tag-action
+    i.im.im-close

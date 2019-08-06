@@ -1,0 +1,60 @@
+prereq_configs: space
+
+variables:
+  - &CASE         Gradebook Scoring (mix user and team phases)
+  - &PHASE_USER_1 User 1
+  - &PHASE_TEAM_1 Teams 1
+  - &PHASE_USER_2 User 2
+  - &PHASE_TEAM_2 Teams 2
+  - &PHASE_USER_3 User 3
+  import_text[./space@variables]
+  import_text[../common_imports/phase_settings]
+  import_text[../common_imports/teams]
+
+  - phase_common: &PHASE_COMMON
+      assignment:    *CASE
+      template_name: one_column_html_submit
+      settings:
+        <<: *SUBMIT
+      sections:
+        html:
+          methods: inputs
+          title:   HTML Inputs
+
+assignments:
+  - title: *CASE
+    space: *SPACE
+
+phases:
+
+  - title: *PHASE_USER_1
+    <<: *PHASE_COMMON
+
+  - title: *PHASE_TEAM_1
+    <<: *PHASE_COMMON
+
+  - title: *PHASE_USER_2
+    <<: *PHASE_COMMON
+
+  - title: *PHASE_TEAM_2
+    <<: *PHASE_COMMON
+
+  - title: *PHASE_USER_3
+    <<: *PHASE_COMMON
+
+team_phases:
+  - {title: *PHASE_TEAM_1, space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_COLLABORATION}
+  - {title: *PHASE_TEAM_2, space: *SPACE, assignment: *CASE, team_sets: *ALL_TEAM_SETS, team_category: *TEAM_COLLABORATION}
+
+auto_input:
+  responses:
+    - phases: *PHASE_USER_1
+      users:  read_1
+    - phases: *PHASE_USER_2
+      users:  read_1
+    - phases: *PHASE_USER_3
+      users:  read_1
+    - phases: *PHASE_TEAM_1
+      teams:  *TEAM_1
+    - phases: *PHASE_TEAM_2
+      teams:  *TEAM_2
