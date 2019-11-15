@@ -29,7 +29,7 @@ end
 gem 'rest-client', '2.0.2'
 
 # CORS - config in application.rb
-gem 'rack-cors', '1.0.3', require: 'rack/cors'
+gem 'rack-cors', '1.0.6', require: 'rack/cors'
 
 # Redis for serving Index.
 gem 'redis', '4.1.2'
