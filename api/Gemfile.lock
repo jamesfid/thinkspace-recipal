@@ -277,7 +277,7 @@ GEM
     minitest (5.11.3)
     netrc (0.11.0)
     newrelic_rpm (6.4.0.356)
-    nokogiri (1.10.3)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     non-digest-assets (1.0.10)
       sprockets (>= 2.0)
